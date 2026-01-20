@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV Futuriste - Votre Nom</title>
+
+  <!-- Google Font futuriste -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #05070d;
+      --bg-glass: rgba(255,255,255,0.05);
+      --primary: #00f6ff;
+      --secondary: #7a7cff;
+      --text: #e6f1ff;
+      --muted: #8b9bb4;
+      --border: rgba(255,255,255,0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at top, #0b1020, var(--bg));
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Background animation */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 40%, rgba(0,246,255,0.08), transparent 60%);
+      animation: scan 6s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes scan {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    header {
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+    }
+
+    section {
+      background: var(--bg-glass);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 0 40px rgba(0,246,255,0.08);
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .info-item {
+      margin-bottom: 1rem;
+    }
+
+    .info-item span {
+      color: var(--muted);
+      font-size: 0.85rem;
+      display: block;
+    }
+
+    .info-item strong {
+      font-weight: 400;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .card {
+      padding: 1.2rem 1.5rem;
+      border-left: 3px solid var(--primary);
+      background: rgba(255,255,255,0.03);
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .card span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .skill {
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>Votre Nom</h1>
+    <p>Poste / Spécialité / Titre professionnel</p>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- ===== COLONNE GAUCHE ===== -->
+    <section>
+      <h2>Profil</h2>
+      <p style="font-size:0.9rem; line-height:1.6; color:var(--muted)">
+        Brève description de votre profil, votre vision, votre valeur ajoutée.
+      </p>
+
+      <h2 style="margin-top:2rem">Infos</h2>
+      <div class="info-item">
+        <span>Email</span>
+        <strong>email@exemple.com</strong>
+      </div>
+      <div class="info-item">
+        <span>Téléphone</span>
+        <strong>+33 6 00 00 00 00</strong>
+      </div>
+      <div class="info-item">
+        <span>Localisation</span>
+        <strong>Ville, Pays</strong>
+      </div>
+
+      <h2 style="margin-top:2rem">Compétences</h2>
+      <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">React</div>
+        <div class="skill">UI / UX</div>
+      </div>
+    </section>
+
+    <!-- ===== COLONNE DROITE ===== -->
+    <section>
+      <h2>Expériences</h2>
+      <div class="timeline">
+        <div class="card">
+          <h3>Poste - Entreprise</h3>
+          <span>2023 – Présent</span>
+          <p style="margin-top:0.6rem; font-size:0.85rem; color:var(--muted)">
+            Description de vos missions et réalisations.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Poste - Entreprise</h3>
+          <span>2021 – 2023</span>
+          <p style="margin-top:0.6rem; font-size:0.85rem; color:var(--muted)">
+            Description de vos missions et réalisations.
+          </p>
+        </div>
+      </div>
+
+      <h2 style="margin-top:2rem">Formation</h2>
+      <div class="timeline">
+        <div class="card">
+          <h3>Diplôme - École</h3>
+          <span>Année</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    © 2026 – CV Futuriste | Conçu en HTML & CSS
+  </footer>
+
+</body>
+</html>
