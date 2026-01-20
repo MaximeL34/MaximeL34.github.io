@@ -3,43 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV Futuriste - Votre Nom</title>
+  <title>Site Personnel – Data Analyst</title>
 
-  <!-- Google Font futuriste -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #05070d;
-      --bg-glass: rgba(255,255,255,0.05);
+      --bg: #04060c;
+      --glass: rgba(255,255,255,0.06);
       --primary: #00f6ff;
-      --secondary: #7a7cff;
-      --text: #e6f1ff;
+      --secondary: #8a7cff;
+      --text: #eaf2ff;
       --muted: #8b9bb4;
       --border: rgba(255,255,255,0.15);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Orbitron', sans-serif;
       background: radial-gradient(circle at top, #0b1020, var(--bg));
       color: var(--text);
-      min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* Background animation */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background: linear-gradient(120deg, transparent 40%, rgba(0,246,255,0.08), transparent 60%);
-      animation: scan 6s linear infinite;
+      background: linear-gradient(120deg, transparent 40%, rgba(0,246,255,0.07), transparent 60%);
+      animation: scan 7s linear infinite;
       pointer-events: none;
     }
 
@@ -49,14 +42,18 @@
     }
 
     header {
-      padding: 4rem 2rem 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 2rem;
     }
 
     header h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: 0.15em;
+      font-size: 3.5rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       background: linear-gradient(90deg, var(--primary), var(--secondary));
       -webkit-background-clip: text;
@@ -64,178 +61,179 @@
     }
 
     header p {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
+      max-width: 700px;
       color: var(--muted);
       font-size: 1.1rem;
+      line-height: 1.8;
     }
 
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2rem;
+    .cta {
+      margin-top: 3rem;
+      padding: 0.9rem 2.5rem;
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.3s ease;
+    }
+
+    .cta:hover {
+      background: var(--primary);
+      color: #000;
+      box-shadow: 0 0 30px rgba(0,246,255,0.6);
     }
 
     section {
-      background: var(--bg-glass);
-      backdrop-filter: blur(14px);
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .glass {
+      background: var(--glass);
+      backdrop-filter: blur(16px);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2rem;
+      border-radius: 24px;
+      padding: 3rem;
       box-shadow: 0 0 40px rgba(0,246,255,0.08);
     }
 
     section h2 {
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 2rem;
       color: var(--primary);
-      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .info-item {
-      margin-bottom: 1rem;
-    }
-
-    .info-item span {
+    .about p {
       color: var(--muted);
-      font-size: 0.85rem;
-      display: block;
+      line-height: 1.8;
+      font-size: 0.95rem;
     }
 
-    .info-item strong {
-      font-weight: 400;
-    }
-
-    .timeline {
+    .grid {
       display: grid;
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
     }
 
     .card {
-      padding: 1.2rem 1.5rem;
-      border-left: 3px solid var(--primary);
       background: rgba(255,255,255,0.03);
-      border-radius: 10px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      transition: 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px rgba(0,246,255,0.25);
     }
 
     .card h3 {
       font-size: 1rem;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.8rem;
     }
 
-    .card span {
-      font-size: 0.8rem;
+    .card p {
+      font-size: 0.85rem;
       color: var(--muted);
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
-
-    .skill {
-      padding: 0.4rem 0.9rem;
-      border: 1px solid var(--primary);
-      border-radius: 999px;
-      font-size: 0.75rem;
-      color: var(--primary);
+      line-height: 1.6;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 3rem 1rem;
       color: var(--muted);
       font-size: 0.75rem;
-    }
-
-    @media (max-width: 900px) {
-      main {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
+  <!-- HERO -->
   <header>
     <h1>Votre Nom</h1>
-    <p>Poste / Spécialité / Titre professionnel</p>
+    <p>
+      Analytics Engineer.
+      Je conçois des pipelines fiables, des modèles de données clairs et des fondations analytiques durables.
+    </p>
+    <a href="#about" class="cta">Explorer</a>
   </header>
 
-  <!-- ===== MAIN ===== -->
-  <main>
-
-    <!-- ===== COLONNE GAUCHE ===== -->
-    <section>
-      <h2>Profil</h2>
-      <p style="font-size:0.9rem; line-height:1.6; color:var(--muted)">
-        Brève description de votre profil, votre vision, votre valeur ajoutée.
+  <!-- À PROPOS -->
+  <section id="about">
+    <div class="glass about">
+      <h2>À propos</h2>
+      <p>
+        Analytics Engineer orienté fiabilité et clarté.
+        Mon rôle est de transformer des données brutes et fragmentées en modèles robustes,
+        exploitables par les équipes data, produit et business.
+        <br /><br />
+        Je me situe à l'interface entre l'ingénierie et l'analyse :
+        structurer, documenter et rendre la donnée digne de confiance.
       </p>
+    </div>
+  </section>
 
-      <h2 style="margin-top:2rem">Infos</h2>
-      <div class="info-item">
-        <span>Email</span>
-        <strong>email@exemple.com</strong>
-      </div>
-      <div class="info-item">
-        <span>Téléphone</span>
-        <strong>+33 6 00 00 00 00</strong>
-      </div>
-      <div class="info-item">
-        <span>Localisation</span>
-        <strong>Ville, Pays</strong>
-      </div>
-
-      <h2 style="margin-top:2rem">Compétences</h2>
-      <div class="skills">
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">React</div>
-        <div class="skill">UI / UX</div>
-      </div>
-    </section>
-
-    <!-- ===== COLONNE DROITE ===== -->
+  <!-- CE QUE JE FAIS -->
+  <section>
     <section>
-      <h2>Expériences</h2>
-      <div class="timeline">
-        <div class="card">
-          <h3>Poste - Entreprise</h3>
-          <span>2023 – Présent</span>
-          <p style="margin-top:0.6rem; font-size:0.85rem; color:var(--muted)">
-            Description de vos missions et réalisations.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Poste - Entreprise</h3>
-          <span>2021 – 2023</span>
-          <p style="margin-top:0.6rem; font-size:0.85rem; color:var(--muted)">
-            Description de vos missions et réalisations.
-          </p>
-        </div>
+    <section>
+    <h2>Expertise</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Data Modeling</h3>
+        <p>Modèles analytiques propres, normalisés et orientés usage métier.</p>
       </div>
-
-      <h2 style="margin-top:2rem">Formation</h2>
-      <div class="timeline">
-        <div class="card">
-          <h3>Diplôme - École</h3>
-          <span>Année</span>
-        </div>
+      <div class="card">
+        <h3>Pipelines & Transformation</h3>
+        <p>ETL / ELT fiables, tests, fraîcheur et qualité des données.</p>
       </div>
-    </section>
+      <div class="card">
+        <h3>Analytics Enablement</h3>
+        <p>Mise à disposition de données compréhensibles et actionnables.</p>
+      </div>
+    </div>
+  </section>
 
-  </main>
+  <!-- PROJETS -->
+  <section>
+    <section>
+    <section>
+    <h2>Systèmes & Projets</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Data Warehouse Analytics</h3>
+        <p>Conception de couches analytiques au-dessus de données brutes hétérogènes.</p>
+      </div>
+      <div class="card">
+        <h3>Framework de qualité des données</h3>
+        <p>Tests, documentation et monitoring pour garantir la confiance.</p>
+      </div>
+      <div class="card">
+        <h3>Self-Service Analytics</h3>
+        <p>Structuration des données pour autonomie des équipes métier.</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- CONTACT -->
+  <section>
+    <div class="glass">
+      <h2>Contact</h2>
+      <p style="color:var(--muted); line-height:1.7; font-size:0.9rem">
+        email@exemple.com<br />
+        LinkedIn / GitHub / Réseaux
+      </p>
+    </div>
+  </section>
+
   <footer>
-    © 2026 – CV Futuriste | Conçu en HTML & CSS
+    © 2026 – Site personnel futuriste
   </footer>
 
 </body>
