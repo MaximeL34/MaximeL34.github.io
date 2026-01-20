@@ -25,8 +25,10 @@
       background: radial-gradient(circle at top, #0b1020, var(--bg));
       color: var(--text);
       overflow-x: hidden;
+      position: relative;
     }
 
+    /* Animations background */
     body::before {
       content: "";
       position: fixed;
@@ -36,11 +38,21 @@
       pointer-events: none;
     }
 
-    @keyframes scan {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(var(--primary) 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.03;
+      pointer-events: none;
+      animation: moveGrid 60s linear infinite;
     }
 
+    @keyframes scan { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+    @keyframes moveGrid { 0% { background-position: 0 0; } 100% { background-position: 500px 500px; } }
+
+    /* Header / Hero */
     header {
       min-height: 100vh;
       display: flex;
@@ -126,16 +138,22 @@
       border-radius: 18px;
       padding: 2rem;
       transition: 0.4s ease;
+      position: relative;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 30px rgba(0,246,255,0.25);
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 0 30px rgba(0,246,255,0.5), 0 0 60px rgba(138,124,255,0.3);
+      border: 1px solid var(--primary);
     }
 
     .card h3 {
       font-size: 1rem;
       margin-bottom: 0.8rem;
+    }
+
+    .card h3 span {
+      margin-right: 0.5rem;
     }
 
     .card p {
@@ -144,23 +162,86 @@
       line-height: 1.6;
     }
 
+    /* Skill bar */
+    .skill-bar {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      height: 8px;
+      margin-top: 0.8rem;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      background: var(--primary);
+      height: 100%;
+      width: 0;
+      border-radius: 12px;
+      transition: width 1.5s ease-in-out;
+    }
+
+    .card:hover .skill-fill {
+      width: inherit;
+    }
+
+        .contact-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .contact-buttons .cta {
+        display: inline-block;      /* Assure que le lien est cliquable */
+        text-decoration: none;      /* Retire le souligné du lien */
+        padding: 0.7rem 1.8rem;
+        font-size: 0.9rem;
+        border: 1px solid var(--primary);
+        border-radius: 999px;
+        color: var(--primary);
+        transition: 0.3s ease;
+    }
+
+    .contact-buttons .cta:hover {
+        background: var(--primary);
+        color: #000;
+        box-shadow: 0 0 40px rgba(0,246,255,0.6), 0 0 80px rgba(138,124,255,0.4);
+    }
+
     footer {
       text-align: center;
       padding: 3rem 1rem;
       color: var(--muted);
       font-size: 0.75rem;
     }
-  </style>
+    .profile-photo {
+        margin-bottom: 2rem;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid var(--primary);
+        box-shadow: 0 0 20px rgba(0,246,255,0.6);
+    }
+
+    .profile-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+</style>
 </head>
 <body>
 
   <!-- HERO -->
   <header>
+    <!-- PHOTO -->
+    <div class="profile-photo">
+        <img src="photo.jpg" alt="Laurent Maxime" />
+    </div>
     <h1>Laurent Maxime</h1>
     <p>
-      Data Analyst.
-      Diplômé d'une école d'ingénieur en informatique et technologies de l'information (INSA Rouen Normandie).
-      J'analyse les données pour produire des insights clairs, fiables et utiles aux décisions métier.
+      Data Analyst. Diplômé d'une école d'ingénieur en informatique et technologies de l'information (INSA Rouen Normandie). J'analyse les données pour produire des insights clairs, fiables et utiles aux décisions métier.
     </p>
     <a href="#about" class="cta">Explorer</a>
   </header>
@@ -170,90 +251,84 @@
     <div class="glass about">
       <h2>À propos</h2>
       <p>
-        Data Analyst, issu d'une formation d'ingénieur en informatique et technologies de l'information (Insa Rouen Normandie).
-        J'ai développé une approche structurée de l'analyse de données, alliant rigueur technique
-        et compréhension des enjeux métier.
+        Data Analyst, issu d'une formation d'ingénieur en informatique et technologies de l'information (Insa Rouen Normandie). J'ai développé une approche structurée de l'analyse de données, alliant rigueur technique et compréhension des enjeux métier.
         <br /><br />
-        Mon objectif est de transformer des données brutes en analyses lisibles,
-        afin d'aider les équipes à prendre des décisions éclairées.
+        Mon objectif est de transformer des données brutes en analyses lisibles, afin d'aider les équipes à prendre des décisions éclairées.
       </p>
     </div>
   </section>
 
-  <!-- CE QUE JE FAIS -->
+  <!-- COMPÉTENCES -->
   <section>
-    <section>
-    <section>
-    <section>
-    <section>
     <h2>Compétences clés</h2>
     <div class="grid">
       <div class="card">
-        <h3>Analyse & BI</h3>
+        <h3> Analyse & BI</h3>
         <p>Analyse de données, KPI, reporting, Power BI, restitution orientée métier.</p>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 90%;"></div>
+        </div>
       </div>
       <div class="card">
-        <h3>Base technique</h3>
+        <h3> Base technique</h3>
         <p>SQL, Python, bases de données, compréhension des systèmes informatiques.</p>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 85%;"></div>
+        </div>
       </div>
       <div class="card">
-        <h3>Environnement data</h3>
+        <h3> Environnement data</h3>
         <p>Azure, Databricks, GitLab, notions de MDM et qualité des données.</p>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 75%;"></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- PROJETS -->
   <section>
-    <section>
-    <section>
-    <section>
-    <section>
     <h2>Expériences & Projets</h2>
     <div class="grid">
       <div class="card">
-        <h3>Mission Data / BI – Secteur Santé</h3>
+        <h3> Mission Data / BI – Secteur Santé</h3>
         <p>
-          Mission de 9 mois chez un grand acteur de la santé (Ramsay Santé),
-          dans le cadre de la mise en place d'un Master Data Management (MDM).
+          Mission de 9 mois chez un grand acteur de la santé (Ramsay Santé), dans le cadre de la mise en place d'un Master Data Management (MDM).
           <br /><br />
-          Participation au pilotage des activités, à la conduite du changement,
-          à la conception de KPI sur Power BI ainsi qu'au développement d'une Web App
-          dédiée au suivi et à l'analyse des données.
+          Participation au pilotage des activités, à la conduite du changement, à la conception de KPI sur Power BI ainsi qu'au développement d'une Web App dédiée au suivi et à l'analyse des données.
         </p>
       </div>
 
       <div class="card">
-        <h3>Projet INSA certifié – Mission de consulting</h3>
+        <h3> Projet INSA certifié – Mission de consulting</h3>
         <p>
-          Projet académique certifié mené comme une mission de consulting.
-          Réalisation d'un Proof of Concept (POC) visant à migrer des données
-          vers une base de données propre, structurée et documentée.
+          Projet académique certifié mené comme une mission de consulting. Réalisation d'un Proof of Concept (POC) visant à migrer des données vers une base propre, structurée et documentée.
           <br /><br />
-          Conception et implémentation de calculs de KPI sur les données migrées,
-          afin de permettre un suivi clair et exploitable des indicateurs métier.
+          Conception et implémentation de calculs de KPI sur les données migrées, afin de permettre un suivi clair et exploitable des indicateurs métier.
         </p>
       </div>
 
       <div class="card">
-        <h3>Analyse du marché immobilier</h3>
+        <h3> Analyse du marché immobilier</h3>
         <p>
-          Analyse du prix de l'immobilier en Californie : exploration des données,
-          identification des facteurs clés et visualisation des tendances.
+          Analyse du prix de l'immobilier en Californie : exploration des données, identification des facteurs clés et visualisation des tendances.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section>
+    <!-- CONTACT -->
+    <section>
     <div class="glass">
-      <h2>Contact</h2>
-      <p style="color:var(--muted); line-height:1.7; font-size:0.9rem">
-        maxime.laurent02@icloud.com<br />
-      </p>
+        <h2>Contact</h2>
+        <div class="contact-buttons">
+        <a href="mailto:maxime.laurent02@icloud.com" class="cta">📧 Email</a>
+        <a href="https://www.linkedin.com/in/maxime-laurent-3866a3209/" target="_blank" class="cta">🔗 Linkedin</a>
+        </div>
     </div>
-  </section>
+    </section>
+
+
 
   <footer>
     © 2026 – Laurent Maxime
