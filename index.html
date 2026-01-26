@@ -18,7 +18,21 @@
       --border: rgba(255,255,255,0.15);
     }
 
+    :root.light-mode {
+      --bg: #f0f4f8;
+      --glass: rgba(0,0,0,0.04);
+      --primary: #0099aa;
+      --secondary: #6b5ce7;
+      --text: #1a2a3a;
+      --muted: #5a6a7a;
+      --border: rgba(0,0,0,0.1);
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'Orbitron', sans-serif;
@@ -26,6 +40,12 @@
       color: var(--text);
       overflow-x: hidden;
       position: relative;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    .light-mode body,
+    :root.light-mode body {
+      background: radial-gradient(circle at top, #e8ecf0, var(--bg));
     }
 
     /* Animations background */
@@ -52,6 +72,152 @@
     @keyframes scan { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
     @keyframes moveGrid { 0% { background-position: 0 0; } 100% { background-position: 500px 500px; } }
 
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(4, 6, 12, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease, background 0.5s ease;
+    }
+
+    nav.visible {
+      transform: translateY(0);
+    }
+
+    .light-mode nav {
+      background: rgba(240, 244, 248, 0.9);
+    }
+
+    .nav-brand {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      letter-spacing: 0.1em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary);
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    .nav-controls {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--primary);
+      box-shadow: 0 0 15px rgba(0,246,255,0.3);
+    }
+
+    /* Language toggle */
+    .lang-toggle {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      font-size: 0.7rem;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--text);
+      transition: all 0.3s ease;
+      letter-spacing: 0.05em;
+    }
+
+    .lang-toggle:hover {
+      border-color: var(--primary);
+      box-shadow: 0 0 15px rgba(0,246,255,0.3);
+    }
+
+    /* Mobile menu */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(4, 6, 12, 0.95);
+        flex-direction: column;
+        padding: 1rem 2rem;
+        gap: 1rem;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .light-mode .nav-links {
+        background: rgba(240, 244, 248, 0.95);
+      }
+    }
+
     /* Header / Hero */
     header {
       min-height: 100vh;
@@ -70,6 +236,7 @@
       background: linear-gradient(90deg, var(--primary), var(--secondary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      min-height: 4.5rem;
     }
 
     header p {
@@ -80,8 +247,30 @@
       line-height: 1.8;
     }
 
-    .cta {
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 3.5rem;
+      background: var(--primary);
+      margin-left: 5px;
+      animation: blink 1s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
       margin-top: 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cta {
       padding: 0.9rem 2.5rem;
       border: 1px solid var(--primary);
       border-radius: 999px;
@@ -89,12 +278,26 @@
       text-decoration: none;
       font-size: 0.9rem;
       transition: 0.3s ease;
+      cursor: pointer;
+      background: transparent;
+      font-family: 'Orbitron', sans-serif;
     }
 
     .cta:hover {
       background: var(--primary);
       color: #000;
       box-shadow: 0 0 30px rgba(0,246,255,0.6);
+    }
+
+    .cta.secondary {
+      border-color: var(--secondary);
+      color: var(--secondary);
+    }
+
+    .cta.secondary:hover {
+      background: var(--secondary);
+      color: #000;
+      box-shadow: 0 0 30px rgba(138,124,255,0.6);
     }
 
     section {
@@ -141,6 +344,10 @@
       position: relative;
     }
 
+    .light-mode .card {
+      background: rgba(0,0,0,0.02);
+    }
+
     .card:hover {
       transform: translateY(-8px) scale(1.03);
       box-shadow: 0 0 30px rgba(0,246,255,0.5), 0 0 60px rgba(138,124,255,0.3);
@@ -172,39 +379,79 @@
     }
 
     .skill-fill {
-      background: var(--primary);
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
       height: 100%;
       width: 0;
       border-radius: 12px;
       transition: width 1.5s ease-in-out;
     }
 
-    .card:hover .skill-fill {
-      width: inherit;
+    .skill-fill.animated {
+      width: var(--skill-level);
     }
 
-        .contact-buttons {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1rem;
-        flex-wrap: wrap;
+    .contact-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
     }
 
     .contact-buttons .cta {
-        display: inline-block;      /* Assure que le lien est cliquable */
-        text-decoration: none;      /* Retire le souligné du lien */
-        padding: 0.7rem 1.8rem;
-        font-size: 0.9rem;
-        border: 1px solid var(--primary);
-        border-radius: 999px;
-        color: var(--primary);
-        transition: 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.7rem 1.8rem;
+      font-size: 0.9rem;
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      color: var(--primary);
+      transition: 0.3s ease;
     }
 
     .contact-buttons .cta:hover {
-        background: var(--primary);
-        color: #000;
-        box-shadow: 0 0 40px rgba(0,246,255,0.6), 0 0 80px rgba(138,124,255,0.4);
+      background: var(--primary);
+      color: #000;
+      box-shadow: 0 0 40px rgba(0,246,255,0.6), 0 0 80px rgba(138,124,255,0.4);
+    }
+
+    /* Contact form */
+    .contact-form {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      color: var(--text);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+
+    .light-mode .contact-form input,
+    .light-mode .contact-form textarea {
+      background: rgba(0,0,0,0.03);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 20px rgba(0,246,255,0.2);
+    }
+
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-form .cta {
+      justify-self: start;
     }
 
     footer {
@@ -213,126 +460,545 @@
       color: var(--muted);
       font-size: 0.75rem;
     }
+
     .profile-photo {
-        margin-bottom: 2rem;
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 3px solid var(--primary);
-        box-shadow: 0 0 20px rgba(0,246,255,0.6);
+      margin-bottom: 2rem;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 20px rgba(0,246,255,0.6);
     }
 
     .profile-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
-</style>
+
+    /* Scroll animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--glass);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+      backdrop-filter: blur(10px);
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-top:hover {
+      background: var(--primary);
+      color: #000;
+      box-shadow: 0 0 30px rgba(0,246,255,0.6);
+    }
+
+    /* Project filters */
+    .filter-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1.2rem;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: transparent;
+      color: var(--muted);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0 0 15px rgba(0,246,255,0.3);
+    }
+
+    .card[data-category] {
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .card.hidden {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+      position: absolute;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header>
-    <!-- PHOTO -->
-    <div class="profile-photo">
-        <img src="photo.jpg" alt="Laurent Maxime" />
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <span class="nav-brand">ML</span>
+    <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#hero" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="#about" data-i18n="nav.about">A propos</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Competences</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="lang-toggle" id="langToggle">EN</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9790;</button>
     </div>
-    <h1>Laurent Maxime</h1>
-    <p>
-      Data Analyst. Diplômé d'une école d'ingénieur en informatique et technologies de l'information (INSA Rouen Normandie). J'analyse les données pour produire des insights clairs, fiables et utiles aux décisions métier.
+  </nav>
+
+  <!-- HERO -->
+  <header id="hero">
+    <!-- PHOTO -->
+    <div class="profile-photo reveal">
+      <img src="photo.jpg" alt="Laurent Maxime" />
+    </div>
+    <h1 id="typed-name"></h1>
+    <p class="reveal" data-i18n="hero.description">
+      Data Analyst. Diplome d'une ecole d'ingenieur en informatique et technologies de l'information (INSA Rouen Normandie). J'analyse les donnees pour produire des insights clairs, fiables et utiles aux decisions metier.
     </p>
-    <a href="#about" class="cta">Explorer</a>
+    <div class="hero-buttons reveal">
+      <a href="#about" class="cta" data-i18n="hero.explore">Explorer</a>
+      <a href="#" class="cta secondary" id="downloadCV" data-i18n="hero.download">Telecharger CV</a>
+    </div>
   </header>
 
-  <!-- À PROPOS -->
+  <!-- A PROPOS -->
   <section id="about">
-    <div class="glass about">
-      <h2>À propos</h2>
-      <p>
-        Data Analyst, issu d'une formation d'ingénieur en informatique et technologies de l'information (Insa Rouen Normandie). J'ai développé une approche structurée de l'analyse de données, alliant rigueur technique et compréhension des enjeux métier.
+    <div class="glass about reveal">
+      <h2 data-i18n="about.title">A propos</h2>
+      <p data-i18n="about.text">
+        Data Analyst, issu d'une formation d'ingenieur en informatique et technologies de l'information (Insa Rouen Normandie). J'ai developpe une approche structuree de l'analyse de donnees, alliant rigueur technique et comprehension des enjeux metier.
         <br /><br />
-        Mon objectif est de transformer des données brutes en analyses lisibles, afin d'aider les équipes à prendre des décisions éclairées.
+        Mon objectif est de transformer des donnees brutes en analyses lisibles, afin d'aider les equipes a prendre des decisions eclairees.
       </p>
     </div>
   </section>
 
-  <!-- COMPÉTENCES -->
-  <section>
-    <h2>Compétences clés</h2>
+  <!-- COMPETENCES -->
+  <section id="skills">
+    <h2 class="reveal" data-i18n="skills.title">Competences cles</h2>
     <div class="grid">
-      <div class="card">
-        <h3> Analyse & BI</h3>
-        <p>Analyse de données, KPI, reporting, Power BI, restitution orientée métier.</p>
+      <div class="card reveal-left">
+        <h3 data-i18n="skills.analysis.title">Analyse & BI</h3>
+        <p data-i18n="skills.analysis.desc">Analyse de donnees, KPI, reporting, Power BI, restitution orientee metier.</p>
         <div class="skill-bar">
-          <div class="skill-fill" style="width: 90%;"></div>
+          <div class="skill-fill" style="--skill-level: 90%;"></div>
         </div>
       </div>
-      <div class="card">
-        <h3> Base technique</h3>
-        <p>SQL, Python, bases de données, compréhension des systèmes informatiques.</p>
+      <div class="card reveal">
+        <h3 data-i18n="skills.tech.title">Base technique</h3>
+        <p data-i18n="skills.tech.desc">SQL, Python, bases de donnees, comprehension des systemes informatiques.</p>
         <div class="skill-bar">
-          <div class="skill-fill" style="width: 85%;"></div>
+          <div class="skill-fill" style="--skill-level: 85%;"></div>
         </div>
       </div>
-      <div class="card">
-        <h3> Environnement data</h3>
-        <p>Azure, Databricks, GitLab, notions de MDM et qualité des données.</p>
+      <div class="card reveal-right">
+        <h3 data-i18n="skills.data.title">Environnement data</h3>
+        <p data-i18n="skills.data.desc">Azure, Databricks, GitLab, notions de MDM et qualite des donnees.</p>
         <div class="skill-bar">
-          <div class="skill-fill" style="width: 75%;"></div>
+          <div class="skill-fill" style="--skill-level: 75%;"></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PROJETS -->
-  <section>
-    <h2>Expériences & Projets</h2>
-    <div class="grid">
-      <div class="card">
-        <h3> Mission Data / BI – Secteur Santé</h3>
-        <p>
-          Mission de 9 mois chez un grand acteur de la santé (Ramsay Santé), dans le cadre de la mise en place d'un Master Data Management (MDM).
+  <section id="projects">
+    <h2 class="reveal" data-i18n="projects.title">Experiences & Projets</h2>
+
+    <div class="filter-buttons reveal">
+      <button class="filter-btn active" data-filter="all" data-i18n="projects.filter.all">Tous</button>
+      <button class="filter-btn" data-filter="pro" data-i18n="projects.filter.pro">Professionnel</button>
+      <button class="filter-btn" data-filter="academic" data-i18n="projects.filter.academic">Academique</button>
+      <button class="filter-btn" data-filter="personal" data-i18n="projects.filter.personal">Personnel</button>
+    </div>
+
+    <div class="grid" id="projects-grid">
+      <div class="card reveal-left" data-category="pro">
+        <h3 data-i18n="projects.health.title">Mission Data / BI - Secteur Sante</h3>
+        <p data-i18n="projects.health.desc">
+          Mission de 9 mois chez un grand acteur de la sante (Ramsay Sante), dans le cadre de la mise en place d'un Master Data Management (MDM).
           <br /><br />
-          Participation au pilotage des activités, à la conduite du changement, à la conception de KPI sur Power BI ainsi qu'au développement d'une Web App dédiée au suivi et à l'analyse des données.
+          Participation au pilotage des activites, a la conduite du changement, a la conception de KPI sur Power BI ainsi qu'au developpement d'une Web App dediee au suivi et a l'analyse des donnees.
         </p>
       </div>
 
-      <div class="card">
-        <h3> Projet INSA certifié – Mission de consulting</h3>
-        <p>
-          Projet académique certifié mené comme une mission de consulting. Réalisation d'un Proof of Concept (POC) visant à migrer des données vers une base propre, structurée et documentée.
+      <div class="card reveal" data-category="academic">
+        <h3 data-i18n="projects.insa.title">Projet INSA certifie - Mission de consulting</h3>
+        <p data-i18n="projects.insa.desc">
+          Projet academique certifie mene comme une mission de consulting. Realisation d'un Proof of Concept (POC) visant a migrer des donnees vers une base propre, structuree et documentee.
           <br /><br />
-          Conception et implémentation de calculs de KPI sur les données migrées, afin de permettre un suivi clair et exploitable des indicateurs métier.
+          Conception et implementation de calculs de KPI sur les donnees migrees, afin de permettre un suivi clair et exploitable des indicateurs metier.
         </p>
       </div>
 
-      <div class="card">
-        <h3> Analyse du marché immobilier</h3>
-        <p>
-          Analyse du prix de l'immobilier en Californie : exploration des données, identification des facteurs clés et visualisation des tendances.
+      <div class="card reveal-right" data-category="personal">
+        <h3 data-i18n="projects.realestate.title">Analyse du marche immobilier</h3>
+        <p data-i18n="projects.realestate.desc">
+          Analyse du prix de l'immobilier en Californie : exploration des donnees, identification des facteurs cles et visualisation des tendances.
         </p>
       </div>
     </div>
   </section>
 
-    <!-- CONTACT -->
-    <section>
-    <div class="glass">
-        <h2>Contact</h2>
-        <div class="contact-buttons">
-        <a href="mailto:maxime.laurent02@icloud.com" class="cta">📧 Email</a>
-        <a href="https://www.linkedin.com/in/maxime-laurent-3866a3209/" target="_blank" class="cta">🔗 Linkedin</a>
-        </div>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="glass reveal">
+      <h2 data-i18n="contact.title">Contact</h2>
+      <div class="contact-buttons">
+        <a href="mailto:maxime.laurent02@icloud.com" class="cta">Email</a>
+        <a href="https://www.linkedin.com/in/maxime-laurent-3866a3209/" target="_blank" class="cta">LinkedIn</a>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <input type="text" name="name" placeholder="Votre nom" data-i18n-placeholder="contact.form.name" required />
+        <input type="email" name="email" placeholder="Votre email" data-i18n-placeholder="contact.form.email" required />
+        <textarea name="message" placeholder="Votre message" data-i18n-placeholder="contact.form.message" required></textarea>
+        <button type="submit" class="cta" data-i18n="contact.form.send">Envoyer</button>
+      </form>
     </div>
-    </section>
+  </section>
 
-
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#8593;</button>
 
   <footer>
-    © 2026 – Laurent Maxime
+    &copy; 2026 - Laurent Maxime
   </footer>
+
+  <script>
+    // ========== TRANSLATIONS ==========
+    const translations = {
+      fr: {
+        'nav.home': 'Accueil',
+        'nav.about': 'A propos',
+        'nav.skills': 'Competences',
+        'nav.projects': 'Projets',
+        'nav.contact': 'Contact',
+        'hero.description': "Data Analyst. Diplome d'une ecole d'ingenieur en informatique et technologies de l'information (INSA Rouen Normandie). J'analyse les donnees pour produire des insights clairs, fiables et utiles aux decisions metier.",
+        'hero.explore': 'Explorer',
+        'hero.download': 'Telecharger CV',
+        'about.title': 'A propos',
+        'about.text': "Data Analyst, issu d'une formation d'ingenieur en informatique et technologies de l'information (Insa Rouen Normandie). J'ai developpe une approche structuree de l'analyse de donnees, alliant rigueur technique et comprehension des enjeux metier.<br /><br />Mon objectif est de transformer des donnees brutes en analyses lisibles, afin d'aider les equipes a prendre des decisions eclairees.",
+        'skills.title': 'Competences cles',
+        'skills.analysis.title': 'Analyse & BI',
+        'skills.analysis.desc': 'Analyse de donnees, KPI, reporting, Power BI, restitution orientee metier.',
+        'skills.tech.title': 'Base technique',
+        'skills.tech.desc': 'SQL, Python, bases de donnees, comprehension des systemes informatiques.',
+        'skills.data.title': 'Environnement data',
+        'skills.data.desc': 'Azure, Databricks, GitLab, notions de MDM et qualite des donnees.',
+        'projects.title': 'Experiences & Projets',
+        'projects.filter.all': 'Tous',
+        'projects.filter.pro': 'Professionnel',
+        'projects.filter.academic': 'Academique',
+        'projects.filter.personal': 'Personnel',
+        'projects.health.title': 'Mission Data / BI - Secteur Sante',
+        'projects.health.desc': "Mission de 9 mois chez un grand acteur de la sante (Ramsay Sante), dans le cadre de la mise en place d'un Master Data Management (MDM).<br /><br />Participation au pilotage des activites, a la conduite du changement, a la conception de KPI sur Power BI ainsi qu'au developpement d'une Web App dediee au suivi et a l'analyse des donnees.",
+        'projects.insa.title': 'Projet INSA certifie - Mission de consulting',
+        'projects.insa.desc': "Projet academique certifie mene comme une mission de consulting. Realisation d'un Proof of Concept (POC) visant a migrer des donnees vers une base propre, structuree et documentee.<br /><br />Conception et implementation de calculs de KPI sur les donnees migrees, afin de permettre un suivi clair et exploitable des indicateurs metier.",
+        'projects.realestate.title': "Analyse du marche immobilier",
+        'projects.realestate.desc': "Analyse du prix de l'immobilier en Californie : exploration des donnees, identification des facteurs cles et visualisation des tendances.",
+        'contact.title': 'Contact',
+        'contact.form.name': 'Votre nom',
+        'contact.form.email': 'Votre email',
+        'contact.form.message': 'Votre message',
+        'contact.form.send': 'Envoyer'
+      },
+      en: {
+        'nav.home': 'Home',
+        'nav.about': 'About',
+        'nav.skills': 'Skills',
+        'nav.projects': 'Projects',
+        'nav.contact': 'Contact',
+        'hero.description': "Data Analyst. Graduate of an engineering school in computer science and information technology (INSA Rouen Normandie). I analyze data to produce clear, reliable, and business-relevant insights.",
+        'hero.explore': 'Explore',
+        'hero.download': 'Download CV',
+        'about.title': 'About',
+        'about.text': "Data Analyst with an engineering background in computer science and information technology (Insa Rouen Normandie). I have developed a structured approach to data analysis, combining technical rigor with business understanding.<br /><br />My goal is to transform raw data into readable analyses to help teams make informed decisions.",
+        'skills.title': 'Key Skills',
+        'skills.analysis.title': 'Analysis & BI',
+        'skills.analysis.desc': 'Data analysis, KPIs, reporting, Power BI, business-oriented delivery.',
+        'skills.tech.title': 'Technical Foundation',
+        'skills.tech.desc': 'SQL, Python, databases, understanding of IT systems.',
+        'skills.data.title': 'Data Environment',
+        'skills.data.desc': 'Azure, Databricks, GitLab, MDM concepts and data quality.',
+        'projects.title': 'Experience & Projects',
+        'projects.filter.all': 'All',
+        'projects.filter.pro': 'Professional',
+        'projects.filter.academic': 'Academic',
+        'projects.filter.personal': 'Personal',
+        'projects.health.title': 'Data / BI Mission - Healthcare Sector',
+        'projects.health.desc': "9-month mission at a major healthcare company (Ramsay Sante) for Master Data Management (MDM) implementation.<br /><br />Involved in activity management, change management, Power BI KPI design, and development of a Web App for data monitoring and analysis.",
+        'projects.insa.title': 'INSA Certified Project - Consulting Mission',
+        'projects.insa.desc': "Certified academic project conducted as a consulting mission. Development of a Proof of Concept (POC) to migrate data to a clean, structured, and documented database.<br /><br />Design and implementation of KPI calculations on migrated data for clear and actionable business indicator tracking.",
+        'projects.realestate.title': "Real Estate Market Analysis",
+        'projects.realestate.desc': "Analysis of California real estate prices: data exploration, identification of key factors, and trend visualization.",
+        'contact.title': 'Contact',
+        'contact.form.name': 'Your name',
+        'contact.form.email': 'Your email',
+        'contact.form.message': 'Your message',
+        'contact.form.send': 'Send'
+      }
+    };
+
+    let currentLang = 'fr';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang][key]) {
+          el.placeholder = translations[lang][key];
+        }
+      });
+      document.getElementById('langToggle').textContent = lang === 'fr' ? 'EN' : 'FR';
+      localStorage.setItem('cv-lang', lang);
+    }
+
+    // ========== TYPING EFFECT ==========
+    const name = "Laurent Maxime";
+    let charIndex = 0;
+    const typedElement = document.getElementById('typed-name');
+
+    function typeWriter() {
+      if (charIndex < name.length) {
+        typedElement.textContent = name.substring(0, charIndex + 1);
+        charIndex++;
+        setTimeout(typeWriter, 120);
+      }
+    }
+
+    // ========== THEME TOGGLE ==========
+    const themeToggle = document.getElementById('themeToggle');
+
+    function setTheme(isDark) {
+      if (isDark) {
+        document.documentElement.classList.remove('light-mode');
+        themeToggle.innerHTML = '&#9790;'; // Moon
+      } else {
+        document.documentElement.classList.add('light-mode');
+        themeToggle.innerHTML = '&#9728;'; // Sun
+      }
+      localStorage.setItem('cv-theme', isDark ? 'dark' : 'light');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('light-mode');
+      setTheme(isDark);
+    });
+
+    // ========== LANGUAGE TOGGLE ==========
+    document.getElementById('langToggle').addEventListener('click', () => {
+      setLanguage(currentLang === 'fr' ? 'en' : 'fr');
+    });
+
+    // ========== NAVIGATION ==========
+    const navbar = document.getElementById('navbar');
+    const sections = document.querySelectorAll('section, header');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      // Show/hide navbar
+      if (window.scrollY > 100) {
+        navbar.classList.add('visible');
+      } else {
+        navbar.classList.remove('visible');
+      }
+
+      // Active section highlighting
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Mobile menu toggle
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('open');
+      });
+    });
+
+    // ========== SCROLL REVEAL ==========
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const skillBars = document.querySelectorAll('.skill-fill');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+
+          // Animate skill bars within this element
+          const skillFills = entry.target.querySelectorAll('.skill-fill');
+          skillFills.forEach(fill => {
+            fill.classList.add('animated');
+          });
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Also observe skill cards directly
+    document.querySelectorAll('.card').forEach(card => {
+      revealObserver.observe(card);
+    });
+
+    // ========== SCROLL TO TOP ==========
+    const scrollTopBtn = document.getElementById('scrollTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ========== PROJECT FILTERS ==========
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('#projects-grid .card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // ========== CONTACT FORM ==========
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const message = formData.get('message');
+
+      // Create mailto link with form data
+      const mailtoLink = `mailto:maxime.laurent02@icloud.com?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`From: ${name}\nEmail: ${email}\n\n${message}`)}`;
+      window.location.href = mailtoLink;
+    });
+
+    // ========== DOWNLOAD CV ==========
+    document.getElementById('downloadCV').addEventListener('click', (e) => {
+      e.preventDefault();
+      alert(currentLang === 'fr'
+        ? 'Le CV PDF sera bientot disponible au telechargement.'
+        : 'The PDF CV will be available for download soon.');
+    });
+
+    // ========== INIT ==========
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load saved preferences
+      const savedTheme = localStorage.getItem('cv-theme');
+      if (savedTheme) {
+        setTheme(savedTheme === 'dark');
+      }
+
+      const savedLang = localStorage.getItem('cv-lang');
+      if (savedLang) {
+        setLanguage(savedLang);
+      }
+
+      // Start typing effect
+      setTimeout(typeWriter, 500);
+    });
+  </script>
 
 </body>
 </html>
