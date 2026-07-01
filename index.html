@@ -3,1002 +3,1279 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site Personnel – Data Analyst</title>
+  <meta name="description" content="Maxime Laurent — Data Analyst spécialisé santé : codage, facturation, MDM, Power BI. Ingénieur INSA Rouen Normandie." />
+  <title>Maxime Laurent — Data Analyst | Santé · BI · Data</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
+    /* ============ DESIGN TOKENS ============ */
     :root {
-      --bg: #04060c;
-      --glass: rgba(255,255,255,0.06);
-      --primary: #00f6ff;
-      --secondary: #8a7cff;
-      --text: #eaf2ff;
-      --muted: #8b9bb4;
-      --border: rgba(255,255,255,0.15);
+      --bg: #070b14;
+      --bg-soft: #0c1220;
+      --surface: rgba(255,255,255,0.04);
+      --surface-strong: rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.10);
+      --border-strong: rgba(255,255,255,0.18);
+      --text: #e8eefc;
+      --muted: #93a1bd;
+      --accent: #2dd4bf;        /* teal */
+      --accent-2: #818cf8;      /* indigo */
+      --accent-3: #f472b6;      /* pink */
+      --accent-soft: rgba(45,212,191,0.12);
+      --accent2-soft: rgba(129,140,248,0.12);
+      --glow: rgba(45,212,191,0.35);
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
     }
 
-    :root.light-mode {
-      --bg: #f0f4f8;
-      --glass: rgba(0,0,0,0.04);
-      --primary: #0099aa;
-      --secondary: #6b5ce7;
-      --text: #1a2a3a;
-      --muted: #5a6a7a;
-      --border: rgba(0,0,0,0.1);
+    :root.light {
+      --bg: #f5f7fb;
+      --bg-soft: #eceff6;
+      --surface: rgba(13,27,58,0.04);
+      --surface-strong: rgba(13,27,58,0.07);
+      --border: rgba(13,27,58,0.10);
+      --border-strong: rgba(13,27,58,0.20);
+      --text: #101a2e;
+      --muted: #51607c;
+      --accent: #0d9488;
+      --accent-2: #5b62e0;
+      --accent-3: #db2777;
+      --accent-soft: rgba(13,148,136,0.10);
+      --accent2-soft: rgba(91,98,224,0.10);
+      --glow: rgba(13,148,136,0.25);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(circle at top, #0b1020, var(--bg));
+      font-family: var(--font-body);
+      background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
-      position: relative;
-      transition: background 0.5s ease, color 0.5s ease;
+      line-height: 1.6;
+      transition: background 0.4s ease, color 0.4s ease;
     }
 
-    .light-mode body,
-    :root.light-mode body {
-      background: radial-gradient(circle at top, #e8ecf0, var(--bg));
+    ::selection { background: var(--accent); color: #06251f; }
+
+    h1, h2, h3, h4 { font-family: var(--font-display); }
+
+    /* Ambient background */
+    .ambient {
+      position: fixed; inset: 0; z-index: -2; pointer-events: none;
+      background:
+        radial-gradient(700px 500px at 12% -5%, var(--accent2-soft), transparent 60%),
+        radial-gradient(800px 600px at 95% 15%, var(--accent-soft), transparent 60%),
+        radial-gradient(600px 700px at 50% 110%, var(--accent2-soft), transparent 60%);
     }
 
-    /* Animations background */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 40%, rgba(0,246,255,0.07), transparent 60%);
-      animation: scan 7s linear infinite;
-      pointer-events: none;
+    #particles {
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      opacity: 0.85;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: radial-gradient(var(--primary) 1px, transparent 1px);
-      background-size: 50px 50px;
-      opacity: 0.03;
-      pointer-events: none;
-      animation: moveGrid 60s linear infinite;
+    /* ============ SCROLL PROGRESS ============ */
+    .progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+      z-index: 2000;
+      box-shadow: 0 0 12px var(--glow);
     }
 
-    @keyframes scan { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-    @keyframes moveGrid { 0% { background-position: 0 0; } 100% { background-position: 500px 500px; } }
-
-    /* Navigation */
+    /* ============ NAV ============ */
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(4, 6, 12, 0.85);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transform: translateY(-100%);
-      transition: transform 0.3s ease, background 0.5s ease;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.9rem 5vw;
+      background: transparent;
+      transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
+      border-bottom: 1px solid transparent;
     }
 
-    nav.visible {
-      transform: translateY(0);
-    }
-
-    .light-mode nav {
-      background: rgba(240, 244, 248, 0.9);
+    nav.scrolled {
+      background: color-mix(in srgb, var(--bg) 78%, transparent);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom-color: var(--border);
     }
 
     .nav-brand {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--primary);
-      letter-spacing: 0.1em;
+      font-family: var(--font-mono);
+      font-size: 0.95rem; font-weight: 600;
+      color: var(--text); text-decoration: none;
+      letter-spacing: 0.02em;
     }
+    .nav-brand .tag { color: var(--accent); }
+    .nav-brand .slash { color: var(--accent-2); }
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
 
     .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
+      color: var(--muted); text-decoration: none;
+      font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      transition: color 0.25s ease; position: relative;
+    }
+    .nav-links a::after {
+      content: ""; position: absolute; left: 0; bottom: -6px;
+      width: 0%; height: 2px; border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-links a.active::after, .nav-links a:hover::after { width: 100%; }
+
+    .nav-controls { display: flex; gap: 0.6rem; align-items: center; }
+
+    .icon-btn {
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text); border-radius: 10px;
+      width: 38px; height: 38px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; transition: all 0.25s ease;
+      font-family: var(--font-mono);
+    }
+    .icon-btn:hover { border-color: var(--accent); box-shadow: 0 0 16px var(--glow); transform: translateY(-1px); }
+    .icon-btn.lang { width: auto; padding: 0 0.7rem; font-size: 0.78rem; font-weight: 600; }
+
+    .menu-toggle { display: none; }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        position: fixed; top: 62px; left: 0; right: 0;
+        background: color-mix(in srgb, var(--bg) 96%, transparent);
+        backdrop-filter: blur(20px);
+        flex-direction: column; padding: 1.4rem 5vw; gap: 1.2rem;
+        border-bottom: 1px solid var(--border);
+        transform: translateY(-130%); transition: transform 0.35s ease;
+        align-items: flex-start;
+      }
+      .nav-links.open { transform: translateY(0); }
+      .menu-toggle { display: flex; }
+    }
+
+    /* ============ HERO ============ */
+    header {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 7rem 5vw 4rem;
       position: relative;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--primary);
+    .avatar-wrap { position: relative; width: 158px; height: 158px; margin-bottom: 2rem; }
+    .avatar-ring {
+      position: absolute; inset: -8px; border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent));
+      animation: spin 6s linear infinite;
+      filter: blur(0.5px);
+    }
+    .avatar-ring::after {
+      content: ""; position: absolute; inset: 4px; border-radius: 50%;
+      background: var(--bg);
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar-wrap img {
+      position: relative; width: 100%; height: 100%;
+      border-radius: 50%; object-fit: cover; display: block;
+      border: 3px solid transparent;
     }
 
-    .nav-links a.active::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--primary);
-      box-shadow: 0 0 10px var(--primary);
+    .hero-eyebrow {
+      font-family: var(--font-mono); font-size: 0.8rem;
+      color: var(--accent); letter-spacing: 0.15em;
+      text-transform: uppercase; margin-bottom: 1rem;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.4rem 1rem; border: 1px solid var(--border);
+      border-radius: 999px; background: var(--surface);
     }
-
-    .nav-controls {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
+    .pulse-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 var(--glow);
+      animation: pulse 2s infinite;
     }
-
-    /* Theme toggle */
-    .theme-toggle {
-      background: var(--glass);
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-    }
-
-    .theme-toggle:hover {
-      border-color: var(--primary);
-      box-shadow: 0 0 15px rgba(0,246,255,0.3);
-    }
-
-    /* Language toggle */
-    .lang-toggle {
-      background: var(--glass);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 0.4rem 0.8rem;
-      cursor: pointer;
-      font-size: 0.7rem;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--text);
-      transition: all 0.3s ease;
-      letter-spacing: 0.05em;
-    }
-
-    .lang-toggle:hover {
-      border-color: var(--primary);
-      box-shadow: 0 0 15px rgba(0,246,255,0.3);
-    }
-
-    /* Mobile menu */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--primary);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(4, 6, 12, 0.95);
-        flex-direction: column;
-        padding: 1rem 2rem;
-        gap: 1rem;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .light-mode .nav-links {
-        background: rgba(240, 244, 248, 0.95);
-      }
-    }
-
-    /* Header / Hero */
-    header {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 var(--glow); }
+      70% { box-shadow: 0 0 0 10px transparent; }
+      100% { box-shadow: 0 0 0 0 transparent; }
     }
 
     header h1 {
-      font-size: 3.5rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 700; letter-spacing: -0.02em; line-height: 1.08;
+    }
+    header h1 .grad {
+      background: linear-gradient(100deg, var(--accent) 10%, var(--accent-2) 55%, var(--accent-3) 100%);
+      -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent;
-      min-height: 4.5rem;
     }
 
-    header p {
-      margin-top: 1.5rem;
-      max-width: 700px;
-      color: var(--muted);
-      font-size: 1.1rem;
-      line-height: 1.8;
+    .hero-roles {
+      margin-top: 1rem;
+      font-family: var(--font-mono);
+      font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+      color: var(--muted); min-height: 1.8em;
+    }
+    .hero-roles .typed { color: var(--text); font-weight: 600; }
+    .cursor-blink {
+      display: inline-block; width: 10px; height: 1.15em;
+      background: var(--accent); margin-left: 4px; vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .hero-desc {
+      margin-top: 1.4rem; max-width: 640px;
+      color: var(--muted); font-size: 1.02rem;
+    }
+    .hero-desc strong { color: var(--text); font-weight: 600; }
+
+    .hero-buttons { display: flex; gap: 1rem; margin-top: 2.4rem; flex-wrap: wrap; justify-content: center; }
+
+    .btn {
+      font-family: var(--font-display); font-weight: 600; font-size: 0.92rem;
+      padding: 0.85rem 2.1rem; border-radius: 12px; cursor: pointer;
+      text-decoration: none; transition: all 0.25s ease;
+      border: 1px solid transparent; display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-primary {
+      background: linear-gradient(100deg, var(--accent), var(--accent-2));
+      color: #061019;
+      box-shadow: 0 8px 24px -8px var(--glow);
+    }
+    :root.light .btn-primary { color: #fff; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 34px -8px var(--glow); }
+    .btn-ghost {
+      background: var(--surface); color: var(--text); border-color: var(--border-strong);
+    }
+    .btn-ghost:hover { border-color: var(--accent); box-shadow: 0 0 20px var(--glow); transform: translateY(-2px); }
+
+    /* Stats */
+    .hero-stats {
+      display: flex; gap: clamp(1.5rem, 5vw, 4rem);
+      margin-top: 3.4rem; flex-wrap: wrap; justify-content: center;
+    }
+    .stat { text-align: center; }
+    .stat .num {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      background: linear-gradient(180deg, var(--text), var(--muted));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .stat .num .plus { color: var(--accent); -webkit-text-fill-color: var(--accent); }
+    .stat .label {
+      font-size: 0.72rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.12em; margin-top: 0.2rem;
     }
 
-    .typing-cursor {
-      display: inline-block;
-      width: 3px;
-      height: 3.5rem;
-      background: var(--primary);
-      margin-left: 5px;
-      animation: blink 1s infinite;
-      vertical-align: middle;
+    .scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      color: var(--muted); font-size: 1.4rem;
+      animation: bob 2s ease-in-out infinite; text-decoration: none;
     }
+    @keyframes bob { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
 
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
-    }
+    /* ============ SECTIONS ============ */
+    section { max-width: 1120px; margin: 0 auto; padding: 5.5rem 5vw; }
 
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 3rem;
-      flex-wrap: wrap;
-      justify-content: center;
+    .section-head { margin-bottom: 3rem; }
+    .section-head .kicker {
+      font-family: var(--font-mono); font-size: 0.78rem;
+      color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase;
     }
-
-    .cta {
-      padding: 0.9rem 2.5rem;
-      border: 1px solid var(--primary);
-      border-radius: 999px;
-      color: var(--primary);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: 0.3s ease;
-      cursor: pointer;
-      background: transparent;
-      font-family: 'Orbitron', sans-serif;
+    .section-head h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 700;
+      letter-spacing: -0.01em; margin-top: 0.4rem;
     }
-
-    .cta:hover {
-      background: var(--primary);
-      color: #000;
-      box-shadow: 0 0 30px rgba(0,246,255,0.6);
-    }
-
-    .cta.secondary {
-      border-color: var(--secondary);
-      color: var(--secondary);
-    }
-
-    .cta.secondary:hover {
-      background: var(--secondary);
-      color: #000;
-      box-shadow: 0 0 30px rgba(138,124,255,0.6);
-    }
-
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 5rem 2rem;
-    }
+    .section-head .sub { color: var(--muted); margin-top: 0.6rem; max-width: 640px; }
 
     .glass {
-      background: var(--glass);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 3rem;
-      box-shadow: 0 0 40px rgba(0,246,255,0.08);
-    }
-
-    section h2 {
-      font-size: 1.4rem;
-      letter-spacing: 0.15em;
-      margin-bottom: 2rem;
-      color: var(--primary);
-      text-transform: uppercase;
-    }
-
-    .about p {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 0.95rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 2rem;
-      transition: 0.4s ease;
-      position: relative;
-    }
-
-    .light-mode .card {
-      background: rgba(0,0,0,0.02);
-    }
-
-    .card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 0 30px rgba(0,246,255,0.5), 0 0 60px rgba(138,124,255,0.3);
-      border: 1px solid var(--primary);
-    }
-
-    .card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .card h3 span {
-      margin-right: 0.5rem;
-    }
-
-    .card p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* Skill bar */
-    .skill-bar {
-      background: rgba(255,255,255,0.1);
-      border-radius: 12px;
-      height: 8px;
-      margin-top: 0.8rem;
-      overflow: hidden;
-    }
-
-    .skill-fill {
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      height: 100%;
-      width: 0;
-      border-radius: 12px;
-      transition: width 1.5s ease-in-out;
-    }
-
-    .skill-fill.animated {
-      width: var(--skill-level);
-    }
-
-    .contact-buttons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .contact-buttons .cta {
-      display: inline-block;
-      text-decoration: none;
-      padding: 0.7rem 1.8rem;
-      font-size: 0.9rem;
-      border: 1px solid var(--primary);
-      border-radius: 999px;
-      color: var(--primary);
-      transition: 0.3s ease;
-    }
-
-    .contact-buttons .cta:hover {
-      background: var(--primary);
-      color: #000;
-      box-shadow: 0 0 40px rgba(0,246,255,0.6), 0 0 80px rgba(138,124,255,0.4);
-    }
-
-    /* Contact form */
-    .contact-form {
-      margin-top: 2rem;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1rem;
-      color: var(--text);
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.85rem;
-      transition: all 0.3s ease;
-    }
-
-    .light-mode .contact-form input,
-    .light-mode .contact-form textarea {
-      background: rgba(0,0,0,0.03);
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 20px rgba(0,246,255,0.2);
-    }
-
-    .contact-form textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .contact-form .cta {
-      justify-self: start;
-    }
-
-    footer {
-      text-align: center;
-      padding: 3rem 1rem;
-      color: var(--muted);
-      font-size: 0.75rem;
-    }
-
-    .profile-photo {
-      margin-bottom: 2rem;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid var(--primary);
-      box-shadow: 0 0 20px rgba(0,246,255,0.6);
-    }
-
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Scroll animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .reveal-left.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .reveal-right.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    /* Scroll to top button */
-    .scroll-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--glass);
-      border: 1px solid var(--primary);
-      color: var(--primary);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 999;
-      backdrop-filter: blur(10px);
-    }
-
-    .scroll-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .scroll-top:hover {
-      background: var(--primary);
-      color: #000;
-      box-shadow: 0 0 30px rgba(0,246,255,0.6);
-    }
-
-    /* Project filters */
-    .filter-buttons {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      padding: 0.5rem 1.2rem;
+      background: var(--surface);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border: 1px solid var(--border);
       border-radius: 20px;
-      background: transparent;
-      color: var(--muted);
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.75rem;
-      cursor: pointer;
+    }
+
+    /* ============ ABOUT ============ */
+    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: start; }
+    @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+
+    .about-text { padding: 2.2rem; }
+    .about-text p { color: var(--muted); font-size: 0.98rem; }
+    .about-text p + p { margin-top: 1rem; }
+    .about-text strong { color: var(--text); }
+
+    .about-side { display: flex; flex-direction: column; gap: 1rem; }
+    .info-card { padding: 1.3rem 1.5rem; display: flex; gap: 1rem; align-items: center; transition: all 0.3s ease; }
+    .info-card:hover { border-color: var(--accent); transform: translateX(4px); }
+    .info-card .ico {
+      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+      background: var(--accent-soft); border: 1px solid var(--border);
+    }
+    .info-card h4 { font-size: 0.92rem; }
+    .info-card p { font-size: 0.8rem; color: var(--muted); }
+
+    /* ============ EXPERIENCE / TIMELINE ============ */
+    .timeline { position: relative; padding-left: 2.2rem; }
+    .timeline::before {
+      content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2), transparent);
+      opacity: 0.5;
+    }
+    .tl-item { position: relative; padding-bottom: 3rem; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-item::before {
+      content: ""; position: absolute; left: -2.2rem; top: 8px;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--bg);
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 14px var(--glow);
+    }
+    .tl-item:nth-child(2)::before { border-color: var(--accent-2); }
+    .tl-item:nth-child(3)::before { border-color: var(--accent-3); }
+
+    .tl-meta {
+      font-family: var(--font-mono); font-size: 0.75rem;
+      color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .tl-item h3 { font-size: 1.25rem; margin-top: 0.3rem; }
+    .tl-item .org { color: var(--muted); font-size: 0.9rem; margin-top: 0.1rem; }
+    .tl-item .org strong { color: var(--text); }
+    .tl-body { margin-top: 1.1rem; display: grid; gap: 0.9rem; }
+
+    .tl-block {
+      padding: 1.1rem 1.4rem; border-radius: 14px;
+      background: var(--surface); border: 1px solid var(--border);
       transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
+    .tl-block:hover { border-color: var(--border-strong); background: var(--surface-strong); }
+    .tl-block h4 { font-size: 0.92rem; display: flex; align-items: center; gap: 0.55rem; }
+    .tl-block h4 .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .tl-block:nth-child(2) h4 .dot { background: var(--accent-2); }
+    .tl-block:nth-child(3) h4 .dot { background: var(--accent-3); }
+    .tl-block:nth-child(4) h4 .dot { background: #fbbf24; }
+    .tl-block p { font-size: 0.86rem; color: var(--muted); margin-top: 0.35rem; }
 
-    .filter-btn:hover,
+    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.1rem; }
+    .chip {
+      font-family: var(--font-mono); font-size: 0.7rem;
+      padding: 0.3rem 0.75rem; border-radius: 999px;
+      border: 1px solid var(--border); color: var(--muted);
+      background: var(--surface); transition: all 0.25s ease;
+    }
+    .chip:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ============ PROJECTS ============ */
+    .filter-buttons { display: flex; gap: 0.7rem; margin-bottom: 2.2rem; flex-wrap: wrap; }
+    .filter-btn {
+      padding: 0.5rem 1.3rem; border-radius: 999px;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--muted); cursor: pointer;
+      font-family: var(--font-display); font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.04em; transition: all 0.25s ease;
+    }
+    .filter-btn:hover { color: var(--text); border-color: var(--border-strong); }
     .filter-btn.active {
-      border-color: var(--primary);
-      color: var(--primary);
-      box-shadow: 0 0 15px rgba(0,246,255,0.3);
+      color: #061019;
+      background: linear-gradient(100deg, var(--accent), var(--accent-2));
+      border-color: transparent;
+      box-shadow: 0 6px 18px -6px var(--glow);
+    }
+    :root.light .filter-btn.active { color: #fff; }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.4rem; }
+
+    .project {
+      padding: 1.7rem; border-radius: 18px;
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 0.9rem;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, opacity 0.35s ease;
+      position: relative; overflow: hidden;
+    }
+    .project::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), var(--accent-soft), transparent 45%);
+      opacity: 0; transition: opacity 0.35s ease; pointer-events: none;
+    }
+    .project:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: 0 18px 40px -18px var(--glow); }
+    .project:hover::before { opacity: 1; }
+    .project.hidden { display: none; }
+
+    .project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.8rem; }
+    .project .ico {
+      width: 46px; height: 46px; border-radius: 13px; font-size: 1.3rem;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--accent-soft); border: 1px solid var(--border);
+    }
+    .project .badge {
+      font-family: var(--font-mono); font-size: 0.65rem;
+      padding: 0.25rem 0.65rem; border-radius: 999px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border: 1px solid var(--border); color: var(--muted);
+    }
+    .project[data-category="pro"] .badge { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+    .project[data-category="academic"] .badge { color: var(--accent-2); border-color: color-mix(in srgb, var(--accent-2) 45%, transparent); }
+    .project[data-category="personal"] .badge { color: var(--accent-3); border-color: color-mix(in srgb, var(--accent-3) 45%, transparent); }
+
+    .project h3 { font-size: 1.05rem; line-height: 1.35; }
+    .project p { font-size: 0.85rem; color: var(--muted); flex-grow: 1; }
+    .project .chips { margin-top: 0; }
+
+    /* ============ SKILLS ============ */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.4rem; }
+    .skill-card { padding: 1.7rem; transition: all 0.3s ease; }
+    .skill-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 16px 36px -18px var(--glow); }
+    .skill-card .ico {
+      width: 46px; height: 46px; border-radius: 13px; font-size: 1.3rem;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--accent2-soft); border: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+    .skill-card h3 { font-size: 1rem; margin-bottom: 0.9rem; }
+    .skill-row { margin-bottom: 0.85rem; }
+    .skill-row .top { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.35rem; }
+    .skill-row .top .pct { font-family: var(--font-mono); color: var(--muted); font-size: 0.72rem; }
+    .skill-bar { background: var(--surface-strong); border-radius: 99px; height: 7px; overflow: hidden; }
+    .skill-fill {
+      height: 100%; width: 0; border-radius: 99px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transition: width 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .skill-fill.animated { width: var(--lvl); }
+
+    /* ============ CONTACT ============ */
+    .contact-wrap { padding: 2.5rem; display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; }
+    @media (max-width: 860px) { .contact-wrap { grid-template-columns: 1fr; } }
+
+    .contact-info h3 { font-size: 1.3rem; margin-bottom: 0.7rem; }
+    .contact-info p { color: var(--muted); font-size: 0.92rem; margin-bottom: 1.6rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 0.8rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 0.9rem;
+      padding: 0.9rem 1.1rem; border-radius: 13px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text); text-decoration: none; font-size: 0.88rem;
+      transition: all 0.25s ease;
+    }
+    .contact-link:hover { border-color: var(--accent); transform: translateX(5px); box-shadow: 0 0 18px var(--glow); }
+    .contact-link .ico { font-size: 1.15rem; }
+
+    .contact-form { display: grid; gap: 0.9rem; }
+    .contact-form input, .contact-form textarea {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 0.95rem 1.1rem;
+      color: var(--text); font-family: var(--font-body); font-size: 0.88rem;
+      transition: all 0.25s ease; width: 100%;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none; border-color: var(--accent); box-shadow: 0 0 16px var(--glow);
+    }
+    .contact-form textarea { min-height: 130px; resize: vertical; }
+    .contact-form .btn { justify-self: start; border: none; }
+
+    /* ============ FOOTER ============ */
+    footer {
+      text-align: center; padding: 2.6rem 5vw;
+      color: var(--muted); font-size: 0.78rem;
+      border-top: 1px solid var(--border);
+    }
+    footer .mono { font-family: var(--font-mono); color: var(--accent); }
+
+    /* ============ SCROLL TOP ============ */
+    .scroll-top {
+      position: fixed; bottom: 1.8rem; right: 1.8rem; z-index: 900;
+      width: 46px; height: 46px; border-radius: 13px;
+      background: var(--surface); border: 1px solid var(--border-strong);
+      color: var(--text); font-size: 1.2rem; cursor: pointer;
+      backdrop-filter: blur(12px);
+      opacity: 0; visibility: hidden; transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+    .scroll-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .scroll-top:hover { border-color: var(--accent); box-shadow: 0 0 20px var(--glow); }
+
+    /* ============ REVEAL ANIMATIONS ============ */
+    .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal[data-delay="1"] { transition-delay: 0.1s; }
+    .reveal[data-delay="2"] { transition-delay: 0.2s; }
+    .reveal[data-delay="3"] { transition-delay: 0.3s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
     }
 
-    .card[data-category] {
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-
-    .card.hidden {
-      opacity: 0;
-      transform: scale(0.8);
-      pointer-events: none;
-      position: absolute;
+    /* ============ PRINT (CV PDF) ============ */
+    @media print {
+      :root { --bg: #fff; --text: #111; --muted: #444; --border: #ccc; --surface: #fff; --surface-strong: #f4f4f4; }
+      .ambient, #particles, nav, .progress, .scroll-top, .hero-buttons, .scroll-hint,
+      .filter-buttons, .contact-form, .avatar-ring, .pulse-dot, footer .mono { display: none !important; }
+      body { background: #fff; color: #111; font-size: 11px; }
+      header { min-height: auto; padding: 1rem 0; }
+      section { padding: 0.8rem 0; max-width: 100%; }
+      .glass, .project, .tl-block, .skill-card, .info-card { border: 1px solid #ddd; box-shadow: none; break-inside: avoid; }
+      .project.hidden { display: flex !important; }
+      header h1 .grad, .stat .num { -webkit-text-fill-color: #111; color: #111; background: none; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .avatar-wrap { width: 90px; height: 90px; margin-bottom: 0.6rem; }
+      a { color: #111; text-decoration: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <div class="ambient"></div>
+  <canvas id="particles"></canvas>
+  <div class="progress" id="progress"></div>
+
+  <!-- ============ NAV ============ -->
   <nav id="navbar">
-    <span class="nav-brand">ML</span>
-    <button class="menu-toggle" aria-label="Menu">&#9776;</button>
-    <ul class="nav-links">
-      <li><a href="#hero" data-i18n="nav.home">Accueil</a></li>
-      <li><a href="#about" data-i18n="nav.about">A propos</a></li>
-      <li><a href="#skills" data-i18n="nav.skills">Competences</a></li>
+    <a href="#hero" class="nav-brand"><span class="tag">&lt;</span>maxime.laurent<span class="slash"> /</span><span class="tag">&gt;</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Expérience</a></li>
       <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Compétences</a></li>
       <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
     <div class="nav-controls">
-      <button class="lang-toggle" id="langToggle">EN</button>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9790;</button>
+      <button class="icon-btn lang" id="langToggle" aria-label="Switch language">EN</button>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☾</button>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- ============ HERO ============ -->
   <header id="hero">
-    <!-- PHOTO -->
-    <div class="profile-photo reveal">
-      <img src="photo.jpg" alt="Laurent Maxime" />
+    <div class="avatar-wrap reveal visible">
+      <div class="avatar-ring"></div>
+      <img src="photo.jpg" alt="Maxime Laurent" />
     </div>
-    <h1 id="typed-name"></h1>
-    <p class="reveal" data-i18n="hero.description">
-      Data Analyst. Diplome d'une ecole d'ingenieur en informatique et technologies de l'information (INSA Rouen Normandie). J'analyse les donnees pour produire des insights clairs, fiables et utiles aux decisions metier.
+
+    <span class="hero-eyebrow"><span class="pulse-dot"></span><span data-i18n="hero.available">Disponible pour de nouvelles missions</span></span>
+
+    <h1>Maxime <span class="grad">Laurent</span></h1>
+
+    <div class="hero-roles">
+      <span class="typed" id="typedRole"></span><span class="cursor-blink"></span>
+    </div>
+
+    <p class="hero-desc" data-i18n="hero.desc">
+      Ingénieur INSA Rouen Normandie, je transforme les données de santé — <strong>codage, facturation, référentiels</strong> — en indicateurs fiables et en outils concrets pour piloter l'activité.
     </p>
-    <div class="hero-buttons reveal">
-      <a href="#about" class="cta" data-i18n="hero.explore">Explorer</a>
-      <a href="#" class="cta secondary" id="downloadCV" data-i18n="hero.download">Telecharger CV</a>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">Voir mes projets</a>
+      <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Me contacter</a>
+      <button class="btn btn-ghost" id="downloadCV" data-i18n="hero.cta3">⬇ Version CV</button>
     </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="num"><span class="counter" data-target="9">0</span></div>
+        <div class="label" data-i18n="stats.months">mois de mission santé</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="counter" data-target="6">0</span><span class="plus">+</span></div>
+        <div class="label" data-i18n="stats.projects">projets data livrés</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="counter" data-target="3">0</span></div>
+        <div class="label" data-i18n="stats.domains">domaines : codage · facturation · MDM</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="counter" data-target="2">0</span></div>
+        <div class="label" data-i18n="stats.langs">langues de travail</div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-hint" aria-label="Scroll down">↓</a>
   </header>
 
-  <!-- A PROPOS -->
+  <!-- ============ ABOUT ============ -->
   <section id="about">
-    <div class="glass about reveal">
-      <h2 data-i18n="about.title">A propos</h2>
-      <p data-i18n="about.text">
-        Data Analyst, issu d'une formation d'ingenieur en informatique et technologies de l'information (Insa Rouen Normandie). J'ai developpe une approche structuree de l'analyse de donnees, alliant rigueur technique et comprehension des enjeux metier.
-        <br /><br />
-        Mon objectif est de transformer des donnees brutes en analyses lisibles, afin d'aider les equipes a prendre des decisions eclairees.
-      </p>
+    <div class="section-head reveal">
+      <span class="kicker" data-i18n="about.kicker">01 · Profil</span>
+      <h2 data-i18n="about.title">À propos</h2>
+    </div>
+    <div class="about-grid">
+      <div class="glass about-text reveal">
+        <p data-i18n="about.p1">
+          <strong>Data Analyst</strong> diplômé de l'INSA Rouen Normandie (ingénieur en informatique et technologies de l'information), je me suis spécialisé dans la <strong>donnée de santé</strong> à travers une mission longue chez <strong>Ramsay Santé</strong>, leader européen de l'hospitalisation privée.
+        </p>
+        <p data-i18n="about.p2">
+          Au cœur de la chaîne <strong>codage → facturation → recouvrement</strong>, j'ai appris à faire parler des données sensibles et complexes : fiabiliser les référentiels (MDM), construire des KPI de pilotage sur Power BI, et développer des outils web pour que les équipes métier suivent leur activité en autonomie.
+        </p>
+        <p data-i18n="about.p3">
+          Mon approche : comprendre l'enjeu métier avant d'écrire la moindre requête, livrer des analyses <strong>lisibles et actionnables</strong>, et automatiser tout ce qui peut l'être.
+        </p>
+      </div>
+      <div class="about-side">
+        <div class="glass info-card reveal" data-delay="1">
+          <div class="ico">🎓</div>
+          <div>
+            <h4 data-i18n="about.edu.title">INSA Rouen Normandie</h4>
+            <p data-i18n="about.edu.desc">Diplôme d'ingénieur — Informatique & technologies de l'information</p>
+          </div>
+        </div>
+        <div class="glass info-card reveal" data-delay="2">
+          <div class="ico">🏥</div>
+          <div>
+            <h4 data-i18n="about.health.title">Spécialisation santé</h4>
+            <p data-i18n="about.health.desc">Codage des actes, facturation hospitalière, MDM, qualité des données</p>
+          </div>
+        </div>
+        <div class="glass info-card reveal" data-delay="3">
+          <div class="ico">📍</div>
+          <div>
+            <h4 data-i18n="about.loc.title">France</h4>
+            <p data-i18n="about.loc.desc">Mobile · Français / Anglais</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- COMPETENCES -->
-  <section id="skills">
-    <h2 class="reveal" data-i18n="skills.title">Competences cles</h2>
-    <div class="grid">
-      <div class="card reveal-left">
-        <h3 data-i18n="skills.analysis.title">Analyse & BI</h3>
-        <p data-i18n="skills.analysis.desc">Analyse de donnees, KPI, reporting, Power BI, restitution orientee metier.</p>
-        <div class="skill-bar">
-          <div class="skill-fill" style="--skill-level: 90%;"></div>
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience">
+    <div class="section-head reveal">
+      <span class="kicker" data-i18n="exp.kicker">02 · Parcours</span>
+      <h2 data-i18n="exp.title">Expérience</h2>
+      <p class="sub" data-i18n="exp.sub">De la donnée brute au pilotage de l'activité hospitalière.</p>
+    </div>
+
+    <div class="timeline">
+      <!-- Ramsay -->
+      <div class="tl-item reveal">
+        <span class="tl-meta">2025 — 2026 · <span data-i18n="exp.ramsay.duration">Mission 9 mois</span></span>
+        <h3 data-i18n="exp.ramsay.title">Consultant Data / BI — Codage & Facturation</h3>
+        <p class="org"><strong>Ramsay Santé</strong> · <span data-i18n="exp.ramsay.org">Leader européen de l'hospitalisation privée — Programme Master Data Management</span></p>
+        <div class="tl-body">
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b1.title">Codage & facturation hospitalière</span></h4>
+            <p data-i18n="exp.ramsay.b1.desc">Analyse des données de codage des actes et de la chaîne de facturation : détection d'anomalies et d'écarts, fiabilisation des flux, suivi des rejets et sécurisation des recettes des établissements.</p>
+          </div>
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b2.title">KPI & dashboards Power BI</span></h4>
+            <p data-i18n="exp.ramsay.b2.desc">Conception de tableaux de bord de pilotage pour les équipes métier et le management : indicateurs de qualité des données, avancement du déploiement MDM, performance de la chaîne codage-facturation.</p>
+          </div>
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b3.title">Web App de suivi & d'analyse</span></h4>
+            <p data-i18n="exp.ramsay.b3.desc">Développement d'une application web dédiée au suivi et à l'analyse des données du programme : consultation des référentiels, monitoring de la qualité, restitution en libre-service pour les utilisateurs.</p>
+          </div>
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b4.title">MDM & conduite du changement</span></h4>
+            <p data-i18n="exp.ramsay.b4.desc">Participation au pilotage du programme Master Data Management : cadrage des règles de gestion des données de référence, accompagnement des utilisateurs, documentation et adoption des nouveaux processus.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">Python</span>
+          <span class="chip">Azure</span><span class="chip">Databricks</span><span class="chip">MDM</span>
+          <span class="chip">GitLab</span><span class="chip" data-i18n="exp.ramsay.chip">Facturation santé</span>
         </div>
       </div>
-      <div class="card reveal">
-        <h3 data-i18n="skills.tech.title">Base technique</h3>
-        <p data-i18n="skills.tech.desc">SQL, Python, bases de donnees, comprehension des systemes informatiques.</p>
-        <div class="skill-bar">
-          <div class="skill-fill" style="--skill-level: 85%;"></div>
+
+      <!-- INSA consulting -->
+      <div class="tl-item reveal">
+        <span class="tl-meta">2024 — 2025 · <span data-i18n="exp.insa.duration">Projet certifié</span></span>
+        <h3 data-i18n="exp.insa.title">Mission de consulting — Migration de données & KPI</h3>
+        <p class="org"><strong>INSA Rouen Normandie</strong> · <span data-i18n="exp.insa.org">Projet certifié mené en conditions réelles pour un client</span></p>
+        <div class="tl-body">
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.insa.b1.title">Proof of Concept de migration</span></h4>
+            <p data-i18n="exp.insa.b1.desc">Conception et réalisation d'un POC de migration des données vers une base propre, structurée et documentée : modélisation, nettoyage, règles de transformation et validation de la cohérence.</p>
+          </div>
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.insa.b2.title">Indicateurs métier</span></h4>
+            <p data-i18n="exp.insa.b2.desc">Implémentation des calculs de KPI sur les données migrées pour offrir un suivi clair et exploitable des indicateurs métier, avec restitution auprès du client en fin de mission.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <span class="chip">SQL</span><span class="chip" data-i18n="exp.insa.chip1">Modélisation</span>
+          <span class="chip">ETL</span><span class="chip">KPI</span><span class="chip">Consulting</span>
         </div>
       </div>
-      <div class="card reveal-right">
-        <h3 data-i18n="skills.data.title">Environnement data</h3>
-        <p data-i18n="skills.data.desc">Azure, Databricks, GitLab, notions de MDM et qualite des donnees.</p>
-        <div class="skill-bar">
-          <div class="skill-fill" style="--skill-level: 75%;"></div>
+
+      <!-- Formation -->
+      <div class="tl-item reveal">
+        <span class="tl-meta">2020 — 2025</span>
+        <h3 data-i18n="exp.edu.title">Diplôme d'ingénieur — Informatique & TI</h3>
+        <p class="org"><strong>INSA Rouen Normandie</strong> · <span data-i18n="exp.edu.org">Grande école d'ingénieurs</span></p>
+        <div class="tl-body">
+          <div class="tl-block">
+            <p data-i18n="exp.edu.desc">Formation d'ingénieur en informatique et technologies de l'information : bases de données, algorithmique, développement, statistiques et analyse de données, gestion de projet.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJETS -->
+  <!-- ============ PROJECTS ============ -->
   <section id="projects">
-    <h2 class="reveal" data-i18n="projects.title">Experiences & Projets</h2>
+    <div class="section-head reveal">
+      <span class="kicker" data-i18n="proj.kicker">03 · Réalisations</span>
+      <h2 data-i18n="proj.title">Projets à valeur ajoutée</h2>
+      <p class="sub" data-i18n="proj.sub">Une sélection de projets professionnels, académiques et personnels.</p>
+    </div>
 
     <div class="filter-buttons reveal">
-      <button class="filter-btn active" data-filter="all" data-i18n="projects.filter.all">Tous</button>
-      <button class="filter-btn" data-filter="pro" data-i18n="projects.filter.pro">Professionnel</button>
-      <button class="filter-btn" data-filter="academic" data-i18n="projects.filter.academic">Academique</button>
-      <button class="filter-btn" data-filter="personal" data-i18n="projects.filter.personal">Personnel</button>
+      <button class="filter-btn active" data-filter="all" data-i18n="proj.filter.all">Tous</button>
+      <button class="filter-btn" data-filter="pro" data-i18n="proj.filter.pro">Professionnel</button>
+      <button class="filter-btn" data-filter="academic" data-i18n="proj.filter.academic">Académique</button>
+      <button class="filter-btn" data-filter="personal" data-i18n="proj.filter.personal">Personnel</button>
     </div>
 
-    <div class="grid" id="projects-grid">
-      <div class="card reveal-left" data-category="pro">
-        <h3 data-i18n="projects.health.title">Mission Data / BI - Secteur Sante</h3>
-        <p data-i18n="projects.health.desc">
-          Mission de 9 mois chez un grand acteur de la sante (Ramsay Sante), dans le cadre de la mise en place d'un Master Data Management (MDM).
-          <br /><br />
-          Participation au pilotage des activites, a la conduite du changement, a la conception de KPI sur Power BI ainsi qu'au developpement d'une Web App dediee au suivi et a l'analyse des donnees.
-        </p>
+    <div class="projects-grid" id="projectsGrid">
+      <div class="project glass reveal" data-category="pro">
+        <div class="project-top">
+          <div class="ico">🧾</div>
+          <span class="badge" data-i18n="proj.badge.pro">Pro · Ramsay Santé</span>
+        </div>
+        <h3 data-i18n="proj.p1.title">Fiabilisation codage & facturation</h3>
+        <p data-i18n="proj.p1.desc">Analyse de la chaîne codage → facturation : détection des anomalies et des écarts de facturation, suivi des rejets, fiabilisation des données pour sécuriser les recettes des établissements.</p>
+        <div class="chips"><span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip" data-i18n="proj.p1.chip">Data Quality</span></div>
       </div>
 
-      <div class="card reveal" data-category="academic">
-        <h3 data-i18n="projects.insa.title">Projet INSA certifie - Mission de consulting</h3>
-        <p data-i18n="projects.insa.desc">
-          Projet academique certifie mene comme une mission de consulting. Realisation d'un Proof of Concept (POC) visant a migrer des donnees vers une base propre, structuree et documentee.
-          <br /><br />
-          Conception et implementation de calculs de KPI sur les donnees migrees, afin de permettre un suivi clair et exploitable des indicateurs metier.
-        </p>
+      <div class="project glass reveal" data-category="pro" data-delay="1">
+        <div class="project-top">
+          <div class="ico">📊</div>
+          <span class="badge" data-i18n="proj.badge.pro2">Pro · Ramsay Santé</span>
+        </div>
+        <h3 data-i18n="proj.p2.title">Dashboards Power BI de pilotage</h3>
+        <p data-i18n="proj.p2.desc">Conception de tableaux de bord pour le management et les équipes métier : KPI de qualité des données, avancement du déploiement MDM et performance de la facturation, du brut à la décision.</p>
+        <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">KPI</span></div>
       </div>
 
-      <div class="card reveal-right" data-category="personal">
-        <h3 data-i18n="projects.realestate.title">Analyse du marche immobilier</h3>
-        <p data-i18n="projects.realestate.desc">
-          Analyse du prix de l'immobilier en Californie : exploration des donnees, identification des facteurs cles et visualisation des tendances.
-        </p>
+      <div class="project glass reveal" data-category="pro" data-delay="2">
+        <div class="project-top">
+          <div class="ico">🖥️</div>
+          <span class="badge" data-i18n="proj.badge.pro3">Pro · Ramsay Santé</span>
+        </div>
+        <h3 data-i18n="proj.p3.title">Web App de suivi des données</h3>
+        <p data-i18n="proj.p3.desc">Développement d'une application web de suivi et d'analyse des données du programme MDM : consultation des référentiels, monitoring de la qualité et restitution en libre-service.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Web App</span><span class="chip">Azure</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="academic">
+        <div class="project-top">
+          <div class="ico">🗄️</div>
+          <span class="badge" data-i18n="proj.badge.academic">Académique · Certifié</span>
+        </div>
+        <h3 data-i18n="proj.p4.title">POC migration de base de données</h3>
+        <p data-i18n="proj.p4.desc">Mission de consulting certifiée INSA : migration de données vers une base propre, structurée et documentée, puis implémentation de KPI exploitables pour le suivi métier du client.</p>
+        <div class="chips"><span class="chip">SQL</span><span class="chip">ETL</span><span class="chip">Consulting</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="personal" data-delay="1">
+        <div class="project-top">
+          <div class="ico">🏠</div>
+          <span class="badge" data-i18n="proj.badge.personal">Personnel</span>
+        </div>
+        <h3 data-i18n="proj.p5.title">Analyse du marché immobilier</h3>
+        <p data-i18n="proj.p5.desc">Étude du prix de l'immobilier en Californie : exploration des données, identification des facteurs clés de valorisation et visualisation des tendances avec Python.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Data Viz</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="personal" data-delay="2">
+        <div class="project-top">
+          <div class="ico">✨</div>
+          <span class="badge" data-i18n="proj.badge.personal2">Personnel</span>
+        </div>
+        <h3 data-i18n="proj.p6.title">Ce portfolio interactif</h3>
+        <p data-i18n="proj.p6.desc">Site 100 % fait main en HTML / CSS / JS vanilla : animations canvas, bilingue FR/EN, thème clair/sombre, version CV imprimable — hébergé sur GitHub Pages.</p>
+        <div class="chips"><span class="chip">HTML/CSS</span><span class="chip">JavaScript</span><span class="chip">GitHub Pages</span></div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ============ SKILLS ============ -->
+  <section id="skills">
+    <div class="section-head reveal">
+      <span class="kicker" data-i18n="skills.kicker">04 · Expertise</span>
+      <h2 data-i18n="skills.title">Compétences</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="glass skill-card reveal">
+        <div class="ico">📈</div>
+        <h3 data-i18n="skills.bi.title">Analyse & BI</h3>
+        <div class="skill-row">
+          <div class="top"><span>Power BI / DAX</span><span class="pct">90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 90%;"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span data-i18n="skills.bi.kpi">KPI & reporting</span><span class="pct">90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 90%;"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Data storytelling</span><span class="pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 85%;"></div></div>
+        </div>
+      </div>
+
+      <div class="glass skill-card reveal" data-delay="1">
+        <div class="ico">⚙️</div>
+        <h3 data-i18n="skills.tech.title">Data Engineering</h3>
+        <div class="skill-row">
+          <div class="top"><span>SQL</span><span class="pct">88%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 88%;"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Python / Pandas</span><span class="pct">82%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 82%;"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Azure / Databricks</span><span class="pct">75%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 75%;"></div></div>
+        </div>
+      </div>
+
+      <div class="glass skill-card reveal" data-delay="2">
+        <div class="ico">🏥</div>
+        <h3 data-i18n="skills.health.title">Data Santé</h3>
+        <div class="skill-row">
+          <div class="top"><span data-i18n="skills.health.billing">Codage & facturation</span><span class="pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 85%;"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span data-i18n="skills.health.mdm">MDM & référentiels</span><span class="pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 80%;"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span data-i18n="skills.health.quality">Qualité des données</span><span class="pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 85%;"></div></div>
+        </div>
+      </div>
+
+      <div class="glass skill-card reveal" data-delay="3">
+        <div class="ico">🤝</div>
+        <h3 data-i18n="skills.soft.title">Pilotage & Métier</h3>
+        <div class="skill-row">
+          <div class="top"><span data-i18n="skills.soft.change">Conduite du changement</span><span class="pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 80%;"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span data-i18n="skills.soft.pm">Pilotage d'activités</span><span class="pct">78%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 78%;"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span data-i18n="skills.soft.com">Restitution & communication</span><span class="pct">88%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 88%;"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
   <section id="contact">
-    <div class="glass reveal">
-      <h2 data-i18n="contact.title">Contact</h2>
-      <div class="contact-buttons">
-        <a href="mailto:maxime.laurent02@icloud.com" class="cta">Email</a>
-        <a href="https://www.linkedin.com/in/maxime-laurent-3866a3209/" target="_blank" class="cta">LinkedIn</a>
+    <div class="section-head reveal">
+      <span class="kicker" data-i18n="contact.kicker">05 · Contact</span>
+      <h2 data-i18n="contact.title">Travaillons ensemble</h2>
+    </div>
+
+    <div class="glass contact-wrap reveal">
+      <div class="contact-info">
+        <h3 data-i18n="contact.sub">Un projet data ? Une mission ?</h3>
+        <p data-i18n="contact.text">Je suis ouvert aux opportunités en data analyse, BI et data santé. Réponse rapide garantie.</p>
+        <div class="contact-links">
+          <a href="mailto:maxime.laurent02@icloud.com" class="contact-link">
+            <span class="ico">✉️</span> maxime.laurent02@icloud.com
+          </a>
+          <a href="https://www.linkedin.com/in/maxime-laurent-3866a3209/" target="_blank" rel="noopener" class="contact-link">
+            <span class="ico">💼</span> LinkedIn — Maxime Laurent
+          </a>
+          <a href="https://github.com/MaximeL34" target="_blank" rel="noopener" class="contact-link">
+            <span class="ico">💻</span> GitHub — MaximeL34
+          </a>
+        </div>
       </div>
 
       <form class="contact-form" id="contactForm">
-        <input type="text" name="name" placeholder="Votre nom" data-i18n-placeholder="contact.form.name" required />
-        <input type="email" name="email" placeholder="Votre email" data-i18n-placeholder="contact.form.email" required />
-        <textarea name="message" placeholder="Votre message" data-i18n-placeholder="contact.form.message" required></textarea>
-        <button type="submit" class="cta" data-i18n="contact.form.send">Envoyer</button>
+        <input type="text" name="name" placeholder="Votre nom" data-i18n-ph="contact.form.name" required />
+        <input type="email" name="email" placeholder="Votre email" data-i18n-ph="contact.form.email" required />
+        <textarea name="message" placeholder="Votre message" data-i18n-ph="contact.form.message" required></textarea>
+        <button type="submit" class="btn btn-primary" data-i18n="contact.form.send">Envoyer le message</button>
       </form>
     </div>
   </section>
 
-  <!-- Scroll to top button -->
-  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#8593;</button>
+  <button class="scroll-top" id="scrollTop" aria-label="Retour en haut">↑</button>
 
   <footer>
-    &copy; 2026 - Laurent Maxime
+    <span data-i18n="footer.text">© 2026 Maxime Laurent — Conçu & codé à la main</span>
+    <span class="mono"> · &lt;html + css + js/&gt;</span>
   </footer>
 
   <script>
-    // ========== TRANSLATIONS ==========
-    const translations = {
+    /* ============ I18N ============ */
+    const T = {
       fr: {
-        'nav.home': 'Accueil',
-        'nav.about': 'A propos',
-        'nav.skills': 'Competences',
-        'nav.projects': 'Projets',
-        'nav.contact': 'Contact',
-        'hero.description': "Data Analyst. Diplome d'une ecole d'ingenieur en informatique et technologies de l'information (INSA Rouen Normandie). J'analyse les donnees pour produire des insights clairs, fiables et utiles aux decisions metier.",
-        'hero.explore': 'Explorer',
-        'hero.download': 'Telecharger CV',
-        'about.title': 'A propos',
-        'about.text': "Data Analyst, issu d'une formation d'ingenieur en informatique et technologies de l'information (Insa Rouen Normandie). J'ai developpe une approche structuree de l'analyse de donnees, alliant rigueur technique et comprehension des enjeux metier.<br /><br />Mon objectif est de transformer des donnees brutes en analyses lisibles, afin d'aider les equipes a prendre des decisions eclairees.",
-        'skills.title': 'Competences cles',
-        'skills.analysis.title': 'Analyse & BI',
-        'skills.analysis.desc': 'Analyse de donnees, KPI, reporting, Power BI, restitution orientee metier.',
-        'skills.tech.title': 'Base technique',
-        'skills.tech.desc': 'SQL, Python, bases de donnees, comprehension des systemes informatiques.',
-        'skills.data.title': 'Environnement data',
-        'skills.data.desc': 'Azure, Databricks, GitLab, notions de MDM et qualite des donnees.',
-        'projects.title': 'Experiences & Projets',
-        'projects.filter.all': 'Tous',
-        'projects.filter.pro': 'Professionnel',
-        'projects.filter.academic': 'Academique',
-        'projects.filter.personal': 'Personnel',
-        'projects.health.title': 'Mission Data / BI - Secteur Sante',
-        'projects.health.desc': "Mission de 9 mois chez un grand acteur de la sante (Ramsay Sante), dans le cadre de la mise en place d'un Master Data Management (MDM).<br /><br />Participation au pilotage des activites, a la conduite du changement, a la conception de KPI sur Power BI ainsi qu'au developpement d'une Web App dediee au suivi et a l'analyse des donnees.",
-        'projects.insa.title': 'Projet INSA certifie - Mission de consulting',
-        'projects.insa.desc': "Projet academique certifie mene comme une mission de consulting. Realisation d'un Proof of Concept (POC) visant a migrer des donnees vers une base propre, structuree et documentee.<br /><br />Conception et implementation de calculs de KPI sur les donnees migrees, afin de permettre un suivi clair et exploitable des indicateurs metier.",
-        'projects.realestate.title': "Analyse du marche immobilier",
-        'projects.realestate.desc': "Analyse du prix de l'immobilier en Californie : exploration des donnees, identification des facteurs cles et visualisation des tendances.",
-        'contact.title': 'Contact',
-        'contact.form.name': 'Votre nom',
-        'contact.form.email': 'Votre email',
-        'contact.form.message': 'Votre message',
-        'contact.form.send': 'Envoyer'
+        'nav.about': 'À propos', 'nav.experience': 'Expérience', 'nav.projects': 'Projets',
+        'nav.skills': 'Compétences', 'nav.contact': 'Contact',
+        'hero.available': 'Disponible pour de nouvelles missions',
+        'hero.desc': "Ingénieur INSA Rouen Normandie, je transforme les données de santé — <strong>codage, facturation, référentiels</strong> — en indicateurs fiables et en outils concrets pour piloter l'activité.",
+        'hero.cta1': 'Voir mes projets', 'hero.cta2': 'Me contacter', 'hero.cta3': '⬇ Version CV',
+        'stats.months': 'mois de mission santé', 'stats.projects': 'projets data livrés',
+        'stats.domains': 'domaines : codage · facturation · MDM', 'stats.langs': 'langues de travail',
+        'about.kicker': '01 · Profil', 'about.title': 'À propos',
+        'about.p1': "<strong>Data Analyst</strong> diplômé de l'INSA Rouen Normandie (ingénieur en informatique et technologies de l'information), je me suis spécialisé dans la <strong>donnée de santé</strong> à travers une mission longue chez <strong>Ramsay Santé</strong>, leader européen de l'hospitalisation privée.",
+        'about.p2': "Au cœur de la chaîne <strong>codage → facturation → recouvrement</strong>, j'ai appris à faire parler des données sensibles et complexes : fiabiliser les référentiels (MDM), construire des KPI de pilotage sur Power BI, et développer des outils web pour que les équipes métier suivent leur activité en autonomie.",
+        'about.p3': "Mon approche : comprendre l'enjeu métier avant d'écrire la moindre requête, livrer des analyses <strong>lisibles et actionnables</strong>, et automatiser tout ce qui peut l'être.",
+        'about.edu.title': 'INSA Rouen Normandie',
+        'about.edu.desc': "Diplôme d'ingénieur — Informatique & technologies de l'information",
+        'about.health.title': 'Spécialisation santé',
+        'about.health.desc': 'Codage des actes, facturation hospitalière, MDM, qualité des données',
+        'about.loc.title': 'France', 'about.loc.desc': 'Mobile · Français / Anglais',
+        'exp.kicker': '02 · Parcours', 'exp.title': 'Expérience',
+        'exp.sub': "De la donnée brute au pilotage de l'activité hospitalière.",
+        'exp.ramsay.duration': 'Mission 9 mois',
+        'exp.ramsay.title': 'Consultant Data / BI — Codage & Facturation',
+        'exp.ramsay.org': "Leader européen de l'hospitalisation privée — Programme Master Data Management",
+        'exp.ramsay.b1.title': 'Codage & facturation hospitalière',
+        'exp.ramsay.b1.desc': "Analyse des données de codage des actes et de la chaîne de facturation : détection d'anomalies et d'écarts, fiabilisation des flux, suivi des rejets et sécurisation des recettes des établissements.",
+        'exp.ramsay.b2.title': 'KPI & dashboards Power BI',
+        'exp.ramsay.b2.desc': "Conception de tableaux de bord de pilotage pour les équipes métier et le management : indicateurs de qualité des données, avancement du déploiement MDM, performance de la chaîne codage-facturation.",
+        'exp.ramsay.b3.title': "Web App de suivi & d'analyse",
+        'exp.ramsay.b3.desc': "Développement d'une application web dédiée au suivi et à l'analyse des données du programme : consultation des référentiels, monitoring de la qualité, restitution en libre-service pour les utilisateurs.",
+        'exp.ramsay.b4.title': 'MDM & conduite du changement',
+        'exp.ramsay.b4.desc': "Participation au pilotage du programme Master Data Management : cadrage des règles de gestion des données de référence, accompagnement des utilisateurs, documentation et adoption des nouveaux processus.",
+        'exp.ramsay.chip': 'Facturation santé',
+        'exp.insa.duration': 'Projet certifié',
+        'exp.insa.title': 'Mission de consulting — Migration de données & KPI',
+        'exp.insa.org': 'Projet certifié mené en conditions réelles pour un client',
+        'exp.insa.b1.title': 'Proof of Concept de migration',
+        'exp.insa.b1.desc': "Conception et réalisation d'un POC de migration des données vers une base propre, structurée et documentée : modélisation, nettoyage, règles de transformation et validation de la cohérence.",
+        'exp.insa.b2.title': 'Indicateurs métier',
+        'exp.insa.b2.desc': "Implémentation des calculs de KPI sur les données migrées pour offrir un suivi clair et exploitable des indicateurs métier, avec restitution auprès du client en fin de mission.",
+        'exp.insa.chip1': 'Modélisation',
+        'exp.edu.title': "Diplôme d'ingénieur — Informatique & TI",
+        'exp.edu.org': "Grande école d'ingénieurs",
+        'exp.edu.desc': "Formation d'ingénieur en informatique et technologies de l'information : bases de données, algorithmique, développement, statistiques et analyse de données, gestion de projet.",
+        'proj.kicker': '03 · Réalisations', 'proj.title': 'Projets à valeur ajoutée',
+        'proj.sub': 'Une sélection de projets professionnels, académiques et personnels.',
+        'proj.filter.all': 'Tous', 'proj.filter.pro': 'Professionnel',
+        'proj.filter.academic': 'Académique', 'proj.filter.personal': 'Personnel',
+        'proj.badge.pro': 'Pro · Ramsay Santé', 'proj.badge.pro2': 'Pro · Ramsay Santé', 'proj.badge.pro3': 'Pro · Ramsay Santé',
+        'proj.badge.academic': 'Académique · Certifié', 'proj.badge.personal': 'Personnel', 'proj.badge.personal2': 'Personnel',
+        'proj.p1.title': 'Fiabilisation codage & facturation',
+        'proj.p1.desc': "Analyse de la chaîne codage → facturation : détection des anomalies et des écarts de facturation, suivi des rejets, fiabilisation des données pour sécuriser les recettes des établissements.",
+        'proj.p1.chip': 'Data Quality',
+        'proj.p2.title': 'Dashboards Power BI de pilotage',
+        'proj.p2.desc': "Conception de tableaux de bord pour le management et les équipes métier : KPI de qualité des données, avancement du déploiement MDM et performance de la facturation, du brut à la décision.",
+        'proj.p3.title': 'Web App de suivi des données',
+        'proj.p3.desc': "Développement d'une application web de suivi et d'analyse des données du programme MDM : consultation des référentiels, monitoring de la qualité et restitution en libre-service.",
+        'proj.p4.title': 'POC migration de base de données',
+        'proj.p4.desc': "Mission de consulting certifiée INSA : migration de données vers une base propre, structurée et documentée, puis implémentation de KPI exploitables pour le suivi métier du client.",
+        'proj.p5.title': 'Analyse du marché immobilier',
+        'proj.p5.desc': "Étude du prix de l'immobilier en Californie : exploration des données, identification des facteurs clés de valorisation et visualisation des tendances avec Python.",
+        'proj.p6.title': 'Ce portfolio interactif',
+        'proj.p6.desc': "Site 100 % fait main en HTML / CSS / JS vanilla : animations canvas, bilingue FR/EN, thème clair/sombre, version CV imprimable — hébergé sur GitHub Pages.",
+        'skills.kicker': '04 · Expertise', 'skills.title': 'Compétences',
+        'skills.bi.title': 'Analyse & BI', 'skills.bi.kpi': 'KPI & reporting',
+        'skills.tech.title': 'Data Engineering',
+        'skills.health.title': 'Data Santé',
+        'skills.health.billing': 'Codage & facturation', 'skills.health.mdm': 'MDM & référentiels',
+        'skills.health.quality': 'Qualité des données',
+        'skills.soft.title': 'Pilotage & Métier',
+        'skills.soft.change': 'Conduite du changement', 'skills.soft.pm': "Pilotage d'activités",
+        'skills.soft.com': 'Restitution & communication',
+        'contact.kicker': '05 · Contact', 'contact.title': 'Travaillons ensemble',
+        'contact.sub': 'Un projet data ? Une mission ?',
+        'contact.text': 'Je suis ouvert aux opportunités en data analyse, BI et data santé. Réponse rapide garantie.',
+        'contact.form.name': 'Votre nom', 'contact.form.email': 'Votre email',
+        'contact.form.message': 'Votre message', 'contact.form.send': 'Envoyer le message',
+        'footer.text': '© 2026 Maxime Laurent — Conçu & codé à la main',
+        'roles': ['Data Analyst', 'Spécialiste Data Santé', 'Power BI · SQL · Python', 'Codage & Facturation', 'Ingénieur INSA']
       },
       en: {
-        'nav.home': 'Home',
-        'nav.about': 'About',
-        'nav.skills': 'Skills',
-        'nav.projects': 'Projects',
-        'nav.contact': 'Contact',
-        'hero.description': "Data Analyst. Graduate of an engineering school in computer science and information technology (INSA Rouen Normandie). I analyze data to produce clear, reliable, and business-relevant insights.",
-        'hero.explore': 'Explore',
-        'hero.download': 'Download CV',
-        'about.title': 'About',
-        'about.text': "Data Analyst with an engineering background in computer science and information technology (Insa Rouen Normandie). I have developed a structured approach to data analysis, combining technical rigor with business understanding.<br /><br />My goal is to transform raw data into readable analyses to help teams make informed decisions.",
-        'skills.title': 'Key Skills',
-        'skills.analysis.title': 'Analysis & BI',
-        'skills.analysis.desc': 'Data analysis, KPIs, reporting, Power BI, business-oriented delivery.',
-        'skills.tech.title': 'Technical Foundation',
-        'skills.tech.desc': 'SQL, Python, databases, understanding of IT systems.',
-        'skills.data.title': 'Data Environment',
-        'skills.data.desc': 'Azure, Databricks, GitLab, MDM concepts and data quality.',
-        'projects.title': 'Experience & Projects',
-        'projects.filter.all': 'All',
-        'projects.filter.pro': 'Professional',
-        'projects.filter.academic': 'Academic',
-        'projects.filter.personal': 'Personal',
-        'projects.health.title': 'Data / BI Mission - Healthcare Sector',
-        'projects.health.desc': "9-month mission at a major healthcare company (Ramsay Sante) for Master Data Management (MDM) implementation.<br /><br />Involved in activity management, change management, Power BI KPI design, and development of a Web App for data monitoring and analysis.",
-        'projects.insa.title': 'INSA Certified Project - Consulting Mission',
-        'projects.insa.desc': "Certified academic project conducted as a consulting mission. Development of a Proof of Concept (POC) to migrate data to a clean, structured, and documented database.<br /><br />Design and implementation of KPI calculations on migrated data for clear and actionable business indicator tracking.",
-        'projects.realestate.title': "Real Estate Market Analysis",
-        'projects.realestate.desc': "Analysis of California real estate prices: data exploration, identification of key factors, and trend visualization.",
-        'contact.title': 'Contact',
-        'contact.form.name': 'Your name',
-        'contact.form.email': 'Your email',
-        'contact.form.message': 'Your message',
-        'contact.form.send': 'Send'
+        'nav.about': 'About', 'nav.experience': 'Experience', 'nav.projects': 'Projects',
+        'nav.skills': 'Skills', 'nav.contact': 'Contact',
+        'hero.available': 'Open to new opportunities',
+        'hero.desc': "INSA Rouen Normandie engineer, I turn healthcare data — <strong>medical coding, billing, master data</strong> — into reliable KPIs and practical tools to drive business performance.",
+        'hero.cta1': 'View my projects', 'hero.cta2': 'Contact me', 'hero.cta3': '⬇ Resume version',
+        'stats.months': 'months in healthcare', 'stats.projects': 'data projects delivered',
+        'stats.domains': 'domains: coding · billing · MDM', 'stats.langs': 'working languages',
+        'about.kicker': '01 · Profile', 'about.title': 'About',
+        'about.p1': "<strong>Data Analyst</strong> and INSA Rouen Normandie graduate (engineering degree in computer science and information technology), I specialized in <strong>healthcare data</strong> through a long-term mission at <strong>Ramsay Santé</strong>, Europe's leading private hospital group.",
+        'about.p2': "Working at the heart of the <strong>coding → billing → collection</strong> chain, I learned to make sensitive, complex data speak: securing master data (MDM), building steering KPIs in Power BI, and developing web tools so business teams can monitor their activity autonomously.",
+        'about.p3': "My approach: understand the business challenge before writing a single query, deliver <strong>readable, actionable</strong> analyses, and automate everything that can be.",
+        'about.edu.title': 'INSA Rouen Normandie',
+        'about.edu.desc': 'Engineering degree — Computer science & information technology',
+        'about.health.title': 'Healthcare specialization',
+        'about.health.desc': 'Medical coding, hospital billing, MDM, data quality',
+        'about.loc.title': 'France', 'about.loc.desc': 'Mobile · French / English',
+        'exp.kicker': '02 · Career', 'exp.title': 'Experience',
+        'exp.sub': 'From raw data to hospital activity steering.',
+        'exp.ramsay.duration': '9-month mission',
+        'exp.ramsay.title': 'Data / BI Consultant — Coding & Billing',
+        'exp.ramsay.org': "Europe's leading private hospital group — Master Data Management program",
+        'exp.ramsay.b1.title': 'Medical coding & hospital billing',
+        'exp.ramsay.b1.desc': "Analysis of procedure coding and billing chain data: anomaly and discrepancy detection, flow reliability, rejection monitoring and revenue protection for the facilities.",
+        'exp.ramsay.b2.title': 'KPIs & Power BI dashboards',
+        'exp.ramsay.b2.desc': "Design of steering dashboards for business teams and management: data quality indicators, MDM rollout progress, coding-to-billing chain performance.",
+        'exp.ramsay.b3.title': 'Monitoring & analytics Web App',
+        'exp.ramsay.b3.desc': "Development of a web application dedicated to program data monitoring and analysis: master data browsing, quality monitoring, self-service reporting for users.",
+        'exp.ramsay.b4.title': 'MDM & change management',
+        'exp.ramsay.b4.desc': "Contribution to the Master Data Management program steering: framing of master data governance rules, user support, documentation and adoption of new processes.",
+        'exp.ramsay.chip': 'Healthcare billing',
+        'exp.insa.duration': 'Certified project',
+        'exp.insa.title': 'Consulting mission — Data migration & KPIs',
+        'exp.insa.org': 'Certified project carried out in real conditions for a client',
+        'exp.insa.b1.title': 'Migration Proof of Concept',
+        'exp.insa.b1.desc': "Design and delivery of a POC migrating data to a clean, structured and documented database: modeling, cleansing, transformation rules and consistency validation.",
+        'exp.insa.b2.title': 'Business indicators',
+        'exp.insa.b2.desc': "Implementation of KPI calculations on the migrated data for clear, actionable business tracking, with final delivery presented to the client.",
+        'exp.insa.chip1': 'Data modeling',
+        'exp.edu.title': 'Engineering degree — Computer Science & IT',
+        'exp.edu.org': 'French engineering school',
+        'exp.edu.desc': 'Engineering curriculum in computer science and information technology: databases, algorithms, software development, statistics and data analysis, project management.',
+        'proj.kicker': '03 · Work', 'proj.title': 'High-value projects',
+        'proj.sub': 'A selection of professional, academic and personal projects.',
+        'proj.filter.all': 'All', 'proj.filter.pro': 'Professional',
+        'proj.filter.academic': 'Academic', 'proj.filter.personal': 'Personal',
+        'proj.badge.pro': 'Pro · Ramsay Santé', 'proj.badge.pro2': 'Pro · Ramsay Santé', 'proj.badge.pro3': 'Pro · Ramsay Santé',
+        'proj.badge.academic': 'Academic · Certified', 'proj.badge.personal': 'Personal', 'proj.badge.personal2': 'Personal',
+        'proj.p1.title': 'Coding & billing data reliability',
+        'proj.p1.desc': "Analysis of the coding → billing chain: detection of anomalies and billing discrepancies, rejection monitoring, data reliability work to protect facility revenue.",
+        'proj.p1.chip': 'Data Quality',
+        'proj.p2.title': 'Power BI steering dashboards',
+        'proj.p2.desc': "Dashboards for management and business teams: data quality KPIs, MDM rollout progress and billing performance — from raw data to decision.",
+        'proj.p3.title': 'Data monitoring Web App',
+        'proj.p3.desc': "Development of a web application for MDM program data monitoring and analysis: master data browsing, quality monitoring and self-service reporting.",
+        'proj.p4.title': 'Database migration POC',
+        'proj.p4.desc': "INSA-certified consulting mission: data migration to a clean, structured, documented database, then implementation of actionable KPIs for the client's business tracking.",
+        'proj.p5.title': 'Real estate market analysis',
+        'proj.p5.desc': "Study of California housing prices: data exploration, identification of key valuation drivers and trend visualization with Python.",
+        'proj.p6.title': 'This interactive portfolio',
+        'proj.p6.desc': "100% handcrafted site in vanilla HTML / CSS / JS: canvas animations, FR/EN bilingual, light/dark theme, printable resume version — hosted on GitHub Pages.",
+        'skills.kicker': '04 · Expertise', 'skills.title': 'Skills',
+        'skills.bi.title': 'Analytics & BI', 'skills.bi.kpi': 'KPIs & reporting',
+        'skills.tech.title': 'Data Engineering',
+        'skills.health.title': 'Healthcare Data',
+        'skills.health.billing': 'Coding & billing', 'skills.health.mdm': 'MDM & master data',
+        'skills.health.quality': 'Data quality',
+        'skills.soft.title': 'Steering & Business',
+        'skills.soft.change': 'Change management', 'skills.soft.pm': 'Activity steering',
+        'skills.soft.com': 'Delivery & communication',
+        'contact.kicker': '05 · Contact', 'contact.title': "Let's work together",
+        'contact.sub': 'A data project? A mission?',
+        'contact.text': 'I am open to opportunities in data analysis, BI and healthcare data. Fast reply guaranteed.',
+        'contact.form.name': 'Your name', 'contact.form.email': 'Your email',
+        'contact.form.message': 'Your message', 'contact.form.send': 'Send message',
+        'footer.text': '© 2026 Maxime Laurent — Designed & hand-coded',
+        'roles': ['Data Analyst', 'Healthcare Data Specialist', 'Power BI · SQL · Python', 'Coding & Billing', 'INSA Engineer']
       }
     };
 
-    let currentLang = 'fr';
+    let lang = localStorage.getItem('cv-lang') || 'fr';
 
-    function setLanguage(lang) {
-      currentLang = lang;
+    function applyLang(l) {
+      lang = l;
+      document.documentElement.lang = l;
       document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-          el.innerHTML = translations[lang][key];
-        }
+        const k = el.getAttribute('data-i18n');
+        if (T[l][k]) el.innerHTML = T[l][k];
       });
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (translations[lang][key]) {
-          el.placeholder = translations[lang][key];
-        }
+      document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+        const k = el.getAttribute('data-i18n-ph');
+        if (T[l][k]) el.placeholder = T[l][k];
       });
-      document.getElementById('langToggle').textContent = lang === 'fr' ? 'EN' : 'FR';
-      localStorage.setItem('cv-lang', lang);
+      document.getElementById('langToggle').textContent = l === 'fr' ? 'EN' : 'FR';
+      localStorage.setItem('cv-lang', l);
+      roleIdx = 0; charIdx = 0; deleting = false;
     }
 
-    // ========== TYPING EFFECT ==========
-    const name = "Laurent Maxime";
-    let charIndex = 0;
-    const typedElement = document.getElementById('typed-name');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(lang === 'fr' ? 'en' : 'fr'));
 
-    function typeWriter() {
-      if (charIndex < name.length) {
-        typedElement.textContent = name.substring(0, charIndex + 1);
-        charIndex++;
-        setTimeout(typeWriter, 120);
+    /* ============ THEME ============ */
+    const themeBtn = document.getElementById('themeToggle');
+    function applyTheme(mode) {
+      document.documentElement.classList.toggle('light', mode === 'light');
+      themeBtn.textContent = mode === 'light' ? '☀' : '☾';
+      localStorage.setItem('cv-theme', mode);
+    }
+    themeBtn.addEventListener('click', () => {
+      applyTheme(document.documentElement.classList.contains('light') ? 'dark' : 'light');
+    });
+    applyTheme(localStorage.getItem('cv-theme') || 'dark');
+
+    /* ============ TYPING ROLES ============ */
+    const typedEl = document.getElementById('typedRole');
+    let roleIdx = 0, charIdx = 0, deleting = false;
+
+    function typeLoop() {
+      const roles = T[lang]['roles'];
+      const current = roles[roleIdx % roles.length];
+      if (!deleting) {
+        charIdx++;
+        typedEl.textContent = current.substring(0, charIdx);
+        if (charIdx === current.length) { deleting = true; setTimeout(typeLoop, 1800); return; }
+        setTimeout(typeLoop, 65);
+      } else {
+        charIdx--;
+        typedEl.textContent = current.substring(0, charIdx);
+        if (charIdx === 0) { deleting = false; roleIdx++; setTimeout(typeLoop, 350); return; }
+        setTimeout(typeLoop, 32);
       }
     }
 
-    // ========== THEME TOGGLE ==========
-    const themeToggle = document.getElementById('themeToggle');
+    /* ============ PARTICLES ============ */
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [], mouse = { x: -9999, y: -9999 };
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    function setTheme(isDark) {
-      if (isDark) {
-        document.documentElement.classList.remove('light-mode');
-        themeToggle.innerHTML = '&#9790;'; // Moon
-      } else {
-        document.documentElement.classList.add('light-mode');
-        themeToggle.innerHTML = '&#9728;'; // Sun
-      }
-      localStorage.setItem('cv-theme', isDark ? 'dark' : 'light');
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const count = Math.min(90, Math.floor(canvas.width * canvas.height / 22000));
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        r: Math.random() * 1.6 + 0.6
+      }));
     }
 
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.classList.contains('light-mode');
-      setTheme(isDark);
-    });
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const isLight = document.documentElement.classList.contains('light');
+      const dotColor = isLight ? 'rgba(13,148,136,0.5)' : 'rgba(45,212,191,0.55)';
+      const lineBase = isLight ? '13,148,136' : '45,212,191';
 
-    // ========== LANGUAGE TOGGLE ==========
-    document.getElementById('langToggle').addEventListener('click', () => {
-      setLanguage(currentLang === 'fr' ? 'en' : 'fr');
-    });
+      for (const p of particles) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
-    // ========== NAVIGATION ==========
-    const navbar = document.getElementById('navbar');
-    const sections = document.querySelectorAll('section, header');
-    const navLinks = document.querySelectorAll('.nav-links a');
+        const dxm = p.x - mouse.x, dym = p.y - mouse.y;
+        const dm = Math.hypot(dxm, dym);
+        if (dm < 140 && dm > 0.1) { p.x += dxm / dm * 0.6; p.y += dym / dm * 0.6; }
 
-    window.addEventListener('scroll', () => {
-      // Show/hide navbar
-      if (window.scrollY > 100) {
-        navbar.classList.add('visible');
-      } else {
-        navbar.classList.remove('visible');
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = dotColor;
+        ctx.fill();
       }
-
-      // Active section highlighting
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 200) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
-      });
-    });
-
-    // Mobile menu toggle
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('.nav-links').classList.toggle('open');
-    });
-
-    // Close mobile menu on link click
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.remove('open');
-      });
-    });
-
-    // ========== SCROLL REVEAL ==========
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-    const skillBars = document.querySelectorAll('.skill-fill');
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-
-          // Animate skill bars within this element
-          const skillFills = entry.target.querySelectorAll('.skill-fill');
-          skillFills.forEach(fill => {
-            fill.classList.add('animated');
-          });
-        }
-      });
-    }, { threshold: 0.1 });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // Also observe skill cards directly
-    document.querySelectorAll('.card').forEach(card => {
-      revealObserver.observe(card);
-    });
-
-    // ========== SCROLL TO TOP ==========
-    const scrollTopBtn = document.getElementById('scrollTop');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
-        scrollTopBtn.classList.add('visible');
-      } else {
-        scrollTopBtn.classList.remove('visible');
-      }
-    });
-
-    scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // ========== PROJECT FILTERS ==========
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('#projects-grid .card');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filter = btn.getAttribute('data-filter');
-
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        projectCards.forEach(card => {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const d = Math.hypot(dx, dy);
+          if (d < 130) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(${lineBase},${(1 - d / 130) * 0.18})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
           }
+        }
+      }
+      if (!reducedMotion) requestAnimationFrame(drawParticles);
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+    window.addEventListener('mouseout', () => { mouse.x = -9999; mouse.y = -9999; });
+
+    /* ============ NAV / SCROLL ============ */
+    const navbar = document.getElementById('navbar');
+    const progress = document.getElementById('progress');
+    const scrollTopBtn = document.getElementById('scrollTop');
+    const sections = document.querySelectorAll('section, header');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      navbar.classList.toggle('scrolled', y > 40);
+      scrollTopBtn.classList.toggle('visible', y > 600);
+
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+
+      let current = '';
+      sections.forEach(s => { if (y >= s.offsetTop - 220) current = s.id; });
+      navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+    }, { passive: true });
+
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinksEl = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => navLinksEl.classList.toggle('open'));
+    navAnchors.forEach(a => a.addEventListener('click', () => navLinksEl.classList.remove('open')));
+
+    /* ============ REVEAL + COUNTERS + SKILL BARS ============ */
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('visible');
+        e.target.querySelectorAll('.skill-fill').forEach(f => f.classList.add('animated'));
+        e.target.querySelectorAll('.counter:not(.done)').forEach(runCounter);
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal, .skill-card, .hero-stats').forEach(el => io.observe(el));
+
+    function runCounter(el) {
+      el.classList.add('done');
+      const target = +el.dataset.target;
+      const dur = 1200, t0 = performance.now();
+      (function step(t) {
+        const p = Math.min((t - t0) / dur, 1);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(step);
+      })(t0);
+    }
+
+    /* ============ PROJECT FILTERS + SPOTLIGHT ============ */
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        document.querySelectorAll('#projectsGrid .project').forEach(card => {
+          card.classList.toggle('hidden', f !== 'all' && card.dataset.category !== f);
         });
       });
     });
 
-    // ========== CONTACT FORM ==========
-    document.getElementById('contactForm').addEventListener('submit', (e) => {
+    document.querySelectorAll('.project').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+
+    /* ============ CONTACT FORM ============ */
+    document.getElementById('contactForm').addEventListener('submit', e => {
       e.preventDefault();
-      const formData = new FormData(e.target);
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const message = formData.get('message');
-
-      // Create mailto link with form data
-      const mailtoLink = `mailto:maxime.laurent02@icloud.com?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`From: ${name}\nEmail: ${email}\n\n${message}`)}`;
-      window.location.href = mailtoLink;
+      const fd = new FormData(e.target);
+      const body = `From: ${fd.get('name')}\nEmail: ${fd.get('email')}\n\n${fd.get('message')}`;
+      location.href = `mailto:maxime.laurent02@icloud.com?subject=${encodeURIComponent('Contact — ' + fd.get('name'))}&body=${encodeURIComponent(body)}`;
     });
 
-    // ========== DOWNLOAD CV ==========
-    document.getElementById('downloadCV').addEventListener('click', (e) => {
-      e.preventDefault();
-      alert(currentLang === 'fr'
-        ? 'Le CV PDF sera bientot disponible au telechargement.'
-        : 'The PDF CV will be available for download soon.');
-    });
+    /* ============ CV PRINT ============ */
+    document.getElementById('downloadCV').addEventListener('click', () => window.print());
 
-    // ========== INIT ==========
-    document.addEventListener('DOMContentLoaded', () => {
-      // Load saved preferences
-      const savedTheme = localStorage.getItem('cv-theme');
-      if (savedTheme) {
-        setTheme(savedTheme === 'dark');
-      }
-
-      const savedLang = localStorage.getItem('cv-lang');
-      if (savedLang) {
-        setLanguage(savedLang);
-      }
-
-      // Start typing effect
-      setTimeout(typeWriter, 500);
-    });
+    /* ============ INIT ============ */
+    applyLang(lang);
+    resizeCanvas();
+    drawParticles();
+    setTimeout(typeLoop, 600);
   </script>
-
 </body>
 </html>
