@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Maxime Laurent — Data Analyst spécialisé santé : codage, facturation, MDM, Power BI. Ingénieur INSA Rouen Normandie." />
-  <title>Maxime Laurent — Data Analyst | Santé · BI · Data</title>
+  <meta name="description" content="Maxime Laurent — Consultant Data & IA chez Talan (Assurance & Santé) : IA générative appliquée au codage PMSI, facturation hospitalière, ML, architecture Azure. Ingénieur INSA Rouen Normandie." />
+  <title>Maxime Laurent — Consultant Data & IA | Santé · LLM · PMSI</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -230,7 +230,7 @@
     @keyframes blink { 50% { opacity: 0; } }
 
     .hero-desc {
-      margin-top: 1.4rem; max-width: 640px;
+      margin-top: 1.4rem; max-width: 680px;
       color: var(--muted); font-size: 1.02rem;
     }
     .hero-desc strong { color: var(--text); font-weight: 600; }
@@ -272,6 +272,7 @@
     .stat .label {
       font-size: 0.72rem; color: var(--muted);
       text-transform: uppercase; letter-spacing: 0.12em; margin-top: 0.2rem;
+      max-width: 200px;
     }
 
     .scroll-hint {
@@ -293,7 +294,7 @@
       font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 700;
       letter-spacing: -0.01em; margin-top: 0.4rem;
     }
-    .section-head .sub { color: var(--muted); margin-top: 0.6rem; max-width: 640px; }
+    .section-head .sub { color: var(--muted); margin-top: 0.6rem; max-width: 680px; }
 
     .glass {
       background: var(--surface);
@@ -341,6 +342,7 @@
     }
     .tl-item:nth-child(2)::before { border-color: var(--accent-2); }
     .tl-item:nth-child(3)::before { border-color: var(--accent-3); }
+    .tl-item:nth-child(4)::before { border-color: #fbbf24; }
 
     .tl-meta {
       font-family: var(--font-mono); font-size: 0.75rem;
@@ -363,6 +365,7 @@
     .tl-block:nth-child(3) h4 .dot { background: var(--accent-3); }
     .tl-block:nth-child(4) h4 .dot { background: #fbbf24; }
     .tl-block:nth-child(5) h4 .dot { background: #38bdf8; }
+    .tl-block:nth-child(6) h4 .dot { background: #a3e635; }
     .tl-block p { font-size: 0.86rem; color: var(--muted); margin-top: 0.35rem; }
 
     .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.1rem; }
@@ -415,14 +418,17 @@
       width: 46px; height: 46px; border-radius: 13px; font-size: 1.3rem;
       display: flex; align-items: center; justify-content: center;
       background: var(--accent-soft); border: 1px solid var(--border);
+      flex-shrink: 0;
     }
     .project .badge {
       font-family: var(--font-mono); font-size: 0.65rem;
       padding: 0.25rem 0.65rem; border-radius: 999px;
       letter-spacing: 0.08em; text-transform: uppercase;
       border: 1px solid var(--border); color: var(--muted);
+      text-align: right;
     }
     .project[data-category="pro"] .badge { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+    .project[data-category="pro-btp"] .badge { color: #fbbf24; border-color: color-mix(in srgb, #fbbf24 45%, transparent); }
     .project[data-category="academic"] .badge { color: var(--accent-2); border-color: color-mix(in srgb, var(--accent-2) 45%, transparent); }
     .project[data-category="personal"] .badge { color: var(--accent-3); border-color: color-mix(in srgb, var(--accent-3) 45%, transparent); }
 
@@ -442,7 +448,7 @@
     }
     .skill-card h3 { font-size: 1rem; margin-bottom: 0.9rem; }
     .skill-row { margin-bottom: 0.85rem; }
-    .skill-row .top { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.35rem; }
+    .skill-row .top { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.35rem; gap: 0.6rem; }
     .skill-row .top .pct { font-family: var(--font-mono); color: var(--muted); font-size: 0.72rem; }
     .skill-bar { background: var(--surface-strong); border-radius: 99px; height: 7px; overflow: hidden; }
     .skill-fill {
@@ -562,7 +568,7 @@
       <img src="photo.jpg" alt="Maxime Laurent" />
     </div>
 
-    <span class="hero-eyebrow"><span class="pulse-dot"></span><span data-i18n="hero.available">Disponible pour de nouvelles missions</span></span>
+    <span class="hero-eyebrow"><span class="pulse-dot"></span><span data-i18n="hero.eyebrow">Consultant @ Talan — Practice Assurance & Santé</span></span>
 
     <h1>Maxime <span class="grad">Laurent</span></h1>
 
@@ -571,7 +577,7 @@
     </div>
 
     <p class="hero-desc" data-i18n="hero.desc">
-      Ingénieur INSA Rouen Normandie, je transforme les données de santé — <strong>codage, facturation, référentiels</strong> — en indicateurs fiables et en outils concrets pour piloter l'activité.
+      Ingénieur INSA Rouen Normandie, je conçois et déploie des solutions d'<strong>IA générative et de data science</strong> appliquées à la santé : codage médical PMSI assisté par IA, contrôle de facturation, ML prédictif — <strong>du cadrage à la mise en production</strong>.
     </p>
 
     <div class="hero-buttons">
@@ -582,20 +588,20 @@
 
     <div class="hero-stats">
       <div class="stat">
-        <div class="num"><span class="counter" data-target="9">0</span></div>
-        <div class="label" data-i18n="stats.months">mois de mission santé</div>
-      </div>
-      <div class="stat">
-        <div class="num"><span class="counter" data-target="6">0</span><span class="plus">+</span></div>
-        <div class="label" data-i18n="stats.projects">projets data livrés</div>
-      </div>
-      <div class="stat">
-        <div class="num"><span class="counter" data-target="3">0</span></div>
-        <div class="label" data-i18n="stats.domains">domaines : codage · facturation · MDM</div>
-      </div>
-      <div class="stat">
         <div class="num"><span class="counter" data-target="2">0</span></div>
-        <div class="label" data-i18n="stats.langs">langues de travail</div>
+        <div class="label" data-i18n="stats.missions">missions grands comptes</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="counter" data-target="12">0</span><span class="plus">+</span></div>
+        <div class="label" data-i18n="stats.projects">projets data & IA livrés</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="counter" data-target="5">0</span></div>
+        <div class="label" data-i18n="stats.llm">LLM benchmarkés sur cas réels</div>
+      </div>
+      <div class="stat">
+        <div class="num">2,2M</div>
+        <div class="label" data-i18n="stats.stays">séjours MCO/an sur le périmètre analysé</div>
       </div>
     </div>
 
@@ -611,35 +617,35 @@
     <div class="about-grid">
       <div class="glass about-text reveal">
         <p data-i18n="about.p1">
-          <strong>Data Analyst</strong> diplômé de l'INSA Rouen Normandie (ingénieur en informatique et technologies de l'information), je me suis spécialisé dans la <strong>donnée de santé</strong> à travers une mission longue chez <strong>Ramsay Santé</strong>, leader européen de l'hospitalisation privée.
+          <strong>Consultant Data & IA</strong> chez <strong>Talan</strong> (practice Assurance & Santé) et ingénieur diplômé de l'INSA Rouen Normandie, j'interviens à la croisée du <strong>conseil et de l'implémentation technique</strong> : cadrage, architecture, développement et delivery.
         </p>
         <p data-i18n="about.p2">
-          Au cœur de la chaîne <strong>codage → facturation → recouvrement</strong>, j'ai appris à faire parler des données sensibles et complexes : fiabiliser les référentiels (MDM), construire des KPI de pilotage sur Power BI, et développer des outils web pour que les équipes métier suivent leur activité en autonomie.
+          Chez <strong>Ramsay Santé</strong>, leader européen de l'hospitalisation privée, je pilote des chantiers d'IA appliquée au cœur du système hospitalier français : <strong>codage médical PMSI assisté par LLM</strong>, détection des rejets de facturation CPAM, moteur de groupage GHM, ML prédictif — sur un périmètre de ~2,2 millions de séjours MCO par an.
         </p>
         <p data-i18n="about.p3">
-          Mon approche : comprendre l'enjeu métier avant d'écrire la moindre requête, livrer des analyses <strong>lisibles et actionnables</strong>, et automatiser tout ce qui peut l'être.
+          Mon approche : maîtriser le <strong>métier</strong> (CIM-10, CCAM, T2A, S3404) autant que la <strong>technique</strong> (LLM, RAG, XGBoost, Azure/AKS), pour livrer des solutions auditables, conformes (HDS/RGPD) et réellement adoptées par les utilisateurs.
         </p>
       </div>
       <div class="about-side">
         <div class="glass info-card reveal" data-delay="1">
-          <div class="ico">🎓</div>
+          <div class="ico">💼</div>
           <div>
-            <h4 data-i18n="about.edu.title">INSA Rouen Normandie</h4>
-            <p data-i18n="about.edu.desc">Diplôme d'ingénieur — Informatique & technologies de l'information</p>
+            <h4>Talan</h4>
+            <p data-i18n="about.talan.desc">Consultant — practice Assurance & Santé · Conseil + implémentation</p>
           </div>
         </div>
         <div class="glass info-card reveal" data-delay="2">
-          <div class="ico">🏥</div>
+          <div class="ico">🎓</div>
           <div>
-            <h4 data-i18n="about.health.title">Spécialisation santé</h4>
-            <p data-i18n="about.health.desc">Codage des actes, facturation hospitalière, MDM, qualité des données</p>
+            <h4>INSA Rouen Normandie</h4>
+            <p data-i18n="about.edu.desc">Diplôme d'ingénieur — Informatique & technologies de l'information</p>
           </div>
         </div>
         <div class="glass info-card reveal" data-delay="3">
-          <div class="ico">📍</div>
+          <div class="ico">🏥</div>
           <div>
-            <h4 data-i18n="about.loc.title">France</h4>
-            <p data-i18n="about.loc.desc">Mobile · Français / Anglais</p>
+            <h4 data-i18n="about.health.title">Expertise santé</h4>
+            <p data-i18n="about.health.desc">PMSI MCO · CIM-10 · CCAM · GHM/T2A · facturation CPAM · HDS/RGPD</p>
           </div>
         </div>
       </div>
@@ -651,41 +657,66 @@
     <div class="section-head reveal">
       <span class="kicker" data-i18n="exp.kicker">02 · Parcours</span>
       <h2 data-i18n="exp.title">Expérience</h2>
-      <p class="sub" data-i18n="exp.sub">De la donnée brute au pilotage de l'activité hospitalière.</p>
+      <p class="sub" data-i18n="exp.sub">Du conseil à la mise en production : IA générative, data science et expertise métier.</p>
     </div>
 
     <div class="timeline">
-      <!-- Ramsay -->
+      <!-- Ramsay via Talan -->
       <div class="tl-item reveal">
-        <span class="tl-meta">2025 — 2026 · <span data-i18n="exp.ramsay.duration">Mission 9 mois</span></span>
-        <h3 data-i18n="exp.ramsay.title">Consultant Data / BI — Codage & Facturation</h3>
-        <p class="org"><strong>Ramsay Santé</strong> · <span data-i18n="exp.ramsay.org">Leader européen de l'hospitalisation privée — Programme Master Data Management</span></p>
+        <span class="tl-meta">2025 — 2026 · <span data-i18n="exp.ramsay.duration">Mission longue</span></span>
+        <h3 data-i18n="exp.ramsay.title">Consultant Data & IA — Mission Ramsay Santé</h3>
+        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.ramsay.org">Ramsay Santé, leader européen de l'hospitalisation privée — chantiers IA/data menés en parallèle avec sponsor Direction Data (IDCO)</span></p>
         <div class="tl-body">
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b1.title">Qualité & exhaustivité du codage des actes</span></h4>
-            <p data-i18n="exp.ramsay.b1.desc">Analyse des données de codage des actes : contrôles de cohérence et d'exhaustivité, détection des actes manquants, incohérents ou mal codés, croisement avec les référentiels, et appui aux équipes des établissements pour fiabiliser le codage à la source.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b1.title">Codage médical PMSI assisté par IA</span></h4>
+            <p data-i18n="exp.ramsay.b1.desc">Pipeline multi-LLM de codage CIM-10 (DP/DR/DAS) : benchmark GPT, Gemini, Mistral, Grok et Claude avec scoring hiérarchique pondéré, RAG (FAISS), pseudonymisation NER (EDS-Pseudo AP-HP en API Docker) et interface React de validation pour les TIM. Pilote : 100 % de justesse sur le diagnostic principal (Gemini/GPT) contre 63 % pour la référence humaine, sur un échantillon de 8 séjours. Architecture multi-agents LangGraph (codeur → contrôle qualité → arbitrage) proposée pour l'industrialisation.</p>
           </div>
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b5.title">Rejets de facturation & sécurisation des recettes</span></h4>
-            <p data-i18n="exp.ramsay.b5.desc">Analyse des rejets de facturation : catégorisation des motifs de rejet, identification des causes racines, tableaux de suivi du retraitement et plans d'action pour réduire les rejets récurrents — un levier direct de sécurisation des recettes des établissements.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b2.title">Contrôle facturation & rejets CPAM (S3404)</span></h4>
+            <p data-i18n="exp.ramsay.b2.desc">Pipeline hybride LLM + Python déterministe de détection des rejets de factures CPAM sur un benchmark de 81 factures. Diagnostic d'une dérive de version de modèle GPT sur Azure (96 % → 59-72 %), analyse des faux positifs, et recommandation retenue d'une architecture hybride : règles déterministes pour les motifs structurés, LLM pour les motifs sémantiques. Construction d'un référentiel de 24 codes de rejet et des 19 associations d'actes CCAM bloquées.</p>
           </div>
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b2.title">KPI & dashboards Power BI</span></h4>
-            <p data-i18n="exp.ramsay.b2.desc">Conception de tableaux de bord de pilotage pour les équipes métier et le management : indicateurs de qualité des données, avancement du déploiement MDM, performance de la chaîne codage-facturation.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b3.title">ML prédictif des rejets de facturation</span></h4>
+            <p data-i18n="exp.ramsay.b3.desc">Détection prédictive des factures à risque de rejet CPAM : XGBoost retenu face au fine-tuning LLM pour l'auditabilité, le coût et la reproductibilité, avec explicabilité SHAP. Données relationnelles issues de la base factures répliquée, stockage cible Azure (ADLS Gen2), scoring batch et exposition FastAPI.</p>
           </div>
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b3.title">Web App de suivi & d'analyse</span></h4>
-            <p data-i18n="exp.ramsay.b3.desc">Développement d'une application web dédiée au suivi et à l'analyse des données du programme : consultation des référentiels, monitoring de la qualité, restitution en libre-service pour les utilisateurs.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b4.title">Moteur PMSI : groupeur GHM & revalorisation</span></h4>
+            <p data-i18n="exp.ramsay.b4.desc">Développement d'un module Python complet de groupage GHM 2026 (parsing RSS au format ATIH, actes classants CCAM, niveaux de sévérité CMA, valorisation T2A : GHS, EXB/EXH, suppléments réanimation) sur les référentiels officiels ATIH. En complément, framework de détection du sous-codage : analyse de 90 RSS et scoring data-driven des séjours revalorisables par racine GHM.</p>
           </div>
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b4.title">MDM & conduite du changement</span></h4>
-            <p data-i18n="exp.ramsay.b4.desc">Participation au pilotage du programme Master Data Management : cadrage des règles de gestion des données de référence, accompagnement des utilisateurs, documentation et adoption des nouveaux processus.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b5.title">Architecture Azure & veille automatisée</span></h4>
+            <p data-i18n="exp.ramsay.b5.desc">Conception d'un système de veille des appels à projets de financement public, architecture validée avec l'architecte Azure du client : PostgreSQL + pgvector (index HNSW, embeddings 3072 dimensions), Bing Grounding, Key Vault CSI, déploiement Helm + ArgoCD sur AKS. Documents de cadrage produits en français et en anglais.</p>
+          </div>
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b6.title">Stratégie produit & avant-vente</span></h4>
+            <p data-i18n="exp.ramsay.b6.desc">Définition du produit V1 « codage PMSI assisté par IA » pour Talan (spécification 16 semaines / 6 lots, abstraction LLM multi-provider conforme HDS, Ramsay pressenti premier bêta-testeur) et évaluation de la réponse à un appel d'offres suisse (FHVi) : analyse des gaps et stratégie de partenariat.</p>
           </div>
         </div>
         <div class="chips">
-          <span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">Python</span>
-          <span class="chip">Azure</span><span class="chip">Databricks</span><span class="chip">MDM</span>
-          <span class="chip">GitLab</span><span class="chip" data-i18n="exp.ramsay.chip">Facturation santé</span>
+          <span class="chip">Python</span><span class="chip">Azure OpenAI</span><span class="chip">LangGraph</span>
+          <span class="chip">RAG · FAISS</span><span class="chip">XGBoost · SHAP</span><span class="chip">React</span>
+          <span class="chip">Docker</span><span class="chip">AKS · ArgoCD</span><span class="chip">PMSI · T2A</span>
+        </div>
+      </div>
+
+      <!-- DEGAINE -->
+      <div class="tl-item reveal">
+        <span class="tl-meta">2026 · <span data-i18n="exp.degaine.duration">Mission conseil & IA</span></span>
+        <h3 data-i18n="exp.degaine.title">Consultant IA — Mission DEGAINE (VINCI Construction)</h3>
+        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.degaine.org">Filiale VINCI spécialisée dans la restauration de monuments historiques classés</span></p>
+        <div class="tl-body">
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.degaine.b1.title">Veille automatisée d'appels d'offres publics</span></h4>
+            <p data-i18n="exp.degaine.b1.desc">Conception d'un système de veille destiné à remplacer un abonnement payant : collecte via les API BOAMP/TED, puis triage intelligent par LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs du filtrage par mots-clés, avec scoring go/no-go des consultations patrimoine.</p>
+          </div>
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.degaine.b2.title">Atelier client IA — pré-chiffrage patrimoine</span></h4>
+            <p data-i18n="exp.degaine.b2.desc">Préparation et animation d'un atelier client démontrant l'IA agentique (Claude) sur un cas de pré-chiffrage de DCE de restauration : skill de chiffrage dédié, bordereau de prix unitaires de 33 lignes, deck de restitution — démonstration sur le CCTP réel d'un monument classé.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <span class="chip">Mistral</span><span class="chip">Azure AI Foundry</span><span class="chip">Claude</span>
+          <span class="chip">BOAMP · TED</span><span class="chip" data-i18n="exp.degaine.chip">Marchés publics</span>
         </div>
       </div>
 
@@ -696,12 +727,7 @@
         <p class="org"><strong>INSA Rouen Normandie</strong> · <span data-i18n="exp.insa.org">Projet certifié mené en conditions réelles pour un client</span></p>
         <div class="tl-body">
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.insa.b1.title">Proof of Concept de migration</span></h4>
-            <p data-i18n="exp.insa.b1.desc">Conception et réalisation d'un POC de migration des données vers une base propre, structurée et documentée : modélisation, nettoyage, règles de transformation et validation de la cohérence.</p>
-          </div>
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.insa.b2.title">Indicateurs métier</span></h4>
-            <p data-i18n="exp.insa.b2.desc">Implémentation des calculs de KPI sur les données migrées pour offrir un suivi clair et exploitable des indicateurs métier, avec restitution auprès du client en fin de mission.</p>
+            <p data-i18n="exp.insa.desc">Réalisation d'un Proof of Concept de migration des données vers une base propre, structurée et documentée (modélisation, nettoyage, règles de transformation), puis implémentation des calculs de KPI sur les données migrées avec restitution finale au client.</p>
           </div>
         </div>
         <div class="chips">
@@ -729,12 +755,13 @@
     <div class="section-head reveal">
       <span class="kicker" data-i18n="proj.kicker">03 · Réalisations</span>
       <h2 data-i18n="proj.title">Projets à valeur ajoutée</h2>
-      <p class="sub" data-i18n="proj.sub">Une sélection de projets professionnels, académiques et personnels.</p>
+      <p class="sub" data-i18n="proj.sub">IA générative, ML et data appliqués à des enjeux métier réels — santé, marchés publics, patrimoine.</p>
     </div>
 
     <div class="filter-buttons reveal">
       <button class="filter-btn active" data-filter="all" data-i18n="proj.filter.all">Tous</button>
-      <button class="filter-btn" data-filter="pro" data-i18n="proj.filter.pro">Professionnel</button>
+      <button class="filter-btn" data-filter="pro" data-i18n="proj.filter.pro">Santé · Ramsay</button>
+      <button class="filter-btn" data-filter="pro-btp" data-i18n="proj.filter.btp">BTP · VINCI</button>
       <button class="filter-btn" data-filter="academic" data-i18n="proj.filter.academic">Académique</button>
       <button class="filter-btn" data-filter="personal" data-i18n="proj.filter.personal">Personnel</button>
     </div>
@@ -742,61 +769,141 @@
     <div class="projects-grid" id="projectsGrid">
       <div class="project glass reveal" data-category="pro">
         <div class="project-top">
-          <div class="ico">🧾</div>
-          <span class="badge" data-i18n="proj.badge.pro">Pro · Ramsay Santé</span>
+          <div class="ico">🧠</div>
+          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
         </div>
-        <h3 data-i18n="proj.p1.title">Fiabilisation codage & facturation</h3>
-        <p data-i18n="proj.p1.desc">Analyse de la chaîne codage → facturation : détection des anomalies et des écarts de facturation, suivi des rejets, fiabilisation des données pour sécuriser les recettes des établissements.</p>
-        <div class="chips"><span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip" data-i18n="proj.p1.chip">Data Quality</span></div>
+        <h3 data-i18n="proj.p1.title">Codage CIM-10 assisté par IA</h3>
+        <p data-i18n="proj.p1.desc">Pipeline multi-LLM de codage PMSI (DP/DR/DAS) : benchmark de 5 modèles avec scoring hiérarchique, RAG FAISS, interface React de validation pour les TIM. Pilote : 100 % de justesse sur le DP vs 63 % pour la référence humaine.</p>
+        <div class="chips"><span class="chip">LLM</span><span class="chip">RAG</span><span class="chip">React</span></div>
       </div>
 
       <div class="project glass reveal" data-category="pro" data-delay="1">
         <div class="project-top">
-          <div class="ico">📊</div>
-          <span class="badge" data-i18n="proj.badge.pro2">Pro · Ramsay Santé</span>
+          <div class="ico">🔒</div>
+          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
         </div>
-        <h3 data-i18n="proj.p2.title">Dashboards Power BI de pilotage</h3>
-        <p data-i18n="proj.p2.desc">Conception de tableaux de bord pour le management et les équipes métier : KPI de qualité des données, avancement du déploiement MDM et performance de la facturation, du brut à la décision.</p>
-        <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">KPI</span></div>
+        <h3 data-i18n="proj.p2.title">Pseudonymisation de données médicales</h3>
+        <p data-i18n="proj.p2.desc">Pipeline d'anonymisation des dossiers patients avant tout appel LLM : modèle NER EDS-Pseudo (AP-HP) déployé en API Docker, complété par une couche regex — prérequis de conformité HDS/RGPD du projet de codage IA.</p>
+        <div class="chips"><span class="chip">NER</span><span class="chip">Docker</span><span class="chip">RGPD · HDS</span></div>
       </div>
 
       <div class="project glass reveal" data-category="pro" data-delay="2">
         <div class="project-top">
-          <div class="ico">🖥️</div>
-          <span class="badge" data-i18n="proj.badge.pro3">Pro · Ramsay Santé</span>
+          <div class="ico">🧾</div>
+          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
         </div>
-        <h3 data-i18n="proj.p3.title">Web App de suivi des données</h3>
-        <p data-i18n="proj.p3.desc">Développement d'une application web de suivi et d'analyse des données du programme MDM : consultation des référentiels, monitoring de la qualité et restitution en libre-service.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">Web App</span><span class="chip">Azure</span></div>
+        <h3 data-i18n="proj.p3.title">Détection des rejets CPAM (S3404)</h3>
+        <p data-i18n="proj.p3.desc">Pipeline hybride LLM + Python déterministe sur 81 factures : diagnostic d'une dérive de modèle GPT (96 % → 59-72 %), référentiel de 24 codes de rejet et 19 associations CCAM bloquées, architecture hybride retenue par le client.</p>
+        <div class="chips"><span class="chip">LLM</span><span class="chip">Python</span><span class="chip">CPAM</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="academic">
+      <div class="project glass reveal" data-category="pro">
+        <div class="project-top">
+          <div class="ico">📈</div>
+          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
+        </div>
+        <h3 data-i18n="proj.p4.title">ML prédictif des rejets de facturation</h3>
+        <p data-i18n="proj.p4.desc">Scoring prédictif des factures à risque de rejet : XGBoost préféré au fine-tuning LLM pour l'auditabilité et le coût, explicabilité SHAP, données relationnelles de la base factures, cible Azure ADLS Gen2 + API FastAPI.</p>
+        <div class="chips"><span class="chip">XGBoost</span><span class="chip">SHAP</span><span class="chip">FastAPI</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="pro" data-delay="1">
+        <div class="project-top">
+          <div class="ico">⚙️</div>
+          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
+        </div>
+        <h3 data-i18n="proj.p5.title">Groupeur GHM Python & valorisation T2A</h3>
+        <p data-i18n="proj.p5.desc">Moteur complet de groupage GHM 2026 : parsing des RSS au format ATIH, actes classants CCAM, niveaux de sévérité CMA, valorisation T2A (GHS, EXB/EXH, suppléments réanimation) sur les référentiels officiels ATIH.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">PMSI</span><span class="chip">T2A</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="pro" data-delay="2">
+        <div class="project-top">
+          <div class="ico">🔎</div>
+          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
+        </div>
+        <h3 data-i18n="proj.p6.title">Détection de sous-codage & revalorisation</h3>
+        <p data-i18n="proj.p6.desc">Framework d'identification des séjours probablement sous-codés et revalorisables : analyse de 90 RSS, typologie clinique, scoring data-driven fondé sur les taux d'escalade de sévérité par racine GHM pondérés par l'écart de valorisation.</p>
+        <div class="chips"><span class="chip">PMSI</span><span class="chip">Scoring</span><span class="chip">Data</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="pro">
+        <div class="project-top">
+          <div class="ico">🛰️</div>
+          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
+        </div>
+        <h3 data-i18n="proj.p7.title">Veille financements publics sur Azure</h3>
+        <p data-i18n="proj.p7.desc">Système automatisé de veille des appels à projets : PostgreSQL + pgvector (HNSW, embeddings 3072 dim.), Bing Grounding, Key Vault CSI, déploiement Helm + ArgoCD sur AKS — architecture validée avec l'architecte Azure du client.</p>
+        <div class="chips"><span class="chip">pgvector</span><span class="chip">AKS</span><span class="chip">ArgoCD</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="pro" data-delay="1">
+        <div class="project-top">
+          <div class="ico">🚀</div>
+          <span class="badge" data-i18n="proj.badge.talan">Talan · Produit</span>
+        </div>
+        <h3 data-i18n="proj.p8.title">Produit V1 « codage PMSI par IA »</h3>
+        <p data-i18n="proj.p8.desc">Définition d'un produit démontrable pour Talan : parcours TIM complet (upload → pseudonymisation → propositions CIM-10 sourcées → validation), spécification 16 semaines / 6 lots, abstraction LLM multi-provider conforme HDS. Avant-vente associée : évaluation d'un AO hospitalier suisse (FHVi).</p>
+        <div class="chips"><span class="chip" data-i18n="proj.p8.chip1">Produit</span><span class="chip" data-i18n="proj.p8.chip2">Avant-vente</span><span class="chip">HDS</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="pro-btp" data-delay="2">
+        <div class="project-top">
+          <div class="ico">🏛️</div>
+          <span class="badge" data-i18n="proj.badge.degaine">VINCI · DEGAINE</span>
+        </div>
+        <h3 data-i18n="proj.p9.title">Veille d'appels d'offres publics par LLM</h3>
+        <p data-i18n="proj.p9.desc">Système de veille remplaçant un abonnement payant : collecte via les API BOAMP/TED, triage LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs, et scoring go/no-go des consultations de restauration du patrimoine.</p>
+        <div class="chips"><span class="chip">BOAMP · TED</span><span class="chip">Mistral</span><span class="chip">Azure</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="pro-btp">
+        <div class="project-top">
+          <div class="ico">🧱</div>
+          <span class="badge" data-i18n="proj.badge.degaine">VINCI · DEGAINE</span>
+        </div>
+        <h3 data-i18n="proj.p10.title">Atelier IA — pré-chiffrage patrimoine</h3>
+        <p data-i18n="proj.p10.desc">Animation d'un atelier client démontrant l'IA agentique sur le pré-chiffrage d'un DCE de restauration : skill de chiffrage dédié, bordereau de prix de 33 lignes, deck de restitution — démo sur le CCTP réel d'un monument historique classé.</p>
+        <div class="chips"><span class="chip">Claude</span><span class="chip" data-i18n="proj.p10.chip">Atelier client</span><span class="chip">BTP</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="academic" data-delay="1">
         <div class="project-top">
           <div class="ico">🗄️</div>
-          <span class="badge" data-i18n="proj.badge.academic">Académique · Certifié</span>
+          <span class="badge" data-i18n="proj.badge.academic">INSA · Certifié</span>
         </div>
-        <h3 data-i18n="proj.p4.title">POC migration de base de données</h3>
-        <p data-i18n="proj.p4.desc">Mission de consulting certifiée INSA : migration de données vers une base propre, structurée et documentée, puis implémentation de KPI exploitables pour le suivi métier du client.</p>
+        <h3 data-i18n="proj.p11.title">POC migration de base de données</h3>
+        <p data-i18n="proj.p11.desc">Mission de consulting certifiée INSA : migration de données vers une base propre, structurée et documentée, puis implémentation de KPI exploitables pour le suivi métier du client.</p>
         <div class="chips"><span class="chip">SQL</span><span class="chip">ETL</span><span class="chip">Consulting</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="personal" data-delay="1">
-        <div class="project-top">
-          <div class="ico">🏠</div>
-          <span class="badge" data-i18n="proj.badge.personal">Personnel</span>
-        </div>
-        <h3 data-i18n="proj.p5.title">Analyse du marché immobilier</h3>
-        <p data-i18n="proj.p5.desc">Étude du prix de l'immobilier en Californie : exploration des données, identification des facteurs clés de valorisation et visualisation des tendances avec Python.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Data Viz</span></div>
       </div>
 
       <div class="project glass reveal" data-category="personal" data-delay="2">
         <div class="project-top">
-          <div class="ico">✨</div>
-          <span class="badge" data-i18n="proj.badge.personal2">Personnel</span>
+          <div class="ico">🖥️</div>
+          <span class="badge" data-i18n="proj.badge.personal">Personnel</span>
         </div>
-        <h3 data-i18n="proj.p6.title">Ce portfolio interactif</h3>
-        <p data-i18n="proj.p6.desc">Site 100 % fait main en HTML / CSS / JS vanilla : animations canvas, bilingue FR/EN, thème clair/sombre, version CV imprimable — hébergé sur GitHub Pages.</p>
+        <h3 data-i18n="proj.p12.title">Serveur LLM local (homelab)</h3>
+        <p data-i18n="proj.p12.desc">Serveur d'inférence LLM auto-hébergé (WSL2 + Docker + Ollama, GPU RTX 5070 Ti, accès sécurisé via Cloudflare Tunnel) utilisé pour évaluer des modèles open source, notamment médicaux, avant usage en mission.</p>
+        <div class="chips"><span class="chip">Ollama</span><span class="chip">Docker</span><span class="chip">Self-hosted</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="personal">
+        <div class="project-top">
+          <div class="ico">🏠</div>
+          <span class="badge" data-i18n="proj.badge.personal">Personnel</span>
+        </div>
+        <h3 data-i18n="proj.p13.title">Analyse du marché immobilier</h3>
+        <p data-i18n="proj.p13.desc">Étude du prix de l'immobilier en Californie : exploration des données, identification des facteurs clés de valorisation et visualisation des tendances avec Python.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Data Viz</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="personal" data-delay="1">
+        <div class="project-top">
+          <div class="ico">✨</div>
+          <span class="badge" data-i18n="proj.badge.personal">Personnel</span>
+        </div>
+        <h3 data-i18n="proj.p14.title">Ce portfolio interactif</h3>
+        <p data-i18n="proj.p14.desc">Site 100 % fait main en HTML / CSS / JS vanilla : animations canvas, bilingue FR/EN, thème clair/sombre, version CV imprimable — hébergé sur GitHub Pages.</p>
         <div class="chips"><span class="chip">HTML/CSS</span><span class="chip">JavaScript</span><span class="chip">GitHub Pages</span></div>
       </div>
     </div>
@@ -811,70 +918,87 @@
 
     <div class="skills-grid">
       <div class="glass skill-card reveal">
-        <div class="ico">📈</div>
-        <h3 data-i18n="skills.bi.title">Analyse & BI</h3>
+        <div class="ico">🤖</div>
+        <h3 data-i18n="skills.ai.title">IA générative & LLM</h3>
         <div class="skill-row">
-          <div class="top"><span>Power BI / DAX</span><span class="pct">90%</span></div>
+          <div class="top"><span>Azure OpenAI · Mistral · Anthropic · Ollama</span><span class="pct">90%</span></div>
           <div class="skill-bar"><div class="skill-fill" style="--lvl: 90%;"></div></div>
         </div>
         <div class="skill-row">
-          <div class="top"><span data-i18n="skills.bi.kpi">KPI & reporting</span><span class="pct">90%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 90%;"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="top"><span>Data storytelling</span><span class="pct">85%</span></div>
+          <div class="top"><span data-i18n="skills.ai.rag">RAG & multi-agents (FAISS, pgvector, LangGraph)</span><span class="pct">85%</span></div>
           <div class="skill-bar"><div class="skill-fill" style="--lvl: 85%;"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span data-i18n="skills.ai.bench">Benchmarking & prompt engineering</span><span class="pct">90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 90%;"></div></div>
         </div>
       </div>
 
       <div class="glass skill-card reveal" data-delay="1">
-        <div class="ico">⚙️</div>
-        <h3 data-i18n="skills.tech.title">Data Engineering</h3>
+        <div class="ico">📊</div>
+        <h3 data-i18n="skills.ds.title">Data Science & ML</h3>
         <div class="skill-row">
-          <div class="top"><span>SQL</span><span class="pct">88%</span></div>
+          <div class="top"><span>Python · FastAPI</span><span class="pct">88%</span></div>
           <div class="skill-bar"><div class="skill-fill" style="--lvl: 88%;"></div></div>
         </div>
         <div class="skill-row">
-          <div class="top"><span>Python / Pandas</span><span class="pct">82%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 82%;"></div></div>
+          <div class="top"><span>XGBoost · SHAP</span><span class="pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 80%;"></div></div>
         </div>
         <div class="skill-row">
-          <div class="top"><span>Azure / Databricks</span><span class="pct">75%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 75%;"></div></div>
+          <div class="top"><span data-i18n="skills.ds.sql">SQL & data engineering</span><span class="pct">82%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 82%;"></div></div>
         </div>
       </div>
 
       <div class="glass skill-card reveal" data-delay="2">
-        <div class="ico">🏥</div>
-        <h3 data-i18n="skills.health.title">Data Santé</h3>
+        <div class="ico">☁️</div>
+        <h3 data-i18n="skills.cloud.title">Cloud & DevOps</h3>
         <div class="skill-row">
-          <div class="top"><span data-i18n="skills.health.billing">Codage & facturation</span><span class="pct">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 85%;"></div></div>
+          <div class="top"><span>Azure (AKS, ADLS, Key Vault, Functions)</span><span class="pct">82%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 82%;"></div></div>
         </div>
         <div class="skill-row">
-          <div class="top"><span data-i18n="skills.health.mdm">MDM & référentiels</span><span class="pct">80%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 80%;"></div></div>
+          <div class="top"><span>Docker · Helm · ArgoCD</span><span class="pct">78%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 78%;"></div></div>
         </div>
         <div class="skill-row">
-          <div class="top"><span data-i18n="skills.health.quality">Qualité des données</span><span class="pct">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 85%;"></div></div>
+          <div class="top"><span>React/Vite · Power Automate</span><span class="pct">72%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 72%;"></div></div>
         </div>
       </div>
 
       <div class="glass skill-card reveal" data-delay="3">
-        <div class="ico">🤝</div>
-        <h3 data-i18n="skills.soft.title">Pilotage & Métier</h3>
+        <div class="ico">🏥</div>
+        <h3 data-i18n="skills.health.title">Métier Santé</h3>
         <div class="skill-row">
-          <div class="top"><span data-i18n="skills.soft.change">Conduite du changement</span><span class="pct">80%</span></div>
+          <div class="top"><span>PMSI MCO · CIM-10 · CCAM · GHM/T2A</span><span class="pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 85%;"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span data-i18n="skills.health.billing">Facturation CPAM & rejets (S3404)</span><span class="pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 85%;"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span data-i18n="skills.health.compliance">Conformité HDS / RGPD</span><span class="pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 80%;"></div></div>
+        </div>
+      </div>
+
+      <div class="glass skill-card reveal" data-delay="1">
+        <div class="ico">🤝</div>
+        <h3 data-i18n="skills.consulting.title">Conseil & Delivery</h3>
+        <div class="skill-row">
+          <div class="top"><span data-i18n="skills.consulting.framing">Cadrage & spécifications (FR/EN)</span><span class="pct">88%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 88%;"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span data-i18n="skills.consulting.presales">Avant-vente & réponse à AO</span><span class="pct">80%</span></div>
           <div class="skill-bar"><div class="skill-fill" style="--lvl: 80%;"></div></div>
         </div>
         <div class="skill-row">
-          <div class="top"><span data-i18n="skills.soft.pm">Pilotage d'activités</span><span class="pct">78%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 78%;"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="top"><span data-i18n="skills.soft.com">Restitution & communication</span><span class="pct">88%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 88%;"></div></div>
+          <div class="top"><span data-i18n="skills.consulting.workshops">Ateliers client & decks C-level</span><span class="pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--lvl: 85%;"></div></div>
         </div>
       </div>
     </div>
@@ -889,8 +1013,8 @@
 
     <div class="glass contact-wrap reveal">
       <div class="contact-info">
-        <h3 data-i18n="contact.sub">Un projet data ? Une mission ?</h3>
-        <p data-i18n="contact.text">Je suis ouvert aux opportunités en data analyse, BI et data santé. Réponse rapide garantie.</p>
+        <h3 data-i18n="contact.sub">Un projet IA ou data dans la santé ?</h3>
+        <p data-i18n="contact.text">Codage médical assisté par IA, contrôle de facturation, ML prédictif, architecture Azure : parlons-en. Réponse rapide garantie.</p>
         <div class="contact-links">
           <a href="mailto:maxime.laurent02@icloud.com" class="contact-link">
             <span class="ico">✉️</span> maxime.laurent02@icloud.com
@@ -926,162 +1050,216 @@
       fr: {
         'nav.about': 'À propos', 'nav.experience': 'Expérience', 'nav.projects': 'Projets',
         'nav.skills': 'Compétences', 'nav.contact': 'Contact',
-        'hero.available': 'Disponible pour de nouvelles missions',
-        'hero.desc': "Ingénieur INSA Rouen Normandie, je transforme les données de santé — <strong>codage, facturation, référentiels</strong> — en indicateurs fiables et en outils concrets pour piloter l'activité.",
+        'hero.eyebrow': 'Consultant @ Talan — Practice Assurance & Santé',
+        'hero.desc': "Ingénieur INSA Rouen Normandie, je conçois et déploie des solutions d'<strong>IA générative et de data science</strong> appliquées à la santé : codage médical PMSI assisté par IA, contrôle de facturation, ML prédictif — <strong>du cadrage à la mise en production</strong>.",
         'hero.cta1': 'Voir mes projets', 'hero.cta2': 'Me contacter', 'hero.cta3': '⬇ Version CV',
-        'stats.months': 'mois de mission santé', 'stats.projects': 'projets data livrés',
-        'stats.domains': 'domaines : codage · facturation · MDM', 'stats.langs': 'langues de travail',
+        'stats.missions': 'missions grands comptes', 'stats.projects': 'projets data & IA livrés',
+        'stats.llm': 'LLM benchmarkés sur cas réels', 'stats.stays': 'séjours MCO/an sur le périmètre analysé',
         'about.kicker': '01 · Profil', 'about.title': 'À propos',
-        'about.p1': "<strong>Data Analyst</strong> diplômé de l'INSA Rouen Normandie (ingénieur en informatique et technologies de l'information), je me suis spécialisé dans la <strong>donnée de santé</strong> à travers une mission longue chez <strong>Ramsay Santé</strong>, leader européen de l'hospitalisation privée.",
-        'about.p2': "Au cœur de la chaîne <strong>codage → facturation → recouvrement</strong>, j'ai appris à faire parler des données sensibles et complexes : fiabiliser les référentiels (MDM), construire des KPI de pilotage sur Power BI, et développer des outils web pour que les équipes métier suivent leur activité en autonomie.",
-        'about.p3': "Mon approche : comprendre l'enjeu métier avant d'écrire la moindre requête, livrer des analyses <strong>lisibles et actionnables</strong>, et automatiser tout ce qui peut l'être.",
-        'about.edu.title': 'INSA Rouen Normandie',
+        'about.p1': "<strong>Consultant Data & IA</strong> chez <strong>Talan</strong> (practice Assurance & Santé) et ingénieur diplômé de l'INSA Rouen Normandie, j'interviens à la croisée du <strong>conseil et de l'implémentation technique</strong> : cadrage, architecture, développement et delivery.",
+        'about.p2': "Chez <strong>Ramsay Santé</strong>, leader européen de l'hospitalisation privée, je pilote des chantiers d'IA appliquée au cœur du système hospitalier français : <strong>codage médical PMSI assisté par LLM</strong>, détection des rejets de facturation CPAM, moteur de groupage GHM, ML prédictif — sur un périmètre de ~2,2 millions de séjours MCO par an.",
+        'about.p3': "Mon approche : maîtriser le <strong>métier</strong> (CIM-10, CCAM, T2A, S3404) autant que la <strong>technique</strong> (LLM, RAG, XGBoost, Azure/AKS), pour livrer des solutions auditables, conformes (HDS/RGPD) et réellement adoptées par les utilisateurs.",
+        'about.talan.desc': 'Consultant — practice Assurance & Santé · Conseil + implémentation',
         'about.edu.desc': "Diplôme d'ingénieur — Informatique & technologies de l'information",
-        'about.health.title': 'Spécialisation santé',
-        'about.health.desc': 'Codage des actes, facturation hospitalière, MDM, qualité des données',
-        'about.loc.title': 'France', 'about.loc.desc': 'Mobile · Français / Anglais',
+        'about.health.title': 'Expertise santé',
+        'about.health.desc': 'PMSI MCO · CIM-10 · CCAM · GHM/T2A · facturation CPAM · HDS/RGPD',
         'exp.kicker': '02 · Parcours', 'exp.title': 'Expérience',
-        'exp.sub': "De la donnée brute au pilotage de l'activité hospitalière.",
-        'exp.ramsay.duration': 'Mission 9 mois',
-        'exp.ramsay.title': 'Consultant Data / BI — Codage & Facturation',
-        'exp.ramsay.org': "Leader européen de l'hospitalisation privée — Programme Master Data Management",
-        'exp.ramsay.b1.title': 'Qualité & exhaustivité du codage des actes',
-        'exp.ramsay.b1.desc': "Analyse des données de codage des actes : contrôles de cohérence et d'exhaustivité, détection des actes manquants, incohérents ou mal codés, croisement avec les référentiels, et appui aux équipes des établissements pour fiabiliser le codage à la source.",
-        'exp.ramsay.b5.title': 'Rejets de facturation & sécurisation des recettes',
-        'exp.ramsay.b5.desc': "Analyse des rejets de facturation : catégorisation des motifs de rejet, identification des causes racines, tableaux de suivi du retraitement et plans d'action pour réduire les rejets récurrents — un levier direct de sécurisation des recettes des établissements.",
-        'exp.ramsay.b2.title': 'KPI & dashboards Power BI',
-        'exp.ramsay.b2.desc': "Conception de tableaux de bord de pilotage pour les équipes métier et le management : indicateurs de qualité des données, avancement du déploiement MDM, performance de la chaîne codage-facturation.",
-        'exp.ramsay.b3.title': "Web App de suivi & d'analyse",
-        'exp.ramsay.b3.desc': "Développement d'une application web dédiée au suivi et à l'analyse des données du programme : consultation des référentiels, monitoring de la qualité, restitution en libre-service pour les utilisateurs.",
-        'exp.ramsay.b4.title': 'MDM & conduite du changement',
-        'exp.ramsay.b4.desc': "Participation au pilotage du programme Master Data Management : cadrage des règles de gestion des données de référence, accompagnement des utilisateurs, documentation et adoption des nouveaux processus.",
-        'exp.ramsay.chip': 'Facturation santé',
+        'exp.sub': 'Du conseil à la mise en production : IA générative, data science et expertise métier.',
+        'exp.ramsay.duration': 'Mission longue',
+        'exp.ramsay.title': 'Consultant Data & IA — Mission Ramsay Santé',
+        'exp.ramsay.org': "Ramsay Santé, leader européen de l'hospitalisation privée — chantiers IA/data menés en parallèle avec sponsor Direction Data (IDCO)",
+        'exp.ramsay.b1.title': 'Codage médical PMSI assisté par IA',
+        'exp.ramsay.b1.desc': "Pipeline multi-LLM de codage CIM-10 (DP/DR/DAS) : benchmark GPT, Gemini, Mistral, Grok et Claude avec scoring hiérarchique pondéré, RAG (FAISS), pseudonymisation NER (EDS-Pseudo AP-HP en API Docker) et interface React de validation pour les TIM. Pilote : 100 % de justesse sur le diagnostic principal (Gemini/GPT) contre 63 % pour la référence humaine, sur un échantillon de 8 séjours. Architecture multi-agents LangGraph (codeur → contrôle qualité → arbitrage) proposée pour l'industrialisation.",
+        'exp.ramsay.b2.title': 'Contrôle facturation & rejets CPAM (S3404)',
+        'exp.ramsay.b2.desc': "Pipeline hybride LLM + Python déterministe de détection des rejets de factures CPAM sur un benchmark de 81 factures. Diagnostic d'une dérive de version de modèle GPT sur Azure (96 % → 59-72 %), analyse des faux positifs, et recommandation retenue d'une architecture hybride : règles déterministes pour les motifs structurés, LLM pour les motifs sémantiques. Construction d'un référentiel de 24 codes de rejet et des 19 associations d'actes CCAM bloquées.",
+        'exp.ramsay.b3.title': 'ML prédictif des rejets de facturation',
+        'exp.ramsay.b3.desc': "Détection prédictive des factures à risque de rejet CPAM : XGBoost retenu face au fine-tuning LLM pour l'auditabilité, le coût et la reproductibilité, avec explicabilité SHAP. Données relationnelles issues de la base factures répliquée, stockage cible Azure (ADLS Gen2), scoring batch et exposition FastAPI.",
+        'exp.ramsay.b4.title': 'Moteur PMSI : groupeur GHM & revalorisation',
+        'exp.ramsay.b4.desc': "Développement d'un module Python complet de groupage GHM 2026 (parsing RSS au format ATIH, actes classants CCAM, niveaux de sévérité CMA, valorisation T2A : GHS, EXB/EXH, suppléments réanimation) sur les référentiels officiels ATIH. En complément, framework de détection du sous-codage : analyse de 90 RSS et scoring data-driven des séjours revalorisables par racine GHM.",
+        'exp.ramsay.b5.title': 'Architecture Azure & veille automatisée',
+        'exp.ramsay.b5.desc': "Conception d'un système de veille des appels à projets de financement public, architecture validée avec l'architecte Azure du client : PostgreSQL + pgvector (index HNSW, embeddings 3072 dimensions), Bing Grounding, Key Vault CSI, déploiement Helm + ArgoCD sur AKS. Documents de cadrage produits en français et en anglais.",
+        'exp.ramsay.b6.title': 'Stratégie produit & avant-vente',
+        'exp.ramsay.b6.desc': "Définition du produit V1 « codage PMSI assisté par IA » pour Talan (spécification 16 semaines / 6 lots, abstraction LLM multi-provider conforme HDS, Ramsay pressenti premier bêta-testeur) et évaluation de la réponse à un appel d'offres suisse (FHVi) : analyse des gaps et stratégie de partenariat.",
+        'exp.degaine.duration': 'Mission conseil & IA',
+        'exp.degaine.title': 'Consultant IA — Mission DEGAINE (VINCI Construction)',
+        'exp.degaine.org': 'Filiale VINCI spécialisée dans la restauration de monuments historiques classés',
+        'exp.degaine.b1.title': "Veille automatisée d'appels d'offres publics",
+        'exp.degaine.b1.desc': "Conception d'un système de veille destiné à remplacer un abonnement payant : collecte via les API BOAMP/TED, puis triage intelligent par LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs du filtrage par mots-clés, avec scoring go/no-go des consultations patrimoine.",
+        'exp.degaine.b2.title': 'Atelier client IA — pré-chiffrage patrimoine',
+        'exp.degaine.b2.desc': "Préparation et animation d'un atelier client démontrant l'IA agentique (Claude) sur un cas de pré-chiffrage de DCE de restauration : skill de chiffrage dédié, bordereau de prix unitaires de 33 lignes, deck de restitution — démonstration sur le CCTP réel d'un monument classé.",
+        'exp.degaine.chip': 'Marchés publics',
         'exp.insa.duration': 'Projet certifié',
         'exp.insa.title': 'Mission de consulting — Migration de données & KPI',
         'exp.insa.org': 'Projet certifié mené en conditions réelles pour un client',
-        'exp.insa.b1.title': 'Proof of Concept de migration',
-        'exp.insa.b1.desc': "Conception et réalisation d'un POC de migration des données vers une base propre, structurée et documentée : modélisation, nettoyage, règles de transformation et validation de la cohérence.",
-        'exp.insa.b2.title': 'Indicateurs métier',
-        'exp.insa.b2.desc': "Implémentation des calculs de KPI sur les données migrées pour offrir un suivi clair et exploitable des indicateurs métier, avec restitution auprès du client en fin de mission.",
+        'exp.insa.desc': "Réalisation d'un Proof of Concept de migration des données vers une base propre, structurée et documentée (modélisation, nettoyage, règles de transformation), puis implémentation des calculs de KPI sur les données migrées avec restitution finale au client.",
         'exp.insa.chip1': 'Modélisation',
         'exp.edu.title': "Diplôme d'ingénieur — Informatique & TI",
         'exp.edu.org': "Grande école d'ingénieurs",
         'exp.edu.desc': "Formation d'ingénieur en informatique et technologies de l'information : bases de données, algorithmique, développement, statistiques et analyse de données, gestion de projet.",
         'proj.kicker': '03 · Réalisations', 'proj.title': 'Projets à valeur ajoutée',
-        'proj.sub': 'Une sélection de projets professionnels, académiques et personnels.',
-        'proj.filter.all': 'Tous', 'proj.filter.pro': 'Professionnel',
+        'proj.sub': 'IA générative, ML et data appliqués à des enjeux métier réels — santé, marchés publics, patrimoine.',
+        'proj.filter.all': 'Tous', 'proj.filter.pro': 'Santé · Ramsay', 'proj.filter.btp': 'BTP · VINCI',
         'proj.filter.academic': 'Académique', 'proj.filter.personal': 'Personnel',
-        'proj.badge.pro': 'Pro · Ramsay Santé', 'proj.badge.pro2': 'Pro · Ramsay Santé', 'proj.badge.pro3': 'Pro · Ramsay Santé',
-        'proj.badge.academic': 'Académique · Certifié', 'proj.badge.personal': 'Personnel', 'proj.badge.personal2': 'Personnel',
-        'proj.p1.title': 'Fiabilisation codage & facturation',
-        'proj.p1.desc': "Analyse de la chaîne codage → facturation : détection des anomalies et des écarts de facturation, suivi des rejets, fiabilisation des données pour sécuriser les recettes des établissements.",
-        'proj.p1.chip': 'Data Quality',
-        'proj.p2.title': 'Dashboards Power BI de pilotage',
-        'proj.p2.desc': "Conception de tableaux de bord pour le management et les équipes métier : KPI de qualité des données, avancement du déploiement MDM et performance de la facturation, du brut à la décision.",
-        'proj.p3.title': 'Web App de suivi des données',
-        'proj.p3.desc': "Développement d'une application web de suivi et d'analyse des données du programme MDM : consultation des référentiels, monitoring de la qualité et restitution en libre-service.",
-        'proj.p4.title': 'POC migration de base de données',
-        'proj.p4.desc': "Mission de consulting certifiée INSA : migration de données vers une base propre, structurée et documentée, puis implémentation de KPI exploitables pour le suivi métier du client.",
-        'proj.p5.title': 'Analyse du marché immobilier',
-        'proj.p5.desc': "Étude du prix de l'immobilier en Californie : exploration des données, identification des facteurs clés de valorisation et visualisation des tendances avec Python.",
-        'proj.p6.title': 'Ce portfolio interactif',
-        'proj.p6.desc': "Site 100 % fait main en HTML / CSS / JS vanilla : animations canvas, bilingue FR/EN, thème clair/sombre, version CV imprimable — hébergé sur GitHub Pages.",
+        'proj.badge.ramsay': 'Ramsay Santé', 'proj.badge.talan': 'Talan · Produit',
+        'proj.badge.degaine': 'VINCI · DEGAINE', 'proj.badge.academic': 'INSA · Certifié', 'proj.badge.personal': 'Personnel',
+        'proj.p1.title': 'Codage CIM-10 assisté par IA',
+        'proj.p1.desc': "Pipeline multi-LLM de codage PMSI (DP/DR/DAS) : benchmark de 5 modèles avec scoring hiérarchique, RAG FAISS, interface React de validation pour les TIM. Pilote : 100 % de justesse sur le DP vs 63 % pour la référence humaine.",
+        'proj.p2.title': 'Pseudonymisation de données médicales',
+        'proj.p2.desc': "Pipeline d'anonymisation des dossiers patients avant tout appel LLM : modèle NER EDS-Pseudo (AP-HP) déployé en API Docker, complété par une couche regex — prérequis de conformité HDS/RGPD du projet de codage IA.",
+        'proj.p3.title': 'Détection des rejets CPAM (S3404)',
+        'proj.p3.desc': "Pipeline hybride LLM + Python déterministe sur 81 factures : diagnostic d'une dérive de modèle GPT (96 % → 59-72 %), référentiel de 24 codes de rejet et 19 associations CCAM bloquées, architecture hybride retenue par le client.",
+        'proj.p4.title': 'ML prédictif des rejets de facturation',
+        'proj.p4.desc': "Scoring prédictif des factures à risque de rejet : XGBoost préféré au fine-tuning LLM pour l'auditabilité et le coût, explicabilité SHAP, données relationnelles de la base factures, cible Azure ADLS Gen2 + API FastAPI.",
+        'proj.p5.title': 'Groupeur GHM Python & valorisation T2A',
+        'proj.p5.desc': "Moteur complet de groupage GHM 2026 : parsing des RSS au format ATIH, actes classants CCAM, niveaux de sévérité CMA, valorisation T2A (GHS, EXB/EXH, suppléments réanimation) sur les référentiels officiels ATIH.",
+        'proj.p6.title': 'Détection de sous-codage & revalorisation',
+        'proj.p6.desc': "Framework d'identification des séjours probablement sous-codés et revalorisables : analyse de 90 RSS, typologie clinique, scoring data-driven fondé sur les taux d'escalade de sévérité par racine GHM pondérés par l'écart de valorisation.",
+        'proj.p7.title': 'Veille financements publics sur Azure',
+        'proj.p7.desc': "Système automatisé de veille des appels à projets : PostgreSQL + pgvector (HNSW, embeddings 3072 dim.), Bing Grounding, Key Vault CSI, déploiement Helm + ArgoCD sur AKS — architecture validée avec l'architecte Azure du client.",
+        'proj.p8.title': 'Produit V1 « codage PMSI par IA »',
+        'proj.p8.desc': "Définition d'un produit démontrable pour Talan : parcours TIM complet (upload → pseudonymisation → propositions CIM-10 sourcées → validation), spécification 16 semaines / 6 lots, abstraction LLM multi-provider conforme HDS. Avant-vente associée : évaluation d'un AO hospitalier suisse (FHVi).",
+        'proj.p8.chip1': 'Produit', 'proj.p8.chip2': 'Avant-vente',
+        'proj.p9.title': "Veille d'appels d'offres publics par LLM",
+        'proj.p9.desc': "Système de veille remplaçant un abonnement payant : collecte via les API BOAMP/TED, triage LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs, et scoring go/no-go des consultations de restauration du patrimoine.",
+        'proj.p10.title': 'Atelier IA — pré-chiffrage patrimoine',
+        'proj.p10.desc': "Animation d'un atelier client démontrant l'IA agentique sur le pré-chiffrage d'un DCE de restauration : skill de chiffrage dédié, bordereau de prix de 33 lignes, deck de restitution — démo sur le CCTP réel d'un monument historique classé.",
+        'proj.p10.chip': 'Atelier client',
+        'proj.p11.title': 'POC migration de base de données',
+        'proj.p11.desc': "Mission de consulting certifiée INSA : migration de données vers une base propre, structurée et documentée, puis implémentation de KPI exploitables pour le suivi métier du client.",
+        'proj.p12.title': 'Serveur LLM local (homelab)',
+        'proj.p12.desc': "Serveur d'inférence LLM auto-hébergé (WSL2 + Docker + Ollama, GPU RTX 5070 Ti, accès sécurisé via Cloudflare Tunnel) utilisé pour évaluer des modèles open source, notamment médicaux, avant usage en mission.",
+        'proj.p13.title': 'Analyse du marché immobilier',
+        'proj.p13.desc': "Étude du prix de l'immobilier en Californie : exploration des données, identification des facteurs clés de valorisation et visualisation des tendances avec Python.",
+        'proj.p14.title': 'Ce portfolio interactif',
+        'proj.p14.desc': "Site 100 % fait main en HTML / CSS / JS vanilla : animations canvas, bilingue FR/EN, thème clair/sombre, version CV imprimable — hébergé sur GitHub Pages.",
         'skills.kicker': '04 · Expertise', 'skills.title': 'Compétences',
-        'skills.bi.title': 'Analyse & BI', 'skills.bi.kpi': 'KPI & reporting',
-        'skills.tech.title': 'Data Engineering',
-        'skills.health.title': 'Data Santé',
-        'skills.health.billing': 'Codage & facturation', 'skills.health.mdm': 'MDM & référentiels',
-        'skills.health.quality': 'Qualité des données',
-        'skills.soft.title': 'Pilotage & Métier',
-        'skills.soft.change': 'Conduite du changement', 'skills.soft.pm': "Pilotage d'activités",
-        'skills.soft.com': 'Restitution & communication',
+        'skills.ai.title': 'IA générative & LLM',
+        'skills.ai.rag': 'RAG & multi-agents (FAISS, pgvector, LangGraph)',
+        'skills.ai.bench': 'Benchmarking & prompt engineering',
+        'skills.ds.title': 'Data Science & ML',
+        'skills.ds.sql': 'SQL & data engineering',
+        'skills.cloud.title': 'Cloud & DevOps',
+        'skills.health.title': 'Métier Santé',
+        'skills.health.billing': 'Facturation CPAM & rejets (S3404)',
+        'skills.health.compliance': 'Conformité HDS / RGPD',
+        'skills.consulting.title': 'Conseil & Delivery',
+        'skills.consulting.framing': 'Cadrage & spécifications (FR/EN)',
+        'skills.consulting.presales': 'Avant-vente & réponse à AO',
+        'skills.consulting.workshops': 'Ateliers client & decks C-level',
         'contact.kicker': '05 · Contact', 'contact.title': 'Travaillons ensemble',
-        'contact.sub': 'Un projet data ? Une mission ?',
-        'contact.text': 'Je suis ouvert aux opportunités en data analyse, BI et data santé. Réponse rapide garantie.',
+        'contact.sub': 'Un projet IA ou data dans la santé ?',
+        'contact.text': "Codage médical assisté par IA, contrôle de facturation, ML prédictif, architecture Azure : parlons-en. Réponse rapide garantie.",
         'contact.form.name': 'Votre nom', 'contact.form.email': 'Votre email',
         'contact.form.message': 'Votre message', 'contact.form.send': 'Envoyer le message',
         'footer.text': '© 2026 Maxime Laurent — Conçu & codé à la main',
-        'roles': ['Data Analyst', 'Spécialiste Data Santé', 'Power BI · SQL · Python', 'Codage & Facturation', 'Ingénieur INSA']
+        'roles': ['Consultant Data & IA', 'IA générative · LLM', 'Santé · PMSI · Facturation', 'Python · Azure · ML', 'Ingénieur INSA']
       },
       en: {
         'nav.about': 'About', 'nav.experience': 'Experience', 'nav.projects': 'Projects',
         'nav.skills': 'Skills', 'nav.contact': 'Contact',
-        'hero.available': 'Open to new opportunities',
-        'hero.desc': "INSA Rouen Normandie engineer, I turn healthcare data — <strong>medical coding, billing, master data</strong> — into reliable KPIs and practical tools to drive business performance.",
+        'hero.eyebrow': 'Consultant @ Talan — Insurance & Healthcare practice',
+        'hero.desc': "INSA Rouen Normandie engineer, I design and ship <strong>generative AI and data science</strong> solutions for healthcare: AI-assisted medical coding (French PMSI/DRG system), billing control, predictive ML — <strong>from framing to production</strong>.",
         'hero.cta1': 'View my projects', 'hero.cta2': 'Contact me', 'hero.cta3': '⬇ Resume version',
-        'stats.months': 'months in healthcare', 'stats.projects': 'data projects delivered',
-        'stats.domains': 'domains: coding · billing · MDM', 'stats.langs': 'working languages',
+        'stats.missions': 'enterprise client engagements', 'stats.projects': 'data & AI projects delivered',
+        'stats.llm': 'LLMs benchmarked on real cases', 'stats.stays': 'inpatient stays/year in analyzed scope',
         'about.kicker': '01 · Profile', 'about.title': 'About',
-        'about.p1': "<strong>Data Analyst</strong> and INSA Rouen Normandie graduate (engineering degree in computer science and information technology), I specialized in <strong>healthcare data</strong> through a long-term mission at <strong>Ramsay Santé</strong>, Europe's leading private hospital group.",
-        'about.p2': "Working at the heart of the <strong>coding → billing → collection</strong> chain, I learned to make sensitive, complex data speak: securing master data (MDM), building steering KPIs in Power BI, and developing web tools so business teams can monitor their activity autonomously.",
-        'about.p3': "My approach: understand the business challenge before writing a single query, deliver <strong>readable, actionable</strong> analyses, and automate everything that can be.",
-        'about.edu.title': 'INSA Rouen Normandie',
+        'about.p1': "<strong>Data & AI Consultant</strong> at <strong>Talan</strong> (Insurance & Healthcare practice) and INSA Rouen Normandie engineering graduate, I work at the intersection of <strong>consulting and technical implementation</strong>: framing, architecture, development and delivery.",
+        'about.p2': "At <strong>Ramsay Santé</strong>, Europe's leading private hospital group, I drive applied-AI workstreams at the heart of the French hospital system: <strong>LLM-assisted medical coding (PMSI)</strong>, health insurance billing rejection detection, DRG grouping engine, predictive ML — over a scope of ~2.2 million inpatient stays per year.",
+        'about.p3': "My approach: master the <strong>business domain</strong> (ICD-10, procedure coding, DRG-based funding, billing rules) as deeply as the <strong>technology</strong> (LLMs, RAG, XGBoost, Azure/AKS), to deliver solutions that are auditable, compliant (health-data hosting / GDPR) and actually adopted by users.",
+        'about.talan.desc': 'Consultant — Insurance & Healthcare practice · Consulting + implementation',
         'about.edu.desc': 'Engineering degree — Computer science & information technology',
-        'about.health.title': 'Healthcare specialization',
-        'about.health.desc': 'Medical coding, hospital billing, MDM, data quality',
-        'about.loc.title': 'France', 'about.loc.desc': 'Mobile · French / English',
+        'about.health.title': 'Healthcare expertise',
+        'about.health.desc': 'French DRG system (PMSI) · ICD-10 · procedure coding · billing · GDPR',
         'exp.kicker': '02 · Career', 'exp.title': 'Experience',
-        'exp.sub': 'From raw data to hospital activity steering.',
-        'exp.ramsay.duration': '9-month mission',
-        'exp.ramsay.title': 'Data / BI Consultant — Coding & Billing',
-        'exp.ramsay.org': "Europe's leading private hospital group — Master Data Management program",
-        'exp.ramsay.b1.title': 'Coding quality & completeness',
-        'exp.ramsay.b1.desc': "Analysis of procedure coding data: consistency and completeness checks, detection of missing, inconsistent or miscoded procedures, cross-checks against master data, and support to facility teams to make coding reliable at the source.",
-        'exp.ramsay.b5.title': 'Billing rejections & revenue protection',
-        'exp.ramsay.b5.desc': "Analysis of billing rejections: categorization of rejection reasons, root cause identification, reprocessing tracking dashboards and action plans to reduce recurring rejections — a direct lever to protect facility revenue.",
-        'exp.ramsay.b2.title': 'KPIs & Power BI dashboards',
-        'exp.ramsay.b2.desc': "Design of steering dashboards for business teams and management: data quality indicators, MDM rollout progress, coding-to-billing chain performance.",
-        'exp.ramsay.b3.title': 'Monitoring & analytics Web App',
-        'exp.ramsay.b3.desc': "Development of a web application dedicated to program data monitoring and analysis: master data browsing, quality monitoring, self-service reporting for users.",
-        'exp.ramsay.b4.title': 'MDM & change management',
-        'exp.ramsay.b4.desc': "Contribution to the Master Data Management program steering: framing of master data governance rules, user support, documentation and adoption of new processes.",
-        'exp.ramsay.chip': 'Healthcare billing',
+        'exp.sub': 'From consulting to production: generative AI, data science and domain expertise.',
+        'exp.ramsay.duration': 'Long-term mission',
+        'exp.ramsay.title': 'Data & AI Consultant — Ramsay Santé engagement',
+        'exp.ramsay.org': "Ramsay Santé, Europe's leading private hospital group — parallel AI/data workstreams sponsored by the client's Data Office",
+        'exp.ramsay.b1.title': 'AI-assisted medical coding (PMSI)',
+        'exp.ramsay.b1.desc': "Multi-LLM ICD-10 coding pipeline (primary/related/associated diagnoses): benchmark of GPT, Gemini, Mistral, Grok and Claude with weighted hierarchical scoring, RAG (FAISS), NER pseudonymization (EDS-Pseudo from Paris hospitals, deployed as a Docker API) and a React validation interface for medical coders. Pilot: 100% accuracy on the primary diagnosis (Gemini/GPT) vs 63% for the human baseline, on an 8-stay sample. LangGraph multi-agent architecture (coder → QA → arbitration) proposed for industrialization.",
+        'exp.ramsay.b2.title': 'Billing control & insurance rejections',
+        'exp.ramsay.b2.desc': "Hybrid LLM + deterministic Python pipeline detecting health insurance billing rejections on an 81-invoice benchmark. Diagnosed a GPT model-version drift on Azure (96% → 59-72%), analyzed false-positive patterns, and recommended the retained hybrid architecture: deterministic rules for structured rejection reasons, LLM for semantic ones. Built a reference base of 24 rejection codes and the 19 blocked procedure-code combinations.",
+        'exp.ramsay.b3.title': 'Predictive ML for billing rejections',
+        'exp.ramsay.b3.desc': "Predictive detection of invoices at risk of rejection: XGBoost chosen over LLM fine-tuning for auditability, cost and reproducibility, with SHAP explainability. Relational data from the replicated invoicing database, Azure target storage (ADLS Gen2), batch scoring and FastAPI exposure.",
+        'exp.ramsay.b4.title': 'PMSI engine: DRG grouper & revenue uplift',
+        'exp.ramsay.b4.desc': "Development of a complete Python DRG grouping engine (2026 rules): positional-format record parsing, classifying procedures, severity levels, tariff valuation including outlier payments and ICU supplements, on official national reference files. Additionally, an under-coding detection framework: 90 records analyzed and data-driven scoring of upgradeable stays per DRG root.",
+        'exp.ramsay.b5.title': 'Azure architecture & automated intelligence',
+        'exp.ramsay.b5.desc': "Design of an automated public-funding call monitoring system, architecture validated with the client's Azure architect: PostgreSQL + pgvector (HNSW index, 3072-dimension embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD deployment on AKS. Framing documents delivered in French and English.",
+        'exp.ramsay.b6.title': 'Product strategy & pre-sales',
+        'exp.ramsay.b6.desc': "Definition of Talan's V1 'AI-assisted PMSI coding' product (16-week / 6-workstream specification, multi-provider LLM abstraction compliant with French health-data hosting rules, Ramsay identified as first beta tester) and assessment of a Swiss hospital RFP (FHVi): gap analysis and partnership strategy.",
+        'exp.degaine.duration': 'Consulting & AI mission',
+        'exp.degaine.title': 'AI Consultant — DEGAINE engagement (VINCI Construction)',
+        'exp.degaine.org': 'VINCI subsidiary specialized in the restoration of listed historical monuments',
+        'exp.degaine.b1.title': 'Automated public tender monitoring',
+        'exp.degaine.b1.desc': "Design of a tender-monitoring system replacing a paid subscription: collection through the French/EU public procurement APIs (BOAMP/TED), then LLM triage (Mistral Small on Azure AI Foundry) to eliminate keyword-filter false positives, with go/no-go scoring of heritage restoration tenders.",
+        'exp.degaine.b2.title': 'Client AI workshop — heritage cost pre-estimation',
+        'exp.degaine.b2.desc': "Prepared and led a client workshop demonstrating agentic AI (Claude) on pre-estimating a heritage restoration tender package: dedicated estimation skill, 33-line unit price schedule, delivery deck — live demo on the real specification of a listed monument.",
+        'exp.degaine.chip': 'Public procurement',
         'exp.insa.duration': 'Certified project',
         'exp.insa.title': 'Consulting mission — Data migration & KPIs',
         'exp.insa.org': 'Certified project carried out in real conditions for a client',
-        'exp.insa.b1.title': 'Migration Proof of Concept',
-        'exp.insa.b1.desc': "Design and delivery of a POC migrating data to a clean, structured and documented database: modeling, cleansing, transformation rules and consistency validation.",
-        'exp.insa.b2.title': 'Business indicators',
-        'exp.insa.b2.desc': "Implementation of KPI calculations on the migrated data for clear, actionable business tracking, with final delivery presented to the client.",
+        'exp.insa.desc': "Delivery of a Proof of Concept migrating data to a clean, structured and documented database (modeling, cleansing, transformation rules), then implementation of KPI calculations on the migrated data with final delivery to the client.",
         'exp.insa.chip1': 'Data modeling',
         'exp.edu.title': 'Engineering degree — Computer Science & IT',
         'exp.edu.org': 'French engineering school',
         'exp.edu.desc': 'Engineering curriculum in computer science and information technology: databases, algorithms, software development, statistics and data analysis, project management.',
         'proj.kicker': '03 · Work', 'proj.title': 'High-value projects',
-        'proj.sub': 'A selection of professional, academic and personal projects.',
-        'proj.filter.all': 'All', 'proj.filter.pro': 'Professional',
+        'proj.sub': 'Generative AI, ML and data applied to real business challenges — healthcare, public procurement, heritage.',
+        'proj.filter.all': 'All', 'proj.filter.pro': 'Health · Ramsay', 'proj.filter.btp': 'Construction · VINCI',
         'proj.filter.academic': 'Academic', 'proj.filter.personal': 'Personal',
-        'proj.badge.pro': 'Pro · Ramsay Santé', 'proj.badge.pro2': 'Pro · Ramsay Santé', 'proj.badge.pro3': 'Pro · Ramsay Santé',
-        'proj.badge.academic': 'Academic · Certified', 'proj.badge.personal': 'Personal', 'proj.badge.personal2': 'Personal',
-        'proj.p1.title': 'Coding & billing data reliability',
-        'proj.p1.desc': "Analysis of the coding → billing chain: detection of anomalies and billing discrepancies, rejection monitoring, data reliability work to protect facility revenue.",
-        'proj.p1.chip': 'Data Quality',
-        'proj.p2.title': 'Power BI steering dashboards',
-        'proj.p2.desc': "Dashboards for management and business teams: data quality KPIs, MDM rollout progress and billing performance — from raw data to decision.",
-        'proj.p3.title': 'Data monitoring Web App',
-        'proj.p3.desc': "Development of a web application for MDM program data monitoring and analysis: master data browsing, quality monitoring and self-service reporting.",
-        'proj.p4.title': 'Database migration POC',
-        'proj.p4.desc': "INSA-certified consulting mission: data migration to a clean, structured, documented database, then implementation of actionable KPIs for the client's business tracking.",
-        'proj.p5.title': 'Real estate market analysis',
-        'proj.p5.desc': "Study of California housing prices: data exploration, identification of key valuation drivers and trend visualization with Python.",
-        'proj.p6.title': 'This interactive portfolio',
-        'proj.p6.desc': "100% handcrafted site in vanilla HTML / CSS / JS: canvas animations, FR/EN bilingual, light/dark theme, printable resume version — hosted on GitHub Pages.",
+        'proj.badge.ramsay': 'Ramsay Santé', 'proj.badge.talan': 'Talan · Product',
+        'proj.badge.degaine': 'VINCI · DEGAINE', 'proj.badge.academic': 'INSA · Certified', 'proj.badge.personal': 'Personal',
+        'proj.p1.title': 'AI-assisted ICD-10 coding',
+        'proj.p1.desc': "Multi-LLM medical coding pipeline: benchmark of 5 models with hierarchical scoring, FAISS RAG, React validation interface for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% for the human baseline.",
+        'proj.p2.title': 'Medical data pseudonymization',
+        'proj.p2.desc': "Patient record anonymization pipeline ahead of any LLM call: NER model EDS-Pseudo (Paris hospitals) deployed as a Docker API, plus a regex layer — the compliance prerequisite (health-data hosting / GDPR) of the AI coding project.",
+        'proj.p3.title': 'Billing rejection detection',
+        'proj.p3.desc': "Hybrid LLM + deterministic Python pipeline on 81 invoices: diagnosed a GPT model drift (96% → 59-72%), built a reference base of 24 rejection codes and 19 blocked procedure combinations; hybrid architecture retained by the client.",
+        'proj.p4.title': 'Predictive ML for billing rejections',
+        'proj.p4.desc': "Predictive scoring of invoices at risk of rejection: XGBoost preferred over LLM fine-tuning for auditability and cost, SHAP explainability, relational invoicing data, Azure ADLS Gen2 target + FastAPI API.",
+        'proj.p5.title': 'Python DRG grouper & tariff valuation',
+        'proj.p5.desc': "Complete DRG grouping engine (2026 rules): positional record parsing, classifying procedures, severity levels, tariff valuation including outlier payments and ICU supplements, built on official national reference files.",
+        'proj.p6.title': 'Under-coding detection & revenue uplift',
+        'proj.p6.desc': "Framework identifying probably under-coded, upgradeable stays: 90 records analyzed, clinical typology, data-driven scoring based on historical severity-escalation rates per DRG root weighted by the valuation gap.",
+        'proj.p7.title': 'Public funding watch on Azure',
+        'proj.p7.desc': "Automated funding-call monitoring system: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD deployment on AKS — architecture validated with the client's Azure architect.",
+        'proj.p8.title': "V1 product: 'AI-assisted PMSI coding'",
+        'proj.p8.desc': "Definition of a demonstrable product for Talan: full coder journey (upload → pseudonymization → sourced ICD-10 suggestions → validation), 16-week / 6-workstream specification, compliant multi-provider LLM abstraction. Related pre-sales: assessment of a Swiss hospital RFP (FHVi).",
+        'proj.p8.chip1': 'Product', 'proj.p8.chip2': 'Pre-sales',
+        'proj.p9.title': 'LLM-powered public tender watch',
+        'proj.p9.desc': "Tender monitoring system replacing a paid subscription: collection via the BOAMP/TED public procurement APIs, LLM triage (Mistral Small on Azure AI Foundry) to remove false positives, and go/no-go scoring of heritage restoration tenders.",
+        'proj.p10.title': 'AI workshop — heritage pre-estimation',
+        'proj.p10.desc': "Led a client workshop demonstrating agentic AI on pre-estimating a heritage restoration tender: dedicated estimation skill, 33-line unit price schedule, delivery deck — demo on the real specification of a listed historical monument.",
+        'proj.p10.chip': 'Client workshop',
+        'proj.p11.title': 'Database migration POC',
+        'proj.p11.desc': "INSA-certified consulting mission: data migration to a clean, structured, documented database, then implementation of actionable KPIs for the client's business tracking.",
+        'proj.p12.title': 'Self-hosted LLM server (homelab)',
+        'proj.p12.desc': "Self-hosted LLM inference server (WSL2 + Docker + Ollama, RTX 5070 Ti GPU, secure access via Cloudflare Tunnel) used to evaluate open-source models — medical ones in particular — before using them on client work.",
+        'proj.p13.title': 'Real estate market analysis',
+        'proj.p13.desc': "Study of California housing prices: data exploration, identification of key valuation drivers and trend visualization with Python.",
+        'proj.p14.title': 'This interactive portfolio',
+        'proj.p14.desc': "100% handcrafted site in vanilla HTML / CSS / JS: canvas animations, FR/EN bilingual, light/dark theme, printable resume version — hosted on GitHub Pages.",
         'skills.kicker': '04 · Expertise', 'skills.title': 'Skills',
-        'skills.bi.title': 'Analytics & BI', 'skills.bi.kpi': 'KPIs & reporting',
-        'skills.tech.title': 'Data Engineering',
-        'skills.health.title': 'Healthcare Data',
-        'skills.health.billing': 'Coding & billing', 'skills.health.mdm': 'MDM & master data',
-        'skills.health.quality': 'Data quality',
-        'skills.soft.title': 'Steering & Business',
-        'skills.soft.change': 'Change management', 'skills.soft.pm': 'Activity steering',
-        'skills.soft.com': 'Delivery & communication',
+        'skills.ai.title': 'Generative AI & LLMs',
+        'skills.ai.rag': 'RAG & multi-agent (FAISS, pgvector, LangGraph)',
+        'skills.ai.bench': 'Benchmarking & prompt engineering',
+        'skills.ds.title': 'Data Science & ML',
+        'skills.ds.sql': 'SQL & data engineering',
+        'skills.cloud.title': 'Cloud & DevOps',
+        'skills.health.title': 'Healthcare Domain',
+        'skills.health.billing': 'Health insurance billing & rejections',
+        'skills.health.compliance': 'Health-data hosting / GDPR compliance',
+        'skills.consulting.title': 'Consulting & Delivery',
+        'skills.consulting.framing': 'Framing & specifications (FR/EN)',
+        'skills.consulting.presales': 'Pre-sales & RFP responses',
+        'skills.consulting.workshops': 'Client workshops & C-level decks',
         'contact.kicker': '05 · Contact', 'contact.title': "Let's work together",
-        'contact.sub': 'A data project? A mission?',
-        'contact.text': 'I am open to opportunities in data analysis, BI and healthcare data. Fast reply guaranteed.',
+        'contact.sub': 'An AI or data project in healthcare?',
+        'contact.text': "AI-assisted medical coding, billing control, predictive ML, Azure architecture: let's talk. Fast reply guaranteed.",
         'contact.form.name': 'Your name', 'contact.form.email': 'Your email',
         'contact.form.message': 'Your message', 'contact.form.send': 'Send message',
         'footer.text': '© 2026 Maxime Laurent — Designed & hand-coded',
-        'roles': ['Data Analyst', 'Healthcare Data Specialist', 'Power BI · SQL · Python', 'Coding & Billing', 'INSA Engineer']
+        'roles': ['Data & AI Consultant', 'Generative AI · LLMs', 'Healthcare · Coding · Billing', 'Python · Azure · ML', 'INSA Engineer']
       }
     };
 
