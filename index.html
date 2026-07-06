@@ -1,52 +1,55 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Maxime Laurent — Consultant Data & IA chez Talan (Assurance & Santé) : IA générative appliquée au codage PMSI, facturation hospitalière, ML, architecture Azure. Ingénieur INSA Rouen Normandie." />
-  <title>Maxime Laurent — Consultant Data & IA | Santé · LLM · PMSI</title>
+  <meta name="description" content="Maxime Laurent — AI Data Engineer. I ship GenAI, ML and data platforms in any industry: healthcare, construction, insurance. Python · Azure · LLMs · RAG. Open to opportunities in Australia, the US and Canada." />
+  <title>Maxime Laurent — AI Data Engineer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ============ DESIGN TOKENS ============ */
+    /* ============ DESIGN TOKENS — neutral navy / blues system ============ */
     :root {
-      --bg: #070b14;
-      --bg-soft: #0c1220;
-      --surface: rgba(255,255,255,0.04);
-      --surface-strong: rgba(255,255,255,0.07);
-      --border: rgba(255,255,255,0.10);
-      --border-strong: rgba(255,255,255,0.18);
-      --text: #e8eefc;
-      --muted: #93a1bd;
-      --accent: #2dd4bf;        /* teal */
-      --accent-2: #818cf8;      /* indigo */
-      --accent-3: #f472b6;      /* pink */
-      --accent-soft: rgba(45,212,191,0.12);
-      --accent2-soft: rgba(129,140,248,0.12);
-      --glow: rgba(45,212,191,0.35);
+      --bg: #04070f;
+      --bg-2: #071021;
+      --navy: #0a1f44;
+      --surface: rgba(140,170,255,0.05);
+      --surface-strong: rgba(140,170,255,0.09);
+      --border: rgba(140,170,255,0.14);
+      --border-strong: rgba(140,170,255,0.26);
+      --text: #eef3ff;
+      --muted: #8da2c8;
+      --blue-1: #2e5bff;   /* primary */
+      --blue-2: #5b8aff;   /* mid */
+      --blue-3: #8fb3ff;   /* soft */
+      --blue-4: #c4d7ff;   /* pale */
+      --blue-soft: rgba(46,91,255,0.14);
+      --glow: rgba(70,120,255,0.35);
       --font-display: 'Space Grotesk', sans-serif;
+      --font-serif: 'Instrument Serif', serif;
       --font-body: 'Inter', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
 
     :root.light {
-      --bg: #f5f7fb;
-      --bg-soft: #eceff6;
-      --surface: rgba(13,27,58,0.04);
-      --surface-strong: rgba(13,27,58,0.07);
-      --border: rgba(13,27,58,0.10);
-      --border-strong: rgba(13,27,58,0.20);
-      --text: #101a2e;
-      --muted: #51607c;
-      --accent: #0d9488;
-      --accent-2: #5b62e0;
-      --accent-3: #db2777;
-      --accent-soft: rgba(13,148,136,0.10);
-      --accent2-soft: rgba(91,98,224,0.10);
-      --glow: rgba(13,148,136,0.25);
+      --bg: #f6f8fd;
+      --bg-2: #eaeffa;
+      --navy: #0a1f44;
+      --surface: rgba(10,31,68,0.04);
+      --surface-strong: rgba(10,31,68,0.08);
+      --border: rgba(10,31,68,0.12);
+      --border-strong: rgba(10,31,68,0.24);
+      --text: #0a1f44;
+      --muted: #4a5c82;
+      --blue-1: #1e4ae8;
+      --blue-2: #3565f0;
+      --blue-3: #5b8aff;
+      --blue-4: #2e5bff;
+      --blue-soft: rgba(30,74,232,0.10);
+      --glow: rgba(30,74,232,0.22);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -61,30 +64,36 @@
       transition: background 0.4s ease, color 0.4s ease;
     }
 
-    ::selection { background: var(--accent); color: #06251f; }
+    ::selection { background: var(--blue-1); color: #fff; }
 
     h1, h2, h3, h4 { font-family: var(--font-display); }
+    .serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
 
-    /* Ambient background */
+    /* Ambient background: grid + glows */
     .ambient {
       position: fixed; inset: 0; z-index: -2; pointer-events: none;
       background:
-        radial-gradient(700px 500px at 12% -5%, var(--accent2-soft), transparent 60%),
-        radial-gradient(800px 600px at 95% 15%, var(--accent-soft), transparent 60%),
-        radial-gradient(600px 700px at 50% 110%, var(--accent2-soft), transparent 60%);
+        radial-gradient(900px 600px at 80% -10%, var(--blue-soft), transparent 60%),
+        radial-gradient(700px 500px at 8% 30%, rgba(91,138,255,0.08), transparent 60%),
+        radial-gradient(800px 700px at 50% 115%, var(--blue-soft), transparent 60%);
     }
-
-    #particles {
+    .gridlines {
       position: fixed; inset: 0; z-index: -1; pointer-events: none;
-      opacity: 0.85;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 72px 72px;
+      opacity: 0.22;
+      -webkit-mask-image: radial-gradient(1200px 800px at 50% 0%, #000 20%, transparent 80%);
+      mask-image: radial-gradient(1200px 800px at 50% 0%, #000 20%, transparent 80%);
     }
 
     /* ============ SCROLL PROGRESS ============ */
     .progress {
-      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+      position: fixed; top: 0; left: 0; height: 2px; width: 0%;
+      background: linear-gradient(90deg, var(--blue-1), var(--blue-3));
       z-index: 2000;
-      box-shadow: 0 0 12px var(--glow);
+      box-shadow: 0 0 10px var(--glow);
     }
 
     /* ============ NAV ============ */
@@ -96,42 +105,36 @@
       transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
       border-bottom: 1px solid transparent;
     }
-
     nav.scrolled {
-      background: color-mix(in srgb, var(--bg) 78%, transparent);
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border-bottom-color: var(--border);
     }
 
     .nav-brand {
-      font-family: var(--font-mono);
-      font-size: 0.95rem; font-weight: 600;
-      color: var(--text); text-decoration: none;
-      letter-spacing: 0.02em;
+      font-family: var(--font-mono); font-size: 0.95rem; font-weight: 600;
+      color: var(--text); text-decoration: none; letter-spacing: 0.02em;
     }
-    .nav-brand .tag { color: var(--accent); }
-    .nav-brand .slash { color: var(--accent-2); }
+    .nav-brand .tag { color: var(--blue-2); }
 
     .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
-
     .nav-links a {
       color: var(--muted); text-decoration: none;
-      font-size: 0.82rem; font-weight: 500;
-      letter-spacing: 0.06em; text-transform: uppercase;
+      font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.07em; text-transform: uppercase;
       transition: color 0.25s ease; position: relative;
     }
     .nav-links a::after {
       content: ""; position: absolute; left: 0; bottom: -6px;
       width: 0%; height: 2px; border-radius: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      background: linear-gradient(90deg, var(--blue-1), var(--blue-3));
       transition: width 0.3s ease;
     }
     .nav-links a:hover, .nav-links a.active { color: var(--text); }
     .nav-links a.active::after, .nav-links a:hover::after { width: 100%; }
 
     .nav-controls { display: flex; gap: 0.6rem; align-items: center; }
-
     .icon-btn {
       background: var(--surface); border: 1px solid var(--border);
       color: var(--text); border-radius: 10px;
@@ -140,12 +143,11 @@
       font-size: 1rem; transition: all 0.25s ease;
       font-family: var(--font-mono);
     }
-    .icon-btn:hover { border-color: var(--accent); box-shadow: 0 0 16px var(--glow); transform: translateY(-1px); }
+    .icon-btn:hover { border-color: var(--blue-2); box-shadow: 0 0 16px var(--glow); transform: translateY(-1px); }
     .icon-btn.lang { width: auto; padding: 0 0.7rem; font-size: 0.78rem; font-weight: 600; }
-
     .menu-toggle { display: none; }
 
-    @media (max-width: 860px) {
+    @media (max-width: 880px) {
       .nav-links {
         position: fixed; top: 62px; left: 0; right: 0;
         background: color-mix(in srgb, var(--bg) 96%, transparent);
@@ -163,39 +165,22 @@
     header {
       min-height: 100vh;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; padding: 7rem 5vw 4rem;
+      text-align: center; padding: 7.5rem 5vw 3rem;
       position: relative;
     }
 
-    .avatar-wrap { position: relative; width: 158px; height: 158px; margin-bottom: 2rem; }
-    .avatar-ring {
-      position: absolute; inset: -8px; border-radius: 50%;
-      background: conic-gradient(from 0deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent));
-      animation: spin 6s linear infinite;
-      filter: blur(0.5px);
-    }
-    .avatar-ring::after {
-      content: ""; position: absolute; inset: 4px; border-radius: 50%;
-      background: var(--bg);
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .avatar-wrap img {
-      position: relative; width: 100%; height: 100%;
-      border-radius: 50%; object-fit: cover; display: block;
-      border: 3px solid transparent;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--font-mono); font-size: 0.8rem;
-      color: var(--accent); letter-spacing: 0.15em;
-      text-transform: uppercase; margin-bottom: 1rem;
+    .hero-badge {
+      font-family: var(--font-mono); font-size: 0.75rem;
+      color: var(--blue-3); letter-spacing: 0.14em;
+      text-transform: uppercase; margin-bottom: 1.6rem;
       display: inline-flex; align-items: center; gap: 0.6rem;
-      padding: 0.4rem 1rem; border: 1px solid var(--border);
+      padding: 0.45rem 1.1rem; border: 1px solid var(--border);
       border-radius: 999px; background: var(--surface);
+      backdrop-filter: blur(8px);
     }
     .pulse-dot {
       width: 8px; height: 8px; border-radius: 50%;
-      background: var(--accent);
+      background: var(--blue-2);
       box-shadow: 0 0 0 0 var(--glow);
       animation: pulse 2s infinite;
     }
@@ -205,38 +190,39 @@
       100% { box-shadow: 0 0 0 0 transparent; }
     }
 
-    header h1 {
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      font-weight: 700; letter-spacing: -0.02em; line-height: 1.08;
+    .hero-title {
+      font-size: clamp(2.6rem, 7.2vw, 5.4rem);
+      font-weight: 700; letter-spacing: -0.03em; line-height: 1.04;
+      max-width: 1000px;
     }
-    header h1 .grad {
-      background: linear-gradient(100deg, var(--accent) 10%, var(--accent-2) 55%, var(--accent-3) 100%);
+    .hero-title .serif {
+      background: linear-gradient(100deg, var(--blue-2), var(--blue-3) 60%, var(--blue-4));
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent;
+      padding-right: 0.08em;
     }
 
+    .hero-sub {
+      margin-top: 1.6rem; max-width: 720px;
+      color: var(--muted); font-size: clamp(1rem, 2vw, 1.15rem);
+    }
+    .hero-sub strong { color: var(--text); font-weight: 600; }
+
     .hero-roles {
-      margin-top: 1rem;
+      margin-top: 1.1rem;
       font-family: var(--font-mono);
-      font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+      font-size: clamp(0.85rem, 1.8vw, 1rem);
       color: var(--muted); min-height: 1.8em;
     }
-    .hero-roles .typed { color: var(--text); font-weight: 600; }
+    .hero-roles .typed { color: var(--blue-3); font-weight: 600; }
     .cursor-blink {
-      display: inline-block; width: 10px; height: 1.15em;
-      background: var(--accent); margin-left: 4px; vertical-align: text-bottom;
+      display: inline-block; width: 9px; height: 1.1em;
+      background: var(--blue-2); margin-left: 4px; vertical-align: text-bottom;
       animation: blink 1s step-end infinite;
     }
     @keyframes blink { 50% { opacity: 0; } }
 
-    .hero-desc {
-      margin-top: 1.4rem; max-width: 680px;
-      color: var(--muted); font-size: 1.02rem;
-    }
-    .hero-desc strong { color: var(--text); font-weight: 600; }
-
-    .hero-buttons { display: flex; gap: 1rem; margin-top: 2.4rem; flex-wrap: wrap; justify-content: center; }
-
+    .hero-buttons { display: flex; gap: 1rem; margin-top: 2.6rem; flex-wrap: wrap; justify-content: center; }
     .btn {
       font-family: var(--font-display); font-weight: 600; font-size: 0.92rem;
       padding: 0.85rem 2.1rem; border-radius: 12px; cursor: pointer;
@@ -244,57 +230,76 @@
       border: 1px solid transparent; display: inline-flex; align-items: center; gap: 0.5rem;
     }
     .btn-primary {
-      background: linear-gradient(100deg, var(--accent), var(--accent-2));
-      color: #061019;
-      box-shadow: 0 8px 24px -8px var(--glow);
+      background: linear-gradient(100deg, var(--blue-1), var(--blue-2));
+      color: #fff;
+      box-shadow: 0 10px 28px -10px var(--glow);
     }
-    :root.light .btn-primary { color: #fff; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 34px -8px var(--glow); }
-    .btn-ghost {
-      background: var(--surface); color: var(--text); border-color: var(--border-strong);
-    }
-    .btn-ghost:hover { border-color: var(--accent); box-shadow: 0 0 20px var(--glow); transform: translateY(-2px); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 38px -10px var(--glow); }
+    .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border-strong); }
+    .btn-ghost:hover { border-color: var(--blue-2); box-shadow: 0 0 20px var(--glow); transform: translateY(-2px); }
 
-    /* Stats */
     .hero-stats {
-      display: flex; gap: clamp(1.5rem, 5vw, 4rem);
-      margin-top: 3.4rem; flex-wrap: wrap; justify-content: center;
+      display: flex; gap: clamp(1.2rem, 4.5vw, 3.6rem);
+      margin-top: 3.6rem; flex-wrap: wrap; justify-content: center;
     }
     .stat { text-align: center; }
     .stat .num {
       font-family: var(--font-display); font-weight: 700;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      background: linear-gradient(180deg, var(--text), var(--muted));
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: clamp(1.7rem, 3.8vw, 2.5rem);
+      color: var(--text);
     }
-    .stat .num .plus { color: var(--accent); -webkit-text-fill-color: var(--accent); }
+    .stat .num .accent { color: var(--blue-2); }
     .stat .label {
-      font-size: 0.72rem; color: var(--muted);
+      font-size: 0.7rem; color: var(--muted);
       text-transform: uppercase; letter-spacing: 0.12em; margin-top: 0.2rem;
-      max-width: 200px;
+      max-width: 190px;
     }
 
-    .scroll-hint {
-      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-      color: var(--muted); font-size: 1.4rem;
-      animation: bob 2s ease-in-out infinite; text-decoration: none;
+    /* ============ SECTOR MARQUEE ============ */
+    .marquee-band {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      overflow: hidden;
+      padding: 1.05rem 0;
+      position: relative;
     }
-    @keyframes bob { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
+    .marquee-band::before, .marquee-band::after {
+      content: ""; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2;
+      pointer-events: none;
+    }
+    .marquee-band::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+    .marquee-band::after { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
+    .marquee-track {
+      display: flex; gap: 3.2rem; width: max-content;
+      animation: marquee 30s linear infinite;
+      align-items: center;
+    }
+    .marquee-band:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+    .marquee-item {
+      font-family: var(--font-mono); font-size: 0.8rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); white-space: nowrap;
+      display: flex; align-items: center; gap: 3.2rem;
+    }
+    .marquee-item .diamond { color: var(--blue-2); font-size: 0.6rem; }
+    .marquee-item .hl { color: var(--blue-3); font-weight: 600; }
 
     /* ============ SECTIONS ============ */
-    section { max-width: 1120px; margin: 0 auto; padding: 5.5rem 5vw; }
+    section { max-width: 1140px; margin: 0 auto; padding: 5.5rem 5vw; }
 
     .section-head { margin-bottom: 3rem; }
     .section-head .kicker {
-      font-family: var(--font-mono); font-size: 0.78rem;
-      color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase;
+      font-family: var(--font-mono); font-size: 0.75rem;
+      color: var(--blue-2); letter-spacing: 0.18em; text-transform: uppercase;
     }
     .section-head h2 {
-      font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 700;
-      letter-spacing: -0.01em; margin-top: 0.4rem;
+      font-size: clamp(1.8rem, 4.2vw, 2.6rem); font-weight: 700;
+      letter-spacing: -0.02em; margin-top: 0.4rem;
     }
-    .section-head .sub { color: var(--muted); margin-top: 0.6rem; max-width: 680px; }
+    .section-head h2 .serif { color: var(--blue-3); }
+    .section-head .sub { color: var(--muted); margin-top: 0.7rem; max-width: 700px; }
 
     .glass {
       background: var(--surface);
@@ -305,30 +310,93 @@
     }
 
     /* ============ ABOUT ============ */
-    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: start; }
-    @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 2rem; align-items: start; }
+    @media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; } }
 
-    .about-text { padding: 2.2rem; }
+    .about-text { padding: 2.3rem; }
     .about-text p { color: var(--muted); font-size: 0.98rem; }
     .about-text p + p { margin-top: 1rem; }
     .about-text strong { color: var(--text); }
+    .about-text .lead {
+      font-size: 1.25rem; line-height: 1.5; color: var(--text);
+      font-family: var(--font-display); font-weight: 500;
+    }
+    .about-text .lead .serif { color: var(--blue-3); }
 
     .about-side { display: flex; flex-direction: column; gap: 1rem; }
     .info-card { padding: 1.3rem 1.5rem; display: flex; gap: 1rem; align-items: center; transition: all 0.3s ease; }
-    .info-card:hover { border-color: var(--accent); transform: translateX(4px); }
+    .info-card:hover { border-color: var(--blue-2); transform: translateX(4px); }
     .info-card .ico {
       width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
       display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
-      background: var(--accent-soft); border: 1px solid var(--border);
+      background: var(--blue-soft); border: 1px solid var(--border);
     }
     .info-card h4 { font-size: 0.92rem; }
     .info-card p { font-size: 0.8rem; color: var(--muted); }
+
+    /* ============ BENTO / EXPERTISE ============ */
+    .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.2rem; }
+    .bento-card {
+      padding: 1.8rem; border-radius: 18px;
+      background: var(--surface); border: 1px solid var(--border);
+      position: relative; overflow: hidden;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      display: flex; flex-direction: column; gap: 0.8rem;
+      grid-column: span 3;
+    }
+    .bento-card.wide { grid-column: span 6; flex-direction: row; align-items: center; gap: 2rem; }
+    .bento-card.third { grid-column: span 2; }
+    @media (max-width: 880px) {
+      .bento { grid-template-columns: 1fr; }
+      .bento-card, .bento-card.wide, .bento-card.third { grid-column: span 1; flex-direction: column; }
+    }
+    .bento-card::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(480px circle at var(--mx, 50%) var(--my, 50%), var(--blue-soft), transparent 45%);
+      opacity: 0; transition: opacity 0.35s ease; pointer-events: none;
+    }
+    .bento-card:hover { transform: translateY(-5px); border-color: var(--blue-2); box-shadow: 0 18px 44px -18px var(--glow); }
+    .bento-card:hover::before { opacity: 1; }
+
+    .bento-card .ico {
+      width: 46px; height: 46px; border-radius: 13px; font-size: 1.3rem; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--blue-soft); border: 1px solid var(--border);
+    }
+    .bento-card h3 { font-size: 1.08rem; }
+    .bento-card p { font-size: 0.87rem; color: var(--muted); }
+    .bento-card .big {
+      font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; line-height: 1.25;
+    }
+    .bento-card .big .serif { color: var(--blue-3); }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; padding-top: 0.6rem; }
+    .chip {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      padding: 0.28rem 0.7rem; border-radius: 999px;
+      border: 1px solid var(--border); color: var(--muted);
+      background: var(--surface); transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .chip:hover { color: var(--blue-3); border-color: var(--blue-2); }
+
+    /* Method strip */
+    .method { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1.2rem; }
+    @media (max-width: 880px) { .method { grid-template-columns: 1fr; } }
+    .method-step { padding: 1.5rem 1.6rem; border-radius: 16px; background: var(--surface); border: 1px solid var(--border); transition: all 0.3s ease; }
+    .method-step:hover { border-color: var(--blue-2); transform: translateY(-4px); }
+    .method-step .n {
+      font-family: var(--font-mono); font-size: 0.75rem; color: var(--blue-2);
+      letter-spacing: 0.15em;
+    }
+    .method-step h4 { font-size: 1rem; margin: 0.4rem 0 0.3rem; }
+    .method-step p { font-size: 0.83rem; color: var(--muted); }
 
     /* ============ EXPERIENCE / TIMELINE ============ */
     .timeline { position: relative; padding-left: 2.2rem; }
     .timeline::before {
       content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px;
-      background: linear-gradient(180deg, var(--accent), var(--accent-2), transparent);
+      background: linear-gradient(180deg, var(--blue-1), var(--blue-3), transparent);
       opacity: 0.5;
     }
     .tl-item { position: relative; padding-bottom: 3rem; }
@@ -337,16 +405,16 @@
       content: ""; position: absolute; left: -2.2rem; top: 8px;
       width: 18px; height: 18px; border-radius: 50%;
       background: var(--bg);
-      border: 3px solid var(--accent);
+      border: 3px solid var(--blue-1);
       box-shadow: 0 0 14px var(--glow);
     }
-    .tl-item:nth-child(2)::before { border-color: var(--accent-2); }
-    .tl-item:nth-child(3)::before { border-color: var(--accent-3); }
-    .tl-item:nth-child(4)::before { border-color: #fbbf24; }
+    .tl-item:nth-child(2)::before { border-color: var(--blue-2); }
+    .tl-item:nth-child(3)::before { border-color: var(--blue-3); }
+    .tl-item:nth-child(4)::before { border-color: var(--blue-4); }
 
     .tl-meta {
       font-family: var(--font-mono); font-size: 0.75rem;
-      color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--blue-2); letter-spacing: 0.08em; text-transform: uppercase;
     }
     .tl-item h3 { font-size: 1.25rem; margin-top: 0.3rem; }
     .tl-item .org { color: var(--muted); font-size: 0.9rem; margin-top: 0.1rem; }
@@ -360,22 +428,13 @@
     }
     .tl-block:hover { border-color: var(--border-strong); background: var(--surface-strong); }
     .tl-block h4 { font-size: 0.92rem; display: flex; align-items: center; gap: 0.55rem; }
-    .tl-block h4 .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-    .tl-block:nth-child(2) h4 .dot { background: var(--accent-2); }
-    .tl-block:nth-child(3) h4 .dot { background: var(--accent-3); }
-    .tl-block:nth-child(4) h4 .dot { background: #fbbf24; }
-    .tl-block:nth-child(5) h4 .dot { background: #38bdf8; }
-    .tl-block:nth-child(6) h4 .dot { background: #a3e635; }
+    .tl-block h4 .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue-1); flex-shrink: 0; }
+    .tl-block:nth-child(2) h4 .dot { background: var(--blue-2); }
+    .tl-block:nth-child(3) h4 .dot { background: var(--blue-3); }
+    .tl-block:nth-child(4) h4 .dot { background: var(--blue-4); }
+    .tl-block:nth-child(5) h4 .dot { background: var(--blue-2); }
     .tl-block p { font-size: 0.86rem; color: var(--muted); margin-top: 0.35rem; }
-
-    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.1rem; }
-    .chip {
-      font-family: var(--font-mono); font-size: 0.7rem;
-      padding: 0.3rem 0.75rem; border-radius: 999px;
-      border: 1px solid var(--border); color: var(--muted);
-      background: var(--surface); transition: all 0.25s ease;
-    }
-    .chip:hover { color: var(--accent); border-color: var(--accent); }
+    .tl-item .chips { margin-top: 1.1rem; }
 
     /* ============ PROJECTS ============ */
     .filter-buttons { display: flex; gap: 0.7rem; margin-bottom: 2.2rem; flex-wrap: wrap; }
@@ -388,37 +447,34 @@
     }
     .filter-btn:hover { color: var(--text); border-color: var(--border-strong); }
     .filter-btn.active {
-      color: #061019;
-      background: linear-gradient(100deg, var(--accent), var(--accent-2));
+      color: #fff;
+      background: linear-gradient(100deg, var(--blue-1), var(--blue-2));
       border-color: transparent;
       box-shadow: 0 6px 18px -6px var(--glow);
     }
-    :root.light .filter-btn.active { color: #fff; }
 
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.4rem; }
-
     .project {
       padding: 1.7rem; border-radius: 18px;
       background: var(--surface); border: 1px solid var(--border);
       display: flex; flex-direction: column; gap: 0.9rem;
-      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, opacity 0.35s ease;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
       position: relative; overflow: hidden;
     }
     .project::before {
       content: ""; position: absolute; inset: 0;
-      background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), var(--accent-soft), transparent 45%);
+      background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), var(--blue-soft), transparent 45%);
       opacity: 0; transition: opacity 0.35s ease; pointer-events: none;
     }
-    .project:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: 0 18px 40px -18px var(--glow); }
+    .project:hover { transform: translateY(-6px); border-color: var(--blue-2); box-shadow: 0 18px 40px -18px var(--glow); }
     .project:hover::before { opacity: 1; }
     .project.hidden { display: none; }
 
     .project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.8rem; }
     .project .ico {
-      width: 46px; height: 46px; border-radius: 13px; font-size: 1.3rem;
+      width: 46px; height: 46px; border-radius: 13px; font-size: 1.3rem; flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
-      background: var(--accent-soft); border: 1px solid var(--border);
-      flex-shrink: 0;
+      background: var(--blue-soft); border: 1px solid var(--border);
     }
     .project .badge {
       font-family: var(--font-mono); font-size: 0.65rem;
@@ -427,42 +483,21 @@
       border: 1px solid var(--border); color: var(--muted);
       text-align: right;
     }
-    .project[data-category="pro"] .badge { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
-    .project[data-category="pro-btp"] .badge { color: #fbbf24; border-color: color-mix(in srgb, #fbbf24 45%, transparent); }
-    .project[data-category="academic"] .badge { color: var(--accent-2); border-color: color-mix(in srgb, var(--accent-2) 45%, transparent); }
-    .project[data-category="personal"] .badge { color: var(--accent-3); border-color: color-mix(in srgb, var(--accent-3) 45%, transparent); }
+    .project[data-category="health"] .badge { color: var(--blue-3); border-color: color-mix(in srgb, var(--blue-2) 50%, transparent); }
+    .project[data-category="construction"] .badge { color: var(--blue-4); border-color: color-mix(in srgb, var(--blue-3) 50%, transparent); }
+    .project[data-category="academic"] .badge { color: var(--blue-2); border-color: color-mix(in srgb, var(--blue-1) 55%, transparent); }
+    .project[data-category="personal"] .badge { color: var(--muted); }
 
     .project h3 { font-size: 1.05rem; line-height: 1.35; }
     .project p { font-size: 0.85rem; color: var(--muted); flex-grow: 1; }
-    .project .chips { margin-top: 0; }
-
-    /* ============ SKILLS ============ */
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.4rem; }
-    .skill-card { padding: 1.7rem; transition: all 0.3s ease; }
-    .skill-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 16px 36px -18px var(--glow); }
-    .skill-card .ico {
-      width: 46px; height: 46px; border-radius: 13px; font-size: 1.3rem;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--accent2-soft); border: 1px solid var(--border);
-      margin-bottom: 1rem;
-    }
-    .skill-card h3 { font-size: 1rem; margin-bottom: 0.9rem; }
-    .skill-row { margin-bottom: 0.85rem; }
-    .skill-row .top { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.35rem; gap: 0.6rem; }
-    .skill-row .top .pct { font-family: var(--font-mono); color: var(--muted); font-size: 0.72rem; }
-    .skill-bar { background: var(--surface-strong); border-radius: 99px; height: 7px; overflow: hidden; }
-    .skill-fill {
-      height: 100%; width: 0; border-radius: 99px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      transition: width 1.3s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .skill-fill.animated { width: var(--lvl); }
+    .project .chips { margin-top: 0; padding-top: 0; }
 
     /* ============ CONTACT ============ */
     .contact-wrap { padding: 2.5rem; display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; }
-    @media (max-width: 860px) { .contact-wrap { grid-template-columns: 1fr; } }
+    @media (max-width: 880px) { .contact-wrap { grid-template-columns: 1fr; } }
 
-    .contact-info h3 { font-size: 1.3rem; margin-bottom: 0.7rem; }
+    .contact-info h3 { font-size: 1.4rem; margin-bottom: 0.7rem; }
+    .contact-info h3 .serif { color: var(--blue-3); }
     .contact-info p { color: var(--muted); font-size: 0.92rem; margin-bottom: 1.6rem; }
     .contact-links { display: flex; flex-direction: column; gap: 0.8rem; }
     .contact-link {
@@ -472,7 +507,7 @@
       color: var(--text); text-decoration: none; font-size: 0.88rem;
       transition: all 0.25s ease;
     }
-    .contact-link:hover { border-color: var(--accent); transform: translateX(5px); box-shadow: 0 0 18px var(--glow); }
+    .contact-link:hover { border-color: var(--blue-2); transform: translateX(5px); box-shadow: 0 0 18px var(--glow); }
     .contact-link .ico { font-size: 1.15rem; }
 
     .contact-form { display: grid; gap: 0.9rem; }
@@ -483,7 +518,7 @@
       transition: all 0.25s ease; width: 100%;
     }
     .contact-form input:focus, .contact-form textarea:focus {
-      outline: none; border-color: var(--accent); box-shadow: 0 0 16px var(--glow);
+      outline: none; border-color: var(--blue-2); box-shadow: 0 0 16px var(--glow);
     }
     .contact-form textarea { min-height: 130px; resize: vertical; }
     .contact-form .btn { justify-self: start; border: none; }
@@ -494,7 +529,7 @@
       color: var(--muted); font-size: 0.78rem;
       border-top: 1px solid var(--border);
     }
-    footer .mono { font-family: var(--font-mono); color: var(--accent); }
+    footer .mono { font-family: var(--font-mono); color: var(--blue-2); }
 
     /* ============ SCROLL TOP ============ */
     .scroll-top {
@@ -507,9 +542,9 @@
       transition: all 0.3s ease;
     }
     .scroll-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-    .scroll-top:hover { border-color: var(--accent); box-shadow: 0 0 20px var(--glow); }
+    .scroll-top:hover { border-color: var(--blue-2); box-shadow: 0 0 20px var(--glow); }
 
-    /* ============ REVEAL ANIMATIONS ============ */
+    /* ============ REVEAL ============ */
     .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
     .reveal.visible { opacity: 1; transform: none; }
     .reveal[data-delay="1"] { transition-delay: 0.1s; }
@@ -521,19 +556,18 @@
       .reveal { opacity: 1; transform: none; }
     }
 
-    /* ============ PRINT (CV PDF) ============ */
+    /* ============ PRINT (RESUME) ============ */
     @media print {
       :root { --bg: #fff; --text: #111; --muted: #444; --border: #ccc; --surface: #fff; --surface-strong: #f4f4f4; }
-      .ambient, #particles, nav, .progress, .scroll-top, .hero-buttons, .scroll-hint,
-      .filter-buttons, .contact-form, .avatar-ring, .pulse-dot, footer .mono { display: none !important; }
+      .ambient, .gridlines, nav, .progress, .scroll-top, .hero-buttons,
+      .marquee-band, .filter-buttons, .contact-form, .pulse-dot, footer .mono { display: none !important; }
       body { background: #fff; color: #111; font-size: 11px; }
       header { min-height: auto; padding: 1rem 0; }
       section { padding: 0.8rem 0; max-width: 100%; }
-      .glass, .project, .tl-block, .skill-card, .info-card { border: 1px solid #ddd; box-shadow: none; break-inside: avoid; }
+      .glass, .project, .tl-block, .bento-card, .info-card, .method-step { border: 1px solid #ddd; box-shadow: none; break-inside: avoid; }
       .project.hidden { display: flex !important; }
-      header h1 .grad, .stat .num { -webkit-text-fill-color: #111; color: #111; background: none; }
+      .hero-title .serif, .stat .num { -webkit-text-fill-color: #111; color: #111; background: none; }
       .reveal { opacity: 1 !important; transform: none !important; }
-      .avatar-wrap { width: 90px; height: 90px; margin-bottom: 0.6rem; }
       a { color: #111; text-decoration: none; }
     }
   </style>
@@ -541,21 +575,21 @@
 <body>
 
   <div class="ambient"></div>
-  <canvas id="particles"></canvas>
+  <div class="gridlines"></div>
   <div class="progress" id="progress"></div>
 
   <!-- ============ NAV ============ -->
   <nav id="navbar">
-    <a href="#hero" class="nav-brand"><span class="tag">&lt;</span>maxime.laurent<span class="slash"> /</span><span class="tag">&gt;</span></a>
+    <a href="#hero" class="nav-brand"><span class="tag">&lt;</span>maxime.laurent<span class="tag"> /&gt;</span></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about" data-i18n="nav.about">À propos</a></li>
-      <li><a href="#experience" data-i18n="nav.experience">Expérience</a></li>
-      <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
-      <li><a href="#skills" data-i18n="nav.skills">Compétences</a></li>
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
       <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
     <div class="nav-controls">
-      <button class="icon-btn lang" id="langToggle" aria-label="Switch language">EN</button>
+      <button class="icon-btn lang" id="langToggle" aria-label="Switch language">FR</button>
       <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☾</button>
       <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
     </div>
@@ -563,91 +597,173 @@
 
   <!-- ============ HERO ============ -->
   <header id="hero">
-    <div class="avatar-wrap reveal visible">
-      <div class="avatar-ring"></div>
-      <img src="photo.jpg" alt="Maxime Laurent" />
-    </div>
+    <span class="hero-badge"><span class="pulse-dot"></span><span data-i18n="hero.badge">AI Data Engineer · Open to Australia / USA / Canada</span></span>
 
-    <span class="hero-eyebrow"><span class="pulse-dot"></span><span data-i18n="hero.eyebrow">Consultant @ Talan — Practice Assurance & Santé</span></span>
+    <h1 class="hero-title" data-i18n="hero.title">I build AI systems<br>that ship — <span class="serif">in any industry.</span></h1>
 
-    <h1>Maxime <span class="grad">Laurent</span></h1>
+    <p class="hero-sub" data-i18n="hero.sub">
+      <strong>AI Data Engineer</strong> — I take LLM and ML solutions from a blank page to production: <strong>GenAI pipelines, predictive models, cloud data platforms</strong>. Hospital billing one quarter, heritage restoration tenders the next — the sector changes, the delivery doesn't.
+    </p>
 
     <div class="hero-roles">
       <span class="typed" id="typedRole"></span><span class="cursor-blink"></span>
     </div>
 
-    <p class="hero-desc" data-i18n="hero.desc">
-      Ingénieur INSA Rouen Normandie, je conçois et déploie des solutions d'<strong>IA générative et de data science</strong> appliquées à la santé : codage médical PMSI assisté par IA, contrôle de facturation, ML prédictif — <strong>du cadrage à la mise en production</strong>.
-    </p>
-
     <div class="hero-buttons">
-      <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">Voir mes projets</a>
-      <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Me contacter</a>
-      <button class="btn btn-ghost" id="downloadCV" data-i18n="hero.cta3">⬇ Version CV</button>
+      <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">See my work</a>
+      <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Get in touch</a>
+      <button class="btn btn-ghost" id="downloadCV" data-i18n="hero.cta3">⬇ Resume</button>
     </div>
 
     <div class="hero-stats">
       <div class="stat">
-        <div class="num"><span class="counter" data-target="2">0</span></div>
-        <div class="label" data-i18n="stats.missions">missions grands comptes</div>
+        <div class="num"><span class="counter" data-target="3">0</span></div>
+        <div class="label" data-i18n="stats.sectors">industries delivered in (and counting)</div>
       </div>
       <div class="stat">
-        <div class="num"><span class="counter" data-target="12">0</span><span class="plus">+</span></div>
-        <div class="label" data-i18n="stats.projects">projets data & IA livrés</div>
+        <div class="num"><span class="counter" data-target="12">0</span><span class="accent">+</span></div>
+        <div class="label" data-i18n="stats.projects">AI & data projects shipped</div>
       </div>
       <div class="stat">
         <div class="num"><span class="counter" data-target="5">0</span></div>
-        <div class="label" data-i18n="stats.llm">LLM benchmarkés sur cas réels</div>
+        <div class="label" data-i18n="stats.llm">LLMs benchmarked on real cases</div>
       </div>
       <div class="stat">
-        <div class="num">2,2M</div>
-        <div class="label" data-i18n="stats.stays">séjours MCO/an sur le périmètre analysé</div>
+        <div class="num">2.2M<span class="accent">+</span></div>
+        <div class="label" data-i18n="stats.records">records/year in my largest scope</div>
       </div>
     </div>
-
-    <a href="#about" class="scroll-hint" aria-label="Scroll down">↓</a>
   </header>
+
+  <!-- ============ SECTOR MARQUEE ============ -->
+  <div class="marquee-band" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <span class="marquee-item">
+        <span>Healthcare</span><span class="diamond">◆</span>
+        <span>Insurance</span><span class="diamond">◆</span>
+        <span>Construction</span><span class="diamond">◆</span>
+        <span>Heritage restoration</span><span class="diamond">◆</span>
+        <span>Public procurement</span><span class="diamond">◆</span>
+        <span>Real estate</span><span class="diamond">◆</span>
+        <span class="hl" data-i18n="marquee.next">Your industry next</span><span class="diamond">◆</span>
+      </span>
+    </div>
+  </div>
 
   <!-- ============ ABOUT ============ -->
   <section id="about">
     <div class="section-head reveal">
-      <span class="kicker" data-i18n="about.kicker">01 · Profil</span>
-      <h2 data-i18n="about.title">À propos</h2>
+      <span class="kicker" data-i18n="about.kicker">01 · Profile</span>
+      <h2 data-i18n="about.title">Sector-agnostic, <span class="serif">by design</span></h2>
     </div>
     <div class="about-grid">
       <div class="glass about-text reveal">
+        <p class="lead" data-i18n="about.lead">My edge isn't one domain — it's the speed at which I <span class="serif">master a new one.</span></p>
         <p data-i18n="about.p1">
-          <strong>Consultant Data & IA</strong> chez <strong>Talan</strong> (practice Assurance & Santé) et ingénieur diplômé de l'INSA Rouen Normandie, j'interviens à la croisée du <strong>conseil et de l'implémentation technique</strong> : cadrage, architecture, développement et delivery.
+          I'm an <strong>AI Data Engineer</strong> at Talan and an engineering graduate of INSA Rouen Normandie (France). In under two years I've shipped AI solutions in <strong>healthcare, construction & heritage, and public procurement</strong> — three industries with nothing in common except how much their rules matter.
         </p>
         <p data-i18n="about.p2">
-          Chez <strong>Ramsay Santé</strong>, leader européen de l'hospitalisation privée, je pilote des chantiers d'IA appliquée au cœur du système hospitalier français : <strong>codage médical PMSI assisté par LLM</strong>, détection des rejets de facturation CPAM, moteur de groupage GHM, ML prédictif — sur un périmètre de ~2,2 millions de séjours MCO par an.
+          In healthcare, I went from zero to building production pipelines on one of the most regulated data domains in France — medical coding and hospital billing — including multi-LLM coding systems and predictive rejection models over a <strong>2.2M-stays-per-year</strong> scope. In construction, I automated public tender monitoring and cost pre-estimation for a VINCI subsidiary restoring historical monuments.
         </p>
         <p data-i18n="about.p3">
-          Mon approche : maîtriser le <strong>métier</strong> (CIM-10, CCAM, T2A, S3404) autant que la <strong>technique</strong> (LLM, RAG, XGBoost, Azure/AKS), pour livrer des solutions auditables, conformes (HDS/RGPD) et réellement adoptées par les utilisateurs.
+          Same method every time: <strong>immerse in the domain, build with the right tool</strong> — LLM, classic ML, or plain deterministic code — <strong>and ship to production</strong> with the audit trail, compliance and documentation that regulated industries demand.
         </p>
       </div>
       <div class="about-side">
         <div class="glass info-card reveal" data-delay="1">
-          <div class="ico">💼</div>
+          <div class="ico">⚡</div>
           <div>
-            <h4>Talan</h4>
-            <p data-i18n="about.talan.desc">Consultant — practice Assurance & Santé · Conseil + implémentation</p>
+            <h4 data-i18n="about.c1.title">Fast domain immersion</h4>
+            <p data-i18n="about.c1.desc">Regulated healthcare billing, public procurement law, heritage cost estimation — learned on the job, delivered in weeks</p>
           </div>
         </div>
         <div class="glass info-card reveal" data-delay="2">
           <div class="ico">🎓</div>
           <div>
             <h4>INSA Rouen Normandie</h4>
-            <p data-i18n="about.edu.desc">Diplôme d'ingénieur — Informatique & technologies de l'information</p>
+            <p data-i18n="about.c2.desc">MSc-level engineering degree — Computer science & information technology</p>
           </div>
         </div>
         <div class="glass info-card reveal" data-delay="3">
-          <div class="ico">🏥</div>
+          <div class="ico">🌏</div>
           <div>
-            <h4 data-i18n="about.health.title">Expertise santé</h4>
-            <p data-i18n="about.health.desc">PMSI MCO · CIM-10 · CCAM · GHM/T2A · facturation CPAM · HDS/RGPD</p>
+            <h4 data-i18n="about.c3.title">Ready to relocate</h4>
+            <p data-i18n="about.c3.desc">Targeting Australia, the US and Canada · Bilingual deliverables (EN/FR)</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERTISE BENTO ============ -->
+  <section id="expertise">
+    <div class="section-head reveal">
+      <span class="kicker" data-i18n="exp2.kicker">02 · Expertise</span>
+      <h2 data-i18n="exp2.title">What I <span class="serif">bring</span></h2>
+    </div>
+
+    <div class="bento">
+      <div class="bento-card wide reveal">
+        <div class="big" data-i18n="exp2.hero">One profile, <span class="serif">full stack :</span><br>from LLM orchestration to Kubernetes deployment.</div>
+        <p data-i18n="exp2.hero.desc">Most teams need three people for this: someone who speaks to the business, someone who builds the models, someone who ships to the cloud. I close that loop alone — which is exactly what lean AI teams are hiring for.</p>
+      </div>
+
+      <div class="bento-card reveal" data-delay="1">
+        <div class="ico">🤖</div>
+        <h3 data-i18n="exp2.b1.title">GenAI & LLM systems</h3>
+        <p data-i18n="exp2.b1.desc">Multi-LLM benchmarking on real business cases, RAG, multi-agent orchestration, NER pseudonymization, hybrid LLM + deterministic architectures — with measured accuracy, not demos.</p>
+        <div class="chips">
+          <span class="chip">Azure OpenAI</span><span class="chip">Anthropic</span><span class="chip">Mistral</span>
+          <span class="chip">LangGraph</span><span class="chip">RAG · FAISS · pgvector</span><span class="chip">Ollama</span>
+        </div>
+      </div>
+
+      <div class="bento-card reveal" data-delay="2">
+        <div class="ico">📊</div>
+        <h3 data-i18n="exp2.b2.title">Machine learning in production</h3>
+        <p data-i18n="exp2.b2.desc">Predictive scoring on relational data, explainability for regulated environments, honest model choices — XGBoost over LLM fine-tuning when auditability and cost say so.</p>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">XGBoost</span><span class="chip">SHAP</span>
+          <span class="chip">FastAPI</span><span class="chip">SQL</span><span class="chip">Pandas</span>
+        </div>
+      </div>
+
+      <div class="bento-card reveal" data-delay="1">
+        <div class="ico">☁️</div>
+        <h3 data-i18n="exp2.b3.title">Cloud & data engineering</h3>
+        <p data-i18n="exp2.b3.desc">Architectures designed with client architects and deployed for real: vector databases, GitOps pipelines, secret management, containerized inference.</p>
+        <div class="chips">
+          <span class="chip">Azure · AKS</span><span class="chip">ADLS Gen2</span><span class="chip">Docker</span>
+          <span class="chip">Helm · ArgoCD</span><span class="chip">PostgreSQL · pgvector</span><span class="chip">Key Vault</span>
+        </div>
+      </div>
+
+      <div class="bento-card reveal" data-delay="2">
+        <div class="ico">🧭</div>
+        <h3 data-i18n="exp2.b4.title">Consulting-grade delivery</h3>
+        <p data-i18n="exp2.b4.desc">Framing documents in English and French, client workshops, specifications, compliance by design (health-data hosting, GDPR) — engineering that stakeholders can sign off on.</p>
+        <div class="chips">
+          <span class="chip" data-i18n="exp2.b4.chip1">Framing & specs</span><span class="chip" data-i18n="exp2.b4.chip2">Client workshops</span>
+          <span class="chip">GDPR</span><span class="chip" data-i18n="exp2.b4.chip3">Bilingual EN/FR</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="method">
+      <div class="method-step reveal">
+        <div class="n">STEP 01</div>
+        <h4 data-i18n="method.s1.title">Immerse</h4>
+        <p data-i18n="method.s1.desc">I learn your domain's rules, vocabulary and constraints as fast as your codebase — deep enough to challenge experts on their own turf.</p>
+      </div>
+      <div class="method-step reveal" data-delay="1">
+        <div class="n">STEP 02</div>
+        <h4 data-i18n="method.s2.title">Build</h4>
+        <p data-i18n="method.s2.desc">The right tool for the problem — LLM, classic ML or deterministic code — benchmarked against real data, never against a slideware promise.</p>
+      </div>
+      <div class="method-step reveal" data-delay="2">
+        <div class="n">STEP 03</div>
+        <h4 data-i18n="method.s3.title">Ship</h4>
+        <p data-i18n="method.s3.desc">Production on your cloud, with explainability, compliance and documentation — solutions that survive the handover.</p>
       </div>
     </div>
   </section>
@@ -655,95 +771,91 @@
   <!-- ============ EXPERIENCE ============ -->
   <section id="experience">
     <div class="section-head reveal">
-      <span class="kicker" data-i18n="exp.kicker">02 · Parcours</span>
-      <h2 data-i18n="exp.title">Expérience</h2>
-      <p class="sub" data-i18n="exp.sub">Du conseil à la mise en production : IA générative, data science et expertise métier.</p>
+      <span class="kicker" data-i18n="exp.kicker">03 · Experience</span>
+      <h2 data-i18n="exp.title">Where I've <span class="serif">delivered</span></h2>
+      <p class="sub" data-i18n="exp.sub">Two industries, one employer, a dozen production workstreams.</p>
     </div>
 
     <div class="timeline">
-      <!-- Ramsay via Talan -->
+      <!-- Ramsay -->
       <div class="tl-item reveal">
-        <span class="tl-meta">2025 — 2026 · <span data-i18n="exp.ramsay.duration">Mission longue</span></span>
-        <h3 data-i18n="exp.ramsay.title">Consultant Data & IA — Mission Ramsay Santé</h3>
-        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.ramsay.org">Ramsay Santé, leader européen de l'hospitalisation privée — chantiers IA/data menés en parallèle avec sponsor Direction Data (IDCO)</span></p>
+        <span class="tl-meta">2025 — 2026 · <span data-i18n="exp.ramsay.sector">Healthcare</span></span>
+        <h3 data-i18n="exp.ramsay.title">AI Data Engineer — Ramsay Santé engagement</h3>
+        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.ramsay.org">Europe's leading private hospital group — parallel AI workstreams sponsored by the client's Data Office, over a ~2.2M inpatient-stays-per-year scope</span></p>
         <div class="tl-body">
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b1.title">Codage médical PMSI assisté par IA</span></h4>
-            <p data-i18n="exp.ramsay.b1.desc">Pipeline multi-LLM de codage CIM-10 (DP/DR/DAS) : benchmark GPT, Gemini, Mistral, Grok et Claude avec scoring hiérarchique pondéré, RAG (FAISS), pseudonymisation NER (EDS-Pseudo AP-HP en API Docker) et interface React de validation pour les TIM. Pilote : 100 % de justesse sur le diagnostic principal (Gemini/GPT) contre 63 % pour la référence humaine, sur un échantillon de 8 séjours. Architecture multi-agents LangGraph (codeur → contrôle qualité → arbitrage) proposée pour l'industrialisation.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b1.title">AI-assisted medical coding</span></h4>
+            <p data-i18n="exp.ramsay.b1.desc">Multi-LLM ICD-10 coding pipeline: benchmark of GPT, Gemini, Mistral, Grok and Claude with weighted hierarchical scoring, RAG (FAISS), NER pseudonymization (Docker API) and a React validation interface for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% human baseline. LangGraph multi-agent architecture (coder → QA → arbitration) designed for scale-up.</p>
           </div>
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b2.title">Contrôle facturation & rejets CPAM (S3404)</span></h4>
-            <p data-i18n="exp.ramsay.b2.desc">Pipeline hybride LLM + Python déterministe de détection des rejets de factures CPAM sur un benchmark de 81 factures. Diagnostic d'une dérive de version de modèle GPT sur Azure (96 % → 59-72 %), analyse des faux positifs, et recommandation retenue d'une architecture hybride : règles déterministes pour les motifs structurés, LLM pour les motifs sémantiques. Construction d'un référentiel de 24 codes de rejet et des 19 associations d'actes CCAM bloquées.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b2.title">Billing rejection control (health insurance)</span></h4>
+            <p data-i18n="exp.ramsay.b2.desc">Hybrid LLM + deterministic Python pipeline detecting insurance billing rejections on an 81-invoice benchmark. Diagnosed a GPT model-version drift on Azure (96% → 59-72%), analyzed false-positive patterns, and got the hybrid architecture adopted: deterministic rules for structured rejection reasons, LLM for semantic ones. Built the 24-code rejection reference base.</p>
           </div>
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b3.title">ML prédictif des rejets de facturation</span></h4>
-            <p data-i18n="exp.ramsay.b3.desc">Détection prédictive des factures à risque de rejet CPAM : XGBoost retenu face au fine-tuning LLM pour l'auditabilité, le coût et la reproductibilité, avec explicabilité SHAP. Données relationnelles issues de la base factures répliquée, stockage cible Azure (ADLS Gen2), scoring batch et exposition FastAPI.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b3.title">Predictive ML for billing rejections</span></h4>
+            <p data-i18n="exp.ramsay.b3.desc">Predictive detection of invoices at risk of rejection: XGBoost chosen over LLM fine-tuning for auditability, cost and reproducibility, with SHAP explainability. Relational data from the replicated invoicing database, Azure ADLS Gen2 target, batch scoring and FastAPI exposure.</p>
           </div>
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b4.title">Moteur PMSI : groupeur GHM & revalorisation</span></h4>
-            <p data-i18n="exp.ramsay.b4.desc">Développement d'un module Python complet de groupage GHM 2026 (parsing RSS au format ATIH, actes classants CCAM, niveaux de sévérité CMA, valorisation T2A : GHS, EXB/EXH, suppléments réanimation) sur les référentiels officiels ATIH. En complément, framework de détection du sous-codage : analyse de 90 RSS et scoring data-driven des séjours revalorisables par racine GHM.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b4.title">Hospital funding engine (French DRG / PMSI)</span></h4>
+            <p data-i18n="exp.ramsay.b4.desc">Complete Python DRG grouping engine (2026 national rules): positional record parsing, classifying procedures, severity levels, tariff valuation with outlier payments and ICU supplements — plus an under-coding detection framework scoring upgradeable stays for revenue recovery. Proof that I can absorb a country-specific regulatory system and re-implement it from official specs.</p>
           </div>
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b5.title">Architecture Azure & veille automatisée</span></h4>
-            <p data-i18n="exp.ramsay.b5.desc">Conception d'un système de veille des appels à projets de financement public, architecture validée avec l'architecte Azure du client : PostgreSQL + pgvector (index HNSW, embeddings 3072 dimensions), Bing Grounding, Key Vault CSI, déploiement Helm + ArgoCD sur AKS. Documents de cadrage produits en français et en anglais.</p>
-          </div>
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b6.title">Stratégie produit & avant-vente</span></h4>
-            <p data-i18n="exp.ramsay.b6.desc">Définition du produit V1 « codage PMSI assisté par IA » pour Talan (spécification 16 semaines / 6 lots, abstraction LLM multi-provider conforme HDS, Ramsay pressenti premier bêta-testeur) et évaluation de la réponse à un appel d'offres suisse (FHVi) : analyse des gaps et stratégie de partenariat.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b5.title">Azure platform & automated intelligence</span></h4>
+            <p data-i18n="exp.ramsay.b5.desc">Automated public-funding watch system, architecture validated with the client's Azure architect: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD deployment on AKS. Framing documents delivered in English and French.</p>
           </div>
         </div>
         <div class="chips">
           <span class="chip">Python</span><span class="chip">Azure OpenAI</span><span class="chip">LangGraph</span>
-          <span class="chip">RAG · FAISS</span><span class="chip">XGBoost · SHAP</span><span class="chip">React</span>
-          <span class="chip">Docker</span><span class="chip">AKS · ArgoCD</span><span class="chip">PMSI · T2A</span>
+          <span class="chip">RAG</span><span class="chip">XGBoost · SHAP</span><span class="chip">React</span>
+          <span class="chip">Docker</span><span class="chip">AKS · ArgoCD</span>
         </div>
       </div>
 
       <!-- DEGAINE -->
       <div class="tl-item reveal">
-        <span class="tl-meta">2026 · <span data-i18n="exp.degaine.duration">Mission conseil & IA</span></span>
-        <h3 data-i18n="exp.degaine.title">Consultant IA — Mission DEGAINE (VINCI Construction)</h3>
-        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.degaine.org">Filiale VINCI spécialisée dans la restauration de monuments historiques classés</span></p>
+        <span class="tl-meta">2026 · <span data-i18n="exp.degaine.sector">Construction & Heritage</span></span>
+        <h3 data-i18n="exp.degaine.title">AI Consultant — DEGAINE engagement (VINCI Construction)</h3>
+        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.degaine.org">VINCI subsidiary specialized in the restoration of listed historical monuments</span></p>
         <div class="tl-body">
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.degaine.b1.title">Veille automatisée d'appels d'offres publics</span></h4>
-            <p data-i18n="exp.degaine.b1.desc">Conception d'un système de veille destiné à remplacer un abonnement payant : collecte via les API BOAMP/TED, puis triage intelligent par LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs du filtrage par mots-clés, avec scoring go/no-go des consultations patrimoine.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.degaine.b1.title">Automated public tender monitoring</span></h4>
+            <p data-i18n="exp.degaine.b1.desc">Tender-watch system replacing a paid subscription: collection through the French/EU public procurement APIs (BOAMP/TED), LLM triage (Mistral Small on Azure AI Foundry) to kill keyword-filter false positives, go/no-go scoring of heritage restoration tenders.</p>
           </div>
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.degaine.b2.title">Atelier client IA — pré-chiffrage patrimoine</span></h4>
-            <p data-i18n="exp.degaine.b2.desc">Préparation et animation d'un atelier client démontrant l'IA agentique (Claude) sur un cas de pré-chiffrage de DCE de restauration : skill de chiffrage dédié, bordereau de prix unitaires de 33 lignes, deck de restitution — démonstration sur le CCTP réel d'un monument classé.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.degaine.b2.title">Agentic AI workshop — cost pre-estimation</span></h4>
+            <p data-i18n="exp.degaine.b2.desc">Prepared and led a client workshop demonstrating agentic AI (Claude) on pre-estimating a heritage restoration tender package: dedicated estimation skill, 33-line unit price schedule, delivery deck — live demo on the real specification of a listed monument.</p>
           </div>
         </div>
         <div class="chips">
-          <span class="chip">Mistral</span><span class="chip">Azure AI Foundry</span><span class="chip">Claude</span>
-          <span class="chip">BOAMP · TED</span><span class="chip" data-i18n="exp.degaine.chip">Marchés publics</span>
+          <span class="chip">Mistral</span><span class="chip">Azure AI Foundry</span><span class="chip">Claude · Agents</span>
+          <span class="chip" data-i18n="exp.degaine.chip">Public procurement APIs</span>
         </div>
       </div>
 
       <!-- INSA consulting -->
       <div class="tl-item reveal">
-        <span class="tl-meta">2024 — 2025 · <span data-i18n="exp.insa.duration">Projet certifié</span></span>
-        <h3 data-i18n="exp.insa.title">Mission de consulting — Migration de données & KPI</h3>
-        <p class="org"><strong>INSA Rouen Normandie</strong> · <span data-i18n="exp.insa.org">Projet certifié mené en conditions réelles pour un client</span></p>
+        <span class="tl-meta">2024 — 2025 · <span data-i18n="exp.insa.sector">Certified project</span></span>
+        <h3 data-i18n="exp.insa.title">Consulting mission — Data migration & KPIs</h3>
+        <p class="org"><strong>INSA Rouen Normandie</strong> · <span data-i18n="exp.insa.org">Certified project carried out in real conditions for a client</span></p>
         <div class="tl-body">
           <div class="tl-block">
-            <p data-i18n="exp.insa.desc">Réalisation d'un Proof of Concept de migration des données vers une base propre, structurée et documentée (modélisation, nettoyage, règles de transformation), puis implémentation des calculs de KPI sur les données migrées avec restitution finale au client.</p>
+            <p data-i18n="exp.insa.desc">Delivered a Proof of Concept migrating data to a clean, structured and documented database (modeling, cleansing, transformation rules), then implemented KPI calculations on the migrated data with final delivery to the client.</p>
           </div>
         </div>
         <div class="chips">
-          <span class="chip">SQL</span><span class="chip" data-i18n="exp.insa.chip1">Modélisation</span>
-          <span class="chip">ETL</span><span class="chip">KPI</span><span class="chip">Consulting</span>
+          <span class="chip">SQL</span><span class="chip" data-i18n="exp.insa.chip1">Data modeling</span>
+          <span class="chip">ETL</span><span class="chip">KPI</span>
         </div>
       </div>
 
       <!-- Formation -->
       <div class="tl-item reveal">
         <span class="tl-meta">2020 — 2025</span>
-        <h3 data-i18n="exp.edu.title">Diplôme d'ingénieur — Informatique & TI</h3>
-        <p class="org"><strong>INSA Rouen Normandie</strong> · <span data-i18n="exp.edu.org">Grande école d'ingénieurs</span></p>
+        <h3 data-i18n="exp.edu.title">Engineering degree (MSc level) — Computer Science & IT</h3>
+        <p class="org"><strong>INSA Rouen Normandie</strong> · <span data-i18n="exp.edu.org">French Grande École of engineering</span></p>
         <div class="tl-body">
           <div class="tl-block">
-            <p data-i18n="exp.edu.desc">Formation d'ingénieur en informatique et technologies de l'information : bases de données, algorithmique, développement, statistiques et analyse de données, gestion de projet.</p>
+            <p data-i18n="exp.edu.desc">Engineering curriculum in computer science and information technology: databases, algorithms, software development, statistics and data analysis, project management.</p>
           </div>
         </div>
       </div>
@@ -753,253 +865,148 @@
   <!-- ============ PROJECTS ============ -->
   <section id="projects">
     <div class="section-head reveal">
-      <span class="kicker" data-i18n="proj.kicker">03 · Réalisations</span>
-      <h2 data-i18n="proj.title">Projets à valeur ajoutée</h2>
-      <p class="sub" data-i18n="proj.sub">IA générative, ML et data appliqués à des enjeux métier réels — santé, marchés publics, patrimoine.</p>
+      <span class="kicker" data-i18n="proj.kicker">04 · Work</span>
+      <h2 data-i18n="proj.title">Selected <span class="serif">projects</span></h2>
+      <p class="sub" data-i18n="proj.sub">GenAI, ML and data engineering applied to real business problems — filter by industry.</p>
     </div>
 
     <div class="filter-buttons reveal">
-      <button class="filter-btn active" data-filter="all" data-i18n="proj.filter.all">Tous</button>
-      <button class="filter-btn" data-filter="pro" data-i18n="proj.filter.pro">Santé · Ramsay</button>
-      <button class="filter-btn" data-filter="pro-btp" data-i18n="proj.filter.btp">BTP · VINCI</button>
-      <button class="filter-btn" data-filter="academic" data-i18n="proj.filter.academic">Académique</button>
-      <button class="filter-btn" data-filter="personal" data-i18n="proj.filter.personal">Personnel</button>
+      <button class="filter-btn active" data-filter="all" data-i18n="proj.filter.all">All</button>
+      <button class="filter-btn" data-filter="health" data-i18n="proj.filter.health">Healthcare</button>
+      <button class="filter-btn" data-filter="construction" data-i18n="proj.filter.construction">Construction</button>
+      <button class="filter-btn" data-filter="academic" data-i18n="proj.filter.academic">Academic</button>
+      <button class="filter-btn" data-filter="personal" data-i18n="proj.filter.personal">Personal</button>
     </div>
 
     <div class="projects-grid" id="projectsGrid">
-      <div class="project glass reveal" data-category="pro">
+      <div class="project glass reveal" data-category="health">
         <div class="project-top">
           <div class="ico">🧠</div>
-          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
+          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
-        <h3 data-i18n="proj.p1.title">Codage CIM-10 assisté par IA</h3>
-        <p data-i18n="proj.p1.desc">Pipeline multi-LLM de codage PMSI (DP/DR/DAS) : benchmark de 5 modèles avec scoring hiérarchique, RAG FAISS, interface React de validation pour les TIM. Pilote : 100 % de justesse sur le DP vs 63 % pour la référence humaine.</p>
+        <h3 data-i18n="proj.p1.title">AI-assisted medical coding</h3>
+        <p data-i18n="proj.p1.desc">Multi-LLM ICD-10 coding pipeline: 5 models benchmarked with hierarchical scoring, FAISS RAG, React validation UI for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% human baseline.</p>
         <div class="chips"><span class="chip">LLM</span><span class="chip">RAG</span><span class="chip">React</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="pro" data-delay="1">
+      <div class="project glass reveal" data-category="health" data-delay="1">
         <div class="project-top">
           <div class="ico">🔒</div>
-          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
+          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
-        <h3 data-i18n="proj.p2.title">Pseudonymisation de données médicales</h3>
-        <p data-i18n="proj.p2.desc">Pipeline d'anonymisation des dossiers patients avant tout appel LLM : modèle NER EDS-Pseudo (AP-HP) déployé en API Docker, complété par une couche regex — prérequis de conformité HDS/RGPD du projet de codage IA.</p>
-        <div class="chips"><span class="chip">NER</span><span class="chip">Docker</span><span class="chip">RGPD · HDS</span></div>
+        <h3 data-i18n="proj.p2.title">Medical data pseudonymization</h3>
+        <p data-i18n="proj.p2.desc">Patient-record anonymization ahead of any LLM call: NER model (EDS-Pseudo, Paris hospitals) deployed as a Docker API plus a regex layer — the privacy prerequisite that made the AI coding project compliant.</p>
+        <div class="chips"><span class="chip">NER</span><span class="chip">Docker</span><span class="chip">Privacy · GDPR</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="pro" data-delay="2">
+      <div class="project glass reveal" data-category="health" data-delay="2">
         <div class="project-top">
           <div class="ico">🧾</div>
-          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
+          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
-        <h3 data-i18n="proj.p3.title">Détection des rejets CPAM (S3404)</h3>
-        <p data-i18n="proj.p3.desc">Pipeline hybride LLM + Python déterministe sur 81 factures : diagnostic d'une dérive de modèle GPT (96 % → 59-72 %), référentiel de 24 codes de rejet et 19 associations CCAM bloquées, architecture hybride retenue par le client.</p>
-        <div class="chips"><span class="chip">LLM</span><span class="chip">Python</span><span class="chip">CPAM</span></div>
+        <h3 data-i18n="proj.p3.title">Billing rejection detection</h3>
+        <p data-i18n="proj.p3.desc">Hybrid LLM + deterministic Python pipeline on 81 invoices: diagnosed a GPT model drift (96% → 59-72%), built a 24-code rejection reference base; hybrid architecture adopted by the client.</p>
+        <div class="chips"><span class="chip">LLM</span><span class="chip">Python</span><span class="chip" data-i18n="proj.p3.chip">Billing</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="pro">
+      <div class="project glass reveal" data-category="health">
         <div class="project-top">
           <div class="ico">📈</div>
-          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
+          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
-        <h3 data-i18n="proj.p4.title">ML prédictif des rejets de facturation</h3>
-        <p data-i18n="proj.p4.desc">Scoring prédictif des factures à risque de rejet : XGBoost préféré au fine-tuning LLM pour l'auditabilité et le coût, explicabilité SHAP, données relationnelles de la base factures, cible Azure ADLS Gen2 + API FastAPI.</p>
+        <h3 data-i18n="proj.p4.title">Predictive ML for billing rejections</h3>
+        <p data-i18n="proj.p4.desc">Predictive scoring of invoices at risk of rejection: XGBoost preferred over LLM fine-tuning for auditability and cost, SHAP explainability, Azure ADLS Gen2 target + FastAPI serving.</p>
         <div class="chips"><span class="chip">XGBoost</span><span class="chip">SHAP</span><span class="chip">FastAPI</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="pro" data-delay="1">
+      <div class="project glass reveal" data-category="health" data-delay="1">
         <div class="project-top">
           <div class="ico">⚙️</div>
-          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
+          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
-        <h3 data-i18n="proj.p5.title">Groupeur GHM Python & valorisation T2A</h3>
-        <p data-i18n="proj.p5.desc">Moteur complet de groupage GHM 2026 : parsing des RSS au format ATIH, actes classants CCAM, niveaux de sévérité CMA, valorisation T2A (GHS, EXB/EXH, suppléments réanimation) sur les référentiels officiels ATIH.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">PMSI</span><span class="chip">T2A</span></div>
+        <h3 data-i18n="proj.p5.title">Hospital funding engine (DRG)</h3>
+        <p data-i18n="proj.p5.desc">Complete Python engine re-implementing France's DRG hospital funding rules (PMSI, 2026): record parsing, severity levels, tariff valuation — built from official national specifications.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip" data-i18n="proj.p5.chip">Regulatory</span><span class="chip">Parsing</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="pro" data-delay="2">
+      <div class="project glass reveal" data-category="health" data-delay="2">
         <div class="project-top">
           <div class="ico">🔎</div>
-          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
+          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
-        <h3 data-i18n="proj.p6.title">Détection de sous-codage & revalorisation</h3>
-        <p data-i18n="proj.p6.desc">Framework d'identification des séjours probablement sous-codés et revalorisables : analyse de 90 RSS, typologie clinique, scoring data-driven fondé sur les taux d'escalade de sévérité par racine GHM pondérés par l'écart de valorisation.</p>
-        <div class="chips"><span class="chip">PMSI</span><span class="chip">Scoring</span><span class="chip">Data</span></div>
+        <h3 data-i18n="proj.p6.title">Under-coding detection & revenue uplift</h3>
+        <p data-i18n="proj.p6.desc">Framework identifying under-coded, upgradeable hospital stays: 90 records analyzed, clinical typology, data-driven scoring on severity-escalation rates weighted by valuation gap.</p>
+        <div class="chips"><span class="chip" data-i18n="proj.p6.chip">Scoring</span><span class="chip">Data</span><span class="chip">Revenue</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="pro">
+      <div class="project glass reveal" data-category="health">
         <div class="project-top">
           <div class="ico">🛰️</div>
-          <span class="badge" data-i18n="proj.badge.ramsay">Ramsay Santé</span>
+          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
-        <h3 data-i18n="proj.p7.title">Veille financements publics sur Azure</h3>
-        <p data-i18n="proj.p7.desc">Système automatisé de veille des appels à projets : PostgreSQL + pgvector (HNSW, embeddings 3072 dim.), Bing Grounding, Key Vault CSI, déploiement Helm + ArgoCD sur AKS — architecture validée avec l'architecte Azure du client.</p>
+        <h3 data-i18n="proj.p7.title">Public funding watch on Azure</h3>
+        <p data-i18n="proj.p7.desc">Automated funding-call monitoring: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD on AKS — architecture validated with the client's Azure architect.</p>
         <div class="chips"><span class="chip">pgvector</span><span class="chip">AKS</span><span class="chip">ArgoCD</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="pro" data-delay="1">
-        <div class="project-top">
-          <div class="ico">🚀</div>
-          <span class="badge" data-i18n="proj.badge.talan">Talan · Produit</span>
-        </div>
-        <h3 data-i18n="proj.p8.title">Produit V1 « codage PMSI par IA »</h3>
-        <p data-i18n="proj.p8.desc">Définition d'un produit démontrable pour Talan : parcours TIM complet (upload → pseudonymisation → propositions CIM-10 sourcées → validation), spécification 16 semaines / 6 lots, abstraction LLM multi-provider conforme HDS. Avant-vente associée : évaluation d'un AO hospitalier suisse (FHVi).</p>
-        <div class="chips"><span class="chip" data-i18n="proj.p8.chip1">Produit</span><span class="chip" data-i18n="proj.p8.chip2">Avant-vente</span><span class="chip">HDS</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="pro-btp" data-delay="2">
+      <div class="project glass reveal" data-category="construction" data-delay="1">
         <div class="project-top">
           <div class="ico">🏛️</div>
-          <span class="badge" data-i18n="proj.badge.degaine">VINCI · DEGAINE</span>
+          <span class="badge" data-i18n="proj.badge.construction">Construction</span>
         </div>
-        <h3 data-i18n="proj.p9.title">Veille d'appels d'offres publics par LLM</h3>
-        <p data-i18n="proj.p9.desc">Système de veille remplaçant un abonnement payant : collecte via les API BOAMP/TED, triage LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs, et scoring go/no-go des consultations de restauration du patrimoine.</p>
+        <h3 data-i18n="proj.p8.title">LLM-powered public tender watch</h3>
+        <p data-i18n="proj.p8.desc">Tender monitoring replacing a paid subscription: BOAMP/TED public procurement APIs, LLM triage (Mistral Small on Azure AI Foundry) to remove false positives, go/no-go scoring of heritage tenders.</p>
         <div class="chips"><span class="chip">BOAMP · TED</span><span class="chip">Mistral</span><span class="chip">Azure</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="pro-btp">
+      <div class="project glass reveal" data-category="construction" data-delay="2">
         <div class="project-top">
           <div class="ico">🧱</div>
-          <span class="badge" data-i18n="proj.badge.degaine">VINCI · DEGAINE</span>
+          <span class="badge" data-i18n="proj.badge.construction">Construction</span>
         </div>
-        <h3 data-i18n="proj.p10.title">Atelier IA — pré-chiffrage patrimoine</h3>
-        <p data-i18n="proj.p10.desc">Animation d'un atelier client démontrant l'IA agentique sur le pré-chiffrage d'un DCE de restauration : skill de chiffrage dédié, bordereau de prix de 33 lignes, deck de restitution — démo sur le CCTP réel d'un monument historique classé.</p>
-        <div class="chips"><span class="chip">Claude</span><span class="chip" data-i18n="proj.p10.chip">Atelier client</span><span class="chip">BTP</span></div>
+        <h3 data-i18n="proj.p9.title">Agentic AI cost pre-estimation</h3>
+        <p data-i18n="proj.p9.desc">Client workshop demonstrating agentic AI on pre-estimating a heritage restoration tender: dedicated estimation skill, 33-line unit price schedule — live demo on a listed monument's real specification.</p>
+        <div class="chips"><span class="chip">Claude · Agents</span><span class="chip" data-i18n="proj.p9.chip">Client workshop</span><span class="chip" data-i18n="proj.p9.chip2">Estimation</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="academic" data-delay="1">
+      <div class="project glass reveal" data-category="academic">
         <div class="project-top">
           <div class="ico">🗄️</div>
-          <span class="badge" data-i18n="proj.badge.academic">INSA · Certifié</span>
+          <span class="badge" data-i18n="proj.badge.academic">INSA · Certified</span>
         </div>
-        <h3 data-i18n="proj.p11.title">POC migration de base de données</h3>
-        <p data-i18n="proj.p11.desc">Mission de consulting certifiée INSA : migration de données vers une base propre, structurée et documentée, puis implémentation de KPI exploitables pour le suivi métier du client.</p>
+        <h3 data-i18n="proj.p10.title">Database migration POC</h3>
+        <p data-i18n="proj.p10.desc">Certified consulting mission: data migration to a clean, structured, documented database, then actionable KPIs implemented for the client's business tracking.</p>
         <div class="chips"><span class="chip">SQL</span><span class="chip">ETL</span><span class="chip">Consulting</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="personal" data-delay="2">
-        <div class="project-top">
-          <div class="ico">🖥️</div>
-          <span class="badge" data-i18n="proj.badge.personal">Personnel</span>
-        </div>
-        <h3 data-i18n="proj.p12.title">Serveur LLM local (homelab)</h3>
-        <p data-i18n="proj.p12.desc">Serveur d'inférence LLM auto-hébergé (WSL2 + Docker + Ollama, GPU RTX 5070 Ti, accès sécurisé via Cloudflare Tunnel) utilisé pour évaluer des modèles open source, notamment médicaux, avant usage en mission.</p>
-        <div class="chips"><span class="chip">Ollama</span><span class="chip">Docker</span><span class="chip">Self-hosted</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="personal">
-        <div class="project-top">
-          <div class="ico">🏠</div>
-          <span class="badge" data-i18n="proj.badge.personal">Personnel</span>
-        </div>
-        <h3 data-i18n="proj.p13.title">Analyse du marché immobilier</h3>
-        <p data-i18n="proj.p13.desc">Étude du prix de l'immobilier en Californie : exploration des données, identification des facteurs clés de valorisation et visualisation des tendances avec Python.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Data Viz</span></div>
       </div>
 
       <div class="project glass reveal" data-category="personal" data-delay="1">
         <div class="project-top">
+          <div class="ico">🖥️</div>
+          <span class="badge" data-i18n="proj.badge.personal">Personal</span>
+        </div>
+        <h3 data-i18n="proj.p11.title">Self-hosted LLM server (homelab)</h3>
+        <p data-i18n="proj.p11.desc">Self-hosted inference server (WSL2 + Docker + Ollama, RTX 5070 Ti, secure access via Cloudflare Tunnel) used to evaluate open-source models — medical ones included — before client use.</p>
+        <div class="chips"><span class="chip">Ollama</span><span class="chip">Docker</span><span class="chip">Self-hosted</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="personal" data-delay="2">
+        <div class="project-top">
+          <div class="ico">🏠</div>
+          <span class="badge" data-i18n="proj.badge.personal">Personal</span>
+        </div>
+        <h3 data-i18n="proj.p12.title">Real estate market analysis</h3>
+        <p data-i18n="proj.p12.desc">Study of California housing prices: data exploration, key valuation drivers and trend visualization with Python.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Data Viz</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="personal">
+        <div class="project-top">
           <div class="ico">✨</div>
-          <span class="badge" data-i18n="proj.badge.personal">Personnel</span>
+          <span class="badge" data-i18n="proj.badge.personal">Personal</span>
         </div>
-        <h3 data-i18n="proj.p14.title">Ce portfolio interactif</h3>
-        <p data-i18n="proj.p14.desc">Site 100 % fait main en HTML / CSS / JS vanilla : animations canvas, bilingue FR/EN, thème clair/sombre, version CV imprimable — hébergé sur GitHub Pages.</p>
+        <h3 data-i18n="proj.p13.title">This portfolio</h3>
+        <p data-i18n="proj.p13.desc">100% handcrafted in vanilla HTML / CSS / JS: bento grid, sector marquee, spotlight cards, EN/FR bilingual, light/dark theme, printable resume — hosted on GitHub Pages.</p>
         <div class="chips"><span class="chip">HTML/CSS</span><span class="chip">JavaScript</span><span class="chip">GitHub Pages</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SKILLS ============ -->
-  <section id="skills">
-    <div class="section-head reveal">
-      <span class="kicker" data-i18n="skills.kicker">04 · Expertise</span>
-      <h2 data-i18n="skills.title">Compétences</h2>
-    </div>
-
-    <div class="skills-grid">
-      <div class="glass skill-card reveal">
-        <div class="ico">🤖</div>
-        <h3 data-i18n="skills.ai.title">IA générative & LLM</h3>
-        <div class="skill-row">
-          <div class="top"><span>Azure OpenAI · Mistral · Anthropic · Ollama</span><span class="pct">90%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 90%;"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="top"><span data-i18n="skills.ai.rag">RAG & multi-agents (FAISS, pgvector, LangGraph)</span><span class="pct">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 85%;"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="top"><span data-i18n="skills.ai.bench">Benchmarking & prompt engineering</span><span class="pct">90%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 90%;"></div></div>
-        </div>
-      </div>
-
-      <div class="glass skill-card reveal" data-delay="1">
-        <div class="ico">📊</div>
-        <h3 data-i18n="skills.ds.title">Data Science & ML</h3>
-        <div class="skill-row">
-          <div class="top"><span>Python · FastAPI</span><span class="pct">88%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 88%;"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="top"><span>XGBoost · SHAP</span><span class="pct">80%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 80%;"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="top"><span data-i18n="skills.ds.sql">SQL & data engineering</span><span class="pct">82%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 82%;"></div></div>
-        </div>
-      </div>
-
-      <div class="glass skill-card reveal" data-delay="2">
-        <div class="ico">☁️</div>
-        <h3 data-i18n="skills.cloud.title">Cloud & DevOps</h3>
-        <div class="skill-row">
-          <div class="top"><span>Azure (AKS, ADLS, Key Vault, Functions)</span><span class="pct">82%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 82%;"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="top"><span>Docker · Helm · ArgoCD</span><span class="pct">78%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 78%;"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="top"><span>React/Vite · Power Automate</span><span class="pct">72%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 72%;"></div></div>
-        </div>
-      </div>
-
-      <div class="glass skill-card reveal" data-delay="3">
-        <div class="ico">🏥</div>
-        <h3 data-i18n="skills.health.title">Métier Santé</h3>
-        <div class="skill-row">
-          <div class="top"><span>PMSI MCO · CIM-10 · CCAM · GHM/T2A</span><span class="pct">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 85%;"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="top"><span data-i18n="skills.health.billing">Facturation CPAM & rejets (S3404)</span><span class="pct">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 85%;"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="top"><span data-i18n="skills.health.compliance">Conformité HDS / RGPD</span><span class="pct">80%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 80%;"></div></div>
-        </div>
-      </div>
-
-      <div class="glass skill-card reveal" data-delay="1">
-        <div class="ico">🤝</div>
-        <h3 data-i18n="skills.consulting.title">Conseil & Delivery</h3>
-        <div class="skill-row">
-          <div class="top"><span data-i18n="skills.consulting.framing">Cadrage & spécifications (FR/EN)</span><span class="pct">88%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 88%;"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="top"><span data-i18n="skills.consulting.presales">Avant-vente & réponse à AO</span><span class="pct">80%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 80%;"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="top"><span data-i18n="skills.consulting.workshops">Ateliers client & decks C-level</span><span class="pct">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--lvl: 85%;"></div></div>
-        </div>
       </div>
     </div>
   </section>
@@ -1008,13 +1015,13 @@
   <section id="contact">
     <div class="section-head reveal">
       <span class="kicker" data-i18n="contact.kicker">05 · Contact</span>
-      <h2 data-i18n="contact.title">Travaillons ensemble</h2>
+      <h2 data-i18n="contact.title">Let's build <span class="serif">something</span></h2>
     </div>
 
     <div class="glass contact-wrap reveal">
       <div class="contact-info">
-        <h3 data-i18n="contact.sub">Un projet IA ou data dans la santé ?</h3>
-        <p data-i18n="contact.text">Codage médical assisté par IA, contrôle de facturation, ML prédictif, architecture Azure : parlons-en. Réponse rapide garantie.</p>
+        <h3 data-i18n="contact.sub">Hiring an AI Data Engineer <span class="serif">who ships?</span></h3>
+        <p data-i18n="contact.text">GenAI systems, production ML, cloud data platforms — in your industry, whatever it is. Open to opportunities in Australia, the US and Canada. Fast reply guaranteed.</p>
         <div class="contact-links">
           <a href="mailto:maxime.laurent02@icloud.com" class="contact-link">
             <span class="ico">✉️</span> maxime.laurent02@icloud.com
@@ -1029,241 +1036,282 @@
       </div>
 
       <form class="contact-form" id="contactForm">
-        <input type="text" name="name" placeholder="Votre nom" data-i18n-ph="contact.form.name" required />
-        <input type="email" name="email" placeholder="Votre email" data-i18n-ph="contact.form.email" required />
-        <textarea name="message" placeholder="Votre message" data-i18n-ph="contact.form.message" required></textarea>
-        <button type="submit" class="btn btn-primary" data-i18n="contact.form.send">Envoyer le message</button>
+        <input type="text" name="name" placeholder="Your name" data-i18n-ph="contact.form.name" required />
+        <input type="email" name="email" placeholder="Your email" data-i18n-ph="contact.form.email" required />
+        <textarea name="message" placeholder="Your message" data-i18n-ph="contact.form.message" required></textarea>
+        <button type="submit" class="btn btn-primary" data-i18n="contact.form.send">Send message</button>
       </form>
     </div>
   </section>
 
-  <button class="scroll-top" id="scrollTop" aria-label="Retour en haut">↑</button>
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
 
   <footer>
-    <span data-i18n="footer.text">© 2026 Maxime Laurent — Conçu & codé à la main</span>
+    <span data-i18n="footer.text">© 2026 Maxime Laurent — Designed & hand-coded</span>
     <span class="mono"> · &lt;html + css + js/&gt;</span>
   </footer>
 
   <script>
     /* ============ I18N ============ */
     const T = {
+      en: {
+        'nav.about': 'About', 'nav.expertise': 'Expertise', 'nav.experience': 'Experience',
+        'nav.projects': 'Projects', 'nav.contact': 'Contact',
+        'hero.badge': 'AI Data Engineer · Open to Australia / USA / Canada',
+        'hero.title': 'I build AI systems<br>that ship — <span class="serif">in any industry.</span>',
+        'hero.sub': "<strong>AI Data Engineer</strong> — I take LLM and ML solutions from a blank page to production: <strong>GenAI pipelines, predictive models, cloud data platforms</strong>. Hospital billing one quarter, heritage restoration tenders the next — the sector changes, the delivery doesn't.",
+        'hero.cta1': 'See my work', 'hero.cta2': 'Get in touch', 'hero.cta3': '⬇ Resume',
+        'stats.sectors': 'industries delivered in (and counting)',
+        'stats.projects': 'AI & data projects shipped',
+        'stats.llm': 'LLMs benchmarked on real cases',
+        'stats.records': 'records/year in my largest scope',
+        'marquee.next': 'Your industry next',
+        'about.kicker': '01 · Profile',
+        'about.title': 'Sector-agnostic, <span class="serif">by design</span>',
+        'about.lead': "My edge isn't one domain — it's the speed at which I <span class=\"serif\">master a new one.</span>",
+        'about.p1': "I'm an <strong>AI Data Engineer</strong> at Talan and an engineering graduate of INSA Rouen Normandie (France). In under two years I've shipped AI solutions in <strong>healthcare, construction & heritage, and public procurement</strong> — three industries with nothing in common except how much their rules matter.",
+        'about.p2': "In healthcare, I went from zero to building production pipelines on one of the most regulated data domains in France — medical coding and hospital billing — including multi-LLM coding systems and predictive rejection models over a <strong>2.2M-stays-per-year</strong> scope. In construction, I automated public tender monitoring and cost pre-estimation for a VINCI subsidiary restoring historical monuments.",
+        'about.p3': "Same method every time: <strong>immerse in the domain, build with the right tool</strong> — LLM, classic ML, or plain deterministic code — <strong>and ship to production</strong> with the audit trail, compliance and documentation that regulated industries demand.",
+        'about.c1.title': 'Fast domain immersion',
+        'about.c1.desc': 'Regulated healthcare billing, public procurement law, heritage cost estimation — learned on the job, delivered in weeks',
+        'about.c2.desc': 'MSc-level engineering degree — Computer science & information technology',
+        'about.c3.title': 'Ready to relocate',
+        'about.c3.desc': 'Targeting Australia, the US and Canada · Bilingual deliverables (EN/FR)',
+        'exp2.kicker': '02 · Expertise',
+        'exp2.title': 'What I <span class="serif">bring</span>',
+        'exp2.hero': 'One profile, <span class="serif">full stack:</span><br>from LLM orchestration to Kubernetes deployment.',
+        'exp2.hero.desc': "Most teams need three people for this: someone who speaks to the business, someone who builds the models, someone who ships to the cloud. I close that loop alone — which is exactly what lean AI teams are hiring for.",
+        'exp2.b1.title': 'GenAI & LLM systems',
+        'exp2.b1.desc': 'Multi-LLM benchmarking on real business cases, RAG, multi-agent orchestration, NER pseudonymization, hybrid LLM + deterministic architectures — with measured accuracy, not demos.',
+        'exp2.b2.title': 'Machine learning in production',
+        'exp2.b2.desc': 'Predictive scoring on relational data, explainability for regulated environments, honest model choices — XGBoost over LLM fine-tuning when auditability and cost say so.',
+        'exp2.b3.title': 'Cloud & data engineering',
+        'exp2.b3.desc': 'Architectures designed with client architects and deployed for real: vector databases, GitOps pipelines, secret management, containerized inference.',
+        'exp2.b4.title': 'Consulting-grade delivery',
+        'exp2.b4.desc': 'Framing documents in English and French, client workshops, specifications, compliance by design (health-data hosting, GDPR) — engineering that stakeholders can sign off on.',
+        'exp2.b4.chip1': 'Framing & specs', 'exp2.b4.chip2': 'Client workshops', 'exp2.b4.chip3': 'Bilingual EN/FR',
+        'method.s1.title': 'Immerse',
+        'method.s1.desc': "I learn your domain's rules, vocabulary and constraints as fast as your codebase — deep enough to challenge experts on their own turf.",
+        'method.s2.title': 'Build',
+        'method.s2.desc': 'The right tool for the problem — LLM, classic ML or deterministic code — benchmarked against real data, never against a slideware promise.',
+        'method.s3.title': 'Ship',
+        'method.s3.desc': 'Production on your cloud, with explainability, compliance and documentation — solutions that survive the handover.',
+        'exp.kicker': '03 · Experience',
+        'exp.title': "Where I've <span class=\"serif\">delivered</span>",
+        'exp.sub': 'Two industries, one employer, a dozen production workstreams.',
+        'exp.ramsay.sector': 'Healthcare',
+        'exp.ramsay.title': 'AI Data Engineer — Ramsay Santé engagement',
+        'exp.ramsay.org': "Europe's leading private hospital group — parallel AI workstreams sponsored by the client's Data Office, over a ~2.2M inpatient-stays-per-year scope",
+        'exp.ramsay.b1.title': 'AI-assisted medical coding',
+        'exp.ramsay.b1.desc': "Multi-LLM ICD-10 coding pipeline: benchmark of GPT, Gemini, Mistral, Grok and Claude with weighted hierarchical scoring, RAG (FAISS), NER pseudonymization (Docker API) and a React validation interface for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% human baseline. LangGraph multi-agent architecture (coder → QA → arbitration) designed for scale-up.",
+        'exp.ramsay.b2.title': 'Billing rejection control (health insurance)',
+        'exp.ramsay.b2.desc': "Hybrid LLM + deterministic Python pipeline detecting insurance billing rejections on an 81-invoice benchmark. Diagnosed a GPT model-version drift on Azure (96% → 59-72%), analyzed false-positive patterns, and got the hybrid architecture adopted: deterministic rules for structured rejection reasons, LLM for semantic ones. Built the 24-code rejection reference base.",
+        'exp.ramsay.b3.title': 'Predictive ML for billing rejections',
+        'exp.ramsay.b3.desc': "Predictive detection of invoices at risk of rejection: XGBoost chosen over LLM fine-tuning for auditability, cost and reproducibility, with SHAP explainability. Relational data from the replicated invoicing database, Azure ADLS Gen2 target, batch scoring and FastAPI exposure.",
+        'exp.ramsay.b4.title': 'Hospital funding engine (French DRG / PMSI)',
+        'exp.ramsay.b4.desc': "Complete Python DRG grouping engine (2026 national rules): positional record parsing, classifying procedures, severity levels, tariff valuation with outlier payments and ICU supplements — plus an under-coding detection framework scoring upgradeable stays for revenue recovery. Proof that I can absorb a country-specific regulatory system and re-implement it from official specs.",
+        'exp.ramsay.b5.title': 'Azure platform & automated intelligence',
+        'exp.ramsay.b5.desc': "Automated public-funding watch system, architecture validated with the client's Azure architect: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD deployment on AKS. Framing documents delivered in English and French.",
+        'exp.degaine.sector': 'Construction & Heritage',
+        'exp.degaine.title': 'AI Consultant — DEGAINE engagement (VINCI Construction)',
+        'exp.degaine.org': 'VINCI subsidiary specialized in the restoration of listed historical monuments',
+        'exp.degaine.b1.title': 'Automated public tender monitoring',
+        'exp.degaine.b1.desc': "Tender-watch system replacing a paid subscription: collection through the French/EU public procurement APIs (BOAMP/TED), LLM triage (Mistral Small on Azure AI Foundry) to kill keyword-filter false positives, go/no-go scoring of heritage restoration tenders.",
+        'exp.degaine.b2.title': 'Agentic AI workshop — cost pre-estimation',
+        'exp.degaine.b2.desc': "Prepared and led a client workshop demonstrating agentic AI (Claude) on pre-estimating a heritage restoration tender package: dedicated estimation skill, 33-line unit price schedule, delivery deck — live demo on the real specification of a listed monument.",
+        'exp.degaine.chip': 'Public procurement APIs',
+        'exp.insa.sector': 'Certified project',
+        'exp.insa.title': 'Consulting mission — Data migration & KPIs',
+        'exp.insa.org': 'Certified project carried out in real conditions for a client',
+        'exp.insa.desc': "Delivered a Proof of Concept migrating data to a clean, structured and documented database (modeling, cleansing, transformation rules), then implemented KPI calculations on the migrated data with final delivery to the client.",
+        'exp.insa.chip1': 'Data modeling',
+        'exp.edu.title': 'Engineering degree (MSc level) — Computer Science & IT',
+        'exp.edu.org': 'French Grande École of engineering',
+        'exp.edu.desc': 'Engineering curriculum in computer science and information technology: databases, algorithms, software development, statistics and data analysis, project management.',
+        'proj.kicker': '04 · Work',
+        'proj.title': 'Selected <span class="serif">projects</span>',
+        'proj.sub': 'GenAI, ML and data engineering applied to real business problems — filter by industry.',
+        'proj.filter.all': 'All', 'proj.filter.health': 'Healthcare', 'proj.filter.construction': 'Construction',
+        'proj.filter.academic': 'Academic', 'proj.filter.personal': 'Personal',
+        'proj.badge.health': 'Healthcare', 'proj.badge.construction': 'Construction',
+        'proj.badge.academic': 'INSA · Certified', 'proj.badge.personal': 'Personal',
+        'proj.p1.title': 'AI-assisted medical coding',
+        'proj.p1.desc': "Multi-LLM ICD-10 coding pipeline: 5 models benchmarked with hierarchical scoring, FAISS RAG, React validation UI for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% human baseline.",
+        'proj.p2.title': 'Medical data pseudonymization',
+        'proj.p2.desc': "Patient-record anonymization ahead of any LLM call: NER model (EDS-Pseudo, Paris hospitals) deployed as a Docker API plus a regex layer — the privacy prerequisite that made the AI coding project compliant.",
+        'proj.p3.title': 'Billing rejection detection',
+        'proj.p3.desc': "Hybrid LLM + deterministic Python pipeline on 81 invoices: diagnosed a GPT model drift (96% → 59-72%), built a 24-code rejection reference base; hybrid architecture adopted by the client.",
+        'proj.p3.chip': 'Billing',
+        'proj.p4.title': 'Predictive ML for billing rejections',
+        'proj.p4.desc': "Predictive scoring of invoices at risk of rejection: XGBoost preferred over LLM fine-tuning for auditability and cost, SHAP explainability, Azure ADLS Gen2 target + FastAPI serving.",
+        'proj.p5.title': 'Hospital funding engine (DRG)',
+        'proj.p5.desc': "Complete Python engine re-implementing France's DRG hospital funding rules (PMSI, 2026): record parsing, severity levels, tariff valuation — built from official national specifications.",
+        'proj.p5.chip': 'Regulatory',
+        'proj.p6.title': 'Under-coding detection & revenue uplift',
+        'proj.p6.desc': "Framework identifying under-coded, upgradeable hospital stays: 90 records analyzed, clinical typology, data-driven scoring on severity-escalation rates weighted by valuation gap.",
+        'proj.p6.chip': 'Scoring',
+        'proj.p7.title': 'Public funding watch on Azure',
+        'proj.p7.desc': "Automated funding-call monitoring: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD on AKS — architecture validated with the client's Azure architect.",
+        'proj.p8.title': 'LLM-powered public tender watch',
+        'proj.p8.desc': "Tender monitoring replacing a paid subscription: BOAMP/TED public procurement APIs, LLM triage (Mistral Small on Azure AI Foundry) to remove false positives, go/no-go scoring of heritage tenders.",
+        'proj.p9.title': 'Agentic AI cost pre-estimation',
+        'proj.p9.desc': "Client workshop demonstrating agentic AI on pre-estimating a heritage restoration tender: dedicated estimation skill, 33-line unit price schedule — live demo on a listed monument's real specification.",
+        'proj.p9.chip': 'Client workshop', 'proj.p9.chip2': 'Estimation',
+        'proj.p10.title': 'Database migration POC',
+        'proj.p10.desc': "Certified consulting mission: data migration to a clean, structured, documented database, then actionable KPIs implemented for the client's business tracking.",
+        'proj.p11.title': 'Self-hosted LLM server (homelab)',
+        'proj.p11.desc': "Self-hosted inference server (WSL2 + Docker + Ollama, RTX 5070 Ti, secure access via Cloudflare Tunnel) used to evaluate open-source models — medical ones included — before client use.",
+        'proj.p12.title': 'Real estate market analysis',
+        'proj.p12.desc': "Study of California housing prices: data exploration, key valuation drivers and trend visualization with Python.",
+        'proj.p13.title': 'This portfolio',
+        'proj.p13.desc': "100% handcrafted in vanilla HTML / CSS / JS: bento grid, sector marquee, spotlight cards, EN/FR bilingual, light/dark theme, printable resume — hosted on GitHub Pages.",
+        'contact.kicker': '05 · Contact',
+        'contact.title': "Let's build <span class=\"serif\">something</span>",
+        'contact.sub': 'Hiring an AI Data Engineer <span class="serif">who ships?</span>',
+        'contact.text': "GenAI systems, production ML, cloud data platforms — in your industry, whatever it is. Open to opportunities in Australia, the US and Canada. Fast reply guaranteed.",
+        'contact.form.name': 'Your name', 'contact.form.email': 'Your email',
+        'contact.form.message': 'Your message', 'contact.form.send': 'Send message',
+        'footer.text': '© 2026 Maxime Laurent — Designed & hand-coded',
+        'roles': ['AI Data Engineer', 'GenAI & LLM systems', 'ML in production', 'Azure · Python · RAG', 'Any industry. Fast.']
+      },
       fr: {
-        'nav.about': 'À propos', 'nav.experience': 'Expérience', 'nav.projects': 'Projets',
-        'nav.skills': 'Compétences', 'nav.contact': 'Contact',
-        'hero.eyebrow': 'Consultant @ Talan — Practice Assurance & Santé',
-        'hero.desc': "Ingénieur INSA Rouen Normandie, je conçois et déploie des solutions d'<strong>IA générative et de data science</strong> appliquées à la santé : codage médical PMSI assisté par IA, contrôle de facturation, ML prédictif — <strong>du cadrage à la mise en production</strong>.",
+        'nav.about': 'À propos', 'nav.expertise': 'Expertise', 'nav.experience': 'Expérience',
+        'nav.projects': 'Projets', 'nav.contact': 'Contact',
+        'hero.badge': 'AI Data Engineer · Ouvert à Australie / USA / Canada',
+        'hero.title': 'Je construis des systèmes IA<br>qui tournent — <span class="serif">dans tout secteur.</span>',
+        'hero.sub': "<strong>AI Data Engineer</strong> — je mène les solutions LLM et ML de la page blanche à la production : <strong>pipelines GenAI, modèles prédictifs, plateformes data cloud</strong>. Facturation hospitalière un trimestre, chiffrage de monuments historiques le suivant — le secteur change, le delivery reste.",
         'hero.cta1': 'Voir mes projets', 'hero.cta2': 'Me contacter', 'hero.cta3': '⬇ Version CV',
-        'stats.missions': 'missions grands comptes', 'stats.projects': 'projets data & IA livrés',
-        'stats.llm': 'LLM benchmarkés sur cas réels', 'stats.stays': 'séjours MCO/an sur le périmètre analysé',
-        'about.kicker': '01 · Profil', 'about.title': 'À propos',
-        'about.p1': "<strong>Consultant Data & IA</strong> chez <strong>Talan</strong> (practice Assurance & Santé) et ingénieur diplômé de l'INSA Rouen Normandie, j'interviens à la croisée du <strong>conseil et de l'implémentation technique</strong> : cadrage, architecture, développement et delivery.",
-        'about.p2': "Chez <strong>Ramsay Santé</strong>, leader européen de l'hospitalisation privée, je pilote des chantiers d'IA appliquée au cœur du système hospitalier français : <strong>codage médical PMSI assisté par LLM</strong>, détection des rejets de facturation CPAM, moteur de groupage GHM, ML prédictif — sur un périmètre de ~2,2 millions de séjours MCO par an.",
-        'about.p3': "Mon approche : maîtriser le <strong>métier</strong> (CIM-10, CCAM, T2A, S3404) autant que la <strong>technique</strong> (LLM, RAG, XGBoost, Azure/AKS), pour livrer des solutions auditables, conformes (HDS/RGPD) et réellement adoptées par les utilisateurs.",
-        'about.talan.desc': 'Consultant — practice Assurance & Santé · Conseil + implémentation',
-        'about.edu.desc': "Diplôme d'ingénieur — Informatique & technologies de l'information",
-        'about.health.title': 'Expertise santé',
-        'about.health.desc': 'PMSI MCO · CIM-10 · CCAM · GHM/T2A · facturation CPAM · HDS/RGPD',
-        'exp.kicker': '02 · Parcours', 'exp.title': 'Expérience',
-        'exp.sub': 'Du conseil à la mise en production : IA générative, data science et expertise métier.',
-        'exp.ramsay.duration': 'Mission longue',
-        'exp.ramsay.title': 'Consultant Data & IA — Mission Ramsay Santé',
-        'exp.ramsay.org': "Ramsay Santé, leader européen de l'hospitalisation privée — chantiers IA/data menés en parallèle avec sponsor Direction Data (IDCO)",
-        'exp.ramsay.b1.title': 'Codage médical PMSI assisté par IA',
-        'exp.ramsay.b1.desc': "Pipeline multi-LLM de codage CIM-10 (DP/DR/DAS) : benchmark GPT, Gemini, Mistral, Grok et Claude avec scoring hiérarchique pondéré, RAG (FAISS), pseudonymisation NER (EDS-Pseudo AP-HP en API Docker) et interface React de validation pour les TIM. Pilote : 100 % de justesse sur le diagnostic principal (Gemini/GPT) contre 63 % pour la référence humaine, sur un échantillon de 8 séjours. Architecture multi-agents LangGraph (codeur → contrôle qualité → arbitrage) proposée pour l'industrialisation.",
-        'exp.ramsay.b2.title': 'Contrôle facturation & rejets CPAM (S3404)',
-        'exp.ramsay.b2.desc': "Pipeline hybride LLM + Python déterministe de détection des rejets de factures CPAM sur un benchmark de 81 factures. Diagnostic d'une dérive de version de modèle GPT sur Azure (96 % → 59-72 %), analyse des faux positifs, et recommandation retenue d'une architecture hybride : règles déterministes pour les motifs structurés, LLM pour les motifs sémantiques. Construction d'un référentiel de 24 codes de rejet et des 19 associations d'actes CCAM bloquées.",
+        'stats.sectors': 'secteurs livrés (et ce n’est pas fini)',
+        'stats.projects': 'projets IA & data livrés',
+        'stats.llm': 'LLM benchmarkés sur cas réels',
+        'stats.records': 'enregistrements/an sur mon plus gros périmètre',
+        'marquee.next': 'Votre secteur ensuite',
+        'about.kicker': '01 · Profil',
+        'about.title': 'Multi-sectoriel, <span class="serif">par conception</span>',
+        'about.lead': "Ma force n'est pas un domaine — c'est la vitesse à laquelle <span class=\"serif\">j'en maîtrise un nouveau.</span>",
+        'about.p1': "<strong>AI Data Engineer</strong> chez Talan et ingénieur diplômé de l'INSA Rouen Normandie, j'ai livré en moins de deux ans des solutions IA dans <strong>la santé, la construction & le patrimoine, et les marchés publics</strong> — trois secteurs qui n'ont rien en commun, sauf l'importance de leurs règles.",
+        'about.p2': "Dans la santé, je suis parti de zéro pour construire des pipelines de production sur l'un des domaines les plus réglementés de France — codage médical et facturation hospitalière — dont des systèmes de codage multi-LLM et des modèles prédictifs de rejets sur un périmètre de <strong>2,2 M de séjours par an</strong>. Dans la construction, j'ai automatisé la veille d'appels d'offres et le pré-chiffrage pour une filiale VINCI spécialisée dans les monuments historiques.",
+        'about.p3': "Même méthode à chaque fois : <strong>immersion dans le métier, le bon outil pour le problème</strong> — LLM, ML classique ou code déterministe — <strong>et mise en production</strong> avec l'auditabilité, la conformité et la documentation qu'exigent les secteurs réglementés.",
+        'about.c1.title': 'Immersion métier rapide',
+        'about.c1.desc': 'Facturation santé réglementée, droit des marchés publics, chiffrage patrimoine — appris sur le terrain, livrés en quelques semaines',
+        'about.c2.desc': "Diplôme d'ingénieur (bac+5) — Informatique & technologies de l'information",
+        'about.c3.title': 'Prêt à m’expatrier',
+        'about.c3.desc': 'Cible : Australie, USA, Canada · Livrables bilingues (EN/FR)',
+        'exp2.kicker': '02 · Expertise',
+        'exp2.title': 'Ce que <span class="serif">j’apporte</span>',
+        'exp2.hero': 'Un profil, <span class="serif">full stack :</span><br>de l’orchestration LLM au déploiement Kubernetes.',
+        'exp2.hero.desc': "La plupart des équipes mobilisent trois personnes pour ça : une qui parle au métier, une qui construit les modèles, une qui déploie sur le cloud. Je boucle la chaîne seul — exactement ce que recherchent les équipes IA resserrées.",
+        'exp2.b1.title': 'Systèmes GenAI & LLM',
+        'exp2.b1.desc': "Benchmarking multi-LLM sur cas métier réels, RAG, orchestration multi-agents, pseudonymisation NER, architectures hybrides LLM + déterministe — avec une précision mesurée, pas des démos.",
+        'exp2.b2.title': 'Machine learning en production',
+        'exp2.b2.desc': "Scoring prédictif sur données relationnelles, explicabilité pour environnements réglementés, choix de modèles honnêtes — XGBoost plutôt que fine-tuning LLM quand l'auditabilité et le coût le commandent.",
+        'exp2.b3.title': 'Cloud & data engineering',
+        'exp2.b3.desc': "Des architectures conçues avec les architectes du client et réellement déployées : bases vectorielles, pipelines GitOps, gestion des secrets, inférence conteneurisée.",
+        'exp2.b4.title': 'Delivery de niveau conseil',
+        'exp2.b4.desc': "Documents de cadrage en anglais et en français, ateliers client, spécifications, conformité by design (HDS, RGPD) — une ingénierie que les décideurs peuvent valider.",
+        'exp2.b4.chip1': 'Cadrage & specs', 'exp2.b4.chip2': 'Ateliers client', 'exp2.b4.chip3': 'Bilingue EN/FR',
+        'method.s1.title': 'Immersion',
+        'method.s1.desc': "J'apprends les règles, le vocabulaire et les contraintes de votre métier aussi vite que votre codebase — assez pour challenger les experts sur leur terrain.",
+        'method.s2.title': 'Construction',
+        'method.s2.desc': "Le bon outil pour le problème — LLM, ML classique ou code déterministe — benchmarké sur données réelles, jamais sur une promesse de slide.",
+        'method.s3.title': 'Production',
+        'method.s3.desc': "Déploiement sur votre cloud, avec explicabilité, conformité et documentation — des solutions qui survivent à la passation.",
+        'exp.kicker': '03 · Expérience',
+        'exp.title': 'Là où j’ai <span class="serif">livré</span>',
+        'exp.sub': 'Deux secteurs, un employeur, une douzaine de chantiers de production.',
+        'exp.ramsay.sector': 'Santé',
+        'exp.ramsay.title': 'AI Data Engineer — Mission Ramsay Santé',
+        'exp.ramsay.org': "Leader européen de l'hospitalisation privée — chantiers IA parallèles avec sponsor Direction Data, sur un périmètre de ~2,2 M de séjours par an",
+        'exp.ramsay.b1.title': 'Codage médical assisté par IA',
+        'exp.ramsay.b1.desc': "Pipeline multi-LLM de codage CIM-10 : benchmark GPT, Gemini, Mistral, Grok et Claude avec scoring hiérarchique pondéré, RAG (FAISS), pseudonymisation NER (API Docker) et interface React de validation pour les TIM. Pilote : 100 % de justesse sur le diagnostic principal vs 63 % pour la référence humaine. Architecture multi-agents LangGraph (codeur → QA → arbitrage) conçue pour l'industrialisation.",
+        'exp.ramsay.b2.title': 'Contrôle des rejets de facturation (Assurance Maladie)',
+        'exp.ramsay.b2.desc': "Pipeline hybride LLM + Python déterministe de détection des rejets de factures sur un benchmark de 81 factures. Diagnostic d'une dérive de version GPT sur Azure (96 % → 59-72 %), analyse des faux positifs, et architecture hybride adoptée : règles déterministes pour les motifs structurés, LLM pour les motifs sémantiques. Référentiel de 24 codes de rejet construit.",
         'exp.ramsay.b3.title': 'ML prédictif des rejets de facturation',
-        'exp.ramsay.b3.desc': "Détection prédictive des factures à risque de rejet CPAM : XGBoost retenu face au fine-tuning LLM pour l'auditabilité, le coût et la reproductibilité, avec explicabilité SHAP. Données relationnelles issues de la base factures répliquée, stockage cible Azure (ADLS Gen2), scoring batch et exposition FastAPI.",
-        'exp.ramsay.b4.title': 'Moteur PMSI : groupeur GHM & revalorisation',
-        'exp.ramsay.b4.desc': "Développement d'un module Python complet de groupage GHM 2026 (parsing RSS au format ATIH, actes classants CCAM, niveaux de sévérité CMA, valorisation T2A : GHS, EXB/EXH, suppléments réanimation) sur les référentiels officiels ATIH. En complément, framework de détection du sous-codage : analyse de 90 RSS et scoring data-driven des séjours revalorisables par racine GHM.",
-        'exp.ramsay.b5.title': 'Architecture Azure & veille automatisée',
-        'exp.ramsay.b5.desc': "Conception d'un système de veille des appels à projets de financement public, architecture validée avec l'architecte Azure du client : PostgreSQL + pgvector (index HNSW, embeddings 3072 dimensions), Bing Grounding, Key Vault CSI, déploiement Helm + ArgoCD sur AKS. Documents de cadrage produits en français et en anglais.",
-        'exp.ramsay.b6.title': 'Stratégie produit & avant-vente',
-        'exp.ramsay.b6.desc': "Définition du produit V1 « codage PMSI assisté par IA » pour Talan (spécification 16 semaines / 6 lots, abstraction LLM multi-provider conforme HDS, Ramsay pressenti premier bêta-testeur) et évaluation de la réponse à un appel d'offres suisse (FHVi) : analyse des gaps et stratégie de partenariat.",
-        'exp.degaine.duration': 'Mission conseil & IA',
+        'exp.ramsay.b3.desc': "Détection prédictive des factures à risque de rejet : XGBoost retenu face au fine-tuning LLM pour l'auditabilité, le coût et la reproductibilité, avec explicabilité SHAP. Données relationnelles de la base factures répliquée, cible Azure ADLS Gen2, scoring batch et exposition FastAPI.",
+        'exp.ramsay.b4.title': 'Moteur de financement hospitalier (GHM / PMSI)',
+        'exp.ramsay.b4.desc': "Moteur Python complet de groupage GHM (règles nationales 2026) : parsing des formats positionnels, actes classants, niveaux de sévérité, valorisation T2A avec suppléments — plus un framework de détection du sous-codage pour la récupération de recettes. La preuve que je peux absorber un système réglementaire national et le ré-implémenter depuis les specs officielles.",
+        'exp.ramsay.b5.title': 'Plateforme Azure & veille automatisée',
+        'exp.ramsay.b5.desc': "Système de veille automatisée des financements publics, architecture validée avec l'architecte Azure du client : PostgreSQL + pgvector (HNSW, embeddings 3072 dim.), Bing Grounding, Key Vault CSI, déploiement Helm + ArgoCD sur AKS. Documents de cadrage livrés en anglais et en français.",
+        'exp.degaine.sector': 'Construction & Patrimoine',
         'exp.degaine.title': 'Consultant IA — Mission DEGAINE (VINCI Construction)',
         'exp.degaine.org': 'Filiale VINCI spécialisée dans la restauration de monuments historiques classés',
         'exp.degaine.b1.title': "Veille automatisée d'appels d'offres publics",
-        'exp.degaine.b1.desc': "Conception d'un système de veille destiné à remplacer un abonnement payant : collecte via les API BOAMP/TED, puis triage intelligent par LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs du filtrage par mots-clés, avec scoring go/no-go des consultations patrimoine.",
-        'exp.degaine.b2.title': 'Atelier client IA — pré-chiffrage patrimoine',
-        'exp.degaine.b2.desc': "Préparation et animation d'un atelier client démontrant l'IA agentique (Claude) sur un cas de pré-chiffrage de DCE de restauration : skill de chiffrage dédié, bordereau de prix unitaires de 33 lignes, deck de restitution — démonstration sur le CCTP réel d'un monument classé.",
-        'exp.degaine.chip': 'Marchés publics',
-        'exp.insa.duration': 'Projet certifié',
+        'exp.degaine.b1.desc': "Système de veille remplaçant un abonnement payant : collecte via les API BOAMP/TED, triage LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs du filtrage par mots-clés, scoring go/no-go des consultations patrimoine.",
+        'exp.degaine.b2.title': 'Atelier IA agentique — pré-chiffrage',
+        'exp.degaine.b2.desc': "Préparation et animation d'un atelier client démontrant l'IA agentique (Claude) sur le pré-chiffrage d'un DCE de restauration : skill de chiffrage dédié, bordereau de prix de 33 lignes, deck de restitution — démo sur le CCTP réel d'un monument classé.",
+        'exp.degaine.chip': 'API marchés publics',
+        'exp.insa.sector': 'Projet certifié',
         'exp.insa.title': 'Mission de consulting — Migration de données & KPI',
         'exp.insa.org': 'Projet certifié mené en conditions réelles pour un client',
-        'exp.insa.desc': "Réalisation d'un Proof of Concept de migration des données vers une base propre, structurée et documentée (modélisation, nettoyage, règles de transformation), puis implémentation des calculs de KPI sur les données migrées avec restitution finale au client.",
+        'exp.insa.desc': "Réalisation d'un Proof of Concept de migration des données vers une base propre, structurée et documentée (modélisation, nettoyage, règles de transformation), puis implémentation des calculs de KPI avec restitution finale au client.",
         'exp.insa.chip1': 'Modélisation',
         'exp.edu.title': "Diplôme d'ingénieur — Informatique & TI",
         'exp.edu.org': "Grande école d'ingénieurs",
         'exp.edu.desc': "Formation d'ingénieur en informatique et technologies de l'information : bases de données, algorithmique, développement, statistiques et analyse de données, gestion de projet.",
-        'proj.kicker': '03 · Réalisations', 'proj.title': 'Projets à valeur ajoutée',
-        'proj.sub': 'IA générative, ML et data appliqués à des enjeux métier réels — santé, marchés publics, patrimoine.',
-        'proj.filter.all': 'Tous', 'proj.filter.pro': 'Santé · Ramsay', 'proj.filter.btp': 'BTP · VINCI',
+        'proj.kicker': '04 · Réalisations',
+        'proj.title': 'Projets <span class="serif">choisis</span>',
+        'proj.sub': 'GenAI, ML et data engineering appliqués à des problèmes métier réels — filtrez par secteur.',
+        'proj.filter.all': 'Tous', 'proj.filter.health': 'Santé', 'proj.filter.construction': 'Construction',
         'proj.filter.academic': 'Académique', 'proj.filter.personal': 'Personnel',
-        'proj.badge.ramsay': 'Ramsay Santé', 'proj.badge.talan': 'Talan · Produit',
-        'proj.badge.degaine': 'VINCI · DEGAINE', 'proj.badge.academic': 'INSA · Certifié', 'proj.badge.personal': 'Personnel',
-        'proj.p1.title': 'Codage CIM-10 assisté par IA',
-        'proj.p1.desc': "Pipeline multi-LLM de codage PMSI (DP/DR/DAS) : benchmark de 5 modèles avec scoring hiérarchique, RAG FAISS, interface React de validation pour les TIM. Pilote : 100 % de justesse sur le DP vs 63 % pour la référence humaine.",
+        'proj.badge.health': 'Santé', 'proj.badge.construction': 'Construction',
+        'proj.badge.academic': 'INSA · Certifié', 'proj.badge.personal': 'Personnel',
+        'proj.p1.title': 'Codage médical assisté par IA',
+        'proj.p1.desc': "Pipeline multi-LLM de codage CIM-10 : 5 modèles benchmarkés avec scoring hiérarchique, RAG FAISS, interface React de validation pour les TIM. Pilote : 100 % de justesse sur le DP vs 63 % pour la référence humaine.",
         'proj.p2.title': 'Pseudonymisation de données médicales',
-        'proj.p2.desc': "Pipeline d'anonymisation des dossiers patients avant tout appel LLM : modèle NER EDS-Pseudo (AP-HP) déployé en API Docker, complété par une couche regex — prérequis de conformité HDS/RGPD du projet de codage IA.",
-        'proj.p3.title': 'Détection des rejets CPAM (S3404)',
-        'proj.p3.desc': "Pipeline hybride LLM + Python déterministe sur 81 factures : diagnostic d'une dérive de modèle GPT (96 % → 59-72 %), référentiel de 24 codes de rejet et 19 associations CCAM bloquées, architecture hybride retenue par le client.",
+        'proj.p2.desc': "Anonymisation des dossiers patients avant tout appel LLM : modèle NER (EDS-Pseudo, AP-HP) déployé en API Docker plus une couche regex — le prérequis de conformité du projet de codage IA.",
+        'proj.p3.title': 'Détection des rejets de facturation',
+        'proj.p3.desc': "Pipeline hybride LLM + Python déterministe sur 81 factures : diagnostic d'une dérive de modèle GPT (96 % → 59-72 %), référentiel de 24 codes de rejet ; architecture hybride adoptée par le client.",
+        'proj.p3.chip': 'Facturation',
         'proj.p4.title': 'ML prédictif des rejets de facturation',
-        'proj.p4.desc': "Scoring prédictif des factures à risque de rejet : XGBoost préféré au fine-tuning LLM pour l'auditabilité et le coût, explicabilité SHAP, données relationnelles de la base factures, cible Azure ADLS Gen2 + API FastAPI.",
-        'proj.p5.title': 'Groupeur GHM Python & valorisation T2A',
-        'proj.p5.desc': "Moteur complet de groupage GHM 2026 : parsing des RSS au format ATIH, actes classants CCAM, niveaux de sévérité CMA, valorisation T2A (GHS, EXB/EXH, suppléments réanimation) sur les référentiels officiels ATIH.",
+        'proj.p4.desc': "Scoring prédictif des factures à risque de rejet : XGBoost préféré au fine-tuning LLM pour l'auditabilité et le coût, explicabilité SHAP, cible Azure ADLS Gen2 + serving FastAPI.",
+        'proj.p5.title': 'Moteur de financement hospitalier (GHM)',
+        'proj.p5.desc': "Moteur Python complet ré-implémentant les règles françaises de financement hospitalier (PMSI, 2026) : parsing, niveaux de sévérité, valorisation tarifaire — construit depuis les spécifications officielles.",
+        'proj.p5.chip': 'Réglementaire',
         'proj.p6.title': 'Détection de sous-codage & revalorisation',
-        'proj.p6.desc': "Framework d'identification des séjours probablement sous-codés et revalorisables : analyse de 90 RSS, typologie clinique, scoring data-driven fondé sur les taux d'escalade de sévérité par racine GHM pondérés par l'écart de valorisation.",
+        'proj.p6.desc': "Framework d'identification des séjours sous-codés revalorisables : 90 dossiers analysés, typologie clinique, scoring data-driven sur les taux d'escalade de sévérité pondérés par l'écart de valorisation.",
+        'proj.p6.chip': 'Scoring',
         'proj.p7.title': 'Veille financements publics sur Azure',
-        'proj.p7.desc': "Système automatisé de veille des appels à projets : PostgreSQL + pgvector (HNSW, embeddings 3072 dim.), Bing Grounding, Key Vault CSI, déploiement Helm + ArgoCD sur AKS — architecture validée avec l'architecte Azure du client.",
-        'proj.p8.title': 'Produit V1 « codage PMSI par IA »',
-        'proj.p8.desc': "Définition d'un produit démontrable pour Talan : parcours TIM complet (upload → pseudonymisation → propositions CIM-10 sourcées → validation), spécification 16 semaines / 6 lots, abstraction LLM multi-provider conforme HDS. Avant-vente associée : évaluation d'un AO hospitalier suisse (FHVi).",
-        'proj.p8.chip1': 'Produit', 'proj.p8.chip2': 'Avant-vente',
-        'proj.p9.title': "Veille d'appels d'offres publics par LLM",
-        'proj.p9.desc': "Système de veille remplaçant un abonnement payant : collecte via les API BOAMP/TED, triage LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs, et scoring go/no-go des consultations de restauration du patrimoine.",
-        'proj.p10.title': 'Atelier IA — pré-chiffrage patrimoine',
-        'proj.p10.desc': "Animation d'un atelier client démontrant l'IA agentique sur le pré-chiffrage d'un DCE de restauration : skill de chiffrage dédié, bordereau de prix de 33 lignes, deck de restitution — démo sur le CCTP réel d'un monument historique classé.",
-        'proj.p10.chip': 'Atelier client',
-        'proj.p11.title': 'POC migration de base de données',
-        'proj.p11.desc': "Mission de consulting certifiée INSA : migration de données vers une base propre, structurée et documentée, puis implémentation de KPI exploitables pour le suivi métier du client.",
-        'proj.p12.title': 'Serveur LLM local (homelab)',
-        'proj.p12.desc': "Serveur d'inférence LLM auto-hébergé (WSL2 + Docker + Ollama, GPU RTX 5070 Ti, accès sécurisé via Cloudflare Tunnel) utilisé pour évaluer des modèles open source, notamment médicaux, avant usage en mission.",
-        'proj.p13.title': 'Analyse du marché immobilier',
-        'proj.p13.desc': "Étude du prix de l'immobilier en Californie : exploration des données, identification des facteurs clés de valorisation et visualisation des tendances avec Python.",
-        'proj.p14.title': 'Ce portfolio interactif',
-        'proj.p14.desc': "Site 100 % fait main en HTML / CSS / JS vanilla : animations canvas, bilingue FR/EN, thème clair/sombre, version CV imprimable — hébergé sur GitHub Pages.",
-        'skills.kicker': '04 · Expertise', 'skills.title': 'Compétences',
-        'skills.ai.title': 'IA générative & LLM',
-        'skills.ai.rag': 'RAG & multi-agents (FAISS, pgvector, LangGraph)',
-        'skills.ai.bench': 'Benchmarking & prompt engineering',
-        'skills.ds.title': 'Data Science & ML',
-        'skills.ds.sql': 'SQL & data engineering',
-        'skills.cloud.title': 'Cloud & DevOps',
-        'skills.health.title': 'Métier Santé',
-        'skills.health.billing': 'Facturation CPAM & rejets (S3404)',
-        'skills.health.compliance': 'Conformité HDS / RGPD',
-        'skills.consulting.title': 'Conseil & Delivery',
-        'skills.consulting.framing': 'Cadrage & spécifications (FR/EN)',
-        'skills.consulting.presales': 'Avant-vente & réponse à AO',
-        'skills.consulting.workshops': 'Ateliers client & decks C-level',
-        'contact.kicker': '05 · Contact', 'contact.title': 'Travaillons ensemble',
-        'contact.sub': 'Un projet IA ou data dans la santé ?',
-        'contact.text': "Codage médical assisté par IA, contrôle de facturation, ML prédictif, architecture Azure : parlons-en. Réponse rapide garantie.",
+        'proj.p7.desc': "Veille automatisée des appels à projets : PostgreSQL + pgvector (HNSW, embeddings 3072 dim.), Bing Grounding, Key Vault CSI, Helm + ArgoCD sur AKS — architecture validée avec l'architecte Azure du client.",
+        'proj.p8.title': "Veille d'appels d'offres par LLM",
+        'proj.p8.desc': "Veille remplaçant un abonnement payant : API marchés publics BOAMP/TED, triage LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs, scoring go/no-go des consultations patrimoine.",
+        'proj.p9.title': 'Pré-chiffrage par IA agentique',
+        'proj.p9.desc': "Atelier client démontrant l'IA agentique sur le pré-chiffrage d'un DCE de restauration : skill de chiffrage dédié, bordereau de 33 lignes — démo sur le CCTP réel d'un monument classé.",
+        'proj.p9.chip': 'Atelier client', 'proj.p9.chip2': 'Chiffrage',
+        'proj.p10.title': 'POC migration de base de données',
+        'proj.p10.desc': "Mission de consulting certifiée : migration de données vers une base propre, structurée et documentée, puis KPI actionnables implémentés pour le suivi métier du client.",
+        'proj.p11.title': 'Serveur LLM local (homelab)',
+        'proj.p11.desc': "Serveur d'inférence auto-hébergé (WSL2 + Docker + Ollama, RTX 5070 Ti, accès sécurisé via Cloudflare Tunnel) pour évaluer des modèles open source — y compris médicaux — avant usage client.",
+        'proj.p12.title': 'Analyse du marché immobilier',
+        'proj.p12.desc': "Étude des prix de l'immobilier en Californie : exploration des données, facteurs clés de valorisation et visualisation des tendances avec Python.",
+        'proj.p13.title': 'Ce portfolio',
+        'proj.p13.desc': "100 % fait main en HTML / CSS / JS vanilla : bento grid, marquee de secteurs, cartes spotlight, bilingue EN/FR, thème clair/sombre, CV imprimable — hébergé sur GitHub Pages.",
+        'contact.kicker': '05 · Contact',
+        'contact.title': 'Construisons <span class="serif">quelque chose</span>',
+        'contact.sub': 'Vous cherchez un AI Data Engineer <span class="serif">qui livre ?</span>',
+        'contact.text': "Systèmes GenAI, ML en production, plateformes data cloud — dans votre secteur, quel qu'il soit. Ouvert aux opportunités en Australie, aux USA et au Canada. Réponse rapide garantie.",
         'contact.form.name': 'Votre nom', 'contact.form.email': 'Votre email',
-        'contact.form.message': 'Votre message', 'contact.form.send': 'Envoyer le message',
+        'contact.form.message': 'Votre message', 'contact.form.send': 'Envoyer',
         'footer.text': '© 2026 Maxime Laurent — Conçu & codé à la main',
-        'roles': ['Consultant Data & IA', 'IA générative · LLM', 'Santé · PMSI · Facturation', 'Python · Azure · ML', 'Ingénieur INSA']
-      },
-      en: {
-        'nav.about': 'About', 'nav.experience': 'Experience', 'nav.projects': 'Projects',
-        'nav.skills': 'Skills', 'nav.contact': 'Contact',
-        'hero.eyebrow': 'Consultant @ Talan — Insurance & Healthcare practice',
-        'hero.desc': "INSA Rouen Normandie engineer, I design and ship <strong>generative AI and data science</strong> solutions for healthcare: AI-assisted medical coding (French PMSI/DRG system), billing control, predictive ML — <strong>from framing to production</strong>.",
-        'hero.cta1': 'View my projects', 'hero.cta2': 'Contact me', 'hero.cta3': '⬇ Resume version',
-        'stats.missions': 'enterprise client engagements', 'stats.projects': 'data & AI projects delivered',
-        'stats.llm': 'LLMs benchmarked on real cases', 'stats.stays': 'inpatient stays/year in analyzed scope',
-        'about.kicker': '01 · Profile', 'about.title': 'About',
-        'about.p1': "<strong>Data & AI Consultant</strong> at <strong>Talan</strong> (Insurance & Healthcare practice) and INSA Rouen Normandie engineering graduate, I work at the intersection of <strong>consulting and technical implementation</strong>: framing, architecture, development and delivery.",
-        'about.p2': "At <strong>Ramsay Santé</strong>, Europe's leading private hospital group, I drive applied-AI workstreams at the heart of the French hospital system: <strong>LLM-assisted medical coding (PMSI)</strong>, health insurance billing rejection detection, DRG grouping engine, predictive ML — over a scope of ~2.2 million inpatient stays per year.",
-        'about.p3': "My approach: master the <strong>business domain</strong> (ICD-10, procedure coding, DRG-based funding, billing rules) as deeply as the <strong>technology</strong> (LLMs, RAG, XGBoost, Azure/AKS), to deliver solutions that are auditable, compliant (health-data hosting / GDPR) and actually adopted by users.",
-        'about.talan.desc': 'Consultant — Insurance & Healthcare practice · Consulting + implementation',
-        'about.edu.desc': 'Engineering degree — Computer science & information technology',
-        'about.health.title': 'Healthcare expertise',
-        'about.health.desc': 'French DRG system (PMSI) · ICD-10 · procedure coding · billing · GDPR',
-        'exp.kicker': '02 · Career', 'exp.title': 'Experience',
-        'exp.sub': 'From consulting to production: generative AI, data science and domain expertise.',
-        'exp.ramsay.duration': 'Long-term mission',
-        'exp.ramsay.title': 'Data & AI Consultant — Ramsay Santé engagement',
-        'exp.ramsay.org': "Ramsay Santé, Europe's leading private hospital group — parallel AI/data workstreams sponsored by the client's Data Office",
-        'exp.ramsay.b1.title': 'AI-assisted medical coding (PMSI)',
-        'exp.ramsay.b1.desc': "Multi-LLM ICD-10 coding pipeline (primary/related/associated diagnoses): benchmark of GPT, Gemini, Mistral, Grok and Claude with weighted hierarchical scoring, RAG (FAISS), NER pseudonymization (EDS-Pseudo from Paris hospitals, deployed as a Docker API) and a React validation interface for medical coders. Pilot: 100% accuracy on the primary diagnosis (Gemini/GPT) vs 63% for the human baseline, on an 8-stay sample. LangGraph multi-agent architecture (coder → QA → arbitration) proposed for industrialization.",
-        'exp.ramsay.b2.title': 'Billing control & insurance rejections',
-        'exp.ramsay.b2.desc': "Hybrid LLM + deterministic Python pipeline detecting health insurance billing rejections on an 81-invoice benchmark. Diagnosed a GPT model-version drift on Azure (96% → 59-72%), analyzed false-positive patterns, and recommended the retained hybrid architecture: deterministic rules for structured rejection reasons, LLM for semantic ones. Built a reference base of 24 rejection codes and the 19 blocked procedure-code combinations.",
-        'exp.ramsay.b3.title': 'Predictive ML for billing rejections',
-        'exp.ramsay.b3.desc': "Predictive detection of invoices at risk of rejection: XGBoost chosen over LLM fine-tuning for auditability, cost and reproducibility, with SHAP explainability. Relational data from the replicated invoicing database, Azure target storage (ADLS Gen2), batch scoring and FastAPI exposure.",
-        'exp.ramsay.b4.title': 'PMSI engine: DRG grouper & revenue uplift',
-        'exp.ramsay.b4.desc': "Development of a complete Python DRG grouping engine (2026 rules): positional-format record parsing, classifying procedures, severity levels, tariff valuation including outlier payments and ICU supplements, on official national reference files. Additionally, an under-coding detection framework: 90 records analyzed and data-driven scoring of upgradeable stays per DRG root.",
-        'exp.ramsay.b5.title': 'Azure architecture & automated intelligence',
-        'exp.ramsay.b5.desc': "Design of an automated public-funding call monitoring system, architecture validated with the client's Azure architect: PostgreSQL + pgvector (HNSW index, 3072-dimension embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD deployment on AKS. Framing documents delivered in French and English.",
-        'exp.ramsay.b6.title': 'Product strategy & pre-sales',
-        'exp.ramsay.b6.desc': "Definition of Talan's V1 'AI-assisted PMSI coding' product (16-week / 6-workstream specification, multi-provider LLM abstraction compliant with French health-data hosting rules, Ramsay identified as first beta tester) and assessment of a Swiss hospital RFP (FHVi): gap analysis and partnership strategy.",
-        'exp.degaine.duration': 'Consulting & AI mission',
-        'exp.degaine.title': 'AI Consultant — DEGAINE engagement (VINCI Construction)',
-        'exp.degaine.org': 'VINCI subsidiary specialized in the restoration of listed historical monuments',
-        'exp.degaine.b1.title': 'Automated public tender monitoring',
-        'exp.degaine.b1.desc': "Design of a tender-monitoring system replacing a paid subscription: collection through the French/EU public procurement APIs (BOAMP/TED), then LLM triage (Mistral Small on Azure AI Foundry) to eliminate keyword-filter false positives, with go/no-go scoring of heritage restoration tenders.",
-        'exp.degaine.b2.title': 'Client AI workshop — heritage cost pre-estimation',
-        'exp.degaine.b2.desc': "Prepared and led a client workshop demonstrating agentic AI (Claude) on pre-estimating a heritage restoration tender package: dedicated estimation skill, 33-line unit price schedule, delivery deck — live demo on the real specification of a listed monument.",
-        'exp.degaine.chip': 'Public procurement',
-        'exp.insa.duration': 'Certified project',
-        'exp.insa.title': 'Consulting mission — Data migration & KPIs',
-        'exp.insa.org': 'Certified project carried out in real conditions for a client',
-        'exp.insa.desc': "Delivery of a Proof of Concept migrating data to a clean, structured and documented database (modeling, cleansing, transformation rules), then implementation of KPI calculations on the migrated data with final delivery to the client.",
-        'exp.insa.chip1': 'Data modeling',
-        'exp.edu.title': 'Engineering degree — Computer Science & IT',
-        'exp.edu.org': 'French engineering school',
-        'exp.edu.desc': 'Engineering curriculum in computer science and information technology: databases, algorithms, software development, statistics and data analysis, project management.',
-        'proj.kicker': '03 · Work', 'proj.title': 'High-value projects',
-        'proj.sub': 'Generative AI, ML and data applied to real business challenges — healthcare, public procurement, heritage.',
-        'proj.filter.all': 'All', 'proj.filter.pro': 'Health · Ramsay', 'proj.filter.btp': 'Construction · VINCI',
-        'proj.filter.academic': 'Academic', 'proj.filter.personal': 'Personal',
-        'proj.badge.ramsay': 'Ramsay Santé', 'proj.badge.talan': 'Talan · Product',
-        'proj.badge.degaine': 'VINCI · DEGAINE', 'proj.badge.academic': 'INSA · Certified', 'proj.badge.personal': 'Personal',
-        'proj.p1.title': 'AI-assisted ICD-10 coding',
-        'proj.p1.desc': "Multi-LLM medical coding pipeline: benchmark of 5 models with hierarchical scoring, FAISS RAG, React validation interface for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% for the human baseline.",
-        'proj.p2.title': 'Medical data pseudonymization',
-        'proj.p2.desc': "Patient record anonymization pipeline ahead of any LLM call: NER model EDS-Pseudo (Paris hospitals) deployed as a Docker API, plus a regex layer — the compliance prerequisite (health-data hosting / GDPR) of the AI coding project.",
-        'proj.p3.title': 'Billing rejection detection',
-        'proj.p3.desc': "Hybrid LLM + deterministic Python pipeline on 81 invoices: diagnosed a GPT model drift (96% → 59-72%), built a reference base of 24 rejection codes and 19 blocked procedure combinations; hybrid architecture retained by the client.",
-        'proj.p4.title': 'Predictive ML for billing rejections',
-        'proj.p4.desc': "Predictive scoring of invoices at risk of rejection: XGBoost preferred over LLM fine-tuning for auditability and cost, SHAP explainability, relational invoicing data, Azure ADLS Gen2 target + FastAPI API.",
-        'proj.p5.title': 'Python DRG grouper & tariff valuation',
-        'proj.p5.desc': "Complete DRG grouping engine (2026 rules): positional record parsing, classifying procedures, severity levels, tariff valuation including outlier payments and ICU supplements, built on official national reference files.",
-        'proj.p6.title': 'Under-coding detection & revenue uplift',
-        'proj.p6.desc': "Framework identifying probably under-coded, upgradeable stays: 90 records analyzed, clinical typology, data-driven scoring based on historical severity-escalation rates per DRG root weighted by the valuation gap.",
-        'proj.p7.title': 'Public funding watch on Azure',
-        'proj.p7.desc': "Automated funding-call monitoring system: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD deployment on AKS — architecture validated with the client's Azure architect.",
-        'proj.p8.title': "V1 product: 'AI-assisted PMSI coding'",
-        'proj.p8.desc': "Definition of a demonstrable product for Talan: full coder journey (upload → pseudonymization → sourced ICD-10 suggestions → validation), 16-week / 6-workstream specification, compliant multi-provider LLM abstraction. Related pre-sales: assessment of a Swiss hospital RFP (FHVi).",
-        'proj.p8.chip1': 'Product', 'proj.p8.chip2': 'Pre-sales',
-        'proj.p9.title': 'LLM-powered public tender watch',
-        'proj.p9.desc': "Tender monitoring system replacing a paid subscription: collection via the BOAMP/TED public procurement APIs, LLM triage (Mistral Small on Azure AI Foundry) to remove false positives, and go/no-go scoring of heritage restoration tenders.",
-        'proj.p10.title': 'AI workshop — heritage pre-estimation',
-        'proj.p10.desc': "Led a client workshop demonstrating agentic AI on pre-estimating a heritage restoration tender: dedicated estimation skill, 33-line unit price schedule, delivery deck — demo on the real specification of a listed historical monument.",
-        'proj.p10.chip': 'Client workshop',
-        'proj.p11.title': 'Database migration POC',
-        'proj.p11.desc': "INSA-certified consulting mission: data migration to a clean, structured, documented database, then implementation of actionable KPIs for the client's business tracking.",
-        'proj.p12.title': 'Self-hosted LLM server (homelab)',
-        'proj.p12.desc': "Self-hosted LLM inference server (WSL2 + Docker + Ollama, RTX 5070 Ti GPU, secure access via Cloudflare Tunnel) used to evaluate open-source models — medical ones in particular — before using them on client work.",
-        'proj.p13.title': 'Real estate market analysis',
-        'proj.p13.desc': "Study of California housing prices: data exploration, identification of key valuation drivers and trend visualization with Python.",
-        'proj.p14.title': 'This interactive portfolio',
-        'proj.p14.desc': "100% handcrafted site in vanilla HTML / CSS / JS: canvas animations, FR/EN bilingual, light/dark theme, printable resume version — hosted on GitHub Pages.",
-        'skills.kicker': '04 · Expertise', 'skills.title': 'Skills',
-        'skills.ai.title': 'Generative AI & LLMs',
-        'skills.ai.rag': 'RAG & multi-agent (FAISS, pgvector, LangGraph)',
-        'skills.ai.bench': 'Benchmarking & prompt engineering',
-        'skills.ds.title': 'Data Science & ML',
-        'skills.ds.sql': 'SQL & data engineering',
-        'skills.cloud.title': 'Cloud & DevOps',
-        'skills.health.title': 'Healthcare Domain',
-        'skills.health.billing': 'Health insurance billing & rejections',
-        'skills.health.compliance': 'Health-data hosting / GDPR compliance',
-        'skills.consulting.title': 'Consulting & Delivery',
-        'skills.consulting.framing': 'Framing & specifications (FR/EN)',
-        'skills.consulting.presales': 'Pre-sales & RFP responses',
-        'skills.consulting.workshops': 'Client workshops & C-level decks',
-        'contact.kicker': '05 · Contact', 'contact.title': "Let's work together",
-        'contact.sub': 'An AI or data project in healthcare?',
-        'contact.text': "AI-assisted medical coding, billing control, predictive ML, Azure architecture: let's talk. Fast reply guaranteed.",
-        'contact.form.name': 'Your name', 'contact.form.email': 'Your email',
-        'contact.form.message': 'Your message', 'contact.form.send': 'Send message',
-        'footer.text': '© 2026 Maxime Laurent — Designed & hand-coded',
-        'roles': ['Data & AI Consultant', 'Generative AI · LLMs', 'Healthcare · Coding · Billing', 'Python · Azure · ML', 'INSA Engineer']
+        'roles': ['AI Data Engineer', 'Systèmes GenAI & LLM', 'ML en production', 'Azure · Python · RAG', 'Tout secteur. Vite.']
       }
     };
 
-    let lang = localStorage.getItem('cv-lang') || 'fr';
+    /* Marquee sectors per language */
+    const SECTORS = {
+      en: ['Healthcare', 'Insurance', 'Construction', 'Heritage restoration', 'Public procurement', 'Real estate'],
+      fr: ['Santé', 'Assurance', 'Construction', 'Restauration du patrimoine', 'Marchés publics', 'Immobilier']
+    };
+
+    let lang = localStorage.getItem('cv-lang') || 'en';
+
+    function buildMarquee(l) {
+      const items = SECTORS[l];
+      const next = T[l]['marquee.next'];
+      const seg = items.map(s => `<span>${s}</span><span class="diamond">◆</span>`).join('')
+        + `<span class="hl">${next}</span><span class="diamond">◆</span>`;
+      document.getElementById('marqueeTrack').innerHTML =
+        `<span class="marquee-item">${seg}</span><span class="marquee-item" aria-hidden="true">${seg}</span>`;
+    }
 
     function applyLang(l) {
       lang = l;
@@ -1276,12 +1324,13 @@
         const k = el.getAttribute('data-i18n-ph');
         if (T[l][k]) el.placeholder = T[l][k];
       });
-      document.getElementById('langToggle').textContent = l === 'fr' ? 'EN' : 'FR';
+      document.getElementById('langToggle').textContent = l === 'en' ? 'FR' : 'EN';
       localStorage.setItem('cv-lang', l);
+      buildMarquee(l);
       roleIdx = 0; charIdx = 0; deleting = false;
     }
 
-    document.getElementById('langToggle').addEventListener('click', () => applyLang(lang === 'fr' ? 'en' : 'fr'));
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(lang === 'en' ? 'fr' : 'en'));
 
     /* ============ THEME ============ */
     const themeBtn = document.getElementById('themeToggle');
@@ -1315,67 +1364,6 @@
       }
     }
 
-    /* ============ PARTICLES ============ */
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    let particles = [], mouse = { x: -9999, y: -9999 };
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      const count = Math.min(90, Math.floor(canvas.width * canvas.height / 22000));
-      particles = Array.from({ length: count }, () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.35,
-        vy: (Math.random() - 0.5) * 0.35,
-        r: Math.random() * 1.6 + 0.6
-      }));
-    }
-
-    function drawParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const isLight = document.documentElement.classList.contains('light');
-      const dotColor = isLight ? 'rgba(13,148,136,0.5)' : 'rgba(45,212,191,0.55)';
-      const lineBase = isLight ? '13,148,136' : '45,212,191';
-
-      for (const p of particles) {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
-        const dxm = p.x - mouse.x, dym = p.y - mouse.y;
-        const dm = Math.hypot(dxm, dym);
-        if (dm < 140 && dm > 0.1) { p.x += dxm / dm * 0.6; p.y += dym / dm * 0.6; }
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = dotColor;
-        ctx.fill();
-      }
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const d = Math.hypot(dx, dy);
-          if (d < 130) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(${lineBase},${(1 - d / 130) * 0.18})`;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
-      }
-      if (!reducedMotion) requestAnimationFrame(drawParticles);
-    }
-
-    window.addEventListener('resize', resizeCanvas);
-    window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
-    window.addEventListener('mouseout', () => { mouse.x = -9999; mouse.y = -9999; });
-
     /* ============ NAV / SCROLL ============ */
     const navbar = document.getElementById('navbar');
     const progress = document.getElementById('progress');
@@ -1403,18 +1391,17 @@
     menuToggle.addEventListener('click', () => navLinksEl.classList.toggle('open'));
     navAnchors.forEach(a => a.addEventListener('click', () => navLinksEl.classList.remove('open')));
 
-    /* ============ REVEAL + COUNTERS + SKILL BARS ============ */
+    /* ============ REVEAL + COUNTERS ============ */
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (!e.isIntersecting) return;
         e.target.classList.add('visible');
-        e.target.querySelectorAll('.skill-fill').forEach(f => f.classList.add('animated'));
         e.target.querySelectorAll('.counter:not(.done)').forEach(runCounter);
         io.unobserve(e.target);
       });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.reveal, .skill-card, .hero-stats').forEach(el => io.observe(el));
+    document.querySelectorAll('.reveal, .hero-stats').forEach(el => io.observe(el));
 
     function runCounter(el) {
       el.classList.add('done');
@@ -1427,7 +1414,7 @@
       })(t0);
     }
 
-    /* ============ PROJECT FILTERS + SPOTLIGHT ============ */
+    /* ============ FILTERS + SPOTLIGHT ============ */
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -1439,7 +1426,7 @@
       });
     });
 
-    document.querySelectorAll('.project').forEach(card => {
+    document.querySelectorAll('.project, .bento-card').forEach(card => {
       card.addEventListener('mousemove', e => {
         const r = card.getBoundingClientRect();
         card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
@@ -1455,13 +1442,11 @@
       location.href = `mailto:maxime.laurent02@icloud.com?subject=${encodeURIComponent('Contact — ' + fd.get('name'))}&body=${encodeURIComponent(body)}`;
     });
 
-    /* ============ CV PRINT ============ */
+    /* ============ RESUME PRINT ============ */
     document.getElementById('downloadCV').addEventListener('click', () => window.print());
 
     /* ============ INIT ============ */
     applyLang(lang);
-    resizeCanvas();
-    drawParticles();
     setTimeout(typeLoop, 600);
   </script>
 </body>
