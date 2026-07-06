@@ -6,6 +6,12 @@
   <meta name="description" content="Maxime Laurent — AI Data Engineer. I ship GenAI, ML and data platforms in any industry: healthcare, construction, insurance. Python · Azure · LLMs · RAG. Open to opportunities in Australia, the US and Canada." />
   <title>Maxime Laurent — AI Data Engineer</title>
 
+  <meta property="og:title" content="Maxime Laurent — AI Data Engineer" />
+  <meta property="og:description" content="I ship GenAI, ML and data platforms in any industry: healthcare, construction, insurance. Python · Azure · LLMs · RAG." />
+  <meta property="og:image" content="photo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -55,6 +61,17 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
+    :focus-visible { outline: 2px solid var(--blue-2); outline-offset: 3px; border-radius: 4px; }
+
+    /* Inline SVG icons (Lucide) */
+    .i {
+      width: 1.15em; height: 1.15em;
+      stroke: currentColor; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      flex-shrink: 0; display: inline-block; vertical-align: -0.18em;
+    }
+    .ico .i { width: 21px; height: 21px; color: var(--blue-3); vertical-align: 0; }
+
     body {
       font-family: var(--font-body);
       background: var(--bg);
@@ -77,6 +94,23 @@
         radial-gradient(700px 500px at 8% 30%, rgba(91,138,255,0.08), transparent 60%),
         radial-gradient(800px 700px at 50% 115%, var(--blue-soft), transparent 60%);
     }
+    .blob {
+      position: fixed; z-index: -2; border-radius: 50%;
+      pointer-events: none; will-change: transform;
+    }
+    .blob-1 {
+      width: 540px; height: 540px; top: -12%; right: -6%;
+      background: radial-gradient(circle, var(--blue-soft), transparent 70%);
+      animation: drift1 26s ease-in-out infinite alternate;
+    }
+    .blob-2 {
+      width: 640px; height: 640px; bottom: -16%; left: -9%;
+      background: radial-gradient(circle, rgba(91,138,255,0.10), transparent 70%);
+      animation: drift2 34s ease-in-out infinite alternate;
+    }
+    @keyframes drift1 { to { transform: translate(-130px, 100px) scale(1.15); } }
+    @keyframes drift2 { to { transform: translate(150px, -120px) scale(0.9); } }
+
     .gridlines {
       position: fixed; inset: 0; z-index: -1; pointer-events: none;
       background-image:
@@ -144,6 +178,10 @@
       font-family: var(--font-mono);
     }
     .icon-btn:hover { border-color: var(--blue-2); box-shadow: 0 0 16px var(--glow); transform: translateY(-1px); }
+    .icon-btn:active, .btn:active { transform: scale(0.97); }
+    .icon-btn .i-sun { display: none; }
+    :root.light .icon-btn .i-sun { display: inline-block; }
+    :root.light .icon-btn .i-moon { display: none; }
     .icon-btn.lang { width: auto; padding: 0 0.7rem; font-size: 0.78rem; font-weight: 600; }
     .menu-toggle { display: none; }
 
@@ -355,7 +393,7 @@
       background: radial-gradient(480px circle at var(--mx, 50%) var(--my, 50%), var(--blue-soft), transparent 45%);
       opacity: 0; transition: opacity 0.35s ease; pointer-events: none;
     }
-    .bento-card:hover { transform: translateY(-5px); border-color: var(--blue-2); box-shadow: 0 18px 44px -18px var(--glow); }
+    .bento-card:hover { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-5px); border-color: var(--blue-2); box-shadow: 0 18px 44px -18px var(--glow); }
     .bento-card:hover::before { opacity: 1; }
 
     .bento-card .ico {
@@ -466,7 +504,7 @@
       background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), var(--blue-soft), transparent 45%);
       opacity: 0; transition: opacity 0.35s ease; pointer-events: none;
     }
-    .project:hover { transform: translateY(-6px); border-color: var(--blue-2); box-shadow: 0 18px 40px -18px var(--glow); }
+    .project:hover { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-6px); border-color: var(--blue-2); box-shadow: 0 18px 40px -18px var(--glow); }
     .project:hover::before { opacity: 1; }
     .project.hidden { display: none; }
 
@@ -545,7 +583,7 @@
     .scroll-top:hover { border-color: var(--blue-2); box-shadow: 0 0 20px var(--glow); }
 
     /* ============ REVEAL ============ */
-    .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
     .reveal.visible { opacity: 1; transform: none; }
     .reveal[data-delay="1"] { transition-delay: 0.1s; }
     .reveal[data-delay="2"] { transition-delay: 0.2s; }
@@ -554,13 +592,100 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
       .reveal { opacity: 1; transform: none; }
+      .hero-badge, .hero-title, .hero-sub, .hero-roles, .hero-buttons, .hero-stats { opacity: 1; transform: none; filter: none; }
+      #net { display: none; }
     }
+
+    /* ============ PRELOADER ============ */
+    .preloader {
+      position: fixed; inset: 0; z-index: 3000;
+      background: var(--bg);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.4rem;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    .preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    .pl-name {
+      font-family: var(--font-mono); font-size: clamp(1rem, 3vw, 1.3rem); font-weight: 600;
+      color: var(--text); letter-spacing: 0.02em;
+    }
+    .pl-name .tag { color: var(--blue-2); }
+    .pl-bar {
+      width: 210px; height: 2px; border-radius: 2px;
+      background: var(--surface-strong); overflow: hidden;
+    }
+    .pl-bar i {
+      display: block; height: 100%; width: 0;
+      background: linear-gradient(90deg, var(--blue-1), var(--blue-3));
+      box-shadow: 0 0 12px var(--glow);
+      animation: plload 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    @keyframes plload { to { width: 100%; } }
+
+    /* ============ PARTICLE NETWORK ============ */
+    #net { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+
+    /* ============ CUSTOM CURSOR ============ */
+    body.custom-cursor, body.custom-cursor * { cursor: none !important; }
+    .cursor-dot, .cursor-ring {
+      position: fixed; top: 0; left: 0; pointer-events: none; z-index: 4000;
+      border-radius: 50%; transform: translate(-50%, -50%);
+      display: none;
+    }
+    body.custom-cursor .cursor-dot, body.custom-cursor .cursor-ring { display: block; }
+    .cursor-dot { width: 6px; height: 6px; background: var(--blue-2); }
+    .cursor-ring {
+      width: 34px; height: 34px;
+      border: 1.5px solid color-mix(in srgb, var(--blue-2) 65%, transparent);
+      transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+    .cursor-ring.hover {
+      width: 52px; height: 52px;
+      background: color-mix(in srgb, var(--blue-2) 10%, transparent);
+      border-color: var(--blue-2);
+    }
+
+    /* ============ HERO ENTRANCE ============ */
+    .hero-badge, .hero-title, .hero-sub, .hero-roles, .hero-buttons, .hero-stats {
+      opacity: 0; transform: translateY(26px);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+    }
+    .hero-title { filter: blur(10px); }
+    body.loaded .hero-title { filter: blur(0); }
+    body.loaded .hero-badge, body.loaded .hero-title, body.loaded .hero-sub,
+    body.loaded .hero-roles, body.loaded .hero-buttons, body.loaded .hero-stats {
+      opacity: 1; transform: none;
+    }
+    body.loaded .hero-title { transition-delay: 0.1s; }
+    body.loaded .hero-sub { transition-delay: 0.22s; }
+    body.loaded .hero-roles { transition-delay: 0.32s; }
+    body.loaded .hero-buttons { transition-delay: 0.42s; }
+    body.loaded .hero-stats { transition-delay: 0.55s; }
+
+    /* ============ PHOTO CARD ============ */
+    .photo-card { padding: 0.55rem; position: relative; overflow: hidden; }
+    .photo-card::before {
+      content: ""; position: absolute; inset: -40%;
+      background: conic-gradient(from 0deg, transparent 70%, var(--blue-2), transparent 82%);
+      animation: photospin 6s linear infinite;
+      z-index: 0;
+    }
+    @keyframes photospin { to { transform: rotate(360deg); } }
+    .photo-card img {
+      position: relative; z-index: 1;
+      width: 100%; aspect-ratio: 1 / 1.05; object-fit: cover;
+      border-radius: 15px; display: block;
+      filter: saturate(0.92);
+      transition: transform 0.5s ease, filter 0.5s ease;
+    }
+    .photo-card:hover img { transform: scale(1.035); filter: saturate(1.08); }
 
     /* ============ PRINT (RESUME) ============ */
     @media print {
       :root { --bg: #fff; --text: #111; --muted: #444; --border: #ccc; --surface: #fff; --surface-strong: #f4f4f4; }
       .ambient, .gridlines, nav, .progress, .scroll-top, .hero-buttons,
-      .marquee-band, .filter-buttons, .contact-form, .pulse-dot, footer .mono { display: none !important; }
+      .marquee-band, .filter-buttons, .contact-form, .pulse-dot, footer .mono,
+      .preloader, #net, .cursor-dot, .cursor-ring, .photo-card::before, .blob { display: none !important; }
+      .hero-badge, .hero-title, .hero-sub, .hero-roles, .hero-stats { opacity: 1 !important; transform: none !important; }
       body { background: #fff; color: #111; font-size: 11px; }
       header { min-height: auto; padding: 1rem 0; }
       section { padding: 0.8rem 0; max-width: 100%; }
@@ -574,8 +699,49 @@
 </head>
 <body>
 
+  <div class="preloader" id="preloader">
+    <div class="pl-name"><span class="tag">&lt;</span>maxime.laurent<span class="tag"> /&gt;</span></div>
+    <div class="pl-bar"><i></i></div>
+  </div>
+
+  <svg style="display:none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+    <symbol id="i-grad" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+    <symbol id="i-cog" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-landmark" viewBox="0 0 24 24"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></symbol>
+  </svg>
+
   <div class="ambient"></div>
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
   <div class="gridlines"></div>
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
   <div class="progress" id="progress"></div>
 
   <!-- ============ NAV ============ -->
@@ -590,8 +756,8 @@
     </ul>
     <div class="nav-controls">
       <button class="icon-btn lang" id="langToggle" aria-label="Switch language">FR</button>
-      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☾</button>
-      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><svg class="i i-moon"><use href="#i-moon"/></svg><svg class="i i-sun"><use href="#i-sun"/></svg></button>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu"><svg class="i"><use href="#i-menu"/></svg></button>
     </div>
   </nav>
 
@@ -612,7 +778,7 @@
     <div class="hero-buttons">
       <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">See my work</a>
       <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Get in touch</a>
-      <button class="btn btn-ghost" id="downloadCV" data-i18n="hero.cta3">⬇ Resume</button>
+      <button class="btn btn-ghost" id="downloadCV"><svg class="i"><use href="#i-download"/></svg><span data-i18n="hero.cta3">Resume</span></button>
     </div>
 
     <div class="hero-stats">
@@ -670,22 +836,25 @@
         </p>
       </div>
       <div class="about-side">
+        <div class="glass photo-card reveal">
+          <img src="photo.jpg" alt="Maxime Laurent — AI Data Engineer" loading="lazy" />
+        </div>
         <div class="glass info-card reveal" data-delay="1">
-          <div class="ico">⚡</div>
+          <div class="ico"><svg class="i"><use href="#i-zap"/></svg></div>
           <div>
             <h4 data-i18n="about.c1.title">Fast domain immersion</h4>
             <p data-i18n="about.c1.desc">Regulated healthcare billing, public procurement law, heritage cost estimation — learned on the job, delivered in weeks</p>
           </div>
         </div>
         <div class="glass info-card reveal" data-delay="2">
-          <div class="ico">🎓</div>
+          <div class="ico"><svg class="i"><use href="#i-grad"/></svg></div>
           <div>
             <h4>INSA Rouen Normandie</h4>
             <p data-i18n="about.c2.desc">MSc-level engineering degree — Computer science & information technology</p>
           </div>
         </div>
         <div class="glass info-card reveal" data-delay="3">
-          <div class="ico">🌏</div>
+          <div class="ico"><svg class="i"><use href="#i-globe"/></svg></div>
           <div>
             <h4 data-i18n="about.c3.title">Ready to relocate</h4>
             <p data-i18n="about.c3.desc">Targeting Australia, the US and Canada · Bilingual deliverables (EN/FR)</p>
@@ -709,7 +878,7 @@
       </div>
 
       <div class="bento-card reveal" data-delay="1">
-        <div class="ico">🤖</div>
+        <div class="ico"><svg class="i"><use href="#i-bot"/></svg></div>
         <h3 data-i18n="exp2.b1.title">GenAI & LLM systems</h3>
         <p data-i18n="exp2.b1.desc">Multi-LLM benchmarking on real business cases, RAG, multi-agent orchestration, NER pseudonymization, hybrid LLM + deterministic architectures — with measured accuracy, not demos.</p>
         <div class="chips">
@@ -719,7 +888,7 @@
       </div>
 
       <div class="bento-card reveal" data-delay="2">
-        <div class="ico">📊</div>
+        <div class="ico"><svg class="i"><use href="#i-chart"/></svg></div>
         <h3 data-i18n="exp2.b2.title">Machine learning in production</h3>
         <p data-i18n="exp2.b2.desc">Predictive scoring on relational data, explainability for regulated environments, honest model choices — XGBoost over LLM fine-tuning when auditability and cost say so.</p>
         <div class="chips">
@@ -729,7 +898,7 @@
       </div>
 
       <div class="bento-card reveal" data-delay="1">
-        <div class="ico">☁️</div>
+        <div class="ico"><svg class="i"><use href="#i-cloud"/></svg></div>
         <h3 data-i18n="exp2.b3.title">Cloud & data engineering</h3>
         <p data-i18n="exp2.b3.desc">Architectures designed with client architects and deployed for real: vector databases, GitOps pipelines, secret management, containerized inference.</p>
         <div class="chips">
@@ -739,7 +908,7 @@
       </div>
 
       <div class="bento-card reveal" data-delay="2">
-        <div class="ico">🧭</div>
+        <div class="ico"><svg class="i"><use href="#i-compass"/></svg></div>
         <h3 data-i18n="exp2.b4.title">Consulting-grade delivery</h3>
         <p data-i18n="exp2.b4.desc">Framing documents in English and French, client workshops, specifications, compliance by design (health-data hosting, GDPR) — engineering that stakeholders can sign off on.</p>
         <div class="chips">
@@ -881,7 +1050,7 @@
     <div class="projects-grid" id="projectsGrid">
       <div class="project glass reveal" data-category="health">
         <div class="project-top">
-          <div class="ico">🧠</div>
+          <div class="ico"><svg class="i"><use href="#i-activity"/></svg></div>
           <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
         <h3 data-i18n="proj.p1.title">AI-assisted medical coding</h3>
@@ -891,7 +1060,7 @@
 
       <div class="project glass reveal" data-category="health" data-delay="1">
         <div class="project-top">
-          <div class="ico">🔒</div>
+          <div class="ico"><svg class="i"><use href="#i-lock"/></svg></div>
           <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
         <h3 data-i18n="proj.p2.title">Medical data pseudonymization</h3>
@@ -901,7 +1070,7 @@
 
       <div class="project glass reveal" data-category="health" data-delay="2">
         <div class="project-top">
-          <div class="ico">🧾</div>
+          <div class="ico"><svg class="i"><use href="#i-file"/></svg></div>
           <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
         <h3 data-i18n="proj.p3.title">Billing rejection detection</h3>
@@ -911,7 +1080,7 @@
 
       <div class="project glass reveal" data-category="health">
         <div class="project-top">
-          <div class="ico">📈</div>
+          <div class="ico"><svg class="i"><use href="#i-trend"/></svg></div>
           <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
         <h3 data-i18n="proj.p4.title">Predictive ML for billing rejections</h3>
@@ -921,7 +1090,7 @@
 
       <div class="project glass reveal" data-category="health" data-delay="1">
         <div class="project-top">
-          <div class="ico">⚙️</div>
+          <div class="ico"><svg class="i"><use href="#i-cog"/></svg></div>
           <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
         <h3 data-i18n="proj.p5.title">Hospital funding engine (DRG)</h3>
@@ -931,7 +1100,7 @@
 
       <div class="project glass reveal" data-category="health" data-delay="2">
         <div class="project-top">
-          <div class="ico">🔎</div>
+          <div class="ico"><svg class="i"><use href="#i-search"/></svg></div>
           <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
         <h3 data-i18n="proj.p6.title">Under-coding detection & revenue uplift</h3>
@@ -941,7 +1110,7 @@
 
       <div class="project glass reveal" data-category="health">
         <div class="project-top">
-          <div class="ico">🛰️</div>
+          <div class="ico"><svg class="i"><use href="#i-eye"/></svg></div>
           <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
         <h3 data-i18n="proj.p7.title">Public funding watch on Azure</h3>
@@ -951,7 +1120,7 @@
 
       <div class="project glass reveal" data-category="construction" data-delay="1">
         <div class="project-top">
-          <div class="ico">🏛️</div>
+          <div class="ico"><svg class="i"><use href="#i-landmark"/></svg></div>
           <span class="badge" data-i18n="proj.badge.construction">Construction</span>
         </div>
         <h3 data-i18n="proj.p8.title">LLM-powered public tender watch</h3>
@@ -961,7 +1130,7 @@
 
       <div class="project glass reveal" data-category="construction" data-delay="2">
         <div class="project-top">
-          <div class="ico">🧱</div>
+          <div class="ico"><svg class="i"><use href="#i-calc"/></svg></div>
           <span class="badge" data-i18n="proj.badge.construction">Construction</span>
         </div>
         <h3 data-i18n="proj.p9.title">Agentic AI cost pre-estimation</h3>
@@ -971,7 +1140,7 @@
 
       <div class="project glass reveal" data-category="academic">
         <div class="project-top">
-          <div class="ico">🗄️</div>
+          <div class="ico"><svg class="i"><use href="#i-db"/></svg></div>
           <span class="badge" data-i18n="proj.badge.academic">INSA · Certified</span>
         </div>
         <h3 data-i18n="proj.p10.title">Database migration POC</h3>
@@ -981,7 +1150,7 @@
 
       <div class="project glass reveal" data-category="personal" data-delay="1">
         <div class="project-top">
-          <div class="ico">🖥️</div>
+          <div class="ico"><svg class="i"><use href="#i-server"/></svg></div>
           <span class="badge" data-i18n="proj.badge.personal">Personal</span>
         </div>
         <h3 data-i18n="proj.p11.title">Self-hosted LLM server (homelab)</h3>
@@ -991,7 +1160,7 @@
 
       <div class="project glass reveal" data-category="personal" data-delay="2">
         <div class="project-top">
-          <div class="ico">🏠</div>
+          <div class="ico"><svg class="i"><use href="#i-home"/></svg></div>
           <span class="badge" data-i18n="proj.badge.personal">Personal</span>
         </div>
         <h3 data-i18n="proj.p12.title">Real estate market analysis</h3>
@@ -1001,11 +1170,11 @@
 
       <div class="project glass reveal" data-category="personal">
         <div class="project-top">
-          <div class="ico">✨</div>
+          <div class="ico"><svg class="i"><use href="#i-sparkles"/></svg></div>
           <span class="badge" data-i18n="proj.badge.personal">Personal</span>
         </div>
         <h3 data-i18n="proj.p13.title">This portfolio</h3>
-        <p data-i18n="proj.p13.desc">100% handcrafted in vanilla HTML / CSS / JS: bento grid, sector marquee, spotlight cards, EN/FR bilingual, light/dark theme, printable resume — hosted on GitHub Pages.</p>
+        <p data-i18n="proj.p13.desc">100% handcrafted in vanilla HTML / CSS / JS: interactive particle network, custom cursor, 3D tilt cards, bento grid, EN/FR bilingual, light/dark theme, printable resume — hosted on GitHub Pages.</p>
         <div class="chips"><span class="chip">HTML/CSS</span><span class="chip">JavaScript</span><span class="chip">GitHub Pages</span></div>
       </div>
     </div>
@@ -1024,13 +1193,13 @@
         <p data-i18n="contact.text">GenAI systems, production ML, cloud data platforms — in your industry, whatever it is. Open to opportunities in Australia, the US and Canada. Fast reply guaranteed.</p>
         <div class="contact-links">
           <a href="mailto:maxime.laurent02@icloud.com" class="contact-link">
-            <span class="ico">✉️</span> maxime.laurent02@icloud.com
+            <span class="ico"><svg class="i"><use href="#i-mail"/></svg></span> maxime.laurent02@icloud.com
           </a>
           <a href="https://www.linkedin.com/in/maxime-laurent-3866a3209/" target="_blank" rel="noopener" class="contact-link">
-            <span class="ico">💼</span> LinkedIn — Maxime Laurent
+            <span class="ico"><svg class="i"><use href="#i-linkedin"/></svg></span> LinkedIn — Maxime Laurent
           </a>
           <a href="https://github.com/MaximeL34" target="_blank" rel="noopener" class="contact-link">
-            <span class="ico">💻</span> GitHub — MaximeL34
+            <span class="ico"><svg class="i"><use href="#i-github"/></svg></span> GitHub — MaximeL34
           </a>
         </div>
       </div>
@@ -1044,7 +1213,7 @@
     </div>
   </section>
 
-  <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top"><svg class="i"><use href="#i-up"/></svg></button>
 
   <footer>
     <span data-i18n="footer.text">© 2026 Maxime Laurent — Designed & hand-coded</span>
@@ -1060,7 +1229,7 @@
         'hero.badge': 'AI Data Engineer · Open to Australia / USA / Canada',
         'hero.title': 'I build AI systems<br>that ship — <span class="serif">in any industry.</span>',
         'hero.sub': "<strong>AI Data Engineer</strong> — I take LLM and ML solutions from a blank page to production: <strong>GenAI pipelines, predictive models, cloud data platforms</strong>. Hospital billing one quarter, heritage restoration tenders the next — the sector changes, the delivery doesn't.",
-        'hero.cta1': 'See my work', 'hero.cta2': 'Get in touch', 'hero.cta3': '⬇ Resume',
+        'hero.cta1': 'See my work', 'hero.cta2': 'Get in touch', 'hero.cta3': 'Resume',
         'stats.sectors': 'industries delivered in (and counting)',
         'stats.projects': 'AI & data projects shipped',
         'stats.llm': 'LLMs benchmarked on real cases',
@@ -1164,7 +1333,7 @@
         'proj.p12.title': 'Real estate market analysis',
         'proj.p12.desc': "Study of California housing prices: data exploration, key valuation drivers and trend visualization with Python.",
         'proj.p13.title': 'This portfolio',
-        'proj.p13.desc': "100% handcrafted in vanilla HTML / CSS / JS: bento grid, sector marquee, spotlight cards, EN/FR bilingual, light/dark theme, printable resume — hosted on GitHub Pages.",
+        'proj.p13.desc': "100% handcrafted in vanilla HTML / CSS / JS: interactive particle network, custom cursor, 3D tilt cards, bento grid, EN/FR bilingual, light/dark theme, printable resume — hosted on GitHub Pages.",
         'contact.kicker': '05 · Contact',
         'contact.title': "Let's build <span class=\"serif\">something</span>",
         'contact.sub': 'Hiring an AI Data Engineer <span class="serif">who ships?</span>',
@@ -1180,7 +1349,7 @@
         'hero.badge': 'AI Data Engineer · Ouvert à Australie / USA / Canada',
         'hero.title': 'Je construis des systèmes IA<br>qui tournent — <span class="serif">dans tout secteur.</span>',
         'hero.sub': "<strong>AI Data Engineer</strong> — je mène les solutions LLM et ML de la page blanche à la production : <strong>pipelines GenAI, modèles prédictifs, plateformes data cloud</strong>. Facturation hospitalière un trimestre, chiffrage de monuments historiques le suivant — le secteur change, le delivery reste.",
-        'hero.cta1': 'Voir mes projets', 'hero.cta2': 'Me contacter', 'hero.cta3': '⬇ Version CV',
+        'hero.cta1': 'Voir mes projets', 'hero.cta2': 'Me contacter', 'hero.cta3': 'Version CV',
         'stats.sectors': 'secteurs livrés (et ce n’est pas fini)',
         'stats.projects': 'projets IA & data livrés',
         'stats.llm': 'LLM benchmarkés sur cas réels',
@@ -1284,7 +1453,7 @@
         'proj.p12.title': 'Analyse du marché immobilier',
         'proj.p12.desc': "Étude des prix de l'immobilier en Californie : exploration des données, facteurs clés de valorisation et visualisation des tendances avec Python.",
         'proj.p13.title': 'Ce portfolio',
-        'proj.p13.desc': "100 % fait main en HTML / CSS / JS vanilla : bento grid, marquee de secteurs, cartes spotlight, bilingue EN/FR, thème clair/sombre, CV imprimable — hébergé sur GitHub Pages.",
+        'proj.p13.desc': "100 % fait main en HTML / CSS / JS vanilla : réseau de particules interactif, curseur custom, cartes 3D tilt, bento grid, bilingue EN/FR, thème clair/sombre, CV imprimable — hébergé sur GitHub Pages.",
         'contact.kicker': '05 · Contact',
         'contact.title': 'Construisons <span class="serif">quelque chose</span>',
         'contact.sub': 'Vous cherchez un AI Data Engineer <span class="serif">qui livre ?</span>',
@@ -1336,7 +1505,6 @@
     const themeBtn = document.getElementById('themeToggle');
     function applyTheme(mode) {
       document.documentElement.classList.toggle('light', mode === 'light');
-      themeBtn.textContent = mode === 'light' ? '☀' : '☾';
       localStorage.setItem('cv-theme', mode);
     }
     themeBtn.addEventListener('click', () => {
@@ -1371,10 +1539,17 @@
     const sections = document.querySelectorAll('section, header');
     const navAnchors = document.querySelectorAll('.nav-links a');
 
+    const heroHeader = document.getElementById('hero');
+
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
       navbar.classList.toggle('scrolled', y > 40);
       scrollTopBtn.classList.toggle('visible', y > 600);
+
+      if (!REDUCED && y < window.innerHeight) {
+        heroHeader.style.transform = `translateY(${y * 0.16}px)`;
+        heroHeader.style.opacity = Math.max(1 - y / (window.innerHeight * 0.85), 0.05);
+      }
 
       const h = document.documentElement.scrollHeight - window.innerHeight;
       progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
@@ -1431,6 +1606,12 @@
         const r = card.getBoundingClientRect();
         card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
         card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        card.style.setProperty('--ry', ((e.clientX - r.left) / r.width - 0.5) * 7 + 'deg');
+        card.style.setProperty('--rx', (0.5 - (e.clientY - r.top) / r.height) * 7 + 'deg');
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
       });
     });
 
@@ -1444,6 +1625,110 @@
 
     /* ============ RESUME PRINT ============ */
     document.getElementById('downloadCV').addEventListener('click', () => window.print());
+
+    /* ============ PARTICLE NETWORK ============ */
+    const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const netCanvas = document.getElementById('net');
+    const nctx = netCanvas.getContext('2d');
+    let netRGB = [91, 138, 255], parts = [], netW = 0, netH = 0;
+    const netMouse = { x: -9999, y: -9999 };
+
+    function updateNetColors() {
+      const hex = getComputedStyle(document.documentElement).getPropertyValue('--blue-2').trim();
+      if (/^#[0-9a-f]{6}$/i.test(hex)) {
+        netRGB = [parseInt(hex.slice(1, 3), 16), parseInt(hex.slice(3, 5), 16), parseInt(hex.slice(5, 7), 16)];
+      }
+    }
+
+    function netResize() {
+      netW = netCanvas.width = window.innerWidth;
+      netH = netCanvas.height = window.innerHeight;
+      const count = Math.min(85, Math.round(netW * netH / 22000));
+      parts = Array.from({ length: count }, () => ({
+        x: Math.random() * netW, y: Math.random() * netH,
+        vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35
+      }));
+    }
+
+    function netDraw() {
+      nctx.clearRect(0, 0, netW, netH);
+      const [r, g, b] = netRGB;
+      for (const p of parts) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > netW) p.vx *= -1;
+        if (p.y < 0 || p.y > netH) p.vy *= -1;
+        nctx.beginPath();
+        nctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
+        nctx.fillStyle = `rgba(${r},${g},${b},0.5)`;
+        nctx.fill();
+      }
+      nctx.lineWidth = 1;
+      for (let i = 0; i < parts.length; i++) {
+        for (let j = i + 1; j < parts.length; j++) {
+          const dx = parts[i].x - parts[j].x, dy = parts[i].y - parts[j].y;
+          const d = dx * dx + dy * dy;
+          if (d < 16900) {
+            nctx.strokeStyle = `rgba(${r},${g},${b},${(0.16 * (1 - d / 16900)).toFixed(3)})`;
+            nctx.beginPath(); nctx.moveTo(parts[i].x, parts[i].y); nctx.lineTo(parts[j].x, parts[j].y); nctx.stroke();
+          }
+        }
+        const mdx = parts[i].x - netMouse.x, mdy = parts[i].y - netMouse.y;
+        const md = mdx * mdx + mdy * mdy;
+        if (md < 32400) {
+          nctx.strokeStyle = `rgba(${r},${g},${b},${(0.3 * (1 - md / 32400)).toFixed(3)})`;
+          nctx.beginPath(); nctx.moveTo(parts[i].x, parts[i].y); nctx.lineTo(netMouse.x, netMouse.y); nctx.stroke();
+        }
+      }
+      requestAnimationFrame(netDraw);
+    }
+
+    updateNetColors();
+    themeBtn.addEventListener('click', () => setTimeout(updateNetColors, 0));
+    if (!REDUCED) {
+      netResize();
+      window.addEventListener('resize', netResize);
+      requestAnimationFrame(netDraw);
+    }
+
+    /* ============ CUSTOM CURSOR + MAGNETIC BUTTONS ============ */
+    const FINE = window.matchMedia('(pointer: fine)').matches;
+    if (FINE && !REDUCED) {
+      document.body.classList.add('custom-cursor');
+      const dot = document.getElementById('cursorDot'), ring = document.getElementById('cursorRing');
+      let cx = -100, cy = -100, ringX = -100, ringY = -100;
+      document.addEventListener('mousemove', e => {
+        cx = e.clientX; cy = e.clientY;
+        netMouse.x = cx; netMouse.y = cy;
+        dot.style.left = cx + 'px'; dot.style.top = cy + 'px';
+      });
+      (function ringLoop() {
+        ringX += (cx - ringX) * 0.16; ringY += (cy - ringY) * 0.16;
+        ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
+        requestAnimationFrame(ringLoop);
+      })();
+      const HOVER_TARGETS = 'a, button, .project, .bento-card, .info-card, .chip, input, textarea';
+      document.addEventListener('mouseover', e => { if (e.target.closest(HOVER_TARGETS)) ring.classList.add('hover'); });
+      document.addEventListener('mouseout', e => { if (e.target.closest(HOVER_TARGETS)) ring.classList.remove('hover'); });
+
+      document.querySelectorAll('.hero-buttons .btn').forEach(b => {
+        b.addEventListener('mousemove', e => {
+          const r = b.getBoundingClientRect();
+          b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.18}px, ${(e.clientY - r.top - r.height / 2) * 0.3}px)`;
+        });
+        b.addEventListener('mouseleave', () => { b.style.transform = ''; });
+      });
+    } else {
+      document.addEventListener('mousemove', e => { netMouse.x = e.clientX; netMouse.y = e.clientY; });
+    }
+
+    /* ============ PRELOADER ============ */
+    function finishLoad() {
+      document.getElementById('preloader').classList.add('done');
+      document.body.classList.add('loaded');
+    }
+    if (document.readyState === 'complete') setTimeout(finishLoad, 500);
+    else window.addEventListener('load', () => setTimeout(finishLoad, 500));
+    setTimeout(finishLoad, 2600);
 
     /* ============ INIT ============ */
     applyLang(lang);
