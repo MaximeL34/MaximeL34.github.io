@@ -780,7 +780,7 @@
     <div class="hero-buttons">
       <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">See my work</a>
       <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Get in touch</a>
-      <button class="btn btn-ghost" id="downloadCV"><svg class="i"><use href="#i-download"/></svg><span data-i18n="hero.cta3">Resume</span></button>
+      <a class="btn btn-ghost" id="downloadCV" href="Maxime_Laurent_Resume.pdf" download="Maxime_Laurent_Resume.pdf"><svg class="i"><use href="#i-download"/></svg><span data-i18n="hero.cta3">Resume</span></a>
     </div>
 
     <div class="hero-stats">
@@ -1791,8 +1791,6 @@
       location.href = `mailto:maxime.laurent02@icloud.com?subject=${encodeURIComponent('Contact — ' + fd.get('name'))}&body=${encodeURIComponent(body)}`;
     });
 
-    /* ============ RESUME PRINT ============ */
-    document.getElementById('downloadCV').addEventListener('click', () => window.print());
 
     /* ============ PARTICLE NETWORK ============ */
     const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
