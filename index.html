@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Maxime Laurent — AI Data Engineer. I ship GenAI, ML and data platforms in any industry: healthcare, construction, insurance. Python · Azure · LLMs · RAG. Open to opportunities in Australia, the US and Canada." />
+  <meta name="description" content="Maxime Laurent — AI Data Engineer. I ship GenAI, ML and data platforms in any industry: healthcare, construction, insurance. Python · Azure · LLMs · RAG. Open to opportunities in Australia." />
   <title>Maxime Laurent — AI Data Engineer</title>
 
   <meta property="og:title" content="Maxime Laurent — AI Data Engineer" />
@@ -524,6 +524,8 @@
     .project[data-category="health"] .badge { color: var(--blue-3); border-color: color-mix(in srgb, var(--blue-2) 50%, transparent); }
     .project[data-category="construction"] .badge { color: var(--blue-4); border-color: color-mix(in srgb, var(--blue-3) 50%, transparent); }
     .project[data-category="academic"] .badge { color: var(--blue-2); border-color: color-mix(in srgb, var(--blue-1) 55%, transparent); }
+    .project[data-category="insurance"] .badge { color: var(--blue-3); border-color: color-mix(in srgb, var(--blue-2) 50%, transparent); }
+    .project[data-category="enterprise"] .badge { color: var(--blue-4); border-color: color-mix(in srgb, var(--blue-3) 50%, transparent); }
     .project[data-category="personal"] .badge { color: var(--muted); }
 
     .project h3 { font-size: 1.05rem; line-height: 1.35; }
@@ -763,7 +765,7 @@
 
   <!-- ============ HERO ============ -->
   <header id="hero">
-    <span class="hero-badge"><span class="pulse-dot"></span><span data-i18n="hero.badge">AI Data Engineer · Open to Australia / USA / Canada</span></span>
+    <span class="hero-badge"><span class="pulse-dot"></span><span data-i18n="hero.badge">AI Data Engineer · Open to Australia</span></span>
 
     <h1 class="hero-title" data-i18n="hero.title">I build AI systems<br>that ship — <span class="serif">in any industry.</span></h1>
 
@@ -783,11 +785,11 @@
 
     <div class="hero-stats">
       <div class="stat">
-        <div class="num"><span class="counter" data-target="3">0</span></div>
+        <div class="num"><span class="counter" data-target="5">0</span></div>
         <div class="label" data-i18n="stats.sectors">industries delivered in (and counting)</div>
       </div>
       <div class="stat">
-        <div class="num"><span class="counter" data-target="12">0</span><span class="accent">+</span></div>
+        <div class="num"><span class="counter" data-target="17">0</span><span class="accent">+</span></div>
         <div class="label" data-i18n="stats.projects">AI & data projects shipped</div>
       </div>
       <div class="stat">
@@ -809,6 +811,7 @@
         <span>Insurance</span><span class="diamond">◆</span>
         <span>Construction</span><span class="diamond">◆</span>
         <span>Heritage restoration</span><span class="diamond">◆</span>
+        <span>Luxury</span><span class="diamond">◆</span>
         <span>Public procurement</span><span class="diamond">◆</span>
         <span>Real estate</span><span class="diamond">◆</span>
         <span class="hl" data-i18n="marquee.next">Your industry next</span><span class="diamond">◆</span>
@@ -826,7 +829,7 @@
       <div class="glass about-text reveal">
         <p class="lead" data-i18n="about.lead">My edge isn't one domain — it's the speed at which I <span class="serif">master a new one.</span></p>
         <p data-i18n="about.p1">
-          I'm an <strong>AI Data Engineer</strong> at Talan and an engineering graduate of INSA Rouen Normandie (France). In under two years I've shipped AI solutions in <strong>healthcare, construction & heritage, and public procurement</strong> — three industries with nothing in common except how much their rules matter.
+          I'm an <strong>AI Data Engineer</strong> at Talan and an engineering graduate of INSA Rouen Normandie (France). In under two years I've shipped AI solutions across <strong>healthcare, construction & heritage, insurance and luxury</strong> — industries with nothing in common except how much their rules matter.
         </p>
         <p data-i18n="about.p2">
           In healthcare, I went from zero to building production pipelines on one of the most regulated data domains in France — medical coding and hospital billing — including multi-LLM coding systems and predictive rejection models over a <strong>2.2M-stays-per-year</strong> scope. In construction, I automated public tender monitoring and cost pre-estimation for a VINCI subsidiary restoring historical monuments.
@@ -857,7 +860,7 @@
           <div class="ico"><svg class="i"><use href="#i-globe"/></svg></div>
           <div>
             <h4 data-i18n="about.c3.title">Ready to relocate</h4>
-            <p data-i18n="about.c3.desc">Targeting Australia, the US and Canada · Bilingual deliverables (EN/FR)</p>
+            <p data-i18n="about.c3.desc">Targeting Australia · Bilingual deliverables (EN/FR)</p>
           </div>
         </div>
       </div>
@@ -942,7 +945,7 @@
     <div class="section-head reveal">
       <span class="kicker" data-i18n="exp.kicker">03 · Experience</span>
       <h2 data-i18n="exp.title">Where I've <span class="serif">delivered</span></h2>
-      <p class="sub" data-i18n="exp.sub">Two industries, one employer, a dozen production workstreams.</p>
+      <p class="sub" data-i18n="exp.sub">Several industries, one employer, production workstreams from day one.</p>
     </div>
 
     <div class="timeline">
@@ -972,11 +975,20 @@
             <h4><span class="dot"></span><span data-i18n="exp.ramsay.b5.title">Azure platform & automated intelligence</span></h4>
             <p data-i18n="exp.ramsay.b5.desc">Automated public-funding watch system, architecture validated with the client's Azure architect: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD deployment on AKS. Framing documents delivered in English and French.</p>
           </div>
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b6.title">Master Data Management (MDM)</span></h4>
+            <p data-i18n="exp.ramsay.b6.desc">Contributed to a Master Data Management project: aligning and de-duplicating reference data across the group's systems, defining golden records and data quality rules to keep the billing and coding pipelines fed with clean, consistent master data.</p>
+          </div>
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b7.title">Power BI reporting</span></h4>
+            <p data-i18n="exp.ramsay.b7.desc">Built business intelligence reports in Power BI: data modeling, DAX measures and interactive dashboards giving the Data Office and business teams a clear read on billing, rejections and coding performance.</p>
+          </div>
         </div>
         <div class="chips">
           <span class="chip">Python</span><span class="chip">Azure OpenAI</span><span class="chip">LangGraph</span>
           <span class="chip">RAG</span><span class="chip">XGBoost · SHAP</span><span class="chip">React</span>
           <span class="chip">Docker</span><span class="chip">AKS · ArgoCD</span>
+          <span class="chip">MDM</span><span class="chip">Power BI</span>
         </div>
       </div>
 
@@ -998,6 +1010,65 @@
         <div class="chips">
           <span class="chip">Mistral</span><span class="chip">Azure AI Foundry</span><span class="chip">Claude · Agents</span>
           <span class="chip" data-i18n="exp.degaine.chip">Public procurement APIs</span>
+        </div>
+      </div>
+
+      <!-- Chanel -->
+      <div class="tl-item reveal">
+        <span class="tl-meta">2025 · <span data-i18n="exp.chanel.sector">Luxury · HR</span></span>
+        <h3 data-i18n="exp.chanel.title">AI Consultant — Chanel engagement</h3>
+        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.chanel.org">Global luxury house — GenAI agents supporting the HR / talent function</span></p>
+        <div class="tl-body">
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.chanel.b1.title">AI agents for job descriptions</span></h4>
+            <p data-i18n="exp.chanel.b1.desc">Designed and deployed AI agents on Copilot Studio to create and reformat job descriptions: standardized templates, tone and structure, so recruiters and managers generate consistent, on-brand postings in minutes instead of starting from a blank page.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <span class="chip">Copilot Studio</span><span class="chip">GenAI Agents</span>
+          <span class="chip" data-i18n="exp.chanel.chip">HR automation</span>
+        </div>
+      </div>
+
+      <!-- Insurance / GIS -->
+      <div class="tl-item reveal">
+        <span class="tl-meta">2025 · <span data-i18n="exp.gis.sector">Insurance</span></span>
+        <h3 data-i18n="exp.gis.title">AI Consultant — GIS use cases for insurance</h3>
+        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.gis.org">Geographic Information Systems (GIS) applied to the insurance sector</span></p>
+        <div class="tl-body">
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.gis.b1.title">GIS use cases for insurance</span></h4>
+            <p data-i18n="exp.gis.b1.desc">Built a set of Geographic Information System (GIS) use cases for the insurance domain — geospatial risk analysis, exposure mapping and territorial pricing scenarios — turning location data into concrete business value for insurers.</p>
+          </div>
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.gis.b2.title">Client-adapted value interface</span></h4>
+            <p data-i18n="exp.gis.b2.desc">Designed and built an interface that presents these use cases tailored to each prospect: filtered by their profile and sector, with expected gains scaled to their revenue (turnover) — a personalized, sales-ready demonstration of the ROI of GIS.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <span class="chip">GIS · SIG</span><span class="chip" data-i18n="exp.gis.chip1">Geospatial</span>
+          <span class="chip" data-i18n="exp.gis.chip2">Insurance</span><span class="chip" data-i18n="exp.gis.chip3">ROI interface</span>
+        </div>
+      </div>
+
+      <!-- Internal agentic platform -->
+      <div class="tl-item reveal">
+        <span class="tl-meta">2025 — 2026 · <span data-i18n="exp.platform.sector">Internal R&D</span></span>
+        <h3 data-i18n="exp.platform.title">AI Engineer — Home-made agentic platform</h3>
+        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.platform.org">Internal agentic platform built from scratch, powered by AI agents</span></p>
+        <div class="tl-body">
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.platform.b1.title">Offer ↔ consultant matching</span></h4>
+            <p data-i18n="exp.platform.b1.desc">In-house agentic platform matching an incoming offer to the pool of consultants to surface the best-fit profile: semantic search over consultant skills and experience (RAG, FAISS index) instead of keyword staffing.</p>
+          </div>
+          <div class="tl-block">
+            <h4><span class="dot"></span><span data-i18n="exp.platform.b2.title">Automatic CV reformatting</span></h4>
+            <p data-i18n="exp.platform.b2.desc">AI agents that automatically reformat a consultant's CV against a given offer — re-ordering and rephrasing the relevant experience to the opportunity, so tailored CVs are produced in seconds rather than by hand.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <span class="chip">AI Agents</span><span class="chip">RAG · FAISS</span>
+          <span class="chip" data-i18n="exp.platform.chip1">Semantic matching</span><span class="chip" data-i18n="exp.platform.chip2">CV generation</span>
         </div>
       </div>
 
@@ -1028,6 +1099,22 @@
           </div>
         </div>
       </div>
+
+      <!-- RMIT exchange -->
+      <div class="tl-item reveal">
+        <span class="tl-meta">2024 · <span data-i18n="exp.rmit.sector">University exchange</span></span>
+        <h3 data-i18n="exp.rmit.title">Semester abroad — RMIT University (Melbourne, Australia)</h3>
+        <p class="org"><strong>RMIT University</strong> · <span data-i18n="exp.rmit.org">6-month academic exchange during my engineering studies</span></p>
+        <div class="tl-body">
+          <div class="tl-block">
+            <p data-i18n="exp.rmit.desc">6-month university exchange in 2024 at RMIT (Melbourne, Australia), studying: Cryptocurrency and Blockchain, Machine Learning, Data Science and Network — an English-taught immersion that reinforced my AI/data foundations and my readiness to work in Australia.</p>
+          </div>
+        </div>
+        <div class="chips">
+          <span class="chip">Blockchain</span><span class="chip">Machine Learning</span>
+          <span class="chip">Data Science</span><span class="chip">Network</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1043,6 +1130,8 @@
       <button class="filter-btn active" data-filter="all" data-i18n="proj.filter.all">All</button>
       <button class="filter-btn" data-filter="health" data-i18n="proj.filter.health">Healthcare</button>
       <button class="filter-btn" data-filter="construction" data-i18n="proj.filter.construction">Construction</button>
+      <button class="filter-btn" data-filter="insurance" data-i18n="proj.filter.insurance">Insurance</button>
+      <button class="filter-btn" data-filter="enterprise" data-i18n="proj.filter.enterprise">Enterprise</button>
       <button class="filter-btn" data-filter="academic" data-i18n="proj.filter.academic">Academic</button>
       <button class="filter-btn" data-filter="personal" data-i18n="proj.filter.personal">Personal</button>
     </div>
@@ -1138,6 +1227,56 @@
         <div class="chips"><span class="chip">Claude · Agents</span><span class="chip" data-i18n="proj.p9.chip">Client workshop</span><span class="chip" data-i18n="proj.p9.chip2">Estimation</span></div>
       </div>
 
+      <div class="project glass reveal" data-category="health">
+        <div class="project-top">
+          <div class="ico"><svg class="i"><use href="#i-db"/></svg></div>
+          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
+        </div>
+        <h3 data-i18n="proj.p14.title">Master Data Management (MDM)</h3>
+        <p data-i18n="proj.p14.desc">MDM workstream for the hospital group: reference-data alignment and de-duplication, golden records and data-quality rules keeping the billing and coding pipelines fed with clean, consistent master data.</p>
+        <div class="chips"><span class="chip">MDM</span><span class="chip" data-i18n="proj.p14.chip">Data quality</span><span class="chip" data-i18n="proj.p14.chip2">Reference data</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="health" data-delay="1">
+        <div class="project-top">
+          <div class="ico"><svg class="i"><use href="#i-chart"/></svg></div>
+          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
+        </div>
+        <h3 data-i18n="proj.p15.title">Power BI reporting</h3>
+        <p data-i18n="proj.p15.desc">Business intelligence reports in Power BI: data modeling, DAX measures and interactive dashboards giving the Data Office a clear read on billing, rejections and coding performance.</p>
+        <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip" data-i18n="proj.p15.chip">Dashboards</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="insurance" data-delay="2">
+        <div class="project-top">
+          <div class="ico"><svg class="i"><use href="#i-globe"/></svg></div>
+          <span class="badge" data-i18n="proj.badge.insurance">Insurance</span>
+        </div>
+        <h3 data-i18n="proj.p16.title">GIS use cases for insurance</h3>
+        <p data-i18n="proj.p16.desc">Geographic Information System (GIS) use cases for insurers — geospatial risk, exposure mapping, territorial pricing — plus a client-adapted interface presenting each use case by profile and sector, with gains scaled to the prospect's revenue.</p>
+        <div class="chips"><span class="chip">GIS · SIG</span><span class="chip" data-i18n="proj.p16.chip">Geospatial</span><span class="chip" data-i18n="proj.p16.chip2">ROI interface</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="enterprise">
+        <div class="project-top">
+          <div class="ico"><svg class="i"><use href="#i-bot"/></svg></div>
+          <span class="badge" data-i18n="proj.badge.enterprise">Enterprise</span>
+        </div>
+        <h3 data-i18n="proj.p17.title">Agentic staffing & CV platform</h3>
+        <p data-i18n="proj.p17.desc">Home-made internal agentic platform: AI agents matching an offer to the best-fit consultant (RAG, FAISS index) and automatically reformatting a CV against that offer — tailored profiles in seconds instead of manual staffing.</p>
+        <div class="chips"><span class="chip">AI Agents</span><span class="chip">RAG · FAISS</span><span class="chip" data-i18n="proj.p17.chip">Matching</span></div>
+      </div>
+
+      <div class="project glass reveal" data-category="enterprise" data-delay="1">
+        <div class="project-top">
+          <div class="ico"><svg class="i"><use href="#i-sparkles"/></svg></div>
+          <span class="badge" data-i18n="proj.badge.enterprise">Enterprise</span>
+        </div>
+        <h3 data-i18n="proj.p18.title">AI agents for job descriptions</h3>
+        <p data-i18n="proj.p18.desc">Copilot Studio AI agents for a global luxury house (Chanel) that create and reformat job descriptions — consistent, on-brand postings generated in minutes instead of from a blank page.</p>
+        <div class="chips"><span class="chip">Copilot Studio</span><span class="chip">GenAI Agents</span><span class="chip" data-i18n="proj.p18.chip">HR</span></div>
+      </div>
+
       <div class="project glass reveal" data-category="academic">
         <div class="project-top">
           <div class="ico"><svg class="i"><use href="#i-db"/></svg></div>
@@ -1190,7 +1329,7 @@
     <div class="glass contact-wrap reveal">
       <div class="contact-info">
         <h3 data-i18n="contact.sub">Hiring an AI Data Engineer <span class="serif">who ships?</span></h3>
-        <p data-i18n="contact.text">GenAI systems, production ML, cloud data platforms — in your industry, whatever it is. Open to opportunities in Australia, the US and Canada. Fast reply guaranteed.</p>
+        <p data-i18n="contact.text">GenAI systems, production ML, cloud data platforms — in your industry, whatever it is. Open to opportunities in Australia. Fast reply guaranteed.</p>
         <div class="contact-links">
           <a href="mailto:maxime.laurent02@icloud.com" class="contact-link">
             <span class="ico"><svg class="i"><use href="#i-mail"/></svg></span> maxime.laurent02@icloud.com
@@ -1226,7 +1365,7 @@
       en: {
         'nav.about': 'About', 'nav.expertise': 'Expertise', 'nav.experience': 'Experience',
         'nav.projects': 'Projects', 'nav.contact': 'Contact',
-        'hero.badge': 'AI Data Engineer · Open to Australia / USA / Canada',
+        'hero.badge': 'AI Data Engineer · Open to Australia',
         'hero.title': 'I build AI systems<br>that ship — <span class="serif">in any industry.</span>',
         'hero.sub': "<strong>AI Data Engineer</strong> — I take LLM and ML solutions from a blank page to production: <strong>GenAI pipelines, predictive models, cloud data platforms</strong>. Hospital billing one quarter, heritage restoration tenders the next — the sector changes, the delivery doesn't.",
         'hero.cta1': 'See my work', 'hero.cta2': 'Get in touch', 'hero.cta3': 'Resume',
@@ -1238,14 +1377,14 @@
         'about.kicker': '01 · Profile',
         'about.title': 'Sector-agnostic, <span class="serif">by design</span>',
         'about.lead': "My edge isn't one domain — it's the speed at which I <span class=\"serif\">master a new one.</span>",
-        'about.p1': "I'm an <strong>AI Data Engineer</strong> at Talan and an engineering graduate of INSA Rouen Normandie (France). In under two years I've shipped AI solutions in <strong>healthcare, construction & heritage, and public procurement</strong> — three industries with nothing in common except how much their rules matter.",
+        'about.p1': "I'm an <strong>AI Data Engineer</strong> at Talan and an engineering graduate of INSA Rouen Normandie (France). In under two years I've shipped AI solutions across <strong>healthcare, construction & heritage, insurance and luxury</strong> — industries with nothing in common except how much their rules matter.",
         'about.p2': "In healthcare, I went from zero to building production pipelines on one of the most regulated data domains in France — medical coding and hospital billing — including multi-LLM coding systems and predictive rejection models over a <strong>2.2M-stays-per-year</strong> scope. In construction, I automated public tender monitoring and cost pre-estimation for a VINCI subsidiary restoring historical monuments.",
         'about.p3': "Same method every time: <strong>immerse in the domain, build with the right tool</strong> — LLM, classic ML, or plain deterministic code — <strong>and ship to production</strong> with the audit trail, compliance and documentation that regulated industries demand.",
         'about.c1.title': 'Fast domain immersion',
         'about.c1.desc': 'Regulated healthcare billing, public procurement law, heritage cost estimation — learned on the job, delivered in weeks',
         'about.c2.desc': 'MSc-level engineering degree — Computer science & information technology',
         'about.c3.title': 'Ready to relocate',
-        'about.c3.desc': 'Targeting Australia, the US and Canada · Bilingual deliverables (EN/FR)',
+        'about.c3.desc': 'Targeting Australia · Bilingual deliverables (EN/FR)',
         'exp2.kicker': '02 · Expertise',
         'exp2.title': 'What I <span class="serif">bring</span>',
         'exp2.hero': 'One profile, <span class="serif">full stack:</span><br>from LLM orchestration to Kubernetes deployment.',
@@ -1267,7 +1406,7 @@
         'method.s3.desc': 'Production on your cloud, with explainability, compliance and documentation — solutions that survive the handover.',
         'exp.kicker': '03 · Experience',
         'exp.title': "Where I've <span class=\"serif\">delivered</span>",
-        'exp.sub': 'Two industries, one employer, a dozen production workstreams.',
+        'exp.sub': 'Several industries, one employer, production workstreams from day one.',
         'exp.ramsay.sector': 'Healthcare',
         'exp.ramsay.title': 'AI Data Engineer — Ramsay Santé engagement',
         'exp.ramsay.org': "Europe's leading private hospital group — parallel AI workstreams sponsored by the client's Data Office, over a ~2.2M inpatient-stays-per-year scope",
@@ -1281,6 +1420,32 @@
         'exp.ramsay.b4.desc': "Complete Python DRG grouping engine (2026 national rules): positional record parsing, classifying procedures, severity levels, tariff valuation with outlier payments and ICU supplements — plus an under-coding detection framework scoring upgradeable stays for revenue recovery. Proof that I can absorb a country-specific regulatory system and re-implement it from official specs.",
         'exp.ramsay.b5.title': 'Azure platform & automated intelligence',
         'exp.ramsay.b5.desc': "Automated public-funding watch system, architecture validated with the client's Azure architect: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD deployment on AKS. Framing documents delivered in English and French.",
+        'exp.ramsay.b6.title': 'Master Data Management (MDM)',
+        'exp.ramsay.b6.desc': "Contributed to a Master Data Management project: aligning and de-duplicating reference data across the group's systems, defining golden records and data quality rules to keep the billing and coding pipelines fed with clean, consistent master data.",
+        'exp.ramsay.b7.title': 'Power BI reporting',
+        'exp.ramsay.b7.desc': "Built business intelligence reports in Power BI: data modeling, DAX measures and interactive dashboards giving the Data Office and business teams a clear read on billing, rejections and coding performance.",
+        'exp.chanel.sector': 'Luxury · HR',
+        'exp.chanel.title': 'AI Consultant — Chanel engagement',
+        'exp.chanel.org': 'Global luxury house — GenAI agents supporting the HR / talent function',
+        'exp.chanel.b1.title': 'AI agents for job descriptions',
+        'exp.chanel.b1.desc': "Designed and deployed AI agents on Copilot Studio to create and reformat job descriptions: standardized templates, tone and structure, so recruiters and managers generate consistent, on-brand postings in minutes instead of starting from a blank page.",
+        'exp.chanel.chip': 'HR automation',
+        'exp.gis.sector': 'Insurance',
+        'exp.gis.title': 'AI Consultant — GIS use cases for insurance',
+        'exp.gis.org': 'Geographic Information Systems (GIS) applied to the insurance sector',
+        'exp.gis.b1.title': 'GIS use cases for insurance',
+        'exp.gis.b1.desc': "Built a set of Geographic Information System (GIS) use cases for the insurance domain — geospatial risk analysis, exposure mapping and territorial pricing scenarios — turning location data into concrete business value for insurers.",
+        'exp.gis.b2.title': 'Client-adapted value interface',
+        'exp.gis.b2.desc': "Designed and built an interface that presents these use cases tailored to each prospect: filtered by their profile and sector, with expected gains scaled to their revenue (turnover) — a personalized, sales-ready demonstration of the ROI of GIS.",
+        'exp.gis.chip1': 'Geospatial', 'exp.gis.chip2': 'Insurance', 'exp.gis.chip3': 'ROI interface',
+        'exp.platform.sector': 'Internal R&D',
+        'exp.platform.title': 'AI Engineer — Home-made agentic platform',
+        'exp.platform.org': 'Internal agentic platform built from scratch, powered by AI agents',
+        'exp.platform.b1.title': 'Offer ↔ consultant matching',
+        'exp.platform.b1.desc': "In-house agentic platform matching an incoming offer to the pool of consultants to surface the best-fit profile: semantic search over consultant skills and experience (RAG, FAISS index) instead of keyword staffing.",
+        'exp.platform.b2.title': 'Automatic CV reformatting',
+        'exp.platform.b2.desc': "AI agents that automatically reformat a consultant's CV against a given offer — re-ordering and rephrasing the relevant experience to the opportunity, so tailored CVs are produced in seconds rather than by hand.",
+        'exp.platform.chip1': 'Semantic matching', 'exp.platform.chip2': 'CV generation',
         'exp.degaine.sector': 'Construction & Heritage',
         'exp.degaine.title': 'AI Consultant — DEGAINE engagement (VINCI Construction)',
         'exp.degaine.org': 'VINCI subsidiary specialized in the restoration of listed historical monuments',
@@ -1297,12 +1462,18 @@
         'exp.edu.title': 'Engineering degree (MSc level) — Computer Science & IT',
         'exp.edu.org': 'French Grande École of engineering',
         'exp.edu.desc': 'Engineering curriculum in computer science and information technology: databases, algorithms, software development, statistics and data analysis, project management.',
+        'exp.rmit.sector': 'University exchange',
+        'exp.rmit.title': 'Semester abroad — RMIT University (Melbourne, Australia)',
+        'exp.rmit.org': '6-month academic exchange during my engineering studies',
+        'exp.rmit.desc': '6-month university exchange in 2024 at RMIT (Melbourne, Australia), studying: Cryptocurrency and Blockchain, Machine Learning, Data Science and Network — an English-taught immersion that reinforced my AI/data foundations and my readiness to work in Australia.',
         'proj.kicker': '04 · Work',
         'proj.title': 'Selected <span class="serif">projects</span>',
         'proj.sub': 'GenAI, ML and data engineering applied to real business problems — filter by industry.',
         'proj.filter.all': 'All', 'proj.filter.health': 'Healthcare', 'proj.filter.construction': 'Construction',
+        'proj.filter.insurance': 'Insurance', 'proj.filter.enterprise': 'Enterprise',
         'proj.filter.academic': 'Academic', 'proj.filter.personal': 'Personal',
         'proj.badge.health': 'Healthcare', 'proj.badge.construction': 'Construction',
+        'proj.badge.insurance': 'Insurance', 'proj.badge.enterprise': 'Enterprise',
         'proj.badge.academic': 'INSA · Certified', 'proj.badge.personal': 'Personal',
         'proj.p1.title': 'AI-assisted medical coding',
         'proj.p1.desc': "Multi-LLM ICD-10 coding pipeline: 5 models benchmarked with hierarchical scoring, FAISS RAG, React validation UI for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% human baseline.",
@@ -1334,10 +1505,25 @@
         'proj.p12.desc': "Study of California housing prices: data exploration, key valuation drivers and trend visualization with Python.",
         'proj.p13.title': 'This portfolio',
         'proj.p13.desc': "100% handcrafted in vanilla HTML / CSS / JS: interactive particle network, custom cursor, 3D tilt cards, bento grid, EN/FR bilingual, light/dark theme, printable resume — hosted on GitHub Pages.",
+        'proj.p14.title': 'Master Data Management (MDM)',
+        'proj.p14.desc': "MDM workstream for the hospital group: reference-data alignment and de-duplication, golden records and data-quality rules keeping the billing and coding pipelines fed with clean, consistent master data.",
+        'proj.p14.chip': 'Data quality', 'proj.p14.chip2': 'Reference data',
+        'proj.p15.title': 'Power BI reporting',
+        'proj.p15.desc': "Business intelligence reports in Power BI: data modeling, DAX measures and interactive dashboards giving the Data Office a clear read on billing, rejections and coding performance.",
+        'proj.p15.chip': 'Dashboards',
+        'proj.p16.title': 'GIS use cases for insurance',
+        'proj.p16.desc': "Geographic Information System (GIS) use cases for insurers — geospatial risk, exposure mapping, territorial pricing — plus a client-adapted interface presenting each use case by profile and sector, with gains scaled to the prospect's revenue.",
+        'proj.p16.chip': 'Geospatial', 'proj.p16.chip2': 'ROI interface',
+        'proj.p17.title': 'Agentic staffing & CV platform',
+        'proj.p17.desc': "Home-made internal agentic platform: AI agents matching an offer to the best-fit consultant (RAG, FAISS index) and automatically reformatting a CV against that offer — tailored profiles in seconds instead of manual staffing.",
+        'proj.p17.chip': 'Matching',
+        'proj.p18.title': 'AI agents for job descriptions',
+        'proj.p18.desc': "Copilot Studio AI agents for a global luxury house (Chanel) that create and reformat job descriptions — consistent, on-brand postings generated in minutes instead of from a blank page.",
+        'proj.p18.chip': 'HR',
         'contact.kicker': '05 · Contact',
         'contact.title': "Let's build <span class=\"serif\">something</span>",
         'contact.sub': 'Hiring an AI Data Engineer <span class="serif">who ships?</span>',
-        'contact.text': "GenAI systems, production ML, cloud data platforms — in your industry, whatever it is. Open to opportunities in Australia, the US and Canada. Fast reply guaranteed.",
+        'contact.text': "GenAI systems, production ML, cloud data platforms — in your industry, whatever it is. Open to opportunities in Australia. Fast reply guaranteed.",
         'contact.form.name': 'Your name', 'contact.form.email': 'Your email',
         'contact.form.message': 'Your message', 'contact.form.send': 'Send message',
         'footer.text': '© 2026 Maxime Laurent — Designed & hand-coded',
@@ -1346,7 +1532,7 @@
       fr: {
         'nav.about': 'À propos', 'nav.expertise': 'Expertise', 'nav.experience': 'Expérience',
         'nav.projects': 'Projets', 'nav.contact': 'Contact',
-        'hero.badge': 'AI Data Engineer · Ouvert à Australie / USA / Canada',
+        'hero.badge': 'AI Data Engineer · Ouvert à l’Australie',
         'hero.title': 'Je construis des systèmes IA<br>qui tournent — <span class="serif">dans tout secteur.</span>',
         'hero.sub': "<strong>AI Data Engineer</strong> — je mène les solutions LLM et ML de la page blanche à la production : <strong>pipelines GenAI, modèles prédictifs, plateformes data cloud</strong>. Facturation hospitalière un trimestre, chiffrage de monuments historiques le suivant — le secteur change, le delivery reste.",
         'hero.cta1': 'Voir mes projets', 'hero.cta2': 'Me contacter', 'hero.cta3': 'Version CV',
@@ -1358,14 +1544,14 @@
         'about.kicker': '01 · Profil',
         'about.title': 'Multi-sectoriel, <span class="serif">par conception</span>',
         'about.lead': "Ma force n'est pas un domaine — c'est la vitesse à laquelle <span class=\"serif\">j'en maîtrise un nouveau.</span>",
-        'about.p1': "<strong>AI Data Engineer</strong> chez Talan et ingénieur diplômé de l'INSA Rouen Normandie, j'ai livré en moins de deux ans des solutions IA dans <strong>la santé, la construction & le patrimoine, et les marchés publics</strong> — trois secteurs qui n'ont rien en commun, sauf l'importance de leurs règles.",
+        'about.p1': "<strong>AI Data Engineer</strong> chez Talan et ingénieur diplômé de l'INSA Rouen Normandie, j'ai livré en moins de deux ans des solutions IA dans <strong>la santé, la construction & le patrimoine, l'assurance et le luxe</strong> — des secteurs qui n'ont rien en commun, sauf l'importance de leurs règles.",
         'about.p2': "Dans la santé, je suis parti de zéro pour construire des pipelines de production sur l'un des domaines les plus réglementés de France — codage médical et facturation hospitalière — dont des systèmes de codage multi-LLM et des modèles prédictifs de rejets sur un périmètre de <strong>2,2 M de séjours par an</strong>. Dans la construction, j'ai automatisé la veille d'appels d'offres et le pré-chiffrage pour une filiale VINCI spécialisée dans les monuments historiques.",
         'about.p3': "Même méthode à chaque fois : <strong>immersion dans le métier, le bon outil pour le problème</strong> — LLM, ML classique ou code déterministe — <strong>et mise en production</strong> avec l'auditabilité, la conformité et la documentation qu'exigent les secteurs réglementés.",
         'about.c1.title': 'Immersion métier rapide',
         'about.c1.desc': 'Facturation santé réglementée, droit des marchés publics, chiffrage patrimoine — appris sur le terrain, livrés en quelques semaines',
         'about.c2.desc': "Diplôme d'ingénieur (bac+5) — Informatique & technologies de l'information",
         'about.c3.title': 'Prêt à m’expatrier',
-        'about.c3.desc': 'Cible : Australie, USA, Canada · Livrables bilingues (EN/FR)',
+        'about.c3.desc': 'Cible : Australie · Livrables bilingues (EN/FR)',
         'exp2.kicker': '02 · Expertise',
         'exp2.title': 'Ce que <span class="serif">j’apporte</span>',
         'exp2.hero': 'Un profil, <span class="serif">full stack :</span><br>de l’orchestration LLM au déploiement Kubernetes.',
@@ -1387,7 +1573,7 @@
         'method.s3.desc': "Déploiement sur votre cloud, avec explicabilité, conformité et documentation — des solutions qui survivent à la passation.",
         'exp.kicker': '03 · Expérience',
         'exp.title': 'Là où j’ai <span class="serif">livré</span>',
-        'exp.sub': 'Deux secteurs, un employeur, une douzaine de chantiers de production.',
+        'exp.sub': 'Plusieurs secteurs, un employeur, des chantiers de production dès le premier jour.',
         'exp.ramsay.sector': 'Santé',
         'exp.ramsay.title': 'AI Data Engineer — Mission Ramsay Santé',
         'exp.ramsay.org': "Leader européen de l'hospitalisation privée — chantiers IA parallèles avec sponsor Direction Data, sur un périmètre de ~2,2 M de séjours par an",
@@ -1401,6 +1587,32 @@
         'exp.ramsay.b4.desc': "Moteur Python complet de groupage GHM (règles nationales 2026) : parsing des formats positionnels, actes classants, niveaux de sévérité, valorisation T2A avec suppléments — plus un framework de détection du sous-codage pour la récupération de recettes. La preuve que je peux absorber un système réglementaire national et le ré-implémenter depuis les specs officielles.",
         'exp.ramsay.b5.title': 'Plateforme Azure & veille automatisée',
         'exp.ramsay.b5.desc': "Système de veille automatisée des financements publics, architecture validée avec l'architecte Azure du client : PostgreSQL + pgvector (HNSW, embeddings 3072 dim.), Bing Grounding, Key Vault CSI, déploiement Helm + ArgoCD sur AKS. Documents de cadrage livrés en anglais et en français.",
+        'exp.ramsay.b6.title': 'Master Data Management (MDM)',
+        'exp.ramsay.b6.desc': "Participation à un projet de Master Data Management : alignement et dédoublonnage des données de référence entre les systèmes du groupe, définition des golden records et des règles de qualité de données pour alimenter les pipelines de facturation et de codage en données maîtres propres et cohérentes.",
+        'exp.ramsay.b7.title': 'Reporting Power BI',
+        'exp.ramsay.b7.desc': "Réalisation de rapports décisionnels sous Power BI : modélisation de données, mesures DAX et tableaux de bord interactifs offrant à la Direction Data et aux équipes métier une lecture claire de la facturation, des rejets et de la performance de codage.",
+        'exp.chanel.sector': 'Luxe · RH',
+        'exp.chanel.title': 'Consultant IA — Mission Chanel',
+        'exp.chanel.org': 'Maison de luxe internationale — agents GenAI au service de la fonction RH / talents',
+        'exp.chanel.b1.title': 'Agents IA pour les fiches de poste',
+        'exp.chanel.b1.desc': "Conception et déploiement d'agents IA sur Copilot Studio pour créer et reformater les fiches de poste : gabarits, ton et structure standardisés, permettant aux recruteurs et managers de générer des annonces cohérentes et fidèles à la marque en quelques minutes plutôt qu'à partir d'une page blanche.",
+        'exp.chanel.chip': 'Automatisation RH',
+        'exp.gis.sector': 'Assurance',
+        'exp.gis.title': "Consultant IA — Cas d'usage SIG pour l'assurance",
+        'exp.gis.org': "Systèmes d'Information Géographique (SIG) appliqués au secteur de l'assurance",
+        'exp.gis.b1.title': "Cas d'usage SIG pour l'assurance",
+        'exp.gis.b1.desc': "Construction d'une série de cas d'usage SIG (Système d'Information Géographique) pour le domaine de l'assurance — analyse de risque géospatiale, cartographie de l'exposition et scénarios de tarification territoriale — transformant la donnée de localisation en valeur métier concrète pour les assureurs.",
+        'exp.gis.b2.title': 'Interface de valeur adaptée au client',
+        'exp.gis.b2.desc': "Conception et développement d'une interface présentant ces cas d'usage adaptés à chaque prospect : filtrés selon son profil et son secteur, avec des gains dimensionnés par rapport à son chiffre d'affaires — une démonstration personnalisée et prête pour la vente du ROI du SIG.",
+        'exp.gis.chip1': 'Géospatial', 'exp.gis.chip2': 'Assurance', 'exp.gis.chip3': 'Interface ROI',
+        'exp.platform.sector': 'R&D interne',
+        'exp.platform.title': 'AI Engineer — Plateforme agentique maison',
+        'exp.platform.org': "Plateforme agentique interne construite de A à Z, propulsée par des agents IA",
+        'exp.platform.b1.title': 'Matching offre ↔ consultant',
+        'exp.platform.b1.desc': "Plateforme agentique interne mettant en correspondance une offre entrante avec le vivier de consultants pour faire remonter le profil le plus adapté : recherche sémantique sur les compétences et l'expérience (RAG, index FAISS) plutôt qu'un staffing par mots-clés.",
+        'exp.platform.b2.title': 'Reformatage automatique du CV',
+        'exp.platform.b2.desc': "Des agents IA qui reformatent automatiquement le CV d'un consultant par rapport à une offre donnée — réorganisation et reformulation de l'expérience pertinente vis-à-vis de l'opportunité, pour produire des CV sur-mesure en quelques secondes au lieu de le faire à la main.",
+        'exp.platform.chip1': 'Matching sémantique', 'exp.platform.chip2': 'Génération de CV',
         'exp.degaine.sector': 'Construction & Patrimoine',
         'exp.degaine.title': 'Consultant IA — Mission DEGAINE (VINCI Construction)',
         'exp.degaine.org': 'Filiale VINCI spécialisée dans la restauration de monuments historiques classés',
@@ -1417,12 +1629,18 @@
         'exp.edu.title': "Diplôme d'ingénieur — Informatique & TI",
         'exp.edu.org': "Grande école d'ingénieurs",
         'exp.edu.desc': "Formation d'ingénieur en informatique et technologies de l'information : bases de données, algorithmique, développement, statistiques et analyse de données, gestion de projet.",
+        'exp.rmit.sector': 'Échange universitaire',
+        'exp.rmit.title': "Semestre à l'étranger — RMIT University (Melbourne, Australie)",
+        'exp.rmit.org': "Échange universitaire de 6 mois pendant ma formation d'ingénieur",
+        'exp.rmit.desc': "Échange universitaire de 6 mois en 2024 à RMIT (Melbourne, Australie), avec les cours : Cryptocurrency and Blockchain, Machine Learning, Data Science and Network — une immersion 100 % anglophone qui a renforcé mes fondations IA/data et ma préparation à travailler en Australie.",
         'proj.kicker': '04 · Réalisations',
         'proj.title': 'Projets <span class="serif">choisis</span>',
         'proj.sub': 'GenAI, ML et data engineering appliqués à des problèmes métier réels — filtrez par secteur.',
         'proj.filter.all': 'Tous', 'proj.filter.health': 'Santé', 'proj.filter.construction': 'Construction',
+        'proj.filter.insurance': 'Assurance', 'proj.filter.enterprise': 'Entreprise',
         'proj.filter.academic': 'Académique', 'proj.filter.personal': 'Personnel',
         'proj.badge.health': 'Santé', 'proj.badge.construction': 'Construction',
+        'proj.badge.insurance': 'Assurance', 'proj.badge.enterprise': 'Entreprise',
         'proj.badge.academic': 'INSA · Certifié', 'proj.badge.personal': 'Personnel',
         'proj.p1.title': 'Codage médical assisté par IA',
         'proj.p1.desc': "Pipeline multi-LLM de codage CIM-10 : 5 modèles benchmarkés avec scoring hiérarchique, RAG FAISS, interface React de validation pour les TIM. Pilote : 100 % de justesse sur le DP vs 63 % pour la référence humaine.",
@@ -1454,10 +1672,25 @@
         'proj.p12.desc': "Étude des prix de l'immobilier en Californie : exploration des données, facteurs clés de valorisation et visualisation des tendances avec Python.",
         'proj.p13.title': 'Ce portfolio',
         'proj.p13.desc': "100 % fait main en HTML / CSS / JS vanilla : réseau de particules interactif, curseur custom, cartes 3D tilt, bento grid, bilingue EN/FR, thème clair/sombre, CV imprimable — hébergé sur GitHub Pages.",
+        'proj.p14.title': 'Master Data Management (MDM)',
+        'proj.p14.desc': "Chantier MDM pour le groupe hospitalier : alignement et dédoublonnage des données de référence, golden records et règles de qualité de données alimentant les pipelines de facturation et de codage en données maîtres propres et cohérentes.",
+        'proj.p14.chip': 'Qualité de données', 'proj.p14.chip2': 'Données de référence',
+        'proj.p15.title': 'Reporting Power BI',
+        'proj.p15.desc': "Rapports décisionnels sous Power BI : modélisation de données, mesures DAX et tableaux de bord interactifs offrant à la Direction Data une lecture claire de la facturation, des rejets et de la performance de codage.",
+        'proj.p15.chip': 'Tableaux de bord',
+        'proj.p16.title': "Cas d'usage SIG pour l'assurance",
+        'proj.p16.desc': "Cas d'usage SIG (Système d'Information Géographique) pour les assureurs — risque géospatial, cartographie de l'exposition, tarification territoriale — plus une interface adaptée au client présentant chaque cas d'usage par profil et secteur, avec des gains dimensionnés au chiffre d'affaires du prospect.",
+        'proj.p16.chip': 'Géospatial', 'proj.p16.chip2': 'Interface ROI',
+        'proj.p17.title': 'Plateforme agentique staffing & CV',
+        'proj.p17.desc': "Plateforme agentique interne maison : des agents IA qui matchent une offre au consultant le plus adapté (RAG, index FAISS) et reformatent automatiquement un CV par rapport à cette offre — des profils sur-mesure en quelques secondes plutôt qu'un staffing manuel.",
+        'proj.p17.chip': 'Matching',
+        'proj.p18.title': 'Agents IA pour les fiches de poste',
+        'proj.p18.desc': "Agents IA Copilot Studio pour une maison de luxe internationale (Chanel) qui créent et reformatent les fiches de poste — des annonces cohérentes et fidèles à la marque générées en quelques minutes plutôt qu'à partir d'une page blanche.",
+        'proj.p18.chip': 'RH',
         'contact.kicker': '05 · Contact',
         'contact.title': 'Construisons <span class="serif">quelque chose</span>',
         'contact.sub': 'Vous cherchez un AI Data Engineer <span class="serif">qui livre ?</span>',
-        'contact.text': "Systèmes GenAI, ML en production, plateformes data cloud — dans votre secteur, quel qu'il soit. Ouvert aux opportunités en Australie, aux USA et au Canada. Réponse rapide garantie.",
+        'contact.text': "Systèmes GenAI, ML en production, plateformes data cloud — dans votre secteur, quel qu'il soit. Ouvert aux opportunités en Australie. Réponse rapide garantie.",
         'contact.form.name': 'Votre nom', 'contact.form.email': 'Votre email',
         'contact.form.message': 'Votre message', 'contact.form.send': 'Envoyer',
         'footer.text': '© 2026 Maxime Laurent — Conçu & codé à la main',
@@ -1467,8 +1700,8 @@
 
     /* Marquee sectors per language */
     const SECTORS = {
-      en: ['Healthcare', 'Insurance', 'Construction', 'Heritage restoration', 'Public procurement', 'Real estate'],
-      fr: ['Santé', 'Assurance', 'Construction', 'Restauration du patrimoine', 'Marchés publics', 'Immobilier']
+      en: ['Healthcare', 'Insurance', 'Construction', 'Heritage restoration', 'Luxury', 'Public procurement', 'Real estate'],
+      fr: ['Santé', 'Assurance', 'Construction', 'Restauration du patrimoine', 'Luxe', 'Marchés publics', 'Immobilier']
     };
 
     let lang = localStorage.getItem('cv-lang') || 'en';
