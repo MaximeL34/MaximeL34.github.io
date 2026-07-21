@@ -789,7 +789,7 @@
         <div class="label" data-i18n="stats.sectors">industries delivered in (and counting)</div>
       </div>
       <div class="stat">
-        <div class="num"><span class="counter" data-target="17">0</span><span class="accent">+</span></div>
+        <div class="num"><span class="counter" data-target="15">0</span><span class="accent">+</span></div>
         <div class="label" data-i18n="stats.projects">AI & data projects shipped</div>
       </div>
       <div class="stat">
@@ -877,7 +877,7 @@
     <div class="bento">
       <div class="bento-card wide reveal">
         <div class="big" data-i18n="exp2.hero">One profile, <span class="serif">full stack :</span><br>from LLM orchestration to Kubernetes deployment.</div>
-        <p data-i18n="exp2.hero.desc">Most teams need three people for this: someone who speaks to the business, someone who builds the models, someone who ships to the cloud. I close that loop alone — which is exactly what lean AI teams are hiring for.</p>
+        <p data-i18n="exp2.hero.desc">I carry this end to end: framing it with the business, building the models, shipping them to the cloud. Nothing gets lost in translation between teams — the kind of range lean AI teams are hiring for.</p>
       </div>
 
       <div class="bento-card reveal" data-delay="1">
@@ -925,7 +925,7 @@
       <div class="method-step reveal">
         <div class="n">STEP 01</div>
         <h4 data-i18n="method.s1.title">Immerse</h4>
-        <p data-i18n="method.s1.desc">I learn your domain's rules, vocabulary and constraints as fast as your codebase — deep enough to challenge experts on their own turf.</p>
+        <p data-i18n="method.s1.desc">I learn your domain's rules, vocabulary and constraints as fast as your codebase — enough to ask the right questions and hold a real conversation with your experts.</p>
       </div>
       <div class="method-step reveal" data-delay="1">
         <div class="n">STEP 02</div>
@@ -957,19 +957,11 @@
         <div class="tl-body">
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.ramsay.b1.title">AI-assisted medical coding</span></h4>
-            <p data-i18n="exp.ramsay.b1.desc">Owned the multi-LLM ICD-10 coding pipeline end-to-end: benchmarked GPT, Gemini, Mistral, Grok and Claude with a weighted hierarchical scoring I designed, RAG (FAISS), NER pseudonymization (Docker API) and a React validation interface for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% human baseline. Designed the LangGraph multi-agent architecture (coder → QA → arbitration) for scale-up.</p>
+            <p data-i18n="exp.ramsay.b1.desc">Owned the multi-LLM ICD-10 coding pipeline end-to-end: benchmarked GPT, Gemini, Mistral, Grok and Claude with a weighted hierarchical scoring I designed, RAG (FAISS), NER pseudonymization (Docker API) and a React validation interface for medical coders. Pilot: 92% accuracy on the primary diagnosis vs 80% human baseline. Designed the LangGraph multi-agent architecture (coder → QA → arbitration) for scale-up.</p>
           </div>
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b2.title">Billing rejection control (health insurance)</span></h4>
-            <p data-i18n="exp.ramsay.b2.desc">Owned a hybrid LLM + deterministic Python pipeline detecting insurance billing rejections on an 81-invoice benchmark. Diagnosed a GPT model-version drift on Azure (96% → 59-72%), analyzed false-positive patterns, and drove adoption of the hybrid architecture I recommended: deterministic rules for structured rejection reasons, LLM for semantic ones. Owned the 24-code rejection reference base.</p>
-          </div>
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b3.title">Predictive ML for billing rejections</span></h4>
-            <p data-i18n="exp.ramsay.b3.desc">Owned the predictive detection of invoices at risk of rejection: made the call to use XGBoost over LLM fine-tuning for auditability, cost and reproducibility, with SHAP explainability. Relational data from the replicated invoicing database, Azure ADLS Gen2 target, batch scoring and FastAPI exposure.</p>
-          </div>
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b4.title">Hospital funding engine (French DRG / PMSI)</span></h4>
-            <p data-i18n="exp.ramsay.b4.desc">Owned a complete Python DRG grouping engine (2026 national rules): positional record parsing, classifying procedures, severity levels, tariff valuation with outlier payments and ICU supplements — plus an under-coding detection framework I designed to score upgradeable stays for revenue recovery. Proof that I can absorb a country-specific regulatory system and re-implement it from official specs.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b2.title">Billing rejection detection & prediction</span></h4>
+            <p data-i18n="exp.ramsay.b2.desc">Owned a hybrid LLM + deterministic Python pipeline detecting billing rejections on an 81-invoice benchmark: diagnosed a GPT model-version drift on Azure (96% → 59-72%), analyzed false-positive patterns, and drove adoption of the hybrid architecture I recommended — deterministic rules for structured rejection reasons, LLM for semantic ones. Owned the 24-code rejection reference base, then extended the work to predictive scoring: chose XGBoost over LLM fine-tuning for auditability, cost and reproducibility, with SHAP explainability, relational data from the replicated invoicing database, Azure ADLS Gen2 target, batch scoring and FastAPI exposure.</p>
           </div>
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.ramsay.b5.title">Azure platform & automated intelligence</span></h4>
@@ -1143,7 +1135,7 @@
           <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
         <h3 data-i18n="proj.p1.title">AI-assisted medical coding</h3>
-        <p data-i18n="proj.p1.desc">Owned the multi-LLM ICD-10 coding pipeline: 5 models benchmarked with a hierarchical scoring I designed, FAISS RAG, React validation UI for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% human baseline.</p>
+        <p data-i18n="proj.p1.desc">Owned the multi-LLM ICD-10 coding pipeline: 5 models benchmarked with a hierarchical scoring I designed, FAISS RAG, React validation UI for medical coders. Pilot: 92% accuracy on the primary diagnosis vs 80% human baseline.</p>
         <div class="chips"><span class="chip">LLM</span><span class="chip">RAG</span><span class="chip">React</span></div>
       </div>
 
@@ -1162,39 +1154,9 @@
           <div class="ico"><svg class="i"><use href="#i-file"/></svg></div>
           <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
-        <h3 data-i18n="proj.p3.title">Billing rejection detection</h3>
-        <p data-i18n="proj.p3.desc">Owned a hybrid LLM + deterministic Python pipeline on 81 invoices: diagnosed a GPT model drift (96% → 59-72%), owned the 24-code rejection reference base and drove client adoption of the hybrid architecture.</p>
-        <div class="chips"><span class="chip">LLM</span><span class="chip">Python</span><span class="chip" data-i18n="proj.p3.chip">Billing</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="health">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-trend"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
-        </div>
-        <h3 data-i18n="proj.p4.title">Predictive ML for billing rejections</h3>
-        <p data-i18n="proj.p4.desc">Owned the predictive scoring of invoices at risk of rejection: made the call to use XGBoost over LLM fine-tuning for auditability and cost, SHAP explainability, Azure ADLS Gen2 target + FastAPI serving.</p>
-        <div class="chips"><span class="chip">XGBoost</span><span class="chip">SHAP</span><span class="chip">FastAPI</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="health" data-delay="1">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-cog"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
-        </div>
-        <h3 data-i18n="proj.p5.title">Hospital funding engine (DRG)</h3>
-        <p data-i18n="proj.p5.desc">Owned a complete Python engine re-implementing France's DRG hospital funding rules (PMSI, 2026): record parsing, severity levels, tariff valuation — re-implemented from official national specifications.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip" data-i18n="proj.p5.chip">Regulatory</span><span class="chip">Parsing</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="health" data-delay="2">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-search"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
-        </div>
-        <h3 data-i18n="proj.p6.title">Under-coding detection & revenue uplift</h3>
-        <p data-i18n="proj.p6.desc">Owned a framework identifying under-coded, upgradeable hospital stays: 90 records analyzed, clinical typology, a data-driven scoring I designed on severity-escalation rates weighted by valuation gap.</p>
-        <div class="chips"><span class="chip" data-i18n="proj.p6.chip">Scoring</span><span class="chip">Data</span><span class="chip">Revenue</span></div>
+        <h3 data-i18n="proj.p3.title">Billing rejection detection & prediction</h3>
+        <p data-i18n="proj.p3.desc">Owned a hybrid LLM + deterministic Python pipeline on 81 invoices: diagnosed a GPT model drift (96% → 59-72%), owned the 24-code rejection reference base and drove client adoption of the hybrid architecture. Extended it with a predictive XGBoost model scoring at-risk invoices — chosen over LLM fine-tuning for auditability and cost — with SHAP explainability, Azure ADLS Gen2 target + FastAPI serving.</p>
+        <div class="chips"><span class="chip">LLM</span><span class="chip">XGBoost</span><span class="chip">SHAP</span><span class="chip" data-i18n="proj.p3.chip">Billing</span></div>
       </div>
 
       <div class="project glass reveal" data-category="health">
@@ -1388,7 +1350,7 @@
         'exp2.kicker': '02 · Expertise',
         'exp2.title': 'What I <span class="serif">bring</span>',
         'exp2.hero': 'One profile, <span class="serif">full stack:</span><br>from LLM orchestration to Kubernetes deployment.',
-        'exp2.hero.desc': "Most teams need three people for this: someone who speaks to the business, someone who builds the models, someone who ships to the cloud. I close that loop alone — which is exactly what lean AI teams are hiring for.",
+        'exp2.hero.desc': "I carry this end to end: framing it with the business, building the models, shipping them to the cloud. Nothing gets lost in translation between teams — the kind of range lean AI teams are hiring for.",
         'exp2.b1.title': 'GenAI & LLM systems',
         'exp2.b1.desc': 'Multi-LLM benchmarking on real business cases, RAG, multi-agent orchestration, NER pseudonymization, hybrid LLM + deterministic architectures — with measured accuracy, not demos.',
         'exp2.b2.title': 'Machine learning in production',
@@ -1399,7 +1361,7 @@
         'exp2.b4.desc': 'Framing documents in English and French, client workshops, specifications, compliance by design (health-data hosting, GDPR) — engineering that stakeholders can sign off on.',
         'exp2.b4.chip1': 'Framing & specs', 'exp2.b4.chip2': 'Client workshops', 'exp2.b4.chip3': 'Bilingual EN/FR',
         'method.s1.title': 'Immerse',
-        'method.s1.desc': "I learn your domain's rules, vocabulary and constraints as fast as your codebase — deep enough to challenge experts on their own turf.",
+        'method.s1.desc': "I learn your domain's rules, vocabulary and constraints as fast as your codebase — enough to ask the right questions and hold a real conversation with your experts.",
         'method.s2.title': 'Build',
         'method.s2.desc': 'The right tool for the problem — LLM, classic ML or deterministic code — benchmarked against real data, never against a slideware promise.',
         'method.s3.title': 'Ship',
@@ -1411,13 +1373,9 @@
         'exp.ramsay.title': 'AI Data Engineer — Ramsay Santé engagement',
         'exp.ramsay.org': "Europe's leading private hospital group — parallel AI workstreams sponsored by the client's Data Office, over a ~2.2M inpatient-stays-per-year scope",
         'exp.ramsay.b1.title': 'AI-assisted medical coding',
-        'exp.ramsay.b1.desc': "Owned the multi-LLM ICD-10 coding pipeline end-to-end: benchmarked GPT, Gemini, Mistral, Grok and Claude with a weighted hierarchical scoring I designed, RAG (FAISS), NER pseudonymization (Docker API) and a React validation interface for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% human baseline. Designed the LangGraph multi-agent architecture (coder → QA → arbitration) for scale-up.",
-        'exp.ramsay.b2.title': 'Billing rejection control (health insurance)',
-        'exp.ramsay.b2.desc': "Owned a hybrid LLM + deterministic Python pipeline detecting insurance billing rejections on an 81-invoice benchmark. Diagnosed a GPT model-version drift on Azure (96% → 59-72%), analyzed false-positive patterns, and drove adoption of the hybrid architecture I recommended: deterministic rules for structured rejection reasons, LLM for semantic ones. Owned the 24-code rejection reference base.",
-        'exp.ramsay.b3.title': 'Predictive ML for billing rejections',
-        'exp.ramsay.b3.desc': "Owned the predictive detection of invoices at risk of rejection: made the call to use XGBoost over LLM fine-tuning for auditability, cost and reproducibility, with SHAP explainability. Relational data from the replicated invoicing database, Azure ADLS Gen2 target, batch scoring and FastAPI exposure.",
-        'exp.ramsay.b4.title': 'Hospital funding engine (French DRG / PMSI)',
-        'exp.ramsay.b4.desc': "Owned a complete Python DRG grouping engine (2026 national rules): positional record parsing, classifying procedures, severity levels, tariff valuation with outlier payments and ICU supplements — plus an under-coding detection framework I designed to score upgradeable stays for revenue recovery. Proof that I can absorb a country-specific regulatory system and re-implement it from official specs.",
+        'exp.ramsay.b1.desc': "Owned the multi-LLM ICD-10 coding pipeline end-to-end: benchmarked GPT, Gemini, Mistral, Grok and Claude with a weighted hierarchical scoring I designed, RAG (FAISS), NER pseudonymization (Docker API) and a React validation interface for medical coders. Pilot: 92% accuracy on the primary diagnosis vs 80% human baseline. Designed the LangGraph multi-agent architecture (coder → QA → arbitration) for scale-up.",
+        'exp.ramsay.b2.title': 'Billing rejection detection & prediction',
+        'exp.ramsay.b2.desc': "Owned a hybrid LLM + deterministic Python pipeline detecting billing rejections on an 81-invoice benchmark: diagnosed a GPT model-version drift on Azure (96% → 59-72%), analyzed false-positive patterns, and drove adoption of the hybrid architecture I recommended — deterministic rules for structured rejection reasons, LLM for semantic ones. Owned the 24-code rejection reference base, then extended the work to predictive scoring: chose XGBoost over LLM fine-tuning for auditability, cost and reproducibility, with SHAP explainability, relational data from the replicated invoicing database, Azure ADLS Gen2 target, batch scoring and FastAPI exposure.",
         'exp.ramsay.b5.title': 'Azure platform & automated intelligence',
         'exp.ramsay.b5.desc': "Owned the architecture of an automated public-funding watch system, validated with the client's Azure architect: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD deployment on AKS. Authored the framing documents in English and French.",
         'exp.ramsay.b6.title': 'Master Data Management (MDM)',
@@ -1476,20 +1434,12 @@
         'proj.badge.insurance': 'Insurance', 'proj.badge.enterprise': 'Enterprise',
         'proj.badge.academic': 'INSA · Certified', 'proj.badge.personal': 'Personal',
         'proj.p1.title': 'AI-assisted medical coding',
-        'proj.p1.desc': "Owned the multi-LLM ICD-10 coding pipeline: 5 models benchmarked with a hierarchical scoring I designed, FAISS RAG, React validation UI for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% human baseline.",
+        'proj.p1.desc': "Owned the multi-LLM ICD-10 coding pipeline: 5 models benchmarked with a hierarchical scoring I designed, FAISS RAG, React validation UI for medical coders. Pilot: 92% accuracy on the primary diagnosis vs 80% human baseline.",
         'proj.p2.title': 'Medical data pseudonymization',
         'proj.p2.desc': "Owned the patient-record anonymization run ahead of any LLM call: NER model (EDS-Pseudo, Paris hospitals) deployed as a Docker API plus a regex layer — the privacy prerequisite that made the AI coding project compliant.",
-        'proj.p3.title': 'Billing rejection detection',
-        'proj.p3.desc': "Owned a hybrid LLM + deterministic Python pipeline on 81 invoices: diagnosed a GPT model drift (96% → 59-72%), owned the 24-code rejection reference base and drove client adoption of the hybrid architecture.",
+        'proj.p3.title': 'Billing rejection detection & prediction',
+        'proj.p3.desc': "Owned a hybrid LLM + deterministic Python pipeline on 81 invoices: diagnosed a GPT model drift (96% → 59-72%), owned the 24-code rejection reference base and drove client adoption of the hybrid architecture. Extended it with a predictive XGBoost model scoring at-risk invoices — chosen over LLM fine-tuning for auditability and cost — with SHAP explainability, Azure ADLS Gen2 target + FastAPI serving.",
         'proj.p3.chip': 'Billing',
-        'proj.p4.title': 'Predictive ML for billing rejections',
-        'proj.p4.desc': "Owned the predictive scoring of invoices at risk of rejection: made the call to use XGBoost over LLM fine-tuning for auditability and cost, SHAP explainability, Azure ADLS Gen2 target + FastAPI serving.",
-        'proj.p5.title': 'Hospital funding engine (DRG)',
-        'proj.p5.desc': "Owned a complete Python engine re-implementing France's DRG hospital funding rules (PMSI, 2026): record parsing, severity levels, tariff valuation — re-implemented from official national specifications.",
-        'proj.p5.chip': 'Regulatory',
-        'proj.p6.title': 'Under-coding detection & revenue uplift',
-        'proj.p6.desc': "Owned a framework identifying under-coded, upgradeable hospital stays: 90 records analyzed, clinical typology, a data-driven scoring I designed on severity-escalation rates weighted by valuation gap.",
-        'proj.p6.chip': 'Scoring',
         'proj.p7.title': 'Public funding watch on Azure',
         'proj.p7.desc': "Owned the architecture of an automated funding-call monitor: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD on AKS — validated with the client's Azure architect.",
         'proj.p8.title': 'LLM-powered public tender watch',
@@ -1555,7 +1505,7 @@
         'exp2.kicker': '02 · Expertise',
         'exp2.title': 'Ce que <span class="serif">j’apporte</span>',
         'exp2.hero': 'Un profil, <span class="serif">full stack :</span><br>de l’orchestration LLM au déploiement Kubernetes.',
-        'exp2.hero.desc': "La plupart des équipes mobilisent trois personnes pour ça : une qui parle au métier, une qui construit les modèles, une qui déploie sur le cloud. Je boucle la chaîne seul — exactement ce que recherchent les équipes IA resserrées.",
+        'exp2.hero.desc': "Je porte ça de bout en bout : cadrage avec le métier, construction des modèles, mise en production sur le cloud. Rien ne se perd en route entre les équipes — le type de profil que recherchent les équipes IA resserrées.",
         'exp2.b1.title': 'Systèmes GenAI & LLM',
         'exp2.b1.desc': "Benchmarking multi-LLM sur cas métier réels, RAG, orchestration multi-agents, pseudonymisation NER, architectures hybrides LLM + déterministe — avec une précision mesurée, pas des démos.",
         'exp2.b2.title': 'Machine learning en production',
@@ -1566,7 +1516,7 @@
         'exp2.b4.desc': "Documents de cadrage en anglais et en français, ateliers client, spécifications, conformité by design (HDS, RGPD) — une ingénierie que les décideurs peuvent valider.",
         'exp2.b4.chip1': 'Cadrage & specs', 'exp2.b4.chip2': 'Ateliers client', 'exp2.b4.chip3': 'Bilingue EN/FR',
         'method.s1.title': 'Immersion',
-        'method.s1.desc': "J'apprends les règles, le vocabulaire et les contraintes de votre métier aussi vite que votre codebase — assez pour challenger les experts sur leur terrain.",
+        'method.s1.desc': "J'apprends les règles, le vocabulaire et les contraintes de votre métier aussi vite que votre codebase — assez pour poser les bonnes questions et échanger d'égal à égal avec vos experts.",
         'method.s2.title': 'Construction',
         'method.s2.desc': "Le bon outil pour le problème — LLM, ML classique ou code déterministe — benchmarké sur données réelles, jamais sur une promesse de slide.",
         'method.s3.title': 'Production',
@@ -1579,12 +1529,8 @@
         'exp.ramsay.org': "Leader européen de l'hospitalisation privée — chantiers IA parallèles avec sponsor Direction Data, sur un périmètre de ~2,2 M de séjours par an",
         'exp.ramsay.b1.title': 'Codage médical assisté par IA',
         'exp.ramsay.b1.desc': "Pilotage de bout en bout du pipeline multi-LLM de codage CIM-10 : benchmark GPT, Gemini, Mistral, Grok et Claude avec un scoring hiérarchique pondéré que j'ai conçu, RAG (FAISS), pseudonymisation NER (API Docker) et interface React de validation pour les TIM. Pilote : 92 % de justesse sur le diagnostic principal vs 80 % pour la référence humaine. J'ai conçu l'architecture multi-agents LangGraph (codeur → QA → arbitrage) pour l'industrialisation.",
-        'exp.ramsay.b2.title': 'Contrôle des rejets de facturation (Assurance Maladie)',
-        'exp.ramsay.b2.desc': "J'ai piloté un pipeline hybride LLM + Python déterministe de détection des rejets de factures sur un benchmark de 81 factures. Diagnostic d'une dérive de version GPT sur Azure (96 % → 59-72 %), analyse des faux positifs, et j'ai fait adopter l'architecture hybride que je recommandais : règles déterministes pour les motifs structurés, LLM pour les motifs sémantiques. J'ai construit le référentiel de 24 codes de rejet.",
-        'exp.ramsay.b3.title': 'ML prédictif des rejets de facturation',
-        'exp.ramsay.b3.desc': "J'ai piloté la détection prédictive des factures à risque de rejet : j'ai tranché en faveur de XGBoost face au fine-tuning LLM pour l'auditabilité, le coût et la reproductibilité, avec explicabilité SHAP. Données relationnelles de la base factures répliquée, cible Azure ADLS Gen2, scoring batch et exposition FastAPI.",
-        'exp.ramsay.b4.title': 'Moteur de financement hospitalier (GHM / PMSI)',
-        'exp.ramsay.b4.desc': "Responsable d'un moteur Python complet de groupage GHM (règles nationales 2026) : parsing des formats positionnels, actes classants, niveaux de sévérité, valorisation T2A avec suppléments — plus un framework de détection du sous-codage que j'ai conçu pour la récupération de recettes. La preuve que je peux absorber un système réglementaire national et le ré-implémenter depuis les specs officielles.",
+        'exp.ramsay.b2.title': 'Détection et prédiction des rejets de facturation',
+        'exp.ramsay.b2.desc': "J'ai piloté un pipeline hybride LLM + Python déterministe de détection des rejets de facturation sur un benchmark de 81 factures : diagnostic d'une dérive de version GPT sur Azure (96 % → 59-72 %), analyse des faux positifs, et j'ai fait adopter l'architecture hybride que je recommandais — règles déterministes pour les motifs structurés, LLM pour les motifs sémantiques. J'ai construit le référentiel de 24 codes de rejet, puis étendu le travail au scoring prédictif : j'ai tranché en faveur de XGBoost face au fine-tuning LLM pour l'auditabilité, le coût et la reproductibilité, avec explicabilité SHAP, données relationnelles de la base factures répliquée, cible Azure ADLS Gen2, scoring batch et exposition FastAPI.",
         'exp.ramsay.b5.title': 'Plateforme Azure & veille automatisée',
         'exp.ramsay.b5.desc': "Responsable de l'architecture d'un système de veille automatisée des financements publics, validée avec l'architecte Azure du client : PostgreSQL + pgvector (HNSW, embeddings 3072 dim.), Bing Grounding, Key Vault CSI, déploiement Helm + ArgoCD sur AKS. J'ai rédigé les documents de cadrage en anglais et en français.",
         'exp.ramsay.b6.title': 'Master Data Management (MDM)',
@@ -1643,20 +1589,12 @@
         'proj.badge.insurance': 'Assurance', 'proj.badge.enterprise': 'Entreprise',
         'proj.badge.academic': 'INSA · Certifié', 'proj.badge.personal': 'Personnel',
         'proj.p1.title': 'Codage médical assisté par IA',
-        'proj.p1.desc': "Pilotage du pipeline multi-LLM de codage CIM-10 : 5 modèles benchmarkés avec un scoring hiérarchique que j'ai conçu, RAG FAISS, interface React de validation pour les TIM. Pilote : 100 % de justesse sur le DP vs 63 % pour la référence humaine.",
+        'proj.p1.desc': "Pilotage du pipeline multi-LLM de codage CIM-10 : 5 modèles benchmarkés avec un scoring hiérarchique que j'ai conçu, RAG FAISS, interface React de validation pour les TIM. Pilote : 92 % de justesse sur le DP vs 80 % pour la référence humaine.",
         'proj.p2.title': 'Pseudonymisation de données médicales',
         'proj.p2.desc': "Responsable de l'anonymisation des dossiers patients exécutée avant tout appel LLM : modèle NER (EDS-Pseudo, AP-HP) déployé en API Docker plus une couche regex — le prérequis de conformité du projet de codage IA.",
-        'proj.p3.title': 'Détection des rejets de facturation',
-        'proj.p3.desc': "Pilotage d'un pipeline hybride LLM + Python déterministe sur 81 factures : diagnostic d'une dérive de modèle GPT (96 % → 59-72 %), référentiel de 24 codes de rejet que j'ai construit et architecture hybride que j'ai fait adopter par le client.",
+        'proj.p3.title': 'Détection et prédiction des rejets de facturation',
+        'proj.p3.desc': "Pilotage d'un pipeline hybride LLM + Python déterministe sur 81 factures : diagnostic d'une dérive de modèle GPT (96 % → 59-72 %), référentiel de 24 codes de rejet que j'ai construit et architecture hybride que j'ai fait adopter par le client. Extension avec un modèle XGBoost prédictif de scoring des factures à risque — préféré au fine-tuning LLM pour l'auditabilité et le coût — avec explicabilité SHAP, cible Azure ADLS Gen2 + serving FastAPI.",
         'proj.p3.chip': 'Facturation',
-        'proj.p4.title': 'ML prédictif des rejets de facturation',
-        'proj.p4.desc': "Pilotage du scoring prédictif des factures à risque de rejet : j'ai tranché en faveur de XGBoost face au fine-tuning LLM pour l'auditabilité et le coût, explicabilité SHAP, cible Azure ADLS Gen2 + serving FastAPI.",
-        'proj.p5.title': 'Moteur de financement hospitalier (GHM)',
-        'proj.p5.desc': "Responsable d'un moteur Python complet ré-implémentant les règles françaises de financement hospitalier (PMSI, 2026) : parsing, niveaux de sévérité, valorisation tarifaire — ré-implémenté depuis les spécifications officielles.",
-        'proj.p5.chip': 'Réglementaire',
-        'proj.p6.title': 'Détection de sous-codage & revalorisation',
-        'proj.p6.desc': "Pilotage d'un framework d'identification des séjours sous-codés revalorisables : 90 dossiers analysés, typologie clinique, un scoring data-driven que j'ai conçu sur les taux d'escalade de sévérité pondérés par l'écart de valorisation.",
-        'proj.p6.chip': 'Scoring',
         'proj.p7.title': 'Veille financements publics sur Azure',
         'proj.p7.desc': "Responsable de l'architecture d'une veille automatisée des appels à projets : PostgreSQL + pgvector (HNSW, embeddings 3072 dim.), Bing Grounding, Key Vault CSI, Helm + ArgoCD sur AKS — validée avec l'architecte Azure du client.",
         'proj.p8.title': "Veille d'appels d'offres par LLM",
