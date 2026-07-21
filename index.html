@@ -829,7 +829,7 @@
       <div class="glass about-text reveal">
         <p class="lead" data-i18n="about.lead">My edge isn't one domain — it's the speed at which I <span class="serif">master a new one.</span></p>
         <p data-i18n="about.p1">
-          I'm an <strong>AI Data Engineer</strong> at Talan and an engineering graduate of INSA Rouen Normandie (France). In under two years I've shipped AI solutions across <strong>healthcare, construction & heritage, insurance and luxury</strong> — industries with nothing in common except how much their rules matter.
+          I'm an <strong>AI Data Engineer</strong> at Talan and an engineering graduate of INSA Rouen Normandie (France). I've shipped AI solutions across <strong>healthcare, construction & heritage, insurance and luxury</strong> — industries with nothing in common except how much their rules matter.
         </p>
         <p data-i18n="about.p2">
           In healthcare, I went from zero to building production pipelines on one of the most regulated data domains in France — medical coding and hospital billing — including multi-LLM coding systems and predictive rejection models over a <strong>2.2M-stays-per-year</strong> scope. In construction, I automated public tender monitoring and cost pre-estimation for a VINCI subsidiary restoring historical monuments.
@@ -957,31 +957,31 @@
         <div class="tl-body">
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.ramsay.b1.title">AI-assisted medical coding</span></h4>
-            <p data-i18n="exp.ramsay.b1.desc">Multi-LLM ICD-10 coding pipeline: benchmark of GPT, Gemini, Mistral, Grok and Claude with weighted hierarchical scoring, RAG (FAISS), NER pseudonymization (Docker API) and a React validation interface for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% human baseline. LangGraph multi-agent architecture (coder → QA → arbitration) designed for scale-up.</p>
+            <p data-i18n="exp.ramsay.b1.desc">Owned the multi-LLM ICD-10 coding pipeline end-to-end: benchmarked GPT, Gemini, Mistral, Grok and Claude with a weighted hierarchical scoring I designed, RAG (FAISS), NER pseudonymization (Docker API) and a React validation interface for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% human baseline. Designed the LangGraph multi-agent architecture (coder → QA → arbitration) for scale-up.</p>
           </div>
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.ramsay.b2.title">Billing rejection control (health insurance)</span></h4>
-            <p data-i18n="exp.ramsay.b2.desc">Hybrid LLM + deterministic Python pipeline detecting insurance billing rejections on an 81-invoice benchmark. Diagnosed a GPT model-version drift on Azure (96% → 59-72%), analyzed false-positive patterns, and got the hybrid architecture adopted: deterministic rules for structured rejection reasons, LLM for semantic ones. Built the 24-code rejection reference base.</p>
+            <p data-i18n="exp.ramsay.b2.desc">Owned a hybrid LLM + deterministic Python pipeline detecting insurance billing rejections on an 81-invoice benchmark. Diagnosed a GPT model-version drift on Azure (96% → 59-72%), analyzed false-positive patterns, and drove adoption of the hybrid architecture I recommended: deterministic rules for structured rejection reasons, LLM for semantic ones. Owned the 24-code rejection reference base.</p>
           </div>
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.ramsay.b3.title">Predictive ML for billing rejections</span></h4>
-            <p data-i18n="exp.ramsay.b3.desc">Predictive detection of invoices at risk of rejection: XGBoost chosen over LLM fine-tuning for auditability, cost and reproducibility, with SHAP explainability. Relational data from the replicated invoicing database, Azure ADLS Gen2 target, batch scoring and FastAPI exposure.</p>
+            <p data-i18n="exp.ramsay.b3.desc">Owned the predictive detection of invoices at risk of rejection: made the call to use XGBoost over LLM fine-tuning for auditability, cost and reproducibility, with SHAP explainability. Relational data from the replicated invoicing database, Azure ADLS Gen2 target, batch scoring and FastAPI exposure.</p>
           </div>
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.ramsay.b4.title">Hospital funding engine (French DRG / PMSI)</span></h4>
-            <p data-i18n="exp.ramsay.b4.desc">Complete Python DRG grouping engine (2026 national rules): positional record parsing, classifying procedures, severity levels, tariff valuation with outlier payments and ICU supplements — plus an under-coding detection framework scoring upgradeable stays for revenue recovery. Proof that I can absorb a country-specific regulatory system and re-implement it from official specs.</p>
+            <p data-i18n="exp.ramsay.b4.desc">Owned a complete Python DRG grouping engine (2026 national rules): positional record parsing, classifying procedures, severity levels, tariff valuation with outlier payments and ICU supplements — plus an under-coding detection framework I designed to score upgradeable stays for revenue recovery. Proof that I can absorb a country-specific regulatory system and re-implement it from official specs.</p>
           </div>
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.ramsay.b5.title">Azure platform & automated intelligence</span></h4>
-            <p data-i18n="exp.ramsay.b5.desc">Automated public-funding watch system, architecture validated with the client's Azure architect: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD deployment on AKS. Framing documents delivered in English and French.</p>
+            <p data-i18n="exp.ramsay.b5.desc">Owned the architecture of an automated public-funding watch system, validated with the client's Azure architect: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD deployment on AKS. Authored the framing documents in English and French.</p>
           </div>
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.ramsay.b6.title">Master Data Management (MDM)</span></h4>
-            <p data-i18n="exp.ramsay.b6.desc">Contributed to a Master Data Management project: aligning and de-duplicating reference data across the group's systems, defining golden records and data quality rules to keep the billing and coding pipelines fed with clean, consistent master data.</p>
+            <p data-i18n="exp.ramsay.b6.desc">Drove a Master Data Management workstream: aligned and de-duplicated reference data across the group's systems, defined golden records and the data-quality rules that keep the billing and coding pipelines fed with clean, consistent master data.</p>
           </div>
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.ramsay.b7.title">Power BI reporting</span></h4>
-            <p data-i18n="exp.ramsay.b7.desc">Built business intelligence reports in Power BI: data modeling, DAX measures and interactive dashboards giving the Data Office and business teams a clear read on billing, rejections and coding performance.</p>
+            <p data-i18n="exp.ramsay.b7.desc">Owned the BI reporting in Power BI: modeled the data, wrote the DAX measures and shipped the interactive dashboards giving the Data Office and business teams a clear read on billing, rejections and coding performance.</p>
           </div>
         </div>
         <div class="chips">
@@ -1000,11 +1000,11 @@
         <div class="tl-body">
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.degaine.b1.title">Automated public tender monitoring</span></h4>
-            <p data-i18n="exp.degaine.b1.desc">Tender-watch system replacing a paid subscription: collection through the French/EU public procurement APIs (BOAMP/TED), LLM triage (Mistral Small on Azure AI Foundry) to kill keyword-filter false positives, go/no-go scoring of heritage restoration tenders.</p>
+            <p data-i18n="exp.degaine.b1.desc">Owned a tender-watch system that replaced a paid subscription: collection through the French/EU public procurement APIs (BOAMP/TED), LLM triage (Mistral Small on Azure AI Foundry) to kill keyword-filter false positives, and a go/no-go scoring of heritage restoration tenders I defined.</p>
           </div>
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.degaine.b2.title">Agentic AI workshop — cost pre-estimation</span></h4>
-            <p data-i18n="exp.degaine.b2.desc">Prepared and led a client workshop demonstrating agentic AI (Claude) on pre-estimating a heritage restoration tender package: dedicated estimation skill, 33-line unit price schedule, delivery deck — live demo on the real specification of a listed monument.</p>
+            <p data-i18n="exp.degaine.b2.desc">Owned and led a client workshop demonstrating agentic AI (Claude) on pre-estimating a heritage restoration tender package: built a dedicated estimation skill, a 33-line unit price schedule and the delivery deck — live demo on the real specification of a listed monument.</p>
           </div>
         </div>
         <div class="chips">
@@ -1021,7 +1021,7 @@
         <div class="tl-body">
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.chanel.b1.title">AI agents for job descriptions</span></h4>
-            <p data-i18n="exp.chanel.b1.desc">Designed and deployed AI agents on Copilot Studio to create and reformat job descriptions: standardized templates, tone and structure, so recruiters and managers generate consistent, on-brand postings in minutes instead of starting from a blank page.</p>
+            <p data-i18n="exp.chanel.b1.desc">Owned the design and rollout of AI agents on Copilot Studio to create and reformat job descriptions: standardized templates, tone and structure, so recruiters and managers generate consistent, on-brand postings in minutes instead of starting from a blank page.</p>
           </div>
         </div>
         <div class="chips">
@@ -1038,11 +1038,11 @@
         <div class="tl-body">
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.gis.b1.title">GIS use cases for insurance</span></h4>
-            <p data-i18n="exp.gis.b1.desc">Built a set of Geographic Information System (GIS) use cases for the insurance domain — geospatial risk analysis, exposure mapping and territorial pricing scenarios — turning location data into concrete business value for insurers.</p>
+            <p data-i18n="exp.gis.b1.desc">Owned a set of Geographic Information System (GIS) use cases for the insurance domain — geospatial risk analysis, exposure mapping and territorial pricing scenarios — framing how location data becomes concrete business value for insurers.</p>
           </div>
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.gis.b2.title">Client-adapted value interface</span></h4>
-            <p data-i18n="exp.gis.b2.desc">Designed and built an interface that presents these use cases tailored to each prospect: filtered by their profile and sector, with expected gains scaled to their revenue (turnover) — a personalized, sales-ready demonstration of the ROI of GIS.</p>
+            <p data-i18n="exp.gis.b2.desc">Owned the design and build of an interface that presents these use cases tailored to each prospect: filtered by their profile and sector, with expected gains scaled to their revenue (turnover) — a personalized, sales-ready demonstration of the ROI of GIS.</p>
           </div>
         </div>
         <div class="chips">
@@ -1059,11 +1059,11 @@
         <div class="tl-body">
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.platform.b1.title">Offer ↔ consultant matching</span></h4>
-            <p data-i18n="exp.platform.b1.desc">In-house agentic platform matching an incoming offer to the pool of consultants to surface the best-fit profile: semantic search over consultant skills and experience (RAG, FAISS index) instead of keyword staffing.</p>
+            <p data-i18n="exp.platform.b1.desc">Owned an in-house agentic platform matching an incoming offer to the pool of consultants to surface the best-fit profile: semantic search over consultant skills and experience (RAG, FAISS index) instead of keyword staffing.</p>
           </div>
           <div class="tl-block">
             <h4><span class="dot"></span><span data-i18n="exp.platform.b2.title">Automatic CV reformatting</span></h4>
-            <p data-i18n="exp.platform.b2.desc">AI agents that automatically reformat a consultant's CV against a given offer — re-ordering and rephrasing the relevant experience to the opportunity, so tailored CVs are produced in seconds rather than by hand.</p>
+            <p data-i18n="exp.platform.b2.desc">Owned the AI agents that automatically reformat a consultant's CV against a given offer — re-ordering and rephrasing the relevant experience to the opportunity, so tailored CVs are produced in seconds rather than by hand.</p>
           </div>
         </div>
         <div class="chips">
@@ -1079,7 +1079,7 @@
         <p class="org"><strong>INSA Rouen Normandie</strong> · <span data-i18n="exp.insa.org">Certified project carried out in real conditions for a client</span></p>
         <div class="tl-body">
           <div class="tl-block">
-            <p data-i18n="exp.insa.desc">Delivered a Proof of Concept migrating data to a clean, structured and documented database (modeling, cleansing, transformation rules), then implemented KPI calculations on the migrated data with final delivery to the client.</p>
+            <p data-i18n="exp.insa.desc">Drove a Proof of Concept migrating data to a clean, structured and documented database (modeling, cleansing, transformation rules), then owned the KPI calculations on the migrated data through to final delivery to the client.</p>
           </div>
         </div>
         <div class="chips">
@@ -1377,7 +1377,7 @@
         'about.kicker': '01 · Profile',
         'about.title': 'Sector-agnostic, <span class="serif">by design</span>',
         'about.lead': "My edge isn't one domain — it's the speed at which I <span class=\"serif\">master a new one.</span>",
-        'about.p1': "I'm an <strong>AI Data Engineer</strong> at Talan and an engineering graduate of INSA Rouen Normandie (France). In under two years I've shipped AI solutions across <strong>healthcare, construction & heritage, insurance and luxury</strong> — industries with nothing in common except how much their rules matter.",
+        'about.p1': "I'm an <strong>AI Data Engineer</strong> at Talan and an engineering graduate of INSA Rouen Normandie (France). I've shipped AI solutions across <strong>healthcare, construction & heritage, insurance and luxury</strong> — industries with nothing in common except how much their rules matter.",
         'about.p2': "In healthcare, I went from zero to building production pipelines on one of the most regulated data domains in France — medical coding and hospital billing — including multi-LLM coding systems and predictive rejection models over a <strong>2.2M-stays-per-year</strong> scope. In construction, I automated public tender monitoring and cost pre-estimation for a VINCI subsidiary restoring historical monuments.",
         'about.p3': "Same method every time: <strong>immerse in the domain, build with the right tool</strong> — LLM, classic ML, or plain deterministic code — <strong>and ship to production</strong> with the audit trail, compliance and documentation that regulated industries demand.",
         'about.c1.title': 'Fast domain immersion',
@@ -1411,53 +1411,53 @@
         'exp.ramsay.title': 'AI Data Engineer — Ramsay Santé engagement',
         'exp.ramsay.org': "Europe's leading private hospital group — parallel AI workstreams sponsored by the client's Data Office, over a ~2.2M inpatient-stays-per-year scope",
         'exp.ramsay.b1.title': 'AI-assisted medical coding',
-        'exp.ramsay.b1.desc': "Multi-LLM ICD-10 coding pipeline: benchmark of GPT, Gemini, Mistral, Grok and Claude with weighted hierarchical scoring, RAG (FAISS), NER pseudonymization (Docker API) and a React validation interface for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% human baseline. LangGraph multi-agent architecture (coder → QA → arbitration) designed for scale-up.",
+        'exp.ramsay.b1.desc': "Owned the multi-LLM ICD-10 coding pipeline end-to-end: benchmarked GPT, Gemini, Mistral, Grok and Claude with a weighted hierarchical scoring I designed, RAG (FAISS), NER pseudonymization (Docker API) and a React validation interface for medical coders. Pilot: 100% accuracy on the primary diagnosis vs 63% human baseline. Designed the LangGraph multi-agent architecture (coder → QA → arbitration) for scale-up.",
         'exp.ramsay.b2.title': 'Billing rejection control (health insurance)',
-        'exp.ramsay.b2.desc': "Hybrid LLM + deterministic Python pipeline detecting insurance billing rejections on an 81-invoice benchmark. Diagnosed a GPT model-version drift on Azure (96% → 59-72%), analyzed false-positive patterns, and got the hybrid architecture adopted: deterministic rules for structured rejection reasons, LLM for semantic ones. Built the 24-code rejection reference base.",
+        'exp.ramsay.b2.desc': "Owned a hybrid LLM + deterministic Python pipeline detecting insurance billing rejections on an 81-invoice benchmark. Diagnosed a GPT model-version drift on Azure (96% → 59-72%), analyzed false-positive patterns, and drove adoption of the hybrid architecture I recommended: deterministic rules for structured rejection reasons, LLM for semantic ones. Owned the 24-code rejection reference base.",
         'exp.ramsay.b3.title': 'Predictive ML for billing rejections',
-        'exp.ramsay.b3.desc': "Predictive detection of invoices at risk of rejection: XGBoost chosen over LLM fine-tuning for auditability, cost and reproducibility, with SHAP explainability. Relational data from the replicated invoicing database, Azure ADLS Gen2 target, batch scoring and FastAPI exposure.",
+        'exp.ramsay.b3.desc': "Owned the predictive detection of invoices at risk of rejection: made the call to use XGBoost over LLM fine-tuning for auditability, cost and reproducibility, with SHAP explainability. Relational data from the replicated invoicing database, Azure ADLS Gen2 target, batch scoring and FastAPI exposure.",
         'exp.ramsay.b4.title': 'Hospital funding engine (French DRG / PMSI)',
-        'exp.ramsay.b4.desc': "Complete Python DRG grouping engine (2026 national rules): positional record parsing, classifying procedures, severity levels, tariff valuation with outlier payments and ICU supplements — plus an under-coding detection framework scoring upgradeable stays for revenue recovery. Proof that I can absorb a country-specific regulatory system and re-implement it from official specs.",
+        'exp.ramsay.b4.desc': "Owned a complete Python DRG grouping engine (2026 national rules): positional record parsing, classifying procedures, severity levels, tariff valuation with outlier payments and ICU supplements — plus an under-coding detection framework I designed to score upgradeable stays for revenue recovery. Proof that I can absorb a country-specific regulatory system and re-implement it from official specs.",
         'exp.ramsay.b5.title': 'Azure platform & automated intelligence',
-        'exp.ramsay.b5.desc': "Automated public-funding watch system, architecture validated with the client's Azure architect: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD deployment on AKS. Framing documents delivered in English and French.",
+        'exp.ramsay.b5.desc': "Owned the architecture of an automated public-funding watch system, validated with the client's Azure architect: PostgreSQL + pgvector (HNSW, 3072-dim embeddings), Bing Grounding, Key Vault CSI, Helm + ArgoCD deployment on AKS. Authored the framing documents in English and French.",
         'exp.ramsay.b6.title': 'Master Data Management (MDM)',
-        'exp.ramsay.b6.desc': "Contributed to a Master Data Management project: aligning and de-duplicating reference data across the group's systems, defining golden records and data quality rules to keep the billing and coding pipelines fed with clean, consistent master data.",
+        'exp.ramsay.b6.desc': "Drove a Master Data Management workstream: aligned and de-duplicated reference data across the group's systems, defined golden records and the data-quality rules that keep the billing and coding pipelines fed with clean, consistent master data.",
         'exp.ramsay.b7.title': 'Power BI reporting',
-        'exp.ramsay.b7.desc': "Built business intelligence reports in Power BI: data modeling, DAX measures and interactive dashboards giving the Data Office and business teams a clear read on billing, rejections and coding performance.",
+        'exp.ramsay.b7.desc': "Owned the BI reporting in Power BI: modeled the data, wrote the DAX measures and shipped the interactive dashboards giving the Data Office and business teams a clear read on billing, rejections and coding performance.",
         'exp.chanel.sector': 'Luxury · HR',
         'exp.chanel.title': 'AI Consultant — Chanel engagement',
         'exp.chanel.org': 'Global luxury house — GenAI agents supporting the HR / talent function',
         'exp.chanel.b1.title': 'AI agents for job descriptions',
-        'exp.chanel.b1.desc': "Designed and deployed AI agents on Copilot Studio to create and reformat job descriptions: standardized templates, tone and structure, so recruiters and managers generate consistent, on-brand postings in minutes instead of starting from a blank page.",
+        'exp.chanel.b1.desc': "Owned the design and rollout of AI agents on Copilot Studio to create and reformat job descriptions: standardized templates, tone and structure, so recruiters and managers generate consistent, on-brand postings in minutes instead of starting from a blank page.",
         'exp.chanel.chip': 'HR automation',
         'exp.gis.sector': 'Insurance',
         'exp.gis.title': 'AI Consultant — GIS use cases for insurance',
         'exp.gis.org': 'Geographic Information Systems (GIS) applied to the insurance sector',
         'exp.gis.b1.title': 'GIS use cases for insurance',
-        'exp.gis.b1.desc': "Built a set of Geographic Information System (GIS) use cases for the insurance domain — geospatial risk analysis, exposure mapping and territorial pricing scenarios — turning location data into concrete business value for insurers.",
+        'exp.gis.b1.desc': "Owned a set of Geographic Information System (GIS) use cases for the insurance domain — geospatial risk analysis, exposure mapping and territorial pricing scenarios — framing how location data becomes concrete business value for insurers.",
         'exp.gis.b2.title': 'Client-adapted value interface',
-        'exp.gis.b2.desc': "Designed and built an interface that presents these use cases tailored to each prospect: filtered by their profile and sector, with expected gains scaled to their revenue (turnover) — a personalized, sales-ready demonstration of the ROI of GIS.",
+        'exp.gis.b2.desc': "Owned the design and build of an interface that presents these use cases tailored to each prospect: filtered by their profile and sector, with expected gains scaled to their revenue (turnover) — a personalized, sales-ready demonstration of the ROI of GIS.",
         'exp.gis.chip1': 'Geospatial', 'exp.gis.chip2': 'Insurance', 'exp.gis.chip3': 'ROI interface',
         'exp.platform.sector': 'Internal R&D',
         'exp.platform.title': 'AI Engineer — Home-made agentic platform',
         'exp.platform.org': 'Internal agentic platform built from scratch, powered by AI agents',
         'exp.platform.b1.title': 'Offer ↔ consultant matching',
-        'exp.platform.b1.desc': "In-house agentic platform matching an incoming offer to the pool of consultants to surface the best-fit profile: semantic search over consultant skills and experience (RAG, FAISS index) instead of keyword staffing.",
+        'exp.platform.b1.desc': "Owned an in-house agentic platform matching an incoming offer to the pool of consultants to surface the best-fit profile: semantic search over consultant skills and experience (RAG, FAISS index) instead of keyword staffing.",
         'exp.platform.b2.title': 'Automatic CV reformatting',
-        'exp.platform.b2.desc': "AI agents that automatically reformat a consultant's CV against a given offer — re-ordering and rephrasing the relevant experience to the opportunity, so tailored CVs are produced in seconds rather than by hand.",
+        'exp.platform.b2.desc': "Owned the AI agents that automatically reformat a consultant's CV against a given offer — re-ordering and rephrasing the relevant experience to the opportunity, so tailored CVs are produced in seconds rather than by hand.",
         'exp.platform.chip1': 'Semantic matching', 'exp.platform.chip2': 'CV generation',
         'exp.degaine.sector': 'Construction & Heritage',
         'exp.degaine.title': 'AI Consultant — DEGAINE engagement (VINCI Construction)',
         'exp.degaine.org': 'VINCI subsidiary specialized in the restoration of listed historical monuments',
         'exp.degaine.b1.title': 'Automated public tender monitoring',
-        'exp.degaine.b1.desc': "Tender-watch system replacing a paid subscription: collection through the French/EU public procurement APIs (BOAMP/TED), LLM triage (Mistral Small on Azure AI Foundry) to kill keyword-filter false positives, go/no-go scoring of heritage restoration tenders.",
+        'exp.degaine.b1.desc': "Owned a tender-watch system that replaced a paid subscription: collection through the French/EU public procurement APIs (BOAMP/TED), LLM triage (Mistral Small on Azure AI Foundry) to kill keyword-filter false positives, and a go/no-go scoring of heritage restoration tenders I defined.",
         'exp.degaine.b2.title': 'Agentic AI workshop — cost pre-estimation',
-        'exp.degaine.b2.desc': "Prepared and led a client workshop demonstrating agentic AI (Claude) on pre-estimating a heritage restoration tender package: dedicated estimation skill, 33-line unit price schedule, delivery deck — live demo on the real specification of a listed monument.",
+        'exp.degaine.b2.desc': "Owned and led a client workshop demonstrating agentic AI (Claude) on pre-estimating a heritage restoration tender package: built a dedicated estimation skill, a 33-line unit price schedule and the delivery deck — live demo on the real specification of a listed monument.",
         'exp.degaine.chip': 'Public procurement APIs',
         'exp.insa.sector': 'Certified project',
         'exp.insa.title': 'Consulting mission — Data migration & KPIs',
         'exp.insa.org': 'Certified project carried out in real conditions for a client',
-        'exp.insa.desc': "Delivered a Proof of Concept migrating data to a clean, structured and documented database (modeling, cleansing, transformation rules), then implemented KPI calculations on the migrated data with final delivery to the client.",
+        'exp.insa.desc': "Drove a Proof of Concept migrating data to a clean, structured and documented database (modeling, cleansing, transformation rules), then owned the KPI calculations on the migrated data through to final delivery to the client.",
         'exp.insa.chip1': 'Data modeling',
         'exp.edu.title': 'Engineering degree (MSc level) — Computer Science & IT',
         'exp.edu.org': 'French Grande École of engineering',
@@ -1544,7 +1544,7 @@
         'about.kicker': '01 · Profil',
         'about.title': 'Multi-sectoriel, <span class="serif">par conception</span>',
         'about.lead': "Ma force n'est pas un domaine — c'est la vitesse à laquelle <span class=\"serif\">j'en maîtrise un nouveau.</span>",
-        'about.p1': "<strong>AI Data Engineer</strong> chez Talan et ingénieur diplômé de l'INSA Rouen Normandie, j'ai livré en moins de deux ans des solutions IA dans <strong>la santé, la construction & le patrimoine, l'assurance et le luxe</strong> — des secteurs qui n'ont rien en commun, sauf l'importance de leurs règles.",
+        'about.p1': "<strong>AI Data Engineer</strong> chez Talan et ingénieur diplômé de l'INSA Rouen Normandie, j'ai livré des solutions IA dans <strong>la santé, la construction & le patrimoine, l'assurance et le luxe</strong> — des secteurs qui n'ont rien en commun, sauf l'importance de leurs règles.",
         'about.p2': "Dans la santé, je suis parti de zéro pour construire des pipelines de production sur l'un des domaines les plus réglementés de France — codage médical et facturation hospitalière — dont des systèmes de codage multi-LLM et des modèles prédictifs de rejets sur un périmètre de <strong>2,2 M de séjours par an</strong>. Dans la construction, j'ai automatisé la veille d'appels d'offres et le pré-chiffrage pour une filiale VINCI spécialisée dans les monuments historiques.",
         'about.p3': "Même méthode à chaque fois : <strong>immersion dans le métier, le bon outil pour le problème</strong> — LLM, ML classique ou code déterministe — <strong>et mise en production</strong> avec l'auditabilité, la conformité et la documentation qu'exigent les secteurs réglementés.",
         'about.c1.title': 'Immersion métier rapide',
@@ -1578,53 +1578,53 @@
         'exp.ramsay.title': 'AI Data Engineer — Mission Ramsay Santé',
         'exp.ramsay.org': "Leader européen de l'hospitalisation privée — chantiers IA parallèles avec sponsor Direction Data, sur un périmètre de ~2,2 M de séjours par an",
         'exp.ramsay.b1.title': 'Codage médical assisté par IA',
-        'exp.ramsay.b1.desc': "Pipeline multi-LLM de codage CIM-10 : benchmark GPT, Gemini, Mistral, Grok et Claude avec scoring hiérarchique pondéré, RAG (FAISS), pseudonymisation NER (API Docker) et interface React de validation pour les TIM. Pilote : 100 % de justesse sur le diagnostic principal vs 63 % pour la référence humaine. Architecture multi-agents LangGraph (codeur → QA → arbitrage) conçue pour l'industrialisation.",
+        'exp.ramsay.b1.desc': "Pilotage de bout en bout du pipeline multi-LLM de codage CIM-10 : benchmark GPT, Gemini, Mistral, Grok et Claude avec un scoring hiérarchique pondéré que j'ai conçu, RAG (FAISS), pseudonymisation NER (API Docker) et interface React de validation pour les TIM. Pilote : 100 % de justesse sur le diagnostic principal vs 63 % pour la référence humaine. J'ai conçu l'architecture multi-agents LangGraph (codeur → QA → arbitrage) pour l'industrialisation.",
         'exp.ramsay.b2.title': 'Contrôle des rejets de facturation (Assurance Maladie)',
-        'exp.ramsay.b2.desc': "Pipeline hybride LLM + Python déterministe de détection des rejets de factures sur un benchmark de 81 factures. Diagnostic d'une dérive de version GPT sur Azure (96 % → 59-72 %), analyse des faux positifs, et architecture hybride adoptée : règles déterministes pour les motifs structurés, LLM pour les motifs sémantiques. Référentiel de 24 codes de rejet construit.",
+        'exp.ramsay.b2.desc': "J'ai piloté un pipeline hybride LLM + Python déterministe de détection des rejets de factures sur un benchmark de 81 factures. Diagnostic d'une dérive de version GPT sur Azure (96 % → 59-72 %), analyse des faux positifs, et j'ai fait adopter l'architecture hybride que je recommandais : règles déterministes pour les motifs structurés, LLM pour les motifs sémantiques. J'ai construit le référentiel de 24 codes de rejet.",
         'exp.ramsay.b3.title': 'ML prédictif des rejets de facturation',
-        'exp.ramsay.b3.desc': "Détection prédictive des factures à risque de rejet : XGBoost retenu face au fine-tuning LLM pour l'auditabilité, le coût et la reproductibilité, avec explicabilité SHAP. Données relationnelles de la base factures répliquée, cible Azure ADLS Gen2, scoring batch et exposition FastAPI.",
+        'exp.ramsay.b3.desc': "J'ai piloté la détection prédictive des factures à risque de rejet : j'ai tranché en faveur de XGBoost face au fine-tuning LLM pour l'auditabilité, le coût et la reproductibilité, avec explicabilité SHAP. Données relationnelles de la base factures répliquée, cible Azure ADLS Gen2, scoring batch et exposition FastAPI.",
         'exp.ramsay.b4.title': 'Moteur de financement hospitalier (GHM / PMSI)',
-        'exp.ramsay.b4.desc': "Moteur Python complet de groupage GHM (règles nationales 2026) : parsing des formats positionnels, actes classants, niveaux de sévérité, valorisation T2A avec suppléments — plus un framework de détection du sous-codage pour la récupération de recettes. La preuve que je peux absorber un système réglementaire national et le ré-implémenter depuis les specs officielles.",
+        'exp.ramsay.b4.desc': "Responsable d'un moteur Python complet de groupage GHM (règles nationales 2026) : parsing des formats positionnels, actes classants, niveaux de sévérité, valorisation T2A avec suppléments — plus un framework de détection du sous-codage que j'ai conçu pour la récupération de recettes. La preuve que je peux absorber un système réglementaire national et le ré-implémenter depuis les specs officielles.",
         'exp.ramsay.b5.title': 'Plateforme Azure & veille automatisée',
-        'exp.ramsay.b5.desc': "Système de veille automatisée des financements publics, architecture validée avec l'architecte Azure du client : PostgreSQL + pgvector (HNSW, embeddings 3072 dim.), Bing Grounding, Key Vault CSI, déploiement Helm + ArgoCD sur AKS. Documents de cadrage livrés en anglais et en français.",
+        'exp.ramsay.b5.desc': "Responsable de l'architecture d'un système de veille automatisée des financements publics, validée avec l'architecte Azure du client : PostgreSQL + pgvector (HNSW, embeddings 3072 dim.), Bing Grounding, Key Vault CSI, déploiement Helm + ArgoCD sur AKS. J'ai rédigé les documents de cadrage en anglais et en français.",
         'exp.ramsay.b6.title': 'Master Data Management (MDM)',
-        'exp.ramsay.b6.desc': "Participation à un projet de Master Data Management : alignement et dédoublonnage des données de référence entre les systèmes du groupe, définition des golden records et des règles de qualité de données pour alimenter les pipelines de facturation et de codage en données maîtres propres et cohérentes.",
+        'exp.ramsay.b6.desc': "J'ai piloté un chantier de Master Data Management : alignement et dédoublonnage des données de référence entre les systèmes du groupe, définition des golden records et des règles de qualité de données qui alimentent les pipelines de facturation et de codage en données maîtres propres et cohérentes.",
         'exp.ramsay.b7.title': 'Reporting Power BI',
-        'exp.ramsay.b7.desc': "Réalisation de rapports décisionnels sous Power BI : modélisation de données, mesures DAX et tableaux de bord interactifs offrant à la Direction Data et aux équipes métier une lecture claire de la facturation, des rejets et de la performance de codage.",
+        'exp.ramsay.b7.desc': "J'ai porté le reporting décisionnel sous Power BI : modélisation des données, mesures DAX et tableaux de bord interactifs offrant à la Direction Data et aux équipes métier une lecture claire de la facturation, des rejets et de la performance de codage.",
         'exp.chanel.sector': 'Luxe · RH',
         'exp.chanel.title': 'Consultant IA — Mission Chanel',
         'exp.chanel.org': 'Maison de luxe internationale — agents GenAI au service de la fonction RH / talents',
         'exp.chanel.b1.title': 'Agents IA pour les fiches de poste',
-        'exp.chanel.b1.desc': "Conception et déploiement d'agents IA sur Copilot Studio pour créer et reformater les fiches de poste : gabarits, ton et structure standardisés, permettant aux recruteurs et managers de générer des annonces cohérentes et fidèles à la marque en quelques minutes plutôt qu'à partir d'une page blanche.",
+        'exp.chanel.b1.desc': "Responsable de la conception et du déploiement d'agents IA sur Copilot Studio pour créer et reformater les fiches de poste : gabarits, ton et structure standardisés, permettant aux recruteurs et managers de générer des annonces cohérentes et fidèles à la marque en quelques minutes plutôt qu'à partir d'une page blanche.",
         'exp.chanel.chip': 'Automatisation RH',
         'exp.gis.sector': 'Assurance',
         'exp.gis.title': "Consultant IA — Cas d'usage SIG pour l'assurance",
         'exp.gis.org': "Systèmes d'Information Géographique (SIG) appliqués au secteur de l'assurance",
         'exp.gis.b1.title': "Cas d'usage SIG pour l'assurance",
-        'exp.gis.b1.desc': "Construction d'une série de cas d'usage SIG (Système d'Information Géographique) pour le domaine de l'assurance — analyse de risque géospatiale, cartographie de l'exposition et scénarios de tarification territoriale — transformant la donnée de localisation en valeur métier concrète pour les assureurs.",
+        'exp.gis.b1.desc': "J'ai piloté une série de cas d'usage SIG (Système d'Information Géographique) pour le domaine de l'assurance — analyse de risque géospatiale, cartographie de l'exposition et scénarios de tarification territoriale — en cadrant comment la donnée de localisation devient une valeur métier concrète pour les assureurs.",
         'exp.gis.b2.title': 'Interface de valeur adaptée au client',
-        'exp.gis.b2.desc': "Conception et développement d'une interface présentant ces cas d'usage adaptés à chaque prospect : filtrés selon son profil et son secteur, avec des gains dimensionnés par rapport à son chiffre d'affaires — une démonstration personnalisée et prête pour la vente du ROI du SIG.",
+        'exp.gis.b2.desc': "Responsable de la conception et du développement d'une interface présentant ces cas d'usage adaptés à chaque prospect : filtrés selon son profil et son secteur, avec des gains dimensionnés par rapport à son chiffre d'affaires — une démonstration personnalisée et prête pour la vente du ROI du SIG.",
         'exp.gis.chip1': 'Géospatial', 'exp.gis.chip2': 'Assurance', 'exp.gis.chip3': 'Interface ROI',
         'exp.platform.sector': 'R&D interne',
         'exp.platform.title': 'AI Engineer — Plateforme agentique maison',
         'exp.platform.org': "Plateforme agentique interne construite de A à Z, propulsée par des agents IA",
         'exp.platform.b1.title': 'Matching offre ↔ consultant',
-        'exp.platform.b1.desc': "Plateforme agentique interne mettant en correspondance une offre entrante avec le vivier de consultants pour faire remonter le profil le plus adapté : recherche sémantique sur les compétences et l'expérience (RAG, index FAISS) plutôt qu'un staffing par mots-clés.",
+        'exp.platform.b1.desc': "J'ai piloté une plateforme agentique interne mettant en correspondance une offre entrante avec le vivier de consultants pour faire remonter le profil le plus adapté : recherche sémantique sur les compétences et l'expérience (RAG, index FAISS) plutôt qu'un staffing par mots-clés.",
         'exp.platform.b2.title': 'Reformatage automatique du CV',
-        'exp.platform.b2.desc': "Des agents IA qui reformatent automatiquement le CV d'un consultant par rapport à une offre donnée — réorganisation et reformulation de l'expérience pertinente vis-à-vis de l'opportunité, pour produire des CV sur-mesure en quelques secondes au lieu de le faire à la main.",
+        'exp.platform.b2.desc': "J'ai conçu des agents IA qui reformatent automatiquement le CV d'un consultant par rapport à une offre donnée — réorganisation et reformulation de l'expérience pertinente vis-à-vis de l'opportunité, pour produire des CV sur-mesure en quelques secondes au lieu de le faire à la main.",
         'exp.platform.chip1': 'Matching sémantique', 'exp.platform.chip2': 'Génération de CV',
         'exp.degaine.sector': 'Construction & Patrimoine',
         'exp.degaine.title': 'Consultant IA — Mission DEGAINE (VINCI Construction)',
         'exp.degaine.org': 'Filiale VINCI spécialisée dans la restauration de monuments historiques classés',
         'exp.degaine.b1.title': "Veille automatisée d'appels d'offres publics",
-        'exp.degaine.b1.desc': "Système de veille remplaçant un abonnement payant : collecte via les API BOAMP/TED, triage LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs du filtrage par mots-clés, scoring go/no-go des consultations patrimoine.",
+        'exp.degaine.b1.desc': "J'ai piloté un système de veille remplaçant un abonnement payant : collecte via les API BOAMP/TED, triage LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs du filtrage par mots-clés, et un scoring go/no-go des consultations patrimoine que j'ai défini.",
         'exp.degaine.b2.title': 'Atelier IA agentique — pré-chiffrage',
-        'exp.degaine.b2.desc': "Préparation et animation d'un atelier client démontrant l'IA agentique (Claude) sur le pré-chiffrage d'un DCE de restauration : skill de chiffrage dédié, bordereau de prix de 33 lignes, deck de restitution — démo sur le CCTP réel d'un monument classé.",
+        'exp.degaine.b2.desc': "J'ai porté et animé un atelier client démontrant l'IA agentique (Claude) sur le pré-chiffrage d'un DCE de restauration : j'ai construit un skill de chiffrage dédié, un bordereau de prix de 33 lignes et le deck de restitution — démo sur le CCTP réel d'un monument classé.",
         'exp.degaine.chip': 'API marchés publics',
         'exp.insa.sector': 'Projet certifié',
         'exp.insa.title': 'Mission de consulting — Migration de données & KPI',
         'exp.insa.org': 'Projet certifié mené en conditions réelles pour un client',
-        'exp.insa.desc': "Réalisation d'un Proof of Concept de migration des données vers une base propre, structurée et documentée (modélisation, nettoyage, règles de transformation), puis implémentation des calculs de KPI avec restitution finale au client.",
+        'exp.insa.desc': "J'ai piloté un Proof of Concept de migration des données vers une base propre, structurée et documentée (modélisation, nettoyage, règles de transformation), puis j'ai porté les calculs de KPI jusqu'à la restitution finale au client.",
         'exp.insa.chip1': 'Modélisation',
         'exp.edu.title': "Diplôme d'ingénieur — Informatique & TI",
         'exp.edu.org': "Grande école d'ingénieurs",
