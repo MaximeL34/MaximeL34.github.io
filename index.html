@@ -940,7 +940,7 @@
     <h1 class="hero-title" data-i18n="hero.title">I build AI systems<br>that ship — <span class="serif">in any industry.</span></h1>
 
     <p class="hero-sub" data-i18n="hero.sub">
-      <strong>AI Engineer</strong> — I take LLM and ML systems from a blank page to production on Kubernetes: <strong>agents, document-extraction pipelines, hybrid LLM + rules engines, evaluation loops</strong>. Hospital billing one quarter, heritage restoration tenders the next — the sector changes, the delivery doesn't.
+      <strong>AI Engineer</strong> — I take LLM and ML systems from a blank page to production on Kubernetes. Healthcare, construction, insurance, luxury: the sector changes, the delivery doesn't.
     </p>
 
     <div class="hero-roles">
@@ -948,7 +948,7 @@
     </div>
 
     <div class="hero-buttons">
-      <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">See my work</a>
+      <a href="#systems" class="btn btn-primary" data-i18n="hero.cta1">See my work</a>
       <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Get in touch</a>
       <a class="btn btn-ghost" id="downloadCV" href="Maxime_Laurent_Resume.pdf" download="Maxime_Laurent_Resume.pdf"><svg class="i"><use href="#i-download"/></svg><span data-i18n="hero.cta3">Resume</span></a>
     </div>
@@ -999,16 +999,13 @@
       <div class="glass about-text reveal">
         <p class="lead" data-i18n="about.lead">My edge isn't one domain — it's the speed at which I <span class="serif">master a new one.</span></p>
         <p data-i18n="about.p1">
-          I'm an <strong>AI Data Engineer</strong> at Talan (Paris) and an engineering graduate of INSA Rouen Normandie — in practice, the AI engineer who owns the system end to end. I've shipped AI solutions across <strong>healthcare, construction & heritage, insurance and luxury</strong> — industries with nothing in common except how much their rules matter.
+          <strong>AI Data Engineer</strong> at Talan (Paris), engineering graduate of INSA Rouen Normandie. For Europe's leading private hospital group I run production AI on medical coding and billing — a <strong>2.2M-stays-a-year</strong> scope — and I've delivered for VINCI Construction, Chanel and insurers.
         </p>
         <p data-i18n="about.p2">
-          In healthcare, I went from zero to running production systems on one of the most regulated data domains in France — medical coding and hospital billing: a billing-rejection platform running daily on Azure Kubernetes with its own evaluation loop, multi-LLM coding agents held to a verbatim-evidence contract, and clinical document extraction at under a dollar per thousand documents — over a <strong>2.2M-stays-per-year</strong> scope. In construction, I automated public tender monitoring and cost pre-estimation for a VINCI subsidiary restoring historical monuments.
-        </p>
-        <p data-i18n="about.p3">
-          Same method every time: <strong>immerse in the domain, build with the right tool</strong> — LLM, classic ML, or plain deterministic code — <strong>and ship to production</strong> with the audit trail, compliance and documentation that regulated industries demand.
+          One rule everywhere: <strong>the LLM reads, deterministic code decides</strong>. Accuracy and cost are measured, not assumed.
         </p>
         <p data-i18n="about.p4">
-          Melbourne isn't a guess. I spent six months there in 2024 as an exchange student at <strong>RMIT University</strong>, and I've wanted to come back and build there ever since.
+          Melbourne isn't a guess: I studied at <strong>RMIT University</strong> in 2024, and I'm coming back to build there.
         </p>
       </div>
       <div class="about-side">
@@ -1016,14 +1013,14 @@
           <div class="ico"><svg class="i"><use href="#i-zap"/></svg></div>
           <div>
             <h4 data-i18n="about.c1.title">Fast domain immersion</h4>
-            <p data-i18n="about.c1.desc">Regulated healthcare billing, public procurement law, heritage cost estimation — learned on the job, delivered in weeks</p>
+            <p data-i18n="about.c1.desc">A new regulated domain, in production within weeks</p>
           </div>
         </div>
         <div class="glass info-card reveal" data-delay="2">
           <div class="ico"><svg class="i"><use href="#i-grad"/></svg></div>
           <div>
             <h4>INSA Rouen Normandie</h4>
-            <p data-i18n="about.c2.desc">MSc-level engineering degree — Computer science & information technology</p>
+            <p data-i18n="about.c2.desc">MSc-level engineering degree — Computer Science & IT</p>
           </div>
         </div>
         <div class="glass info-card reveal" data-delay="3">
@@ -1045,67 +1042,44 @@
     </div>
 
     <div class="bento">
-      <div class="bento-card wide reveal">
-        <div class="big" data-i18n="exp2.hero">One profile, <span class="serif">full stack:</span><br>from LLM orchestration to Kubernetes deployment.</div>
-        <p data-i18n="exp2.hero.desc">I carry this end to end: framing it with the business, building the models, shipping them to the cloud. Nothing gets lost in translation between teams — the kind of range lean AI teams are hiring for.</p>
-      </div>
-
-      <div class="bento-card reveal" data-delay="1">
+      <div class="bento-card reveal">
         <div class="ico"><svg class="i"><use href="#i-bot"/></svg></div>
         <h3 data-i18n="exp2.b1.title">LLM systems & agents</h3>
-        <p data-i18n="exp2.b1.desc">Structured extraction with cited evidence, agents with tool use, RAG, multi-LLM evaluation, pseudonymisation — and one rule: the LLM reads, deterministic code decides. Measured accuracy and cost, not demos.</p>
+        <p data-i18n="exp2.b1.desc">Structured extraction with cited evidence, agents with tool use, RAG, multi-LLM evaluation.</p>
         <div class="chips">
-          <span class="chip">Azure OpenAI</span><span class="chip">Anthropic</span><span class="chip">Mistral</span>
-          <span class="chip">LangGraph</span><span class="chip">RAG · FAISS · pgvector</span><span class="chip">Open WebUI</span><span class="chip">Ollama</span>
-        </div>
-      </div>
-
-      <div class="bento-card reveal" data-delay="2">
-        <div class="ico"><svg class="i"><use href="#i-chart"/></svg></div>
-        <h3 data-i18n="exp2.b2.title">Machine learning in production</h3>
-        <p data-i18n="exp2.b2.desc">Predictive scoring on relational data, explainability for regulated environments, evaluation against real outcomes, honest model choices — XGBoost over LLM fine-tuning when auditability and cost say so.</p>
-        <div class="chips">
-          <span class="chip">Python</span><span class="chip">XGBoost</span><span class="chip">SHAP</span>
-          <span class="chip">FastAPI</span><span class="chip">SQL</span><span class="chip">Pandas</span>
+          <span class="chip">Azure OpenAI</span><span class="chip">Claude</span><span class="chip">Mistral</span>
+          <span class="chip">LangGraph</span><span class="chip">RAG · pgvector</span>
         </div>
       </div>
 
       <div class="bento-card reveal" data-delay="1">
+        <div class="ico"><svg class="i"><use href="#i-chart"/></svg></div>
+        <h3 data-i18n="exp2.b2.title">Machine learning in production</h3>
+        <p data-i18n="exp2.b2.desc">Predictive scoring, explainability, evaluation against real outcomes.</p>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">XGBoost · SHAP</span>
+          <span class="chip">FastAPI</span><span class="chip">SQL</span>
+        </div>
+      </div>
+
+      <div class="bento-card reveal">
         <div class="ico"><svg class="i"><use href="#i-cloud"/></svg></div>
         <h3 data-i18n="exp2.b3.title">Cloud & MLOps on Azure</h3>
-        <p data-i18n="exp2.b3.desc">Systems designed with client architects and actually deployed: AKS workloads and CronJobs, GitOps with Helm + Argo CD, managed identities, API-first data access, vector databases.</p>
+        <p data-i18n="exp2.b3.desc">AKS workloads, GitOps with Helm + Argo CD, managed identities, vector databases.</p>
         <div class="chips">
           <span class="chip">Azure · AKS</span><span class="chip">Helm · Argo CD</span><span class="chip">Docker</span>
-          <span class="chip">Azure SQL · Blob</span><span class="chip">PostgreSQL · pgvector</span><span class="chip">Key Vault</span><span class="chip">n8n</span>
+          <span class="chip">PostgreSQL</span>
         </div>
       </div>
 
-      <div class="bento-card reveal" data-delay="2">
+      <div class="bento-card reveal" data-delay="1">
         <div class="ico"><svg class="i"><use href="#i-compass"/></svg></div>
         <h3 data-i18n="exp2.b4.title">Consulting-grade delivery</h3>
-        <p data-i18n="exp2.b4.desc">Framing documents in English and French, client workshops, specifications, compliance by design (health-data hosting, GDPR) — engineering that stakeholders can sign off on.</p>
+        <p data-i18n="exp2.b4.desc">Client workshops, framing documents, GDPR and health-data compliance.</p>
         <div class="chips">
-          <span class="chip" data-i18n="exp2.b4.chip1">Framing & specs</span><span class="chip" data-i18n="exp2.b4.chip2">Client workshops</span>
+          <span class="chip" data-i18n="exp2.b4.chip2">Client workshops</span>
           <span class="chip">GDPR</span><span class="chip" data-i18n="exp2.b4.chip3">Bilingual EN/FR</span>
         </div>
-      </div>
-    </div>
-
-    <div class="method">
-      <div class="method-step reveal">
-        <div class="n">STEP 01</div>
-        <h4 data-i18n="method.s1.title">Immerse</h4>
-        <p data-i18n="method.s1.desc">I learn your domain's rules, vocabulary and constraints as fast as your codebase — enough to ask the right questions and hold a real conversation with your experts.</p>
-      </div>
-      <div class="method-step reveal" data-delay="1">
-        <div class="n">STEP 02</div>
-        <h4 data-i18n="method.s2.title">Build</h4>
-        <p data-i18n="method.s2.desc">The right tool for the problem — LLM, classic ML or deterministic code — benchmarked against real data, never against a slideware promise.</p>
-      </div>
-      <div class="method-step reveal" data-delay="2">
-        <div class="n">STEP 03</div>
-        <h4 data-i18n="method.s3.title">Ship</h4>
-        <p data-i18n="method.s3.desc">Production on your cloud, with explainability, compliance and documentation — solutions that survive the handover.</p>
       </div>
     </div>
   </section>
@@ -1141,148 +1115,31 @@
     <div class="section-head reveal">
       <span class="kicker" data-i18n="exp.kicker">04 · Experience</span>
       <h2 data-i18n="exp.title">Where I've <span class="serif">delivered</span></h2>
-      <p class="sub" data-i18n="exp.sub">Several industries, one employer, production workstreams from day one.</p>
     </div>
 
     <div class="timeline">
-      <!-- Ramsay -->
+      <!-- Talan -->
       <div class="tl-item reveal">
-        <span class="tl-meta">2025 — <span data-i18n="exp.now">Present</span> · <span data-i18n="exp.ramsay.sector">Healthcare</span></span>
-        <h3 data-i18n="exp.ramsay.title">AI Data Engineer — Ramsay Santé engagement</h3>
-        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.ramsay.org">Europe's leading private hospital group — parallel AI workstreams sponsored by the client's Data Office, over a ~2.2M inpatient-stays-per-year scope</span></p>
+        <span class="tl-meta">2025 — <span data-i18n="exp.now">Present</span></span>
+        <h3 data-i18n="exp.talan.title">AI Data Engineer — Talan</h3>
+        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.talan.org">IT consulting, Paris — four industries, production workstreams from day one</span></p>
         <div class="tl-body">
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b1.title">Billing-rejection platform on Azure (AKS)</span></h4>
-            <p data-i18n="exp.ramsay.b1.desc">Designed and shipped the platform that flags invoices likely to be rejected by the national health insurer before they are sent: a hybrid scoring API (deterministic rules engine naming the rejection reason + XGBoost risk score with SHAP), an Azure SQL data model (14 tables), a dedicated data-access API (cursor pagination, one managed identity per use case — no database secret in the orchestrator), n8n-orchestrated daily analysis and a role-based review app for billing clerks. Deployed on AKS with Helm + Argo CD; runs daily on 3 pilot hospitals. A CronJob scores every prediction against the insurer's actual verdict, so precision is measured in production, not assumed.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.talan.b1.title">Ramsay Santé · healthcare</span></h4>
+            <p data-i18n="exp.talan.b1.desc">Billing-rejection platform live on AKS, multi-LLM medical coding at 92% vs an 80% human baseline, clinical document extraction at US$0.81 per 1,000 documents.</p>
           </div>
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b2.title">LLM evaluation on billing: drift, hybrid design, honest model choice</span></h4>
-            <p data-i18n="exp.ramsay.b2.desc">Before the platform, owned the 81-invoice benchmark behind it: diagnosed a GPT model-version drift on Azure (80% → 59-72%), analysed false-positive patterns and drove adoption of the hybrid architecture I recommended — deterministic rules for structured rejection reasons, LLM for semantic ones. Built the 24-code rejection reference base and chose XGBoost over LLM fine-tuning for auditability, cost and reproducibility.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.talan.b2.title">DEGAINE (VINCI Construction) · heritage restoration</span></h4>
+            <p data-i18n="exp.talan.b2.desc">LLM tender watch that replaced a paid subscription; client workshop on agentic cost pre-estimation.</p>
           </div>
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b3.title">AI-assisted medical coding: benchmark, then three audit agents</span></h4>
-            <p data-i18n="exp.ramsay.b3.desc">Owned the multi-LLM ICD-10 coding pipeline end to end: GPT, Gemini, Mistral, Grok and Claude benchmarked with a weighted hierarchical scoring I designed, RAG (FAISS) and a React validation interface for medical coders — 92% accuracy on the primary diagnosis vs an 80% human baseline in the pilot. Then built three audit agents on top (DRG revaluation, record completeness, coding quality) under a strict evidence contract: a proposal that doesn't quote the patient record verbatim is rejected. 89% recall on missing pathology reports over 400 stays; 83% of labelled coding-quality targets detected. Containerised for AKS (web app, chat, scheduled pipeline) with state on Azure Blob Storage.</p>
+            <h4><span class="dot"></span><span data-i18n="exp.talan.b3.title">Talan internal products</span></h4>
+            <p data-i18n="exp.talan.b3.desc">Multi-tenant change-management SaaS from specification to production; semantic offer-to-consultant matching.</p>
           </div>
           <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b4.title">Clinical document extraction</span></h4>
-            <p data-i18n="exp.ramsay.b4.desc">Day-hospital eligibility: an LLM extracts strict JSON, with a verbatim quote for every value, from emergency and pre-anaesthesia records, then deterministic rules apply the clinical thresholds — the LLM reads, it doesn't decide. Validated on a pilot hospital's real corpus at a measured US$0.81 per 1,000 documents, with a follow-up app for nurse coordinators (event-sourced status, evidence view, monitoring). Same pattern reused for a France 2030 research programme: 22 regulatory variables extracted from 157 oncology stays, each with its cited source (feasibility study).</p>
+            <h4><span class="dot"></span><span data-i18n="exp.talan.b4.title">Chanel · HR — and insurance</span></h4>
+            <p data-i18n="exp.talan.b4.desc">Copilot Studio agents for job descriptions; geospatial use cases with a sales-ready ROI interface.</p>
           </div>
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b5.title">Privacy pipeline for health data</span></h4>
-            <p data-i18n="exp.ramsay.b5.desc">Owned the de-identification that runs before any LLM call: OCR, NER (EDS-Pseudo, from the Paris public hospitals) and a regex safety net for what the model misses, in a fault-tolerant pipeline — per-document timeouts, resumable runs, incremental sync to Azure with weekly-rotated delegation tokens. Only de-identified documents ever leave the client's server.</p>
-          </div>
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b6.title">Enterprise agents on the client's internal AI</span></h4>
-            <p data-i18n="exp.ramsay.b6.desc">Built agents on the group's internal assistant (Open WebUI) for the Finance department: one compiles and summarises 81 monthly site reports, with every quoted figure automatically checked against its source; another consolidates 26 provision workbooks into a controlled national Excel, reconciled with the group consolidation system, plus a two-page briefing — personal names never reach the model. Also built documentation agents that draft use-case framing sheets and flag gaps instead of inventing.</p>
-          </div>
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.ramsay.b7.title">Architecture, platform strategy & data foundations</span></h4>
-            <p data-i18n="exp.ramsay.b7.desc">Architected an automated public-funding watch validated with the client's Azure architect — AKS CronJob, PostgreSQL + pgvector (HNSW, 3072-dim embeddings) for semantic de-duplication, Bing Grounding, Key Vault CSI, Helm + Argo CD across 5 environments. Benchmarked Dataiku, Databricks and Azure AI Foundry for the group's AI platform under health-data hosting constraints. Drove the Master Data Management workstream and Power BI reporting, and built an Azure Document Intelligence tool that splits scanned billing batches into ~900 single invoices.</p>
-          </div>
-        </div>
-        <div class="chips">
-          <span class="chip">Python</span><span class="chip">Azure AI Foundry</span><span class="chip">AKS · Helm · Argo CD</span><span class="chip">Azure SQL</span><span class="chip">FastAPI</span><span class="chip">XGBoost · SHAP</span><span class="chip">LangGraph</span><span class="chip">RAG</span><span class="chip">Open WebUI</span><span class="chip">n8n</span><span class="chip">React</span><span class="chip">Docker</span><span class="chip">Power BI</span>
-        </div>
-      </div>
-
-      <!-- Talan internal products -->
-      <div class="tl-item reveal">
-        <span class="tl-meta">2025 — 2026 · <span data-i18n="exp.platform.sector">Internal products</span></span>
-        <h3 data-i18n="exp.platform.title">AI Engineer — Talan internal products</h3>
-        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.platform.org">Products built from scratch for Talan's teams and clients</span></p>
-        <div class="tl-body">
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.platform.b3.title">Multi-tenant change-management SaaS</span></h4>
-            <p data-i18n="exp.platform.b3.desc">Built a change-management SaaS from the specification to production: pooled multi-tenancy with strict tenant isolation, scoped role-based access and a super-admin console, GDPR export and erasure, gamified action plans and training paths, an in-app audit mode that turns client feedback into tickets, S3-compatible storage migrated with three minutes of downtime. In client acceptance with real users; Entra ID SSO rollout planned on Azure.</p>
-          </div>
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.platform.b1.title">Offer ↔ consultant matching</span></h4>
-            <p data-i18n="exp.platform.b1.desc">Owned an in-house agentic platform matching an incoming offer to the pool of consultants to surface the best-fit profile: semantic search over consultant skills and experience (RAG, FAISS index) instead of keyword staffing.</p>
-          </div>
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.platform.b2.title">Automatic CV reformatting</span></h4>
-            <p data-i18n="exp.platform.b2.desc">Owned the AI agents that automatically reformat a consultant's CV against a given offer — re-ordering and rephrasing the relevant experience to the opportunity, so tailored CVs are produced in seconds rather than by hand.</p>
-          </div>
-        </div>
-        <div class="chips">
-          <span class="chip" data-i18n="exp.platform.chip3">Multi-tenant SaaS</span><span class="chip">RBAC · GDPR</span>
-          <span class="chip">AI Agents</span><span class="chip">RAG · FAISS</span>
-          <span class="chip" data-i18n="exp.platform.chip1">Semantic matching</span><span class="chip" data-i18n="exp.platform.chip2">CV generation</span>
-        </div>
-      </div>
-
-      <!-- DEGAINE -->
-      <div class="tl-item reveal">
-        <span class="tl-meta">2026 · <span data-i18n="exp.degaine.sector">Construction & Heritage</span></span>
-        <h3 data-i18n="exp.degaine.title">AI Consultant — DEGAINE engagement (VINCI Construction)</h3>
-        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.degaine.org">VINCI subsidiary specialized in the restoration of listed historical monuments</span></p>
-        <div class="tl-body">
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.degaine.b1.title">Automated public tender monitoring</span></h4>
-            <p data-i18n="exp.degaine.b1.desc">Owned a tender-watch system that replaced a paid subscription: collection through the French/EU public procurement APIs (BOAMP/TED), LLM triage (Mistral Small on Azure AI Foundry) to kill keyword-filter false positives, and a go/no-go scoring of heritage restoration tenders I defined.</p>
-          </div>
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.degaine.b2.title">Agentic AI workshop — cost pre-estimation</span></h4>
-            <p data-i18n="exp.degaine.b2.desc">Owned and led a client workshop demonstrating agentic AI (Claude) on pre-estimating a heritage restoration tender package: built a dedicated estimation skill, a 33-line unit price schedule and the delivery deck — live demo on the real specification of a listed monument.</p>
-          </div>
-        </div>
-        <div class="chips">
-          <span class="chip">Mistral</span><span class="chip">Azure AI Foundry</span><span class="chip">Claude · Agents</span>
-          <span class="chip" data-i18n="exp.degaine.chip">Public procurement APIs</span>
-        </div>
-      </div>
-
-      <!-- Chanel -->
-      <div class="tl-item reveal">
-        <span class="tl-meta">2025 · <span data-i18n="exp.chanel.sector">Luxury · HR</span></span>
-        <h3 data-i18n="exp.chanel.title">AI Consultant — Chanel engagement</h3>
-        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.chanel.org">Global luxury house — GenAI agents supporting the HR / talent function</span></p>
-        <div class="tl-body">
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.chanel.b1.title">AI agents for job descriptions</span></h4>
-            <p data-i18n="exp.chanel.b1.desc">Owned the design and rollout of AI agents on Copilot Studio to create and reformat job descriptions: standardized templates, tone and structure, so recruiters and managers generate consistent, on-brand postings in minutes instead of starting from a blank page.</p>
-          </div>
-        </div>
-        <div class="chips">
-          <span class="chip">Copilot Studio</span><span class="chip">GenAI Agents</span>
-          <span class="chip" data-i18n="exp.chanel.chip">HR automation</span>
-        </div>
-      </div>
-
-      <!-- Insurance / GIS -->
-      <div class="tl-item reveal">
-        <span class="tl-meta">2025 · <span data-i18n="exp.gis.sector">Insurance</span></span>
-        <h3 data-i18n="exp.gis.title">AI Consultant — GIS use cases for insurance</h3>
-        <p class="org"><strong>Talan</strong> · <span data-i18n="exp.gis.org">Geographic Information Systems (GIS) applied to the insurance sector</span></p>
-        <div class="tl-body">
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.gis.b1.title">GIS use cases for insurance</span></h4>
-            <p data-i18n="exp.gis.b1.desc">Owned a set of Geographic Information System (GIS) use cases for the insurance domain — geospatial risk analysis, exposure mapping and territorial pricing scenarios — framing how location data becomes concrete business value for insurers.</p>
-          </div>
-          <div class="tl-block">
-            <h4><span class="dot"></span><span data-i18n="exp.gis.b2.title">Client-adapted value interface</span></h4>
-            <p data-i18n="exp.gis.b2.desc">Owned the design and build of an interface that presents these use cases tailored to each prospect: filtered by their profile and sector, with expected gains scaled to their revenue (turnover) — a personalized, sales-ready demonstration of the ROI of GIS.</p>
-          </div>
-        </div>
-        <div class="chips">
-          <span class="chip">GIS · SIG</span><span class="chip" data-i18n="exp.gis.chip1">Geospatial</span>
-          <span class="chip" data-i18n="exp.gis.chip2">Insurance</span><span class="chip" data-i18n="exp.gis.chip3">ROI interface</span>
-        </div>
-      </div>
-
-      <!-- INSA consulting -->
-      <div class="tl-item reveal">
-        <span class="tl-meta">2024 — 2025 · <span data-i18n="exp.insa.sector">Certified project</span></span>
-        <h3 data-i18n="exp.insa.title">Consulting mission — Data migration & KPIs</h3>
-        <p class="org"><strong>INSA Rouen Normandie</strong> · <span data-i18n="exp.insa.org">Certified project carried out in real conditions for a client</span></p>
-        <div class="tl-body">
-          <div class="tl-block">
-            <p data-i18n="exp.insa.desc">Drove a Proof of Concept migrating data to a clean, structured and documented database (modeling, cleansing, transformation rules), then owned the KPI calculations on the migrated data through to final delivery to the client.</p>
-          </div>
-        </div>
-        <div class="chips">
-          <span class="chip">SQL</span><span class="chip" data-i18n="exp.insa.chip1">Data modeling</span>
-          <span class="chip">ETL</span><span class="chip">KPI</span>
         </div>
       </div>
 
@@ -1291,27 +1148,13 @@
         <span class="tl-meta">2020 — 2025</span>
         <h3 data-i18n="exp.edu.title">Engineering degree (MSc level) — Computer Science & IT</h3>
         <p class="org"><strong>INSA Rouen Normandie</strong> · <span data-i18n="exp.edu.org">French Grande École of engineering</span></p>
-        <div class="tl-body">
-          <div class="tl-block">
-            <p data-i18n="exp.edu.desc">Engineering curriculum in computer science and information technology: databases, algorithms, software development, statistics and data analysis, project management.</p>
-          </div>
-        </div>
       </div>
 
       <!-- RMIT exchange -->
       <div class="tl-item reveal">
-        <span class="tl-meta">2024 · <span data-i18n="exp.rmit.sector">University exchange</span></span>
-        <h3 data-i18n="exp.rmit.title">Semester abroad — RMIT University (Melbourne, Australia)</h3>
-        <p class="org"><strong>RMIT University</strong> · <span data-i18n="exp.rmit.org">6-month academic exchange during my engineering studies</span></p>
-        <div class="tl-body">
-          <div class="tl-block">
-            <p data-i18n="exp.rmit.desc">Six months living in Melbourne in 2024 as an exchange student at RMIT University, with every course taught in English: Machine Learning, Data Science, Cryptocurrency and Blockchain, Networks. It reinforced my AI and data foundations, and it's the reason Melbourne is where I'm heading next: I know the city, and I want to come back to work there.</p>
-          </div>
-        </div>
-        <div class="chips">
-          <span class="chip">Blockchain</span><span class="chip">Machine Learning</span>
-          <span class="chip">Data Science</span><span class="chip">Network</span>
-        </div>
+        <span class="tl-meta">2024</span>
+        <h3 data-i18n="exp.rmit.title">Exchange semester — RMIT University, Melbourne</h3>
+        <p class="org"><strong>RMIT University</strong> · <span data-i18n="exp.rmit.org">Six months in Melbourne, taught in English: Machine Learning, Data Science, Blockchain, Networks</span></p>
       </div>
     </div>
   </section>
@@ -1320,244 +1163,71 @@
   <section id="projects">
     <div class="section-head reveal">
       <span class="kicker" data-i18n="proj.kicker">05 · Work</span>
-      <h2 data-i18n="proj.title">Selected <span class="serif">projects</span></h2>
-      <p class="sub" data-i18n="proj.sub">GenAI, ML and data engineering applied to real business problems — filter by industry.</p>
-    </div>
-
-    <div class="filter-buttons reveal">
-      <button class="filter-btn active" data-filter="all" data-i18n="proj.filter.all">All</button>
-      <button class="filter-btn" data-filter="health" data-i18n="proj.filter.health">Healthcare</button>
-      <button class="filter-btn" data-filter="construction" data-i18n="proj.filter.construction">Construction</button>
-      <button class="filter-btn" data-filter="insurance" data-i18n="proj.filter.insurance">Insurance</button>
-      <button class="filter-btn" data-filter="enterprise" data-i18n="proj.filter.enterprise">Enterprise</button>
-      <button class="filter-btn" data-filter="academic" data-i18n="proj.filter.academic">Academic</button>
-      <button class="filter-btn" data-filter="personal" data-i18n="proj.filter.personal">Personal</button>
+      <h2 data-i18n="proj.title">More <span class="serif">work</span></h2>
+      <p class="sub" data-i18n="proj.sub">Six more, beyond the four systems above.</p>
     </div>
 
     <div class="projects-grid" id="projectsGrid">
-      <div class="project glass reveal" data-category="health">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-file"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
-        </div>
-        <div class="pm" data-i18n="proj.p3.m"><b>3</b> pilot hospitals · scored daily</div>
-        <h3 data-i18n="proj.p3.title">Billing-rejection platform on AKS</h3>
-        <p data-i18n="proj.p3.desc">Designed and shipped the platform flagging invoices at risk of rejection before they go out: rules engine + XGBoost scoring API, Azure SQL model, data-access API, n8n daily analysis and a clerk review app — on AKS with Helm + Argo CD. A daily job scores every prediction against the insurer's real verdict.</p>
-        <div class="chips"><span class="chip">AKS · Argo CD</span><span class="chip">XGBoost · SHAP</span><span class="chip">FastAPI</span><span class="chip" data-i18n="proj.p3.chip">Billing</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="health" data-delay="1">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-activity"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
-        </div>
-        <div class="pm" data-i18n="proj.p1.m"><b>92%</b> vs 80% human baseline</div>
-        <h3 data-i18n="proj.p1.title">AI-assisted medical coding & audit agents</h3>
-        <p data-i18n="proj.p1.desc">Owned the multi-LLM ICD-10 coding pipeline (5 models, hierarchical scoring I designed, RAG, React validation UI), then three audit agents — DRG revaluation, completeness, coding quality — that must quote the record verbatim or be rejected. 89% recall on missing pathology reports.</p>
-        <div class="chips"><span class="chip">LLM</span><span class="chip">Agents</span><span class="chip">RAG</span><span class="chip">React</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="health" data-delay="2">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-search"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
-        </div>
-        <div class="pm" data-i18n="proj.p19.m"><b>$0.81</b> per 1,000 documents</div>
-        <h3 data-i18n="proj.p19.title">Day-hospital eligibility extraction</h3>
-        <p data-i18n="proj.p19.desc">LLM structured extraction with cited evidence from emergency and pre-anaesthesia records, then deterministic rules for the clinical thresholds — the LLM reads, it doesn't decide. Validated on a pilot hospital's real corpus, with a follow-up app for nurse coordinators.</p>
-        <div class="chips"><span class="chip">Azure AI Foundry</span><span class="chip" data-i18n="proj.p19.chip">Structured output</span><span class="chip">Event sourcing</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="health">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-lock"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
-        </div>
-        <h3 data-i18n="proj.p2.title">Medical data pseudonymization</h3>
-        <p data-i18n="proj.p2.desc">Owned the patient-record de-identification that runs before any LLM call: OCR, NER model (EDS-Pseudo, Paris hospitals) and a regex safety net, in a resumable, fault-tolerant pipeline — the privacy prerequisite that made the AI coding work compliant.</p>
-        <div class="chips"><span class="chip">NER</span><span class="chip">Docker</span><span class="chip">Privacy · GDPR</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="health" data-delay="1">
+      <div class="project glass reveal">
         <div class="project-top">
           <div class="ico"><svg class="i"><use href="#i-sparkles"/></svg></div>
           <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
         <div class="pm" data-i18n="proj.p20.m"><b>81</b> reports → 1 checked synthesis</div>
         <h3 data-i18n="proj.p20.title">Finance reporting agents</h3>
-        <p data-i18n="proj.p20.desc">Agents on the client's internal AI (Open WebUI): 81 monthly site reports compiled and summarised with every quoted figure checked against its source; 26 provision workbooks consolidated into a controlled, reconciled Excel — names never reach the model.</p>
-        <div class="chips"><span class="chip">Open WebUI</span><span class="chip">Agents</span><span class="chip">Word · Excel</span></div>
+        <p data-i18n="proj.p20.desc">Agents on the client's internal AI compile 81 monthly site reports and 26 provision workbooks — every quoted figure checked against its source.</p>
+        <div class="chips"><span class="chip">Open WebUI</span><span class="chip">Agents</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="health" data-delay="2">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-activity"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
-        </div>
-        <h3 data-i18n="proj.p22.title">Oncology real-world data extraction</h3>
-        <p data-i18n="proj.p22.desc">Feasibility study for a France 2030 research programme: an LLM extracts the 22 regulatory variables of an early-access drug from 157 hospital stays, each with its cited source, plus a review interface comparing documents and extracted record.</p>
-        <div class="chips"><span class="chip">Mistral</span><span class="chip" data-i18n="proj.p22.chip">Extraction</span><span class="chip" data-i18n="proj.p22.chip2">Review UI</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="health">
+      <div class="project glass reveal" data-delay="1">
         <div class="project-top">
           <div class="ico"><svg class="i"><use href="#i-eye"/></svg></div>
           <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
         </div>
+        <div class="pm" data-i18n="proj.p7.m"><b>5</b> environments · GitOps</div>
         <h3 data-i18n="proj.p7.title">Public funding watch on Azure</h3>
-        <p data-i18n="proj.p7.desc">Architected and built an automated funding-call monitor replacing a Power Automate flow: Bing Grounding collection, pgvector semantic de-duplication (HNSW, 3072-dim embeddings), link validation, Key Vault CSI, Helm + Argo CD on AKS across 5 environments — validated with the client's Azure architect.</p>
-        <div class="chips"><span class="chip">pgvector</span><span class="chip">AKS</span><span class="chip">ArgoCD</span></div>
+        <p data-i18n="proj.p7.desc">Automated funding-call monitor on AKS, with pgvector semantic de-duplication — validated with the client's Azure architect.</p>
+        <div class="chips"><span class="chip">AKS · Argo CD</span><span class="chip">pgvector</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="health" data-delay="1">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-file"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
-        </div>
-        <h3 data-i18n="proj.p21.title">Document AI: invoice batch splitter</h3>
-        <p data-i18n="proj.p21.desc">Azure Document Intelligence tool that splits scanned billing batches into one PDF per invoice and renames them against the finance nomenclature — ~900 invoices processed, with page-count conservation checks and an OCR cache to never pay twice.</p>
-        <div class="chips"><span class="chip">Document Intelligence</span><span class="chip">OCR</span><span class="chip">Python</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="health" data-delay="2">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-db"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
-        </div>
-        <h3 data-i18n="proj.p14.title">Master Data Management (MDM)</h3>
-        <p data-i18n="proj.p14.desc">Drove the MDM workstream for the hospital group: reference-data alignment and de-duplication, golden records and the data-quality rules I defined, keeping the billing and coding pipelines fed with clean, consistent master data.</p>
-        <div class="chips"><span class="chip">MDM</span><span class="chip" data-i18n="proj.p14.chip">Data quality</span><span class="chip" data-i18n="proj.p14.chip2">Reference data</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="health">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-chart"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.health">Healthcare</span>
-        </div>
-        <h3 data-i18n="proj.p15.title">Power BI reporting</h3>
-        <p data-i18n="proj.p15.desc">Owned the BI reporting in Power BI: data modeling, DAX measures and interactive dashboards giving the Data Office a clear read on billing, rejections and coding performance.</p>
-        <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip" data-i18n="proj.p15.chip">Dashboards</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="construction" data-delay="1">
+      <div class="project glass reveal" data-delay="2">
         <div class="project-top">
           <div class="ico"><svg class="i"><use href="#i-landmark"/></svg></div>
           <span class="badge" data-i18n="proj.badge.construction">Construction</span>
         </div>
         <h3 data-i18n="proj.p8.title">LLM-powered public tender watch</h3>
-        <p data-i18n="proj.p8.desc">Owned a tender monitor that replaced a paid subscription: BOAMP/TED public procurement APIs, LLM triage (Mistral Small on Azure AI Foundry) to remove false positives, go/no-go scoring of heritage tenders.</p>
-        <div class="chips"><span class="chip">BOAMP · TED</span><span class="chip">Mistral</span><span class="chip">Azure</span></div>
+        <p data-i18n="proj.p8.desc">Public procurement APIs, LLM triage to remove keyword false positives, go/no-go scoring of heritage tenders.</p>
+        <div class="chips"><span class="chip">Mistral</span><span class="chip">Azure AI Foundry</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="construction" data-delay="2">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-calc"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.construction">Construction</span>
-        </div>
-        <h3 data-i18n="proj.p9.title">Agentic AI cost pre-estimation</h3>
-        <p data-i18n="proj.p9.desc">Owned and led a client workshop demonstrating agentic AI on pre-estimating a heritage restoration tender: dedicated estimation skill, 33-line unit price schedule — live demo on a listed monument's real specification.</p>
-        <div class="chips"><span class="chip">Claude · Agents</span><span class="chip" data-i18n="proj.p9.chip">Client workshop</span><span class="chip" data-i18n="proj.p9.chip2">Estimation</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="insurance">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-globe"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.insurance">Insurance</span>
-        </div>
-        <h3 data-i18n="proj.p16.title">GIS use cases for insurance</h3>
-        <p data-i18n="proj.p16.desc">Owned GIS use cases for insurers — geospatial risk, exposure mapping, territorial pricing — plus a client-adapted interface I built presenting each use case by profile and sector, with gains scaled to the prospect's revenue.</p>
-        <div class="chips"><span class="chip">GIS · SIG</span><span class="chip" data-i18n="proj.p16.chip">Geospatial</span><span class="chip" data-i18n="proj.p16.chip2">ROI interface</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="enterprise" data-delay="1">
+      <div class="project glass reveal">
         <div class="project-top">
           <div class="ico"><svg class="i"><use href="#i-cog"/></svg></div>
           <span class="badge" data-i18n="proj.badge.enterprise">Enterprise</span>
         </div>
         <h3 data-i18n="proj.p23.title">Multi-tenant change-management SaaS</h3>
-        <p data-i18n="proj.p23.desc">Built from specification to production: pooled multi-tenancy with strict tenant isolation, scoped RBAC, GDPR export and erasure, gamified action plans, in-app audit mode — in client acceptance with real users.</p>
-        <div class="chips"><span class="chip" data-i18n="proj.p23.chip">Multi-tenant</span><span class="chip">RBAC</span><span class="chip">GDPR</span></div>
+        <p data-i18n="proj.p23.desc">Strict tenant isolation, scoped RBAC, GDPR export and erasure — in client acceptance with real users.</p>
+        <div class="chips"><span class="chip" data-i18n="proj.p23.chip">Multi-tenant</span><span class="chip">RBAC · GDPR</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="enterprise" data-delay="2">
+      <div class="project glass reveal" data-delay="1">
         <div class="project-top">
           <div class="ico"><svg class="i"><use href="#i-bot"/></svg></div>
           <span class="badge" data-i18n="proj.badge.enterprise">Enterprise</span>
         </div>
-        <h3 data-i18n="proj.p17.title">Agentic staffing & CV platform</h3>
-        <p data-i18n="proj.p17.desc">Owned a home-made internal agentic platform: AI agents matching an offer to the best-fit consultant (RAG, FAISS index) and automatically reformatting a CV against that offer — tailored profiles in seconds instead of manual staffing.</p>
-        <div class="chips"><span class="chip">AI Agents</span><span class="chip">RAG · FAISS</span><span class="chip" data-i18n="proj.p17.chip">Matching</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="enterprise">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-sparkles"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.enterprise">Enterprise</span>
-        </div>
         <h3 data-i18n="proj.p18.title">AI agents for job descriptions</h3>
-        <p data-i18n="proj.p18.desc">Owned the Copilot Studio AI agents for a global luxury house (Chanel) that create and reformat job descriptions — consistent, on-brand postings generated in minutes instead of from a blank page.</p>
-        <div class="chips"><span class="chip">Copilot Studio</span><span class="chip">GenAI Agents</span><span class="chip" data-i18n="proj.p18.chip">HR</span></div>
+        <p data-i18n="proj.p18.desc">Copilot Studio agents that create and reformat job descriptions — consistent, on-brand postings in minutes.</p>
+        <div class="chips"><span class="chip">Copilot Studio</span><span class="chip">GenAI Agents</span></div>
       </div>
 
-      <div class="project glass reveal" data-category="academic" data-delay="1">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-db"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.academic">INSA · Certified</span>
-        </div>
-        <h3 data-i18n="proj.p10.title">Database migration POC</h3>
-        <p data-i18n="proj.p10.desc">Drove a certified consulting mission: data migration to a clean, structured, documented database, then owned the actionable KPIs for the client's business tracking.</p>
-        <div class="chips"><span class="chip">SQL</span><span class="chip">ETL</span><span class="chip">Consulting</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="personal" data-delay="1">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-activity"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.personal">Personal</span>
-        </div>
-        <div class="pm" data-i18n="proj.p25.m"><b>390+</b> tests · one capture = one git commit</div>
-        <h3 data-i18n="proj.p25.title">Fil — voice & meetings into a knowledge base</h3>
-        <p data-i18n="proj.p25.desc">A personal tool, self-hosted: a dictation or a recorded meeting becomes progress points, decisions and tasks, written to a git-versioned Markdown vault after I validate them. FastAPI, PostgreSQL as the job queue (no Redis), SvelteKit PWA with offline capture, native macOS recorder in Swift, transcription with diarisation and echo removal, an evaluation harness for the LLM step and a monthly cost cap enforced in code.</p>
-        <div class="chips"><span class="chip">FastAPI</span><span class="chip">SvelteKit</span><span class="chip">Swift</span><span class="chip">Voxtral · Mistral</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="personal" data-delay="2">
+      <div class="project glass reveal" data-delay="2">
         <div class="project-top">
           <div class="ico"><svg class="i"><use href="#i-db"/></svg></div>
           <span class="badge" data-i18n="proj.badge.personal">Personal</span>
         </div>
         <h3 data-i18n="proj.p24.title">Long-term memory for coding agents</h3>
-        <p data-i18n="proj.p24.desc">A Claude Code plugin I wrote: at session end the transcript is flattened locally (only what was typed and answered), sent over SSH with a key restricted to a single inbox, and consolidated on my server into per-project sheets — state, dated decisions, constraints, open points. At the next session start the right sheet is injected back, on any machine. Every update is a traceable git commit.</p>
-        <div class="chips"><span class="chip">Agents</span><span class="chip" data-i18n="proj.p24.chip">Context engineering</span><span class="chip">Hooks · Skills</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="personal">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-server"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.personal">Personal</span>
-        </div>
-        <h3 data-i18n="proj.p11.title">Self-hosted platform (homelab)</h3>
-        <p data-i18n="proj.p11.desc">The server everything above runs on: Docker Compose apps behind Traefik, published only through a Cloudflare Tunnel with Cloudflare Access in front of each app — no open port — admin over Tailscale, CrowdSec on exposed services, git-push deployments with health checks and separate prod/dev stacks. Plus a GPU box (RTX 5070 Ti, Ollama) to evaluate open-weight models before client use.</p>
-        <div class="chips"><span class="chip">Docker · Traefik</span><span class="chip">Cloudflare Tunnel</span><span class="chip">Tailscale</span><span class="chip">Ollama</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="personal" data-delay="1">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-home"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.personal">Personal</span>
-        </div>
-        <h3 data-i18n="proj.p12.title">Real estate market analysis</h3>
-        <p data-i18n="proj.p12.desc">Analyzed California housing prices: data exploration, key valuation drivers and trend visualization with Python.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Data Viz</span></div>
-      </div>
-
-      <div class="project glass reveal" data-category="personal" data-delay="2">
-        <div class="project-top">
-          <div class="ico"><svg class="i"><use href="#i-sparkles"/></svg></div>
-          <span class="badge" data-i18n="proj.badge.personal">Personal</span>
-        </div>
-        <h3 data-i18n="proj.p13.title">This portfolio</h3>
-        <p data-i18n="proj.p13.desc">100% handcrafted in vanilla HTML / CSS / JS: animated pipeline diagrams, ⌘K command palette, interactive particle network, 3D tilt cards, EN/FR bilingual, light/dark theme — hosted on GitHub Pages.</p>
-        <div class="chips"><span class="chip">HTML/CSS</span><span class="chip">JavaScript</span><span class="chip">GitHub Pages</span></div>
+        <p data-i18n="proj.p24.desc">A Claude Code plugin: each session is consolidated on my server into per-project sheets and re-injected at the next start, on any machine.</p>
+        <div class="chips"><span class="chip">Agents</span><span class="chip">Hooks · Skills</span></div>
       </div>
     </div>
   </section>
@@ -1572,7 +1242,7 @@
     <div class="glass contact-wrap reveal">
       <div class="contact-info">
         <h3 data-i18n="contact.sub">Hiring an AI Engineer <span class="serif">who ships?</span></h3>
-        <p data-i18n="contact.text">LLM systems, production ML, cloud data platforms — in your industry, whatever it is. Open to AI Engineer roles in Melbourne: I studied there at RMIT in 2024 and I'm coming back — relocating, available from March 2027. Fast reply guaranteed.</p>
+        <p data-i18n="contact.text">Open to AI Engineer roles in Melbourne — relocating, available from March 2027. Fast reply guaranteed.</p>
         <div class="clocks" aria-hidden="true">
           <span class="clock"><b>Melbourne</b><span id="clockMel"></span></span>
           <span class="clock"><b>Paris</b><span id="clockPar"></span></span>
@@ -1618,7 +1288,7 @@
         'nav.projects': 'Projets', 'nav.contact': 'Contact',
         'hero.badge': "AI Engineer · Ouvert aux postes à Melbourne",
         'hero.title': 'Je construis des systèmes IA<br>qui tournent — <span class="serif">dans tout secteur.</span>',
-        'hero.sub': "<strong>AI Engineer</strong> — je mène les systèmes LLM et ML de la page blanche à la production sur Kubernetes : <strong>agents, pipelines d'extraction documentaire, moteurs hybrides LLM + règles, boucles d'évaluation</strong>. Facturation hospitalière un trimestre, chiffrage de monuments historiques le suivant — le secteur change, le delivery reste.",
+        'hero.sub': "<strong>AI Engineer</strong> — je mène les systèmes LLM et ML de la page blanche à la production sur Kubernetes. Santé, construction, assurance, luxe : le secteur change, le delivery reste.",
         'hero.cta1': 'Voir mes projets', 'hero.cta2': 'Me contacter', 'hero.cta3': 'Version CV',
         'stats.sectors': 'secteurs livrés (et ce n’est pas fini)',
         'stats.projects': 'projets IA & data livrés',
@@ -1628,178 +1298,70 @@
         'about.kicker': '01 · Profil',
         'about.title': 'Multi-sectoriel, <span class="serif">par conception</span>',
         'about.lead': "Ma force n'est pas un domaine — c'est la vitesse à laquelle <span class=\"serif\">j'en maîtrise un nouveau.</span>",
-        'about.p1': "<strong>AI Data Engineer</strong> chez Talan (Paris) et ingénieur diplômé de l'INSA Rouen Normandie — en pratique, l'ingénieur IA qui porte le système de bout en bout. J'ai livré des solutions IA dans <strong>la santé, la construction & le patrimoine, l'assurance et le luxe</strong> — des secteurs qui n'ont rien en commun, sauf l'importance de leurs règles.",
-        'about.p2': "Dans la santé, je suis parti de zéro pour faire tourner des systèmes en production sur l'un des domaines les plus réglementés de France — codage médical et facturation hospitalière : une plateforme de détection des rejets de facturation qui tourne chaque jour sur Azure Kubernetes avec sa propre boucle d'évaluation, des agents de codage multi-LLM tenus à un contrat de preuve mot pour mot, et de l'extraction de documents cliniques à moins d'un dollar les mille documents — sur un périmètre de <strong>2,2 M de séjours par an</strong>. Dans la construction, j'ai automatisé la veille d'appels d'offres et le pré-chiffrage pour une filiale VINCI spécialisée dans les monuments historiques.",
-        'about.p3': "Même méthode à chaque fois : <strong>immersion dans le métier, le bon outil pour le problème</strong> — LLM, ML classique ou code déterministe — <strong>et mise en production</strong> avec l'auditabilité, la conformité et la documentation qu'exigent les secteurs réglementés.",
-        'about.p4': "Melbourne n'est pas un choix au hasard. J'y ai passé six mois en 2024, en échange à <strong>RMIT University</strong>, et j'ai envie d'y revenir pour y construire depuis.",
+        'about.p1': "<strong>AI Data Engineer</strong> chez Talan (Paris), ingénieur diplômé de l'INSA Rouen Normandie. Pour le leader européen de l'hospitalisation privée, je fais tourner de l'IA en production sur le codage médical et la facturation — un périmètre de <strong>2,2 M de séjours par an</strong> — et j'ai livré pour VINCI Construction, Chanel et des assureurs.",
+        'about.p2': "Une règle partout : <strong>le LLM lit, le code déterministe décide</strong>. La précision et le coût se mesurent, ils ne se supposent pas.",
+        'about.p4': "Melbourne n'est pas un choix au hasard : j'ai étudié à <strong>RMIT University</strong> en 2024, et j'y reviens pour y construire.",
         'about.c1.title': 'Immersion métier rapide',
-        'about.c1.desc': 'Facturation santé réglementée, droit des marchés publics, chiffrage patrimoine — appris sur le terrain, livrés en quelques semaines',
-        'about.c2.desc': "Diplôme d'ingénieur (bac+5) — Informatique & technologies de l'information",
+        'about.c1.desc': "Un nouveau domaine réglementé, en production en quelques semaines",
+        'about.c2.desc': "Diplôme d'ingénieur (bac+5) — Informatique & TI",
         'about.c3.title': "Cap sur Melbourne",
         'about.c3.desc': "Ancien de RMIT · installation prévue, disponible dès mars 2027",
         'exp2.kicker': '02 · Expertise',
         'exp2.title': 'Ce que <span class="serif">j’apporte</span>',
-        'exp2.hero': 'Un profil, <span class="serif">full stack :</span><br>de l’orchestration LLM au déploiement Kubernetes.',
-        'exp2.hero.desc': "Je porte ça de bout en bout : cadrage avec le métier, construction des modèles, mise en production sur le cloud. Rien ne se perd en route entre les équipes — le type de profil que recherchent les équipes IA resserrées.",
         'exp2.b1.title': "Systèmes LLM & agents",
-        'exp2.b1.desc': "Extraction structurée avec preuve citée, agents outillés, RAG, évaluation multi-LLM, pseudonymisation — et une règle : le LLM lit, le code déterministe décide. Une précision et un coût mesurés, pas des démos.",
+        'exp2.b1.desc': "Extraction structurée avec preuve citée, agents outillés, RAG, évaluation multi-LLM.",
         'exp2.b2.title': 'Machine learning en production',
-        'exp2.b2.desc': "Scoring prédictif sur données relationnelles, explicabilité pour environnements réglementés, évaluation sur les résultats réels, choix de modèles honnêtes — XGBoost plutôt que fine-tuning LLM quand l'auditabilité et le coût le commandent.",
+        'exp2.b2.desc': "Scoring prédictif, explicabilité, évaluation sur les résultats réels.",
         'exp2.b3.title': "Cloud & MLOps sur Azure",
-        'exp2.b3.desc': "Des systèmes conçus avec les architectes du client et réellement déployés : workloads et CronJobs AKS, GitOps avec Helm + Argo CD, identités managées, accès aux données par API, bases vectorielles.",
+        'exp2.b3.desc': "Workloads AKS, GitOps avec Helm + Argo CD, identités managées, bases vectorielles.",
         'exp2.b4.title': 'Delivery de niveau conseil',
-        'exp2.b4.desc': "Documents de cadrage en anglais et en français, ateliers client, spécifications, conformité by design (HDS, RGPD) — une ingénierie que les décideurs peuvent valider.",
-        'exp2.b4.chip1': 'Cadrage & specs', 'exp2.b4.chip2': 'Ateliers client', 'exp2.b4.chip3': 'Bilingue EN/FR',
-        'method.s1.title': 'Immersion',
-        'method.s1.desc': "J'apprends les règles, le vocabulaire et les contraintes de votre métier aussi vite que votre codebase — assez pour poser les bonnes questions et échanger d'égal à égal avec vos experts.",
-        'method.s2.title': 'Construction',
-        'method.s2.desc': "Le bon outil pour le problème — LLM, ML classique ou code déterministe — benchmarké sur données réelles, jamais sur une promesse de slide.",
-        'method.s3.title': 'Production',
-        'method.s3.desc': "Déploiement sur votre cloud, avec explicabilité, conformité et documentation — des solutions qui survivent à la passation.",
+        'exp2.b4.desc': "Ateliers client, documents de cadrage, conformité RGPD et données de santé (HDS).",
+        'exp2.b4.chip2': 'Ateliers client', 'exp2.b4.chip3': 'Bilingue EN/FR',
         'sys.kicker': "03 · Systèmes",
         'sys.title': "Au cœur <span class=\"serif\">des systèmes</span>",
         'sys.sub': "Quatre systèmes que j'ai conçus et construits — ceux des clients sont anonymisés. Choisissez-en un et suivez un dossier à travers le pipeline.",
         'sys.why': "Décisions de conception",
         'exp.kicker': "04 · Expérience",
         'exp.title': 'Là où j’ai <span class="serif">livré</span>',
-        'exp.sub': 'Plusieurs secteurs, un employeur, des chantiers de production dès le premier jour.',
-        'exp.ramsay.sector': 'Santé',
-        'exp.ramsay.title': 'AI Data Engineer — Mission Ramsay Santé',
-        'exp.ramsay.org': "Leader européen de l'hospitalisation privée — chantiers IA parallèles avec sponsor Direction Data, sur un périmètre de ~2,2 M de séjours par an",
         'exp.now': "Aujourd'hui",
-        'exp.ramsay.b1.title': "Plateforme rejets de facturation sur Azure (AKS)",
-        'exp.ramsay.b1.desc': "J'ai conçu et livré la plateforme qui signale, avant leur envoi, les factures susceptibles d'être rejetées par l'Assurance Maladie : API de scoring hybride (moteur de règles déterministe qui nomme le motif de rejet + score de risque XGBoost avec SHAP), modèle de données Azure SQL (14 tables), API dédiée d'accès aux données (pagination par curseur, une identité managée par cas d'usage — aucun secret de base dans l'orchestrateur), analyse quotidienne orchestrée par n8n et application de revue par rôle pour les facturières. Déployée sur AKS avec Helm + Argo CD ; elle tourne chaque jour sur 3 établissements pilotes. Un CronJob confronte chaque prédiction au verdict réel de l'Assurance Maladie : la précision se mesure en production, elle ne se suppose pas.",
-        'exp.ramsay.b2.title': "Évaluation LLM sur la facturation : dérive, architecture hybride, choix de modèle",
-        'exp.ramsay.b2.desc': "En amont de la plateforme, j'ai porté le benchmark de 81 factures qui la fonde : diagnostic d'une dérive de version GPT sur Azure (80 % → 59-72 %), analyse des faux positifs, et adoption de l'architecture hybride que je recommandais — règles déterministes pour les motifs structurés, LLM pour les motifs sémantiques. J'ai construit le référentiel de 24 codes de rejet et tranché en faveur de XGBoost face au fine-tuning LLM pour l'auditabilité, le coût et la reproductibilité.",
-        'exp.ramsay.b3.title': "Codage médical assisté par IA : benchmark, puis trois agents de contrôle",
-        'exp.ramsay.b3.desc': "Pilotage de bout en bout du pipeline multi-LLM de codage CIM-10 : GPT, Gemini, Mistral, Grok et Claude benchmarkés avec un scoring hiérarchique pondéré que j'ai conçu, RAG (FAISS) et interface React de validation pour les TIM — 92 % de justesse sur le diagnostic principal vs 80 % pour la référence humaine en pilote. J'ai ensuite construit trois agents de contrôle (revalorisation des GHM, complétude du dossier, qualité du codage) sous un contrat de preuve strict : une proposition qui ne cite pas le dossier mot pour mot est rejetée. 89 % de rappel sur les comptes rendus d'anatomopathologie manquants sur 400 séjours ; 83 % des cibles étiquetées de qualité du codage détectées. Conteneurisé pour AKS (application web, chat, pipeline planifié), état partagé sur Azure Blob Storage.",
-        'exp.ramsay.b4.title': "Extraction de documents cliniques",
-        'exp.ramsay.b4.desc': "Éligibilité à l'hôpital de jour : un LLM extrait un JSON strict, avec une citation littérale pour chaque valeur, depuis les comptes rendus d'urgences et de consultation pré-anesthésique, puis des règles déterministes appliquent les seuils cliniques — le LLM lit, il ne décide pas. Validé sur le corpus réel d'un établissement pilote pour un coût mesuré de 0,81 $ les 1 000 documents, avec une application de suivi pour les infirmières de coordination (statut déduit d'un journal d'événements, preuve affichée, monitoring). Même approche reprise pour un programme de recherche France 2030 : 22 variables réglementaires extraites de 157 séjours d'oncologie, chacune avec sa source citée (étude de faisabilité).",
-        'exp.ramsay.b5.title': "Pipeline de confidentialité des données de santé",
-        'exp.ramsay.b5.desc': "Responsable de la dé-identification exécutée avant tout appel LLM : OCR, NER (EDS-Pseudo, AP-HP) et filet de sécurité regex pour ce que le modèle laisse passer, dans un pipeline tolérant aux pannes — délai par document, reprise des traitements, synchronisation incrémentale vers Azure avec des jetons de délégation renouvelés chaque semaine. Seuls des documents dé-identifiés quittent le serveur du client.",
-        'exp.ramsay.b6.title': "Agents métier sur l'IA interne du client",
-        'exp.ramsay.b6.desc': "J'ai construit des agents sur l'assistant interne du groupe (Open WebUI) pour la Direction Financière : l'un compile et synthétise 81 rapports mensuels d'établissements, chaque chiffre cité étant contrôlé automatiquement par rapport à sa source ; l'autre consolide 26 classeurs de provisions en un Excel national contrôlé, rapproché de l'outil de consolidation du groupe, avec une note de synthèse de deux pages — les noms de personnes n'atteignent jamais le modèle. J'ai aussi construit des agents de documentation qui rédigent les fiches de cadrage des cas d'usage et signalent les manques au lieu d'inventer.",
-        'exp.ramsay.b7.title': "Architecture, stratégie de plateforme & socle data",
-        'exp.ramsay.b7.desc': "Architecture d'une veille automatisée des financements publics validée avec l'architecte Azure du client — CronJob AKS, PostgreSQL + pgvector (HNSW, embeddings 3072 dim.) pour le dédoublonnage sémantique, Bing Grounding, Key Vault CSI, Helm + Argo CD sur 5 environnements. Benchmark de Dataiku, Databricks et Azure AI Foundry pour la plateforme IA du groupe, sous contrainte d'hébergement de données de santé (HDS). J'ai piloté le chantier Master Data Management et le reporting Power BI, et développé un outil Azure Document Intelligence qui découpe des lots de facturation scannés en ~900 factures unitaires.",
-        'exp.chanel.sector': 'Luxe · RH',
-        'exp.chanel.title': 'Consultant IA — Mission Chanel',
-        'exp.chanel.org': 'Maison de luxe internationale — agents GenAI au service de la fonction RH / talents',
-        'exp.chanel.b1.title': 'Agents IA pour les fiches de poste',
-        'exp.chanel.b1.desc': "Responsable de la conception et du déploiement d'agents IA sur Copilot Studio pour créer et reformater les fiches de poste : gabarits, ton et structure standardisés, permettant aux recruteurs et managers de générer des annonces cohérentes et fidèles à la marque en quelques minutes plutôt qu'à partir d'une page blanche.",
-        'exp.chanel.chip': 'Automatisation RH',
-        'exp.gis.sector': 'Assurance',
-        'exp.gis.title': "Consultant IA — Cas d'usage SIG pour l'assurance",
-        'exp.gis.org': "Systèmes d'Information Géographique (SIG) appliqués au secteur de l'assurance",
-        'exp.gis.b1.title': "Cas d'usage SIG pour l'assurance",
-        'exp.gis.b1.desc': "J'ai piloté une série de cas d'usage SIG (Système d'Information Géographique) pour le domaine de l'assurance — analyse de risque géospatiale, cartographie de l'exposition et scénarios de tarification territoriale — en cadrant comment la donnée de localisation devient une valeur métier concrète pour les assureurs.",
-        'exp.gis.b2.title': 'Interface de valeur adaptée au client',
-        'exp.gis.b2.desc': "Responsable de la conception et du développement d'une interface présentant ces cas d'usage adaptés à chaque prospect : filtrés selon son profil et son secteur, avec des gains dimensionnés par rapport à son chiffre d'affaires — une démonstration personnalisée et prête pour la vente du ROI du SIG.",
-        'exp.gis.chip1': 'Géospatial', 'exp.gis.chip2': 'Assurance', 'exp.gis.chip3': 'Interface ROI',
-        'exp.platform.sector': "Produits internes",
-        'exp.platform.title': "AI Engineer — Produits internes Talan",
-        'exp.platform.org': "Des produits construits de A à Z pour les équipes et les clients de Talan",
-        'exp.platform.b1.title': 'Matching offre ↔ consultant',
-        'exp.platform.b1.desc': "J'ai piloté une plateforme agentique interne mettant en correspondance une offre entrante avec le vivier de consultants pour faire remonter le profil le plus adapté : recherche sémantique sur les compétences et l'expérience (RAG, index FAISS) plutôt qu'un staffing par mots-clés.",
-        'exp.platform.b2.title': 'Reformatage automatique du CV',
-        'exp.platform.b2.desc': "J'ai conçu des agents IA qui reformatent automatiquement le CV d'un consultant par rapport à une offre donnée — réorganisation et reformulation de l'expérience pertinente vis-à-vis de l'opportunité, pour produire des CV sur-mesure en quelques secondes au lieu de le faire à la main.",
-        'exp.platform.b3.title': "SaaS multi-tenant de conduite du changement",
-        'exp.platform.b3.desc': "J'ai construit un SaaS de conduite du changement du cahier des charges à la production : multi-tenant mutualisé avec isolation stricte entre clients, droits par périmètre et console super-admin, export et effacement RGPD, plans d'action et parcours de formation gamifiés, mode audit intégré qui transforme les retours client en tickets, stockage compatible S3 migré avec trois minutes de coupure. En recette client avec de vrais utilisateurs ; déploiement SSO Entra ID prévu sur Azure.",
-        'exp.platform.chip3': "SaaS multi-tenant",
-        'exp.platform.chip1': 'Matching sémantique', 'exp.platform.chip2': 'Génération de CV',
-        'exp.degaine.sector': 'Construction & Patrimoine',
-        'exp.degaine.title': 'Consultant IA — Mission DEGAINE (VINCI Construction)',
-        'exp.degaine.org': 'Filiale VINCI spécialisée dans la restauration de monuments historiques classés',
-        'exp.degaine.b1.title': "Veille automatisée d'appels d'offres publics",
-        'exp.degaine.b1.desc': "J'ai piloté un système de veille remplaçant un abonnement payant : collecte via les API BOAMP/TED, triage LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs du filtrage par mots-clés, et un scoring go/no-go des consultations patrimoine que j'ai défini.",
-        'exp.degaine.b2.title': 'Atelier IA agentique — pré-chiffrage',
-        'exp.degaine.b2.desc': "J'ai porté et animé un atelier client démontrant l'IA agentique (Claude) sur le pré-chiffrage d'un DCE de restauration : j'ai construit un skill de chiffrage dédié, un bordereau de prix de 33 lignes et le deck de restitution — démo sur le CCTP réel d'un monument classé.",
-        'exp.degaine.chip': 'API marchés publics',
-        'exp.insa.sector': 'Projet certifié',
-        'exp.insa.title': 'Mission de consulting — Migration de données & KPI',
-        'exp.insa.org': 'Projet certifié mené en conditions réelles pour un client',
-        'exp.insa.desc': "J'ai piloté un Proof of Concept de migration des données vers une base propre, structurée et documentée (modélisation, nettoyage, règles de transformation), puis j'ai porté les calculs de KPI jusqu'à la restitution finale au client.",
-        'exp.insa.chip1': 'Modélisation',
+        'exp.talan.title': 'AI Data Engineer — Talan',
+        'exp.talan.org': "Conseil IT, Paris — quatre secteurs, des chantiers de production dès le premier jour",
+        'exp.talan.b1.title': 'Ramsay Santé · santé',
+        'exp.talan.b1.desc': "Plateforme rejets de facturation en service sur AKS, codage médical multi-LLM à 92 % vs 80 % pour la référence humaine, extraction de documents cliniques à 0,81 $ les 1 000 documents.",
+        'exp.talan.b2.title': 'DEGAINE (VINCI Construction) · restauration du patrimoine',
+        'exp.talan.b2.desc': "Veille d'appels d'offres par LLM remplaçant un abonnement payant ; atelier client sur le pré-chiffrage par IA agentique.",
+        'exp.talan.b3.title': 'Produits internes Talan',
+        'exp.talan.b3.desc': "SaaS multi-tenant de conduite du changement, du cahier des charges à la production ; matching sémantique offre-consultant.",
+        'exp.talan.b4.title': 'Chanel · RH — et assurance',
+        'exp.talan.b4.desc': "Agents Copilot Studio pour les fiches de poste ; cas d'usage géospatiaux avec une interface ROI prête pour la vente.",
         'exp.edu.title': "Diplôme d'ingénieur — Informatique & TI",
         'exp.edu.org': "Grande école d'ingénieurs",
-        'exp.edu.desc': "Formation d'ingénieur en informatique et technologies de l'information : bases de données, algorithmique, développement, statistiques et analyse de données, gestion de projet.",
-        'exp.rmit.sector': 'Échange universitaire',
-        'exp.rmit.title': "Semestre à l'étranger — RMIT University (Melbourne, Australie)",
-        'exp.rmit.org': "Échange universitaire de 6 mois pendant ma formation d'ingénieur",
-        'exp.rmit.desc': "Six mois de vie à Melbourne en 2024, en échange à RMIT University, avec tous les cours en anglais : Machine Learning, Data Science, Cryptocurrency and Blockchain, Networks. Ce semestre a renforcé mes fondations IA et data, et c'est la raison pour laquelle Melbourne est ma prochaine étape : je connais la ville, et j'ai envie d'y revenir pour y travailler.",
+        'exp.rmit.title': "Semestre d'échange — RMIT University, Melbourne",
+        'exp.rmit.org': "Six mois à Melbourne, cours en anglais : Machine Learning, Data Science, Blockchain, Réseaux",
         'proj.kicker': "05 · Réalisations",
-        'proj.title': 'Projets <span class="serif">choisis</span>',
-        'proj.sub': 'GenAI, ML et data engineering appliqués à des problèmes métier réels — filtrez par secteur.',
-        'proj.filter.all': 'Tous', 'proj.filter.health': 'Santé', 'proj.filter.construction': 'Construction',
-        'proj.filter.insurance': 'Assurance', 'proj.filter.enterprise': 'Entreprise',
-        'proj.filter.academic': 'Académique', 'proj.filter.personal': 'Personnel',
+        'proj.title': 'D’autres <span class="serif">projets</span>',
+        'proj.sub': "Six de plus, au-delà des quatre systèmes ci-dessus.",
         'proj.badge.health': 'Santé', 'proj.badge.construction': 'Construction',
-        'proj.badge.insurance': 'Assurance', 'proj.badge.enterprise': 'Entreprise',
-        'proj.badge.academic': 'INSA · Certifié', 'proj.badge.personal': 'Personnel',
-        'proj.p1.title': "Codage médical assisté par IA & agents de contrôle",
-        'proj.p1.desc': "Pilotage du pipeline multi-LLM de codage CIM-10 (5 modèles, scoring hiérarchique que j'ai conçu, RAG, interface React de validation), puis de trois agents de contrôle — revalorisation, complétude, qualité du codage — tenus de citer le dossier mot pour mot, sinon la proposition est rejetée. 89 % de rappel sur les comptes rendus d'anatomopathologie manquants.",
-        'proj.p2.title': 'Pseudonymisation de données médicales',
-        'proj.p2.desc': "Responsable de la dé-identification des dossiers patients exécutée avant tout appel LLM : OCR, modèle NER (EDS-Pseudo, AP-HP) et filet de sécurité regex, dans un pipeline reprenable et tolérant aux pannes — le prérequis de conformité du projet de codage IA.",
-        'proj.p3.title': "Plateforme rejets de facturation sur AKS",
-        'proj.p3.desc': "J'ai conçu et livré la plateforme qui signale les factures à risque de rejet avant leur envoi : API de scoring (moteur de règles + XGBoost), modèle Azure SQL, API d'accès aux données, analyse quotidienne orchestrée par n8n et application de revue pour les facturières — sur AKS avec Helm + Argo CD. Un job quotidien confronte chaque prédiction au verdict réel de l'Assurance Maladie.",
-        'proj.p3.chip': 'Facturation',
-        'proj.p7.title': 'Veille financements publics sur Azure',
-        'proj.p7.desc': "J'ai conçu et développé une veille automatisée des appels à projets remplaçant un flux Power Automate : collecte Bing Grounding, dédoublonnage sémantique pgvector (HNSW, embeddings 3072 dim.), validation des liens, Key Vault CSI, Helm + Argo CD sur AKS sur 5 environnements — validée avec l'architecte Azure du client.",
-        'proj.p8.title': "Veille d'appels d'offres par LLM",
-        'proj.p8.desc': "Pilotage d'une veille remplaçant un abonnement payant : API marchés publics BOAMP/TED, triage LLM (Mistral Small sur Azure AI Foundry) pour éliminer les faux positifs, scoring go/no-go des consultations patrimoine.",
-        'proj.p9.title': 'Pré-chiffrage par IA agentique',
-        'proj.p9.desc': "J'ai porté et animé un atelier client démontrant l'IA agentique sur le pré-chiffrage d'un DCE de restauration : skill de chiffrage dédié, bordereau de 33 lignes — démo sur le CCTP réel d'un monument classé.",
-        'proj.p9.chip': 'Atelier client', 'proj.p9.chip2': 'Chiffrage',
-        'proj.p10.title': 'POC migration de base de données',
-        'proj.p10.desc': "J'ai piloté une mission de consulting certifiée : migration de données vers une base propre, structurée et documentée, puis j'ai porté les KPI actionnables pour le suivi métier du client.",
-        'proj.p11.title': "Plateforme auto-hébergée (homelab)",
-        'proj.p11.desc': "Le serveur sur lequel tourne tout ce qui précède : applications Docker Compose derrière Traefik, publiées uniquement via un Cloudflare Tunnel avec Cloudflare Access devant chaque application — aucun port ouvert —, administration par Tailscale, CrowdSec sur les services exposés, déploiements par git push avec contrôle de santé et piles prod/dev séparées. Plus un PC GPU (RTX 5070 Ti, Ollama) pour évaluer des modèles open source avant usage client.",
-        'proj.p12.title': 'Analyse du marché immobilier',
-        'proj.p12.desc': "Analyse des prix de l'immobilier en Californie : exploration des données, facteurs clés de valorisation et visualisation des tendances avec Python.",
-        'proj.p13.title': 'Ce portfolio',
-        'proj.p13.desc': "100 % fait main en HTML / CSS / JS vanilla : schémas de pipelines animés, palette de commandes ⌘K, réseau de particules interactif, cartes 3D tilt, bilingue EN/FR, thème clair/sombre — hébergé sur GitHub Pages.",
-        'proj.p14.title': 'Master Data Management (MDM)',
-        'proj.p14.desc': "J'ai piloté le chantier MDM pour le groupe hospitalier : alignement et dédoublonnage des données de référence, golden records et règles de qualité de données que j'ai définies, alimentant les pipelines de facturation et de codage en données maîtres propres et cohérentes.",
-        'proj.p14.chip': 'Qualité de données', 'proj.p14.chip2': 'Données de référence',
-        'proj.p15.title': 'Reporting Power BI',
-        'proj.p15.desc': "J'ai porté le reporting décisionnel sous Power BI : modélisation de données, mesures DAX et tableaux de bord interactifs offrant à la Direction Data une lecture claire de la facturation, des rejets et de la performance de codage.",
-        'proj.p15.chip': 'Tableaux de bord',
-        'proj.p16.title': "Cas d'usage SIG pour l'assurance",
-        'proj.p16.desc': "Pilotage de cas d'usage SIG (Système d'Information Géographique) pour les assureurs — risque géospatial, cartographie de l'exposition, tarification territoriale — plus une interface adaptée au client que j'ai développée, présentant chaque cas d'usage par profil et secteur, avec des gains dimensionnés au chiffre d'affaires du prospect.",
-        'proj.p16.chip': 'Géospatial', 'proj.p16.chip2': 'Interface ROI',
-        'proj.p17.title': 'Plateforme agentique staffing & CV',
-        'proj.p17.desc': "J'ai piloté une plateforme agentique interne maison : des agents IA qui matchent une offre au consultant le plus adapté (RAG, index FAISS) et reformatent automatiquement un CV par rapport à cette offre — des profils sur-mesure en quelques secondes plutôt qu'un staffing manuel.",
-        'proj.p17.chip': 'Matching',
-        'proj.p18.title': 'Agents IA pour les fiches de poste',
-        'proj.p18.desc': "Responsable des agents IA Copilot Studio pour une maison de luxe internationale (Chanel) qui créent et reformatent les fiches de poste — des annonces cohérentes et fidèles à la marque générées en quelques minutes plutôt qu'à partir d'une page blanche.",
-        'proj.p18.chip': 'RH',
-        'proj.p1.m': "<b>92 %</b> vs 80 % pour la référence humaine",
-        'proj.p3.m': "<b>3</b> établissements pilotes · scoring quotidien",
-        'proj.p19.title': "Extraction d'éligibilité à l'hôpital de jour",
-        'proj.p19.desc': "Extraction structurée par LLM avec preuve citée dans les comptes rendus d'urgences et de consultation pré-anesthésique, puis règles déterministes pour les seuils cliniques — le LLM lit, il ne décide pas. Validée sur le corpus réel d'un établissement pilote, avec une application de suivi pour les infirmières de coordination.",
-        'proj.p19.m': "<b>0,81 $</b> les 1 000 documents",
-        'proj.p19.chip': "Sortie structurée",
+        'proj.badge.enterprise': 'Entreprise', 'proj.badge.personal': 'Personnel',
         'proj.p20.title': "Agents de reporting Finance",
-        'proj.p20.desc': "Des agents sur l'IA interne du client (Open WebUI) : 81 rapports mensuels d'établissements compilés et synthétisés, chaque chiffre cité étant contrôlé par rapport à sa source ; 26 classeurs de provisions consolidés en un Excel contrôlé et rapproché — les noms n'atteignent jamais le modèle.",
         'proj.p20.m': "<b>81</b> rapports → 1 synthèse contrôlée",
-        'proj.p21.title': "Document AI : découpage de lots de factures",
-        'proj.p21.desc': "Outil Azure Document Intelligence qui découpe des lots de facturation scannés en un PDF par facture et les renomme selon la nomenclature de la Finance — ~900 factures traitées, avec contrôle de conservation des pages et cache OCR pour ne jamais payer deux fois.",
-        'proj.p22.title': "Extraction de données de vie réelle en oncologie",
-        'proj.p22.desc': "Étude de faisabilité pour un programme de recherche France 2030 : un LLM extrait les 22 variables réglementaires d'un médicament en accès précoce à partir de 157 séjours hospitaliers, chacune avec sa source citée, plus une interface de revue confrontant documents et fiche extraite.",
-        'proj.p22.chip': "Extraction",
-        'proj.p22.chip2': "Interface de revue",
+        'proj.p20.desc': "Des agents sur l'IA interne du client compilent 81 rapports mensuels d'établissements et 26 classeurs de provisions — chaque chiffre cité est contrôlé par rapport à sa source.",
+        'proj.p7.title': 'Veille financements publics sur Azure',
+        'proj.p7.m': "<b>5</b> environnements · GitOps",
+        'proj.p7.desc': "Veille automatisée des appels à projets sur AKS, avec dédoublonnage sémantique pgvector — validée avec l'architecte Azure du client.",
+        'proj.p8.title': "Veille d'appels d'offres par LLM",
+        'proj.p8.desc': "API marchés publics, triage LLM pour éliminer les faux positifs des mots-clés, scoring go/no-go des consultations patrimoine.",
         'proj.p23.title': "SaaS multi-tenant de conduite du changement",
-        'proj.p23.desc': "Construit du cahier des charges à la production : multi-tenant mutualisé avec isolation stricte entre clients, droits par périmètre, export et effacement RGPD, plans d'action gamifiés, mode audit intégré — en recette client avec de vrais utilisateurs.",
+        'proj.p23.desc': "Isolation stricte entre clients, droits par périmètre, export et effacement RGPD — en recette client avec de vrais utilisateurs.",
         'proj.p23.chip': "Multi-tenant",
+        'proj.p18.title': 'Agents IA pour les fiches de poste',
+        'proj.p18.desc': "Agents Copilot Studio qui créent et reformatent les fiches de poste — des annonces cohérentes et fidèles à la marque en quelques minutes.",
         'proj.p24.title': "Mémoire long terme pour agents de code",
-        'proj.p24.desc': "Un plugin Claude Code que j'ai écrit : en fin de session, le transcript est aplati en local (seulement ce qui a été tapé et répondu), envoyé par SSH avec une clé restreinte à un seul dossier d'arrivée, puis consolidé sur mon serveur en fiches par projet — état, décisions datées, contraintes, points ouverts. Au démarrage de la session suivante, la bonne fiche est réinjectée, quel que soit le poste. Chaque mise à jour est un commit git traçable.",
-        'proj.p24.chip': "Context engineering",
-        'proj.p25.title': "Fil — de la voix et des réunions à la base de connaissance",
-        'proj.p25.m': "<b>390+</b> tests · une capture = un commit git",
-        'proj.p25.desc': "Un outil personnel, auto-hébergé : une dictée ou une réunion enregistrée devient points d'avancement, décisions et tâches, écrits dans un vault Markdown versionné sous git après ma validation. FastAPI, PostgreSQL comme file de jobs (pas de Redis), PWA SvelteKit avec capture hors ligne, enregistreur macOS natif en Swift, transcription avec diarisation et suppression de l'écho, harnais d'évaluation de l'étape LLM et plafond de coût mensuel appliqué dans le code.",
+        'proj.p24.desc': "Un plugin Claude Code : chaque session est consolidée sur mon serveur en fiches par projet, réinjectées au démarrage suivant, quel que soit le poste.",
         'contact.kicker': "06 · Contact",
         'contact.title': 'Construisons <span class="serif">quelque chose</span>',
         'contact.sub': "Vous cherchez un AI Engineer <span class=\"serif\">qui livre&nbsp;?</span>",
-        'contact.text': "Systèmes LLM, ML en production, plateformes data cloud — dans votre secteur, quel qu'il soit. Ouvert aux postes d'AI Engineer à Melbourne : j'y ai étudié à RMIT en 2024 et j'y reviens — installation prévue, disponible dès mars 2027. Réponse rapide garantie.",
+        'contact.text': "Ouvert aux postes d'AI Engineer à Melbourne — installation prévue, disponible dès mars 2027. Réponse rapide garantie.",
         'cmdk.ph': "Tapez une commande ou cherchez…",
         'footer.text': '© 2026 Maxime Laurent — Conçu & codé à la main',
         'roles': ['AI Engineer', 'Systèmes LLM en production', 'Agents · RAG · Evals', 'Azure · AKS · GitOps', 'Tout secteur. Vite.']
@@ -1943,18 +1505,7 @@
       })(t0);
     }
 
-    /* ============ FILTERS + SPOTLIGHT ============ */
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const f = btn.dataset.filter;
-        document.querySelectorAll('#projectsGrid .project').forEach(card => {
-          card.classList.toggle('hidden', f !== 'all' && card.dataset.category !== f);
-        });
-      });
-    });
-
+    /* ============ SPOTLIGHT ============ */
     document.querySelectorAll('.project, .bento-card').forEach(card => {
       card.addEventListener('mousemove', e => {
         const r = card.getBoundingClientRect();
@@ -2129,7 +1680,6 @@
           ],
           "decisions": [
             "The orchestrator never talks to the database: a dedicated data API, one managed identity per use case, zero SQL secrets in n8n.",
-            "One pagination mode for every endpoint: a bidirectional cursor.",
             "Only ~19% of rejections can be predicted from the invoice itself — so rules name the cause, ML ranks the risk, and the dashboard says so.",
             "GitOps only: Helm charts, Argo CD syncing from the integration branch."
           ]
@@ -2180,7 +1730,6 @@
           ],
           "decisions": [
             "L'orchestrateur ne parle jamais à la base : une API de données dédiée, une identité managée par cas d'usage, aucun secret SQL dans n8n.",
-            "Un seul mode de pagination pour tous les endpoints : un curseur bidirectionnel.",
             "Seuls ~19 % des rejets sont prédictibles depuis la facture elle-même — donc les règles nomment la cause, le ML classe le risque, et le tableau de bord le dit.",
             "GitOps uniquement : charts Helm, Argo CD synchronisé sur la branche d'intégration."
           ]
@@ -2248,7 +1797,6 @@
           ],
           "decisions": [
             "The LLM reads, it doesn't decide: thresholds live in config and are applied by deterministic code.",
-            "No local model: every call goes through the client's governed, budgeted Azure deployment.",
             "Status is never stored: it is derived from the last event in the log.",
             "Ranking reflects the strength of the evidence, not clinical urgency — that call stays with clinicians."
           ]
@@ -2299,7 +1847,6 @@
           ],
           "decisions": [
             "Le LLM lit, il ne décide pas : les seuils vivent dans la configuration et sont appliqués par du code déterministe.",
-            "Pas de modèle local : chaque appel passe par le déploiement Azure du client, gouverné et budgété.",
             "Le statut n'est jamais stocké : il se déduit du dernier événement du journal.",
             "Le classement reflète la solidité de la preuve, pas l'urgence clinique — ce jugement reste aux soignants."
           ]
@@ -2368,7 +1915,6 @@
           "decisions": [
             "Evidence contract: every proposal quotes the record verbatim, or it is dropped.",
             "No diagnosis is ever coded from a single lab value.",
-            "Scope changes go through expert-arbitrated rule sheets, not through code or prompt edits.",
             "A theme with no lab data available is “not examined”, never “compliant”."
           ]
         },
@@ -2419,7 +1965,6 @@
           "decisions": [
             "Contrat de preuve : chaque proposition cite le dossier mot pour mot, sinon elle est écartée.",
             "Aucun diagnostic n'est codé sur la seule base d'une valeur biologique isolée.",
-            "Tout changement de périmètre passe par les fiches de règles arbitrées par les experts, pas par le code ni le prompt.",
             "Une thématique sans biologie disponible est « non examinée », jamais « conforme »."
           ]
         }
@@ -2488,7 +2033,6 @@
           ],
           "decisions": [
             "The Markdown vault is the source of truth; Postgres is only an index that can be rebuilt.",
-            "One writer: only the worker writes to the vault, under a lock shared with a second system.",
             "Job queue and real-time updates live in Postgres (SKIP LOCKED, LISTEN/NOTIFY) — no Redis, one dependency less.",
             "Every LLM call is logged with its estimated cost; a monthly cap suspends non-essential calls."
           ]
@@ -2539,7 +2083,6 @@
           ],
           "decisions": [
             "Le vault Markdown est la source de vérité ; Postgres n'est qu'un index reconstructible.",
-            "Un seul écrivain : seul le worker écrit dans le vault, sous un verrou partagé avec un second système.",
             "File de jobs et temps réel dans Postgres (SKIP LOCKED, LISTEN/NOTIFY) — pas de Redis, une dépendance de moins.",
             "Chaque appel LLM est journalisé avec son coût estimé ; un plafond mensuel suspend les appels non essentiels."
           ]
